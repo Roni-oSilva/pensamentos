@@ -89,7 +89,7 @@ body {
 .hero-stage > * { pointer-events: none; }
 .hero-stage .hero-manifesto { pointer-events: auto; }
 
-.hero-video {
+.hero-canvas {
   position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; object-fit: cover; background: #000;
   will-change: transform, filter;
   transform: translate3d(calc(var(--mx) * -8px), calc(var(--my) * -6px), 0) scale(calc(1.05 + var(--v) * 0.14));
@@ -100,6 +100,7 @@ body {
 @keyframes flicker { 0%, 100% { opacity: 0 } 8% { opacity: .07 } 10% { opacity: 0 } 52% { opacity: .05 } 54% { opacity: 0 } 77% { opacity: .09 } 79% { opacity: 0 } }
 .hero-glow-edge { position: absolute; inset: 0; z-index: 2; opacity: calc(var(--v) * 0.5);
   background: radial-gradient(ellipse 70% 40% at 50% 0%, rgba(232, 69, 60, 0.18), transparent 70%), radial-gradient(ellipse 60% 35% at 50% 100%, rgba(255, 230, 200, 0.1), transparent 70%); }
+.hero-loading { position: absolute; left: 0; right: 0; bottom: 3.2rem; z-index: 7; text-align: center; font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: #a3a3a3; }
 .hero-progress { position: absolute; left: 0; right: 0; bottom: 0; z-index: 8; height: 3px; background: rgba(255, 255, 255, 0.08); }
 .hero-progress i { display: block; height: 100%; background: #e8453c; transform-origin: left; transform: scaleX(var(--v)); box-shadow: 0 0 12px rgba(232, 69, 60, 0.8); }
 
@@ -123,7 +124,7 @@ body {
   .hero { height: auto; --p: 1; }
   .hero-stage { position: relative; height: auto; min-height: 100svh; }
   .hero-manifesto { position: relative; opacity: 1; transform: none; padding: 3rem 1.25rem; }
-  .hero-video { filter: brightness(0.38); transform: none; }
+  .hero-canvas { filter: brightness(0.38); transform: none; }
   .cine-grain, .hero-flicker { animation: none; }
 }
 

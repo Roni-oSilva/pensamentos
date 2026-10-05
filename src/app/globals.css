@@ -77,7 +77,6 @@ body {
   .field { min-height: 46px; font-size: 16px; }
   select.field { padding-right: 2rem; }
 }
-.scroll-hint { background: linear-gradient(90deg, #0a0a0a 30%, transparent) left / 24px 100% no-repeat local, linear-gradient(90deg, #0a0a0a 30%, transparent) right / 24px 100% no-repeat local; }
 
 /* ───────────── Hero com scroll (home) ───────────── */
 .hero { --p: 0; --mx: 0; --my: 0; position: relative; height: calc(330vh - 4rem); }

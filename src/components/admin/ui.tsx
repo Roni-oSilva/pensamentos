@@ -32,8 +32,8 @@ export function Table({ head, children }: { head: string[]; children: React.Reac
   return (
     <div>
       <p className="mb-2 text-xs text-ash-400 md:hidden">↔ Deslize a tabela para os lados para ver todas as colunas</p>
-      <div className="scroll-hint overflow-x-auto overscroll-x-contain rounded-lg border border-ink-700">
-      <table className="w-full min-w-[640px] text-left text-sm [&_td:first-child]:sticky [&_td:first-child]:left-0 [&_td:first-child]:bg-ink-950 [&_th:first-child]:sticky [&_th:first-child]:left-0 [&_th:first-child]:bg-ink-900 max-md:[&_td]:px-3 max-md:[&_th]:px-3">
+      <div className="overflow-x-auto overscroll-x-contain rounded-lg border border-ink-700">
+      <table className="w-full min-w-[640px] text-left text-sm max-md:[&_td:first-child]:sticky max-md:[&_td:first-child]:left-0 max-md:[&_td:first-child]:bg-ink-950 max-md:[&_th:first-child]:sticky max-md:[&_th:first-child]:left-0 max-md:[&_th:first-child]:bg-ink-900 max-md:[&_td]:px-3 max-md:[&_th]:px-3">
         <thead className="border-b border-ink-700 bg-ink-900 text-xs uppercase tracking-widest text-ash-400"><tr>{head.map((h) => <th key={h} className="px-4 py-3 font-normal">{h}</th>)}</tr></thead>
         <tbody className="divide-y divide-ink-700">{children}</tbody>
       </table>

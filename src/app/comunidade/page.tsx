@@ -6,7 +6,7 @@ import { FeedList } from "@/components/posts/FeedList";
 import { PageTitle } from "@/components/ui/Section";
 import { EmptyState } from "@/components/ui/EmptyState";
 
-export const metadata: Metadata = { title: "Comunidade", description: "Frases, pensamentos e poemas de quem faz parte do Heresias." };
+export const metadata: Metadata = { title: "Comunidade", description: "Versículos, frases, pensamentos e conselhos de irmãos que compartilham a Palavra e engrandecem a Cristo." };
 
 const TABS: { key: Sort; label: string }[] = [
   { key: "recent", label: "Recentes" }, { key: "trending", label: "Em alta" }, { key: "likes", label: "Mais curtidas" }, { key: "comments", label: "Mais comentadas" },
@@ -19,9 +19,9 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
   const { posts, hasMore } = await listPosts({ origin: "COMMUNITY", sort }, session?.user.id ?? null);
   return (
     <>
-      <PageTitle eyebrow="Comunidade" title="Vozes">
-        <span>Publicações de quem faz parte. Tudo passa por moderação antes de aparecer.</span>
-        <span className="mt-5 block"><Link href="/comunidade/nova" className="btn-primary">Publicar na comunidade</Link></span>
+      <PageTitle eyebrow="Comunidade" title="Irmãos em Cristo">
+        <span>Compartilhe versículos, frases, pensamentos e conselhos, e engrandeça a Cristo junto com a comunidade. Tudo passa por moderação antes de aparecer.</span>
+        <span className="mt-5 block"><Link href="/comunidade/nova" className="btn-primary">Compartilhar com a comunidade</Link></span>
       </PageTitle>
       <div className="container-wide mt-10">
         <div role="tablist" aria-label="Ordenação" className="mb-8 flex gap-1 overflow-x-auto border-b border-ink-700 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
@@ -31,7 +31,7 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
           ))}
         </div>
         {posts.length ? <FeedList key={sort} initial={posts} hasMore={hasMore} signedIn={!!session} params={{ origin: "COMMUNITY", sort }} />
-          : <EmptyState title="Silêncio absoluto." hint={sort === "trending" ? "Nada em alta nos últimos 14 dias." : "Nenhuma publicação aprovada ainda."} />}
+          : <EmptyState title="Ainda não há palavras por aqui." hint={sort === "trending" ? "Nada em alta nos últimos 14 dias." : "Seja o primeiro a compartilhar uma palavra de fé."} />}
       </div>
     </>
   );

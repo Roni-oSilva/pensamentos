@@ -1,4 +1,4 @@
-/** Gera o PNG de compartilhamento no navegador (canvas): mão + borboleta ao fundo, frase e "HERESIAS" no canto. */
+/** Gera o PNG de compartilhamento no navegador (canvas): imagem de fundo à escolha, a frase e SEMPRE a marca "Igreja de Cristo". */
 
 const W = 1080, H = 1350;
 
@@ -38,61 +38,75 @@ function fit(ctx: CanvasRenderingContext2D, text: string, font: (px: number) => 
   return { px: min, lines };
 }
 
-export async function renderShareImage(text: string, signature?: string): Promise<Blob> {
-  await Promise.all([document.fonts.load("100px Anton"), document.fonts.load("500 40px 'Inter Variable'")]).catch(() => undefined);
-  const [hand, butterfly] = await Promise.all([loadImage("/hero/hand.webp"), loadImage("/hero/butterfly.webp")]);
+/** Fundos disponíveis para o cartão (arquivos em /public/share). `null` = fundo liso escuro. */
+export const SHARE_BACKGROUNDS = [
+  { id: 1, src: "/share/bg1.webp", label: "Pastor e ovelha" },
+  { id: 2, src: "/share/bg2.webp", label: "Ovelha" },
+  { id: 3, src: "/share/bg3.webp", label: "Pomba" },
+  { id: 4, src: "/share/bg4.webp", label: "Mãos" },
+  { id: 5, src: "/share/bg5.webp", label: "Água" },
+] as const;
+
+export const SHARE_BRAND = "Igreja de Cristo";
+
+export async function renderShareImage(text: string, bg: number | null = 1, signature?: string): Promise<Blob> {
+  await Promise.all([document.fonts.load("100px Anton"), document.fonts.load("900 64px 'Bodoni Moda'"), document.fonts.load("500 40px 'Inter Variable'")]).catch(() => undefined);
+  const bgDef = SHARE_BACKGROUNDS.find((b) => b.id === bg);
+  const photo = bgDef ? await loadImage(bgDef.src).catch(() => null) : null;
 
   const canvas = document.createElement("canvas");
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext("2d");
   if (!ctx) throw new Error("canvas");
 
-  // fundo
+  // fundo: foto em "cover" (preenche sem distorcer) ou liso escuro
   ctx.fillStyle = "#050505"; ctx.fillRect(0, 0, W, H);
-  const glow = ctx.createRadialGradient(W * 0.72, H * 0.62, 40, W * 0.72, H * 0.62, 700);
-  glow.addColorStop(0, "rgba(232,69,60,0.35)"); glow.addColorStop(1, "rgba(232,69,60,0)");
-  ctx.fillStyle = glow; ctx.fillRect(0, 0, W, H);
+  if (photo) {
+    const k = Math.max(W / photo.width, H / photo.height);
+    const dw = photo.width * k, dh = photo.height * k;
+    ctx.drawImage(photo, (W - dw) / 2, (H - dh) / 2, dw, dh);
+  } else {
+    const g = ctx.createRadialGradient(W / 2, H * 0.4, 60, W / 2, H * 0.4, 900);
+    g.addColorStop(0, "#26201c"); g.addColorStop(1, "#050505");
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  }
+  // escurece para dar leitura (mais forte no meio e embaixo)
+  ctx.fillStyle = "rgba(0,0,0,0.2)"; ctx.fillRect(0, 0, W, H);
+  const shade = ctx.createLinearGradient(0, 0, 0, H);
+  shade.addColorStop(0, "rgba(0,0,0,0.22)"); shade.addColorStop(0.5, "rgba(0,0,0,0.34)"); shade.addColorStop(1, "rgba(0,0,0,0.85)");
+  ctx.fillStyle = shade; ctx.fillRect(0, 0, W, H);
 
-  // mão (canto inferior direito) + borboleta tocando a ponta do dedo
-  const hh = 1020, hw = hh * (hand.width / hand.height), hx = W - hw - 20, hy = H - hh + 40;
-  ctx.shadowColor = "rgba(0,0,0,0.7)"; ctx.shadowBlur = 50; ctx.shadowOffsetY = 24;
-  ctx.drawImage(hand, hx, hy, hw, hh);
-  const bw = 330, bh = bw * (butterfly.height / butterfly.width);
-  ctx.drawImage(butterfly, Math.min(hx + hw * 0.8 - bw / 2, W - 40 - bw), hy - bh + 28, bw, bh);
+  // frase, centralizada
+  const clean = text.replace(/\s+\n/g, "\n").trim();
+  const box = { w: 820, h: 700 };
+  const serif = (px: number) => `italic 500 ${px}px Georgia, 'Times New Roman', serif`;
+  const f = fit(ctx, clean, serif, box, 78, 34, 1.32);
+  const lh = f.px * 1.32, blockH = f.lines.length * lh;
+  const top = 120 + (box.h - blockH) / 2 + 80;
+  ctx.textAlign = "center"; ctx.textBaseline = "top";
+  ctx.shadowColor = "rgba(0,0,0,0.75)"; ctx.shadowBlur = 24; ctx.shadowOffsetY = 4;
+  ctx.font = "180px Anton, Impact, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.85)";
+  ctx.fillText("“", W / 2, top - 150);
+  ctx.font = serif(f.px); ctx.fillStyle = "#f7f3ec";
+  f.lines.forEach((l, i) => ctx.fillText(l, W / 2, top + i * lh));
+  if (signature) {
+    ctx.font = "500 28px 'Inter Variable', Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.8)";
+    ctx.fillText(`— ${signature}`, W / 2, top + blockH + 28);
+  }
   ctx.shadowColor = "transparent";
 
-  // escurece à esquerda para dar leitura ao texto
-  const fade = ctx.createLinearGradient(0, 0, W * 0.85, 0);
-  fade.addColorStop(0, "rgba(5,5,5,0.92)"); fade.addColorStop(0.6, "rgba(5,5,5,0.55)"); fade.addColorStop(1, "rgba(5,5,5,0)");
-  ctx.fillStyle = fade; ctx.fillRect(0, 0, W, H);
-
-  // frase
-  const clean = text.replace(/\s+\n/g, "\n").trim();
-  const short = clean.length <= 140;
-  const content = short ? clean.toUpperCase() : clean;
-  const box = { w: 540, h: 760 };
-  const f = short
-    ? fit(ctx, content, (px) => `${px}px Anton, Impact, sans-serif`, box, 96, 46, 1.08)
-    : fit(ctx, content, (px) => `500 ${px}px 'Inter Variable', Arial, sans-serif`, box, 46, 24, 1.45);
-  ctx.fillStyle = "#f2efe9"; ctx.textBaseline = "top"; ctx.textAlign = "left";
-  const lh = f.px * (short ? 1.08 : 1.45);
-  const top = 190;
-  ctx.font = "160px Anton, Impact, sans-serif"; ctx.fillStyle = "rgba(232,69,60,0.9)"; ctx.fillText("“", 84, 60);
-  ctx.font = short ? `${f.px}px Anton, Impact, sans-serif` : `500 ${f.px}px 'Inter Variable', Arial, sans-serif`;
-  ctx.fillStyle = "#f2efe9";
-  f.lines.forEach((l, i) => ctx.fillText(l, 90, top + i * lh));
-  if (signature) {
-    ctx.font = "500 26px 'Inter Variable', Arial, sans-serif"; ctx.fillStyle = "#a3a3a3";
-    ctx.fillText(`— ${signature}`, 90, top + f.lines.length * lh + 30);
-  }
-
-  // marca no canto
-  ctx.textBaseline = "alphabetic";
-  ctx.font = "78px Anton, Impact, sans-serif"; ctx.fillStyle = "#e8453c"; ctx.letterSpacing = "6px";
-  ctx.fillText("HERESIAS", 70, H - 70);
-  ctx.letterSpacing = "0px";
-  ctx.font = "500 20px 'Inter Variable', Arial, sans-serif"; ctx.fillStyle = "#8a8a8a";
-  ctx.fillText("QUE PASSAM PELA MINHA CABEÇA", 74, H - 152);
+  // marca (sempre presente): cruz + nome da igreja, embaixo ao centro
+  ctx.textBaseline = "alphabetic"; ctx.textAlign = "center";
+  ctx.strokeStyle = "rgba(255,255,255,0.45)"; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(W / 2 - 220, H - 150); ctx.lineTo(W / 2 + 220, H - 150); ctx.stroke();
+  ctx.font = "56px Georgia, serif"; ctx.fillStyle = "#e8453c";
+  ctx.fillText("✝", W / 2, H - 150 + 4 - 16);
+  // nome em didone preta, esticada na vertical (mesma letra do site)
+  ctx.save();
+  ctx.translate(W / 2, H - 58); ctx.scale(1, 1.32);
+  ctx.font = "900 70px 'Bodoni Moda', Didot, Georgia, serif"; ctx.fillStyle = "#ffffff"; ctx.letterSpacing = "3px";
+  ctx.fillText(SHARE_BRAND.toUpperCase(), 0, 0);
+  ctx.restore(); ctx.letterSpacing = "0px";
 
   return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"));
 }

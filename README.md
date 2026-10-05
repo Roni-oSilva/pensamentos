@@ -1,4 +1,4 @@
-# HERESIAS QUE PASSAM PELA MINHA CABEÇA
+# IGREJA DE CRISTO
 
 Plataforma de conteúdo e comunidade de estética dark/minimalista: o administrador publica frases, pensamentos, reflexões e poemas; usuários cadastrados publicam na comunidade (com moderação), curtem, comentam, favoritam, seguem e compartilham.
 
@@ -10,7 +10,7 @@ Plataforma de conteúdo e comunidade de estética dark/minimalista: o administra
 
 | Área | O que existe |
 |---|---|
-| Público | Home, `/frases`, `/explorar` (busca + filtros), `/categoria/[slug]`, `/heresia` (heresia aleatória em tela cheia), legais (`/privacidade`, `/termos`, `/diretrizes`) |
+| Público | Home, `/frases`, `/explorar` (busca + filtros), `/categoria/[slug]`, `/palavra` (palavra aleatória em tela cheia), legais (`/privacidade`, `/termos`, `/diretrizes`) |
 | Comunidade | Feed com *Recentes / Em alta / Mais curtidas / Mais comentadas*, scroll infinito, publicar/editar/excluir, moderação obrigatória (`PENDING`) |
 | Social | Curtir, favoritar, comentar (com respostas), seguir, compartilhar (Web Share API, copiar link, WhatsApp/X/Facebook), denunciar |
 | Contas | Cadastro, login, logout, confirmação de e-mail, recuperação e troca de senha, perfil, avatar, 2FA (TOTP), exclusão da conta (LGPD) |
@@ -72,6 +72,22 @@ Depois entre em `/admin`: o painel exigirá que você ative o 2FA (`/configuraco
 
 ## Documentação
 
-- [`docs/DEPLOY.md`](docs/DEPLOY.md) — GitHub → Vercel → Supabase, passo a passo, domínio `heresias.com.br`
+- [`docs/DEPLOY.md`](docs/DEPLOY.md) — GitHub → Vercel → Supabase, passo a passo, domínio `seudominio.com.br`
 - [`docs/SECURITY.md`](docs/SECURITY.md) — modelo de ameaças, controles, matriz de testes, o que verificar em produção
 - [`docs/BACKUP.md`](docs/BACKUP.md) — backup e restauração (banco, arquivos, configuração, projeto)
+
+
+## Cargos
+| Cargo | Poderes |
+|---|---|
+| Membro (`USER`) | Publica na comunidade (com moderação), curte, comenta, favorita |
+| Moderador (`MODERATOR`) | Modera publicações da comunidade, comentários e denúncias |
+| Administrador (`ADMIN`) | Painel completo: publicações oficiais, usuários, categorias, mídia, configurações, auditoria |
+| Criador (`CREATOR`) | Dono do site: tudo o que o administrador faz, mais bloquear/remover/rebaixar administradores. Intocável pelos demais. **Só é atribuído por SQL** (nunca pelo painel ou pela API) |
+
+Para definir o Criador (rode no SQL Editor do Supabase, trocando o e-mail):
+```sql
+update public.profiles set role = 'CREATOR'
+where id = (select id from auth.users where email = 'SEU_EMAIL');
+```
+Migrations novas: rode o `0006` sozinho e depois o `0007` (o Postgres não deixa usar um valor de enum recém-criado na mesma execução).

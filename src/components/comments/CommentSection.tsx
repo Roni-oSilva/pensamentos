@@ -14,7 +14,7 @@ export async function CommentSection({ postId }: { postId: string }) {
     <section id="comentarios" aria-labelledby="comentarios-h" className="space-y-6">
       <h2 id="comentarios-h" className="font-poster uppercase tracking-wide text-3xl text-white">Comentários <span className="text-ash-400">({comments.length})</span></h2>
       <CommentForm postId={postId} signedIn={!!session} />
-      {roots.length === 0 ? <p className="text-sm text-ash-400">Ninguém falou ainda. Seja o primeiro a quebrar o silêncio.</p> : (
+      {roots.length === 0 ? <p className="text-sm text-ash-400">Ainda não há comentários. Deixe uma palavra de ânimo ou de gratidão.</p> : (
         <ul className="space-y-8">
           {roots.map((c) => (
             <CommentItem key={c.id} comment={c} replies={byParent.get(c.id) ?? []} viewerId={session?.user.id ?? null} canModerate={canModerate} signedIn={!!session} />

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "@fontsource/anton/latin-400.css";
+import "@fontsource/bodoni-moda/latin-900.css";
 import "@fontsource-variable/inter/index.css";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -10,9 +11,9 @@ import { SITE_URL } from "@/lib/env";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Heresias que passam pela minha cabeça", template: "%s · Heresias" },
-  description: "Frases, pensamentos e reflexões que não pedem licença. Leia, explore e publique na comunidade.",
-  openGraph: { siteName: "Heresias que passam pela minha cabeça", locale: "pt_BR", type: "website" },
+  title: { default: "Igreja de Cristo", template: "%s · Igreja de Cristo" },
+  description: "Uma comunidade cristã para compartilhar versículos, frases, pensamentos e conselhos e, acima de tudo, engrandecer a Cristo.",
+  openGraph: { siteName: "Igreja de Cristo", locale: "pt_BR", type: "website" },
 };
 export const viewport: Viewport = { themeColor: "#050505", width: "device-width", initialScale: 1 };
 

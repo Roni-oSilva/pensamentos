@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { COMMUNITY_KINDS, POST_KINDS, POST_STATUSES, REPORT_REASONS, REPORT_TARGETS, ROLES, MAX_TAGS } from "./constants";
+import { COMMUNITY_KINDS, POST_KINDS, POST_STATUSES, REPORT_REASONS, REPORT_TARGETS, ASSIGNABLE_ROLES, MAX_TAGS } from "./constants";
 import { cleanText } from "./sanitize";
 import { slugify } from "./utils";
 
-const RESERVED = ["admin", "administrador", "moderador", "moderator", "heresias", "suporte", "support", "root", "system", "sistema", "api"];
+const RESERVED = ["admin", "administrador", "moderador", "moderator", "heresias", "igreja", "igrejadecristo", "cristo", "criador", "creator", "suporte", "support", "root", "system", "sistema", "api"];
 
 export const emailSchema = z.string().trim().toLowerCase().email("E-mail inválido").max(254);
 export const passwordSchema = z
@@ -70,7 +70,7 @@ export const profileSchema = z.object({
 });
 
 export const statusSchema = z.enum(POST_STATUSES);
-export const roleSchema = z.enum(ROLES);
+export const roleSchema = z.enum(ASSIGNABLE_ROLES);
 export const nameSchema = z.string().transform(cleanText).pipe(z.string().min(2).max(40));
 
 export function firstError(err: z.ZodError): string {

@@ -11,7 +11,7 @@ export function PostModerationActions({ id, status, origin, viewerRole }: { id: 
       <button className={`${cls} px-3 py-1.5 text-xs`}>{label}</button>
     </form>
   );
-  const canEditOfficial = viewerRole === "ADMIN" && origin === "OFFICIAL";
+  const canEditOfficial = (viewerRole === "ADMIN" || viewerRole === "CREATOR") && origin === "OFFICIAL";
   return (
     <div className="flex flex-wrap items-center gap-2">
       {status !== "PUBLISHED" && set("PUBLISHED", origin === "OFFICIAL" ? "Publicar" : "Aprovar", "btn-primary")}
@@ -26,7 +26,7 @@ export function PostModerationActions({ id, status, origin, viewerRole }: { id: 
       )}
       {canEditOfficial && <Link href={`/admin/posts/${id}/edit`} className="btn-ghost px-3 py-1.5 text-xs">Editar</Link>}
       {origin === "COMMUNITY" && <Link href={`/comunidade/${id}`} className="btn-ghost px-3 py-1.5 text-xs">Ver</Link>}
-      {viewerRole === "ADMIN" && (
+      {(viewerRole === "ADMIN" || viewerRole === "CREATOR") && (
         <form action={deletePost}>
           <input type="hidden" name="id" value={id} />
           <ConfirmButton className="btn-danger px-3 py-1.5 text-xs" title="Excluir definitivamente?" message="A publicação, comentários, curtidas e favoritos serão apagados. Não há como desfazer.">Excluir</ConfirmButton>

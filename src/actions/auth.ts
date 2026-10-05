@@ -119,7 +119,7 @@ export async function changePassword(_: FormState, fd: FormData): Promise<FormSt
 export async function deleteAccount(_: FormState, fd: FormData): Promise<FormState> {
   const s = await actionSession();
   if (!s) return { error: "Sessão expirada. Entre novamente." };
-  if (s.profile.role === "ADMIN") return { error: "Contas administrativas não podem ser excluídas por aqui." };
+  if (s.profile.role === "ADMIN" || s.profile.role === "CREATOR") return { error: "Contas administrativas não podem ser excluídas por aqui." };
   if (str(fd, "confirm") !== s.profile.username) return { error: "Digite seu nome de usuário para confirmar." };
   if (!(await allow("password", s.user.id))) return { error: rateLimitMessage() };
 

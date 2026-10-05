@@ -2,13 +2,13 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { registerShare } from "@/actions/social";
-import { renderShareImage } from "@/lib/share-image";
+import { renderShareImage, SHARE_BACKGROUNDS } from "@/lib/share-image";
 
 type Mode = "link" | "texto" | "imagem";
 const MODES: { id: Mode; title: string; hint: string }[] = [
   { id: "link", title: "Link", hint: "Endereço da publicação" },
-  { id: "texto", title: "Só a frase", hint: "Apenas o texto" },
-  { id: "imagem", title: "Imagem PNG", hint: "Cartão com a mão e a borboleta" },
+  { id: "texto", title: "Só o texto", hint: "Versículo ou frase" },
+  { id: "imagem", title: "Imagem PNG", hint: "Cartão com imagem de fundo" },
 ];
 
 export function ShareButton({ postId, path, title, text, count }: { postId: string; path: string; title: string; text: string; count: number }) {
@@ -18,21 +18,24 @@ export function ShareButton({ postId, path, title, text, count }: { postId: stri
   const [note, setNote] = useState<string | null>(null);
   const [img, setImg] = useState<{ blob: Blob; url: string } | null>(null);
   const [busy, setBusy] = useState(false);
+  const [bg, setBg] = useState<number | null>(1);
 
   const url = () => `${window.location.origin}${path}`;
   const done = (msg: string) => { setNote(msg); setShares((n) => n + 1); void registerShare(postId); };
   const canNativeShare = typeof navigator !== "undefined" && typeof navigator.share === "function";
-  const quote = `“${text}”\n— Heresias`;
+  const quote = `“${text}”\n— Igreja de Cristo`;
 
-  // gera a imagem sob demanda, ao abrir a aba
+  // gera a imagem sob demanda, ao abrir a aba e sempre que trocar o fundo
   useEffect(() => {
-    if (mode !== "imagem" || img || busy) return;
+    if (mode !== "imagem") return;
+    let cancelled = false;
     setBusy(true);
-    renderShareImage(text)
-      .then((blob) => setImg({ blob, url: URL.createObjectURL(blob) }))
-      .catch(() => setNote("Não foi possível gerar a imagem."))
-      .finally(() => setBusy(false));
-  }, [mode]); // eslint-disable-line react-hooks/exhaustive-deps
+    renderShareImage(text, bg)
+      .then((blob) => { if (!cancelled) setImg((old) => { if (old) URL.revokeObjectURL(old.url); return { blob, url: URL.createObjectURL(blob) }; }); })
+      .catch(() => { if (!cancelled) setNote("Não foi possível gerar a imagem."); })
+      .finally(() => { if (!cancelled) setBusy(false); });
+    return () => { cancelled = true; };
+  }, [mode, bg]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => () => { if (img) URL.revokeObjectURL(img.url); }, [img]);
 
   const open = () => { setNote(null); ref.current?.showModal(); };
@@ -47,12 +50,12 @@ export function ShareButton({ postId, path, title, text, count }: { postId: stri
   function download() {
     if (!img) return;
     const a = document.createElement("a");
-    a.href = img.url; a.download = "heresias.png"; a.click();
+    a.href = img.url; a.download = "igreja-de-cristo.png"; a.click();
     done("Imagem baixada.");
   }
   async function shareImage() {
     if (!img) return;
-    const file = new File([img.blob], "heresias.png", { type: "image/png" });
+    const file = new File([img.blob], "igreja-de-cristo.png", { type: "image/png" });
     if (navigator.canShare?.({ files: [file] })) await nativeShare({ files: [file], title }, "Imagem compartilhada.");
     else download();
   }
@@ -112,10 +115,22 @@ export function ShareButton({ postId, path, title, text, count }: { postId: stri
 
           {mode === "imagem" && (
             <div className="space-y-3">
-              <div className="flex min-h-48 items-center justify-center rounded-lg border border-ink-600 bg-ink-950 p-3">
-                {img ? <img src={img.url} alt="Pré-visualização do cartão" className="max-h-[52vh] w-auto rounded" />
+              <div className="relative flex min-h-48 items-center justify-center rounded-lg border border-ink-600 bg-ink-950 p-3">
+                {img ? <img src={img.url} alt="Pré-visualização do cartão" className={`max-h-[46vh] w-auto rounded transition ${busy ? "opacity-40" : ""}`} />
                   : <p className="animate-flicker text-sm text-ash-400">{busy ? "Gerando imagem…" : "—"}</p>}
+                {img && busy && <p className="absolute text-sm text-white">Atualizando…</p>}
               </div>
+              <div role="radiogroup" aria-label="Imagem de fundo" className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                {SHARE_BACKGROUNDS.map((b) => (
+                  <button key={b.id} type="button" role="radio" aria-checked={bg === b.id} aria-label={`Fundo: ${b.label}`} onClick={() => setBg(b.id)}
+                    className={`relative h-16 w-14 shrink-0 overflow-hidden rounded-md border-2 transition active:scale-95 ${bg === b.id ? "border-poster" : "border-ink-600 hover:border-ash-400"}`}>
+                    <img src={b.src} alt="" className="h-full w-full object-cover" loading="lazy" />
+                  </button>
+                ))}
+                <button type="button" role="radio" aria-checked={bg === null} aria-label="Fundo liso" onClick={() => setBg(null)}
+                  className={`grid h-16 w-14 shrink-0 place-items-center rounded-md border-2 bg-ink-800 text-[10px] uppercase tracking-wider transition active:scale-95 ${bg === null ? "border-poster text-white" : "border-ink-600 text-ash-400"}`}>Liso</button>
+              </div>
+              <p className="text-xs text-ash-400">A imagem sempre leva o nome <strong className="text-ash-200">Igreja de Cristo</strong>.</p>
               <div className="flex flex-wrap gap-2">
                 <button type="button" className="btn-primary" disabled={!img} onClick={download}>Baixar PNG</button>
                 {canNativeShare && <button type="button" className="btn-ghost" disabled={!img} onClick={shareImage}>Compartilhar imagem…</button>}

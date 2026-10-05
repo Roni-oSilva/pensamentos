@@ -81,7 +81,7 @@ body {
 /* ───────────── Home: vídeo guiado pelo scroll ───────────── */
 /* --p (0→1) = progresso da rolagem; --v = progresso do vídeo (termina em 82%); depois entra o manifesto */
 .hero {
-  --p: 0; --mx: 0; --my: 0; position: relative; height: calc(520vh - 4rem);
+  --p: 0; --mx: 0; --my: 0; position: relative; height: calc(780vh - 4rem);
   --v: clamp(0, calc(var(--p) / 0.82), 1);
   --m: clamp(0, calc((var(--p) - 0.8) / 0.12), 1);
 }
@@ -135,7 +135,7 @@ body {
 .tilt { --mx: 50%; --my: 50%; --rx: 0deg; --ry: 0deg; position: relative; height: 100%; transform-style: preserve-3d; perspective: 900px; }
 .tilt-inner {
   position: relative; height: 100%; overflow: hidden; border-radius: 0.75rem; border: 1px solid #262626;
-  background: linear-gradient(160deg, rgba(26, 26, 26, 0.85), rgba(10, 10, 10, 0.95));
+  background: radial-gradient(120% 80% at 0% 0%, rgba(232, 69, 60, 0.07), transparent 55%), linear-gradient(160deg, rgba(26, 26, 26, 0.85), rgba(10, 10, 10, 0.95));
   transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform 0.18s ease-out, border-color 0.3s, box-shadow 0.3s;
 }
 .tilt:hover .tilt-inner { border-color: rgba(232, 69, 60, 0.55); box-shadow: 0 24px 60px -24px rgba(232, 69, 60, 0.35); }
@@ -148,5 +148,10 @@ body {
   position: absolute; right: 1.1rem; top: 4.6rem; z-index: 0; font-family: var(--font-poster); font-size: 7rem; line-height: 1; color: #e8453c; opacity: 0.08;
   transition: transform 0.4s, opacity 0.4s; pointer-events: none;
 }
+.tilt-cross { font-family: serif; font-size: 6rem; top: 4.4rem; right: 1.4rem; }
 .tilt:hover .tilt-quote { opacity: 0.22; transform: translateY(6px) scale(1.06); }
 .tick { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #737373; }
+
+/* Nome "Igreja de Cristo": didone preta, alta e estreita (Bodoni Moda 900 esticada na vertical) */
+.church-name { display: inline-block; font-family: "Bodoni Moda", Didot, "Bodoni MT", Georgia, serif; font-weight: 900; line-height: 1; text-transform: uppercase;
+  letter-spacing: 0.01em; transform: scaleY(1.32); transform-origin: 50% 55%; padding-block: 0.12em; white-space: nowrap; }

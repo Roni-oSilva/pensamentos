@@ -18,7 +18,7 @@ export function RichEditor({ name = "content", initialHtml = "" }: { name?: stri
         link: { openOnClick: false, autolink: false, HTMLAttributes: { rel: "noopener noreferrer nofollow", target: "_blank" } },
       }),
       Image.configure({ allowBase64: false }),
-      Placeholder.configure({ placeholder: "Escreva a heresia…" }),
+      Placeholder.configure({ placeholder: "Escreva o versículo, o conselho ou a reflexão…" }),
     ],
     content: initialHtml,
     editorProps: { attributes: { class: "rich min-h-[260px] rounded-b-md border border-t-0 border-ink-600 bg-ink-900 px-5 py-4 focus:outline-none", "aria-label": "Conteúdo" } },

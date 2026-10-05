@@ -11,16 +11,16 @@ import { KIND_LABEL } from "@/lib/constants";
 import { excerpt, toPlainText } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Uma heresia", robots: { index: false } };
+export const metadata: Metadata = { title: "Uma palavra para hoje", robots: { index: false } };
 
-export default async function HeresiaPage() {
+export default async function PalavraPage() {
   const session = await getSession();
   const post = await randomPost(null, session?.user.id ?? null);
   return (
     <div className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden px-5 py-16">
       <div aria-hidden className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(139,30,45,0.14),transparent_65%)] animate-flicker" />
       {!post ? (
-        <div className="relative text-center"><p className="font-display text-4xl text-white">Nenhuma heresia ainda.</p><Link className="btn-ghost mt-6" href="/">Voltar</Link></div>
+        <div className="relative text-center"><p className="font-display text-4xl text-white">Nenhuma palavra publicada ainda.</p><Link className="btn-ghost mt-6" href="/">Voltar</Link></div>
       ) : (
         <article key={post.id} className="relative mx-auto max-w-2xl animate-rise text-center">
           <ViewTracker postId={post.id} />

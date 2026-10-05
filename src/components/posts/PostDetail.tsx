@@ -63,7 +63,7 @@ export function PostDetail({ post, signedIn }: { post: PostWithViewer; signedIn:
 }
 
 export function postMetadata(post: PostWithViewer | null) {
-  if (!post || post.status !== "PUBLISHED") return { title: "Heresia", robots: { index: false } };
+  if (!post || post.status !== "PUBLISHED") return { title: "Publicação", robots: { index: false } };
   const text = excerpt(post.content, 160);
   return {
     title: post.title ?? text.slice(0, 60),

@@ -11,7 +11,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   return (
     <div className="container-wide grid gap-4 pb-10 lg:grid-cols-[14rem_1fr] lg:gap-8 lg:py-10">
       <aside className="contents lg:block lg:sticky lg:top-24 lg:self-start">
-        <p className="eyebrow mb-3 hidden lg:block">Painel · {s.profile.role === "ADMIN" ? "Admin" : "Moderação"}</p>
+        <p className="eyebrow mb-3 hidden lg:block">Painel · {s.profile.role === "CREATOR" ? "Criador" : s.profile.role === "ADMIN" ? "Admin" : "Moderação"}</p>
         <AdminNav role={s.profile.role} />
       </aside>
       <div className="min-w-0">{children}</div>

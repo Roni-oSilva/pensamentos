@@ -14,12 +14,18 @@ export function postPath(p: Pick<PostWithViewer, "id" | "origin">) {
 /** Caixa de publicação: inclina com o mouse, holofote vermelho, aspas gigantes. Só texto puro (seguro no cliente). */
 export function PostCard({ post, signedIn, featured = false }: { post: PostWithViewer; signedIn: boolean; featured?: boolean }) {
   const path = postPath(post);
-  const short = post.kind === "FRASE" && post.content.length < 220;
-  const text = excerpt(post.content, featured ? 320 : 220);
+  const isVerse = post.kind === "VERSICULO";
+  const isPrayer = post.kind === "ORACAO";
+  const short = (post.kind === "FRASE" || isVerse || isPrayer || post.kind === "CONSELHO") && post.content.length < 220;
+  const text = excerpt(post.content, featured ? 320 : 240);
+  // cada tipo ganha um acento próprio: dourado para o versículo, azul-claro para a oração, vermelho para os demais
+  const accent = isVerse ? "text-[#e3b95a]" : isPrayer ? "text-[#8fb4e8]" : "text-poster";
+  const bar = isVerse ? "bg-[#e3b95a]" : isPrayer ? "bg-[#8fb4e8]" : "bg-poster";
   return (
     <article className="h-full animate-rise">
       <TiltCard>
-        <span className="tilt-quote" aria-hidden>“</span>
+        <span className={`tilt-quote ${isVerse || isPrayer ? "tilt-cross" : ""}`} aria-hidden>{isVerse || isPrayer ? "✝" : "“"}</span>
+        <span aria-hidden className={`absolute inset-y-6 left-0 w-[3px] rounded-r ${bar} opacity-70`} />
         <div className="relative flex h-full flex-col gap-4 p-6">
           <header className="flex items-start gap-3">
             {post.author ? (
@@ -32,15 +38,15 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
               </Link>
             ) : (
               <span className="flex min-w-0 flex-1 items-center gap-3">
-                <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-950 bg-ink-900 font-poster text-lg leading-none text-poster">H</span></span>
+                <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-950 bg-ink-900 text-lg leading-none text-poster">✝</span></span>
                 <span className="min-w-0">
-                  <span className="block truncate text-sm font-medium text-white">Heresias</span>
+                  <span className="church-name block text-[0.8rem] text-white">Igreja de Cristo</span>
                   <span className="block truncate text-xs text-ash-400">{post.published_at ? timeAgo(post.published_at) : ""}</span>
                 </span>
               </span>
             )}
             <span className="tick flex shrink-0 flex-col items-end gap-1 pt-0.5">
-              <span className="inline-flex items-center gap-2"><span className="h-px w-4 bg-poster" />{KIND_LABEL[post.kind]}</span>
+              <span className={`inline-flex items-center gap-2 ${accent}`}><span className={`h-px w-4 ${bar}`} />{KIND_LABEL[post.kind]}</span>
               {post.origin === "OFFICIAL" && <span className="rounded-full border border-poster/60 px-2 py-px text-[9px] text-poster">Oficial</span>}
             </span>
           </header>
@@ -50,8 +56,11 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
             </Link>
           )}
           <Link href={path} className="group/t block space-y-3">
-            {post.title && <h3 className="font-poster text-3xl uppercase leading-none tracking-wide text-white transition-colors group-hover/t:text-poster">{post.title}</h3>}
-            <p className={`preline font-display leading-snug ${short ? "text-2xl text-ash-100" : "text-lg text-ash-200"}`}>{text}</p>
+            {post.title && !isVerse && <h3 className="font-poster text-3xl uppercase leading-none tracking-wide text-white transition-colors group-hover/t:text-poster">{post.title}</h3>}
+            <p className={`preline font-display [text-wrap:pretty] ${isVerse ? "text-[1.7rem] italic leading-[1.3] text-white" : short ? "text-2xl leading-snug text-ash-100" : "text-lg leading-relaxed text-ash-200"}`}>
+              {isVerse ? `“${text}”` : text}
+            </p>
+            {isVerse && post.title && <p className={`text-xs font-medium uppercase tracking-[0.25em] ${accent}`}>— {post.title}</p>}
           </Link>
           <div className="flex flex-wrap items-center gap-1.5">
             {post.category && <Link href={`/categoria/${post.category.slug}`} className="badge hover:border-poster hover:text-white">{post.category.name}</Link>}

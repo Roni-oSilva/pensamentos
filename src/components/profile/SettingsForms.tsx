@@ -1,8 +1,8 @@
 "use client";
-import Image from "next/image";
 import { useActionState } from "react";
 import { changePassword, deleteAccount } from "@/actions/auth";
 import { updateProfile } from "@/actions/profile";
+import { AvatarCropField } from "./AvatarCropField";
 import { SubmitButton } from "@/components/ui/Button";
 import { FormMessage } from "@/components/ui/FormMessage";
 import { ConfirmButton } from "@/components/ui/ConfirmButton";
@@ -12,11 +12,7 @@ export function ProfileForm({ profile }: { profile: Profile }) {
   const [state, action] = useActionState(updateProfile, {});
   return (
     <form action={action} className="space-y-5">
-      <div className="flex items-center gap-4">
-        {profile.avatar_url && <Image src={profile.avatar_url} alt="Avatar atual" width={64} height={64} className="h-16 w-16 rounded-full border border-ink-600 object-cover" />}
-        <div className="flex-1"><label className="label" htmlFor="avatar">Avatar (JPG/PNG/WebP até 2 MB)</label>
-          <input id="avatar" name="avatar" type="file" accept="image/jpeg,image/png,image/webp" className="field file:mr-3 file:rounded file:border-0 file:bg-ink-700 file:px-3 file:py-1 file:text-ash-100" /></div>
-      </div>
+      <AvatarCropField currentUrl={profile.avatar_url} />
       <div><label className="label" htmlFor="username">Nome de usuário</label><input id="username" name="username" defaultValue={profile.username} required pattern="[A-Za-z0-9_]{3,24}" className="field" /></div>
       <div><label className="label" htmlFor="displayName">Nome de exibição</label><input id="displayName" name="displayName" defaultValue={profile.display_name ?? ""} required maxLength={50} className="field" /></div>
       <div><label className="label" htmlFor="bio">Bio</label><textarea id="bio" name="bio" rows={3} maxLength={280} defaultValue={profile.bio ?? ""} className="field" /></div>

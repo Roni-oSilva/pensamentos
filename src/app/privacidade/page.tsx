@@ -5,7 +5,7 @@ export const metadata = { title: "Política de Privacidade" };
 export default function Privacidade() {
   return (
     <Legal title="Política de Privacidade" updated="outubro de 2026">
-      <p>Esta política explica, conforme a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018), quais dados tratamos no Heresias, por quê e quais são os seus direitos.</p>
+      <p>Esta política explica, conforme a Lei Geral de Proteção de Dados (LGPD, Lei 13.709/2018), quais dados tratamos na Igreja de Cristo, por quê e quais são os seus direitos.</p>
       <h2>Dados que coletamos</h2>
       <ul>
         <li><strong>Cadastro:</strong> e-mail e senha (a senha é guardada apenas como hash pelo provedor de autenticação, nunca em texto).</li>

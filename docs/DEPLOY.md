@@ -19,8 +19,8 @@ Verifique: *Database → Tables* — todas as tabelas devem mostrar **RLS enable
 *Authentication*:
 - **Providers → Email**: habilitado, **Confirm email = ON**, senha mínima ≥ 10 (a aplicação também valida).
 - **Multi-Factor**: habilite **TOTP**.
-- **URL Configuration**: `Site URL = https://heresias.com.br` (ou a URL da Vercel) e `Redirect URLs`:
-  `https://heresias.com.br/auth/callback`, `https://*.vercel.app/auth/callback` (previews), `http://localhost:3000/auth/callback`.
+- **URL Configuration**: `Site URL = https://seudominio.com.br` (ou a URL da Vercel) e `Redirect URLs`:
+  `https://seudominio.com.br/auth/callback`, `https://*.vercel.app/auth/callback` (previews), `http://localhost:3000/auth/callback`.
 - **Rate Limits**: mantenha os padrões ou reduza (defesa adicional ao rate limit da aplicação).
 - **Sessions** (planos que permitem): *JWT expiry* 3600 s; *Inactivity timeout* e *Time-box* para limitar sessões longas.
 - **Email Templates**: (opcional) em português; o link de confirmação/recuperação deve apontar para `{{ .SiteURL }}/auth/callback?...` (o padrão PKCE já funciona).
@@ -35,7 +35,7 @@ Os buckets são criados pela migration `0004`. Confirme em *Storage*: `avatars` 
 | `NEXT_PUBLIC_SUPABASE_URL` | Vercel (todos ambientes) | pública |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Vercel | pública (protegida por RLS) |
 | `SUPABASE_SERVICE_ROLE_KEY` | Vercel — **Sensitive**, só Production/Preview | **nunca** `NEXT_PUBLIC_`; ignora RLS |
-| `NEXT_PUBLIC_SITE_URL` | Vercel | `https://heresias.com.br` |
+| `NEXT_PUBLIC_SITE_URL` | Vercel | `https://seudominio.com.br` |
 | `REQUIRE_ADMIN_MFA` | Vercel | `true` |
 | `RATE_LIMIT_SALT` | Vercel — Sensitive | `openssl rand -hex 32` (obrigatória em produção) |
 
@@ -51,8 +51,8 @@ Ative em *Settings → Branches* a proteção de `main` (PR + CI verde). O workf
 2. Cadastre as variáveis do passo 5 e faça o *Deploy*.
 3. Região das Functions: escolha a mais próxima do Supabase (*Settings → Functions*).
 
-## 8. Domínio (`heresias.com.br`)
-1. Vercel → *Settings → Domains* → adicione `heresias.com.br` e `www.heresias.com.br` (redirecionar `www` → apex).
+## 8. Domínio (`seudominio.com.br`)
+1. Vercel → *Settings → Domains* → adicione `seudominio.com.br` e `www.seudominio.com.br` (redirecionar `www` → apex).
 2. No Registro.br/DNS: `A  @  76.76.21.21` e `CNAME www  cname.vercel-dns.com` (ou os valores exibidos pela Vercel).
 3. Atualize `NEXT_PUBLIC_SITE_URL`, o *Site URL* e as *Redirect URLs* no Supabase; redeploy. HTTPS e HSTS são automáticos.
 

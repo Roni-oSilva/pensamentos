@@ -16,7 +16,7 @@
 **Manual (recomendado semanalmente, via cron/GitHub Actions privado):**
 ```bash
 # a string de conexão (Settings → Database → Connection string, modo "Session") vem de variável de ambiente, nunca do repositório
-pg_dump "$SUPABASE_DB_URL" --format=custom --no-owner --schema=public -f backups/heresias-$(date +%F).dump
+pg_dump "$SUPABASE_DB_URL" --format=custom --no-owner --schema=public -f backups/igreja-de-cristo-$(date +%F).dump
 ```
 Criptografe antes de enviar a um armazenamento externo: `age -r <chave-publica> backups/*.dump`.
 
@@ -24,7 +24,7 @@ Criptografe antes de enviar a um armazenamento externo: `age -r <chave-publica> 
 1. Crie um projeto Supabase novo (ou limpe o existente) e rode as migrations `0001`–`0004` (cria schema, RLS, buckets).
 2. Restaure só os **dados**:
 ```bash
-pg_restore --data-only --disable-triggers --no-owner -d "$NEW_DB_URL" backups/heresias-AAAA-MM-DD.dump
+pg_restore --data-only --disable-triggers --no-owner -d "$NEW_DB_URL" backups/igreja-de-cristo-AAAA-MM-DD.dump
 ```
 3. Usuários (`auth.users`) são do Supabase Auth: usando restauração por backup do próprio Supabase eles voltam juntos; num projeto novo, usuários precisam se cadastrar de novo (ou use o *PITR/restore* do dashboard).
 4. Valide: `select count(*) from public.posts;` e teste login/admin.

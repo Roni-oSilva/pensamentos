@@ -32,7 +32,7 @@ export function MobileNav({ links, children }: { links: NavLink[]; children?: Re
     <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-16 z-[60] overflow-y-auto overscroll-contain bg-ink-950 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-5 md:hidden"
       onClick={(e) => { if ((e.target as HTMLElement).closest("a,button[type=submit]")) setOpen(false); }}>
       <form action="/explorar" role="search" className="mb-4">
-        <input name="q" type="search" placeholder="Buscar frases, tags, pessoas…" aria-label="Buscar" maxLength={80} className="field" />
+        <input name="q" type="search" placeholder="Buscar versículos, frases, pessoas…" aria-label="Buscar" maxLength={80} className="field" />
       </form>
       <nav aria-label="Principal" className="flex flex-col">
         {links.map((l) => (

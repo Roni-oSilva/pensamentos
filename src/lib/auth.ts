@@ -5,6 +5,7 @@ import { notFound, redirect } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
+import { isAdminRole, isStaffRole } from "@/lib/constants";
 
 export interface Session { user: Pick<User, "id" | "email">; profile: Profile }
 
@@ -45,7 +46,7 @@ export async function staffAssurance(): Promise<"ok" | "challenge" | "enroll"> {
 /** Gate de páginas do /admin. Usuários comuns recebem 404 (não revela a existência da área). */
 export async function requireStaff(next = "/admin", opts: { adminOnly?: boolean } = {}): Promise<Session> {
   const s = await requireUser(next);
-  const allowed = opts.adminOnly ? s.profile.role === "ADMIN" : s.profile.role === "ADMIN" || s.profile.role === "MODERATOR";
+  const allowed = opts.adminOnly ? isAdminRole(s.profile.role) : isStaffRole(s.profile.role);
   if (!allowed) notFound();
   const a = await staffAssurance();
   if (a === "challenge") redirect(`/mfa?next=${encodeURIComponent(next)}`);
@@ -60,7 +61,7 @@ export async function actionSession(level: "user" | "staff" | "admin" = "user"):
   const s = await getSession();
   if (!s) return null;
   if (level === "user") return s;
-  if (level === "admin" && s.profile.role !== "ADMIN") return null;
+  if (level === "admin" && !isAdminRole(s.profile.role)) return null;
   if (s.profile.role === "USER") return null;
   return (await staffAssurance()) === "ok" ? s : null;
 }

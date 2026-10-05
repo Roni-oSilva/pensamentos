@@ -162,6 +162,29 @@ select pg_temp.must_see_zero('public.audit_logs', 'AAL1 não lê audit_logs');
 select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2');
 select pg_temp.assert_eq(public.is_admin(), true, 'AAL2 restaura admin');
 
+-- 7c. CRIADOR ---------------------------------------------------------------------------------
+select pg_temp.as_su();
+insert into auth.users (id, raw_user_meta_data) values ('00000000-0000-0000-0000-0000000000c0', '{"username":"criador","role":"CREATOR"}');
+select pg_temp.assert_eq((select role::text from public.profiles where id = '00000000-0000-0000-0000-0000000000c0'), 'USER', 'metadata não concede CRIADOR');
+update public.profiles set role = 'CREATOR' where id = '00000000-0000-0000-0000-0000000000c0';
+update public.profiles set role = 'ADMIN' where id = '00000000-0000-0000-0000-0000000000b2';
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000c0');
+select pg_temp.assert_eq(public.is_admin(), true, 'criador tem poderes de admin');
+select pg_temp.assert_eq(public.is_staff(), true, 'criador é staff');
+select pg_temp.assert_eq(public.is_creator(), true, 'criador é criador');
+select pg_temp.assert_eq((select count(*) from public.audit_logs)::int >= 1, true, 'criador lê audit_logs');
+update public.profiles set role = 'USER' where id = '00000000-0000-0000-0000-0000000000b2';
+select pg_temp.assert_eq((select role::text from public.profiles where id = '00000000-0000-0000-0000-0000000000b2'), 'USER', 'criador rebaixa admin');
+update public.profiles set role = 'CREATOR' where id = '00000000-0000-0000-0000-0000000000b1';
+select pg_temp.assert_eq((select role::text from public.profiles where id = '00000000-0000-0000-0000-0000000000b1'), 'USER', 'criador não cria outro criador');
+select pg_temp.as_user('00000000-0000-0000-0000-00000000000a');
+update public.profiles set role = 'USER' where id = '00000000-0000-0000-0000-0000000000c0';
+select pg_temp.assert_eq((select role::text from public.profiles where id = '00000000-0000-0000-0000-0000000000c0'), 'CREATOR', 'admin não rebaixa o criador');
+update public.profiles set role = 'CREATOR' where id = '00000000-0000-0000-0000-0000000000b1';
+select pg_temp.assert_eq((select role::text from public.profiles where id = '00000000-0000-0000-0000-0000000000b1'), 'USER', 'admin não cria criador');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.assert_eq(public.is_admin(), false, 'usuário comum não é admin');
+
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();
 update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b2';

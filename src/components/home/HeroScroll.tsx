@@ -47,7 +47,7 @@ export function HeroScroll() {
     };
     const tick = () => {
       raf = 0;
-      current += (target - current) * 0.2;
+      current += (target - current) * 0.14; // suavização maior = acompanha o dedo com mais calma
       if (Math.abs(target - current) < 0.01) current = target;
       draw();
       if (current !== target) kick();
@@ -118,7 +118,7 @@ export function HeroScroll() {
   return (
     <div ref={root} className="hero" data-phase="closed">
       <div className="hero-stage">
-        <h1 className="sr-only">Heresias que passam pela minha cabeça</h1>
+        <h1 className="sr-only">Igreja de Cristo: uma comunidade para compartilhar a Palavra e engrandecer a Cristo</h1>
 
         <canvas ref={canvas} className="hero-canvas" aria-hidden />
         <div className="hero-glow-edge" aria-hidden />
@@ -131,14 +131,14 @@ export function HeroScroll() {
         <div className="hero-progress" aria-hidden><i /></div>
 
         <div className="hero-manifesto">
-          <p className="eyebrow">Manifesto</p>
-          <p className="max-w-4xl font-poster text-[clamp(2.4rem,8vw,6.5rem)] uppercase leading-[0.95] text-white">
-            Nem toda dúvida<br />precisa de <span className="text-poster">resposta.</span>
+          <p className="church-name text-[clamp(2rem,9vw,5.5rem)] tracking-[0.04em] text-white">Igreja de <span className="text-poster">Cristo</span></p>
+          <p className="max-w-4xl font-poster text-[clamp(1.6rem,5vw,3.4rem)] uppercase leading-[1] tracking-wide text-ash-200">
+            Engrandecei a <span className="text-poster">Cristo.</span>
           </p>
-          <p className="max-w-lg text-ash-300">Frases, reflexões e poemas que chegam sem pedir licença. Leia, discorde, guarde — e deixe a sua própria heresia na comunidade.</p>
+          <p className="max-w-lg text-ash-300">Uma comunidade para compartilhar versículos, frases, pensamentos e conselhos. Leia, medite, guarde no coração e compartilhe a sua palavra com os irmãos.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/frases" className="btn-primary px-7 py-3.5 uppercase tracking-widest">Ler as frases</Link>
-            <Link href="/heresia" prefetch={false} className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Mostrar uma heresia</Link>
+            <Link href="/frases" className="btn-primary px-7 py-3.5 uppercase tracking-widest">Ler as palavras</Link>
+            <Link href="/palavra" prefetch={false} className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Palavra aleatória</Link>
             <Link href="/comunidade" className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Comunidade</Link>
           </div>
         </div>

@@ -7,10 +7,10 @@ import { Avatar } from "@/components/ui/Avatar";
 import { MobileNav, type NavLink } from "./MobileNav";
 
 const LINKS: NavLink[] = [
-  { href: "/frases", label: "Frases" },
+  { href: "/frases", label: "Palavras" },
   { href: "/comunidade", label: "Comunidade" },
   { href: "/explorar", label: "Explorar" },
-  { href: "/heresia", label: "Heresia aleatória" },
+  { href: "/palavra", label: "Palavra aleatória" },
 ];
 
 export async function Header() {

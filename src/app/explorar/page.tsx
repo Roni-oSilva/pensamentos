@@ -8,7 +8,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { PageTitle } from "@/components/ui/Section";
 import { KIND_LABEL, POST_KINDS } from "@/lib/constants";
 
-export const metadata: Metadata = { title: "Explorar", description: "Busque frases, títulos, categorias, tags e usuários." };
+export const metadata: Metadata = { title: "Explorar", description: "Busque versículos, frases, conselhos, categorias, tags e pessoas." };
 
 type SP = { q?: string; tipo?: string; categoria?: string; tag?: string; origem?: string; ordem?: string };
 
@@ -33,7 +33,7 @@ export default async function Explorar({ searchParams }: { searchParams: Promise
       <PageTitle eyebrow="Busca" title="Explorar" />
       <div className="container-wide mt-8">
         <form action="/explorar" className="grid gap-3 md:grid-cols-[1fr_repeat(4,10rem)_auto]" role="search">
-          <input name="q" defaultValue={q} maxLength={80} placeholder="Frases, títulos, usuários…" aria-label="Buscar" className="field" />
+          <input name="q" defaultValue={q} maxLength={80} placeholder="Versículos, frases, pessoas…" aria-label="Buscar" className="field" />
           <select name="tipo" defaultValue={kind ?? ""} aria-label="Tipo" className="field"><option value="">Todos os tipos</option>{POST_KINDS.map((k) => <option key={k} value={k}>{KIND_LABEL[k]}</option>)}</select>
           <select name="categoria" defaultValue={categorySlug ?? ""} aria-label="Categoria" className="field"><option value="">Categorias</option>{categories.map((c) => <option key={c.id} value={c.slug}>{c.name}</option>)}</select>
           <select name="origem" defaultValue={origin ?? ""} aria-label="Origem" className="field"><option value="">Oficial + comunidade</option><option value="OFFICIAL">Oficial</option><option value="COMMUNITY">Comunidade</option></select>

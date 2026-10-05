@@ -138,12 +138,14 @@ async function targetUser(fd: FormData, actorId: string) {
   const { data } = await createAdminClient().from("profiles").select("id, role, username").eq("id", id.data).maybeSingle();
   return data as { id: string; role: string; username: string } | null;
 }
+/** CRIADOR é intocável; ADMIN só pode ser bloqueado/removido pelo CRIADOR. */
+const canModerateAccount = (viewer: string, target: string) => target !== "CREATOR" && (target !== "ADMIN" || viewer === "CREATOR");
 
 export async function setUserBlocked(fd: FormData) {
   const s = await gate("admin");
   if (!s) return;
   const target = await targetUser(fd, s.user.id);
-  if (!target || target.role === "ADMIN") return; // admins não são bloqueáveis por esta via
+  if (!target || !canModerateAccount(s.profile.role, target.role)) return; // só o Criador bloqueia admins
   const block = str(fd, "block") === "1";
   const admin = createAdminClient();
   await admin.from("profiles").update({ is_blocked: block }).eq("id", target.id);
@@ -156,7 +158,7 @@ export async function removeUser(fd: FormData) {
   const s = await gate("admin");
   if (!s) return;
   const target = await targetUser(fd, s.user.id);
-  if (!target || target.role === "ADMIN") return;
+  if (!target || !canModerateAccount(s.profile.role, target.role)) return;
   await createAdminClient().auth.admin.deleteUser(target.id);
   await audit("user.remove", "user", target.id, { username: target.username });
   revalidatePath("/admin/users");
@@ -167,8 +169,8 @@ export async function setUserRole(fd: FormData) {
   const role = roleSchema.safeParse(str(fd, "role"));
   if (!s || !role.success) return;
   const target = await targetUser(fd, s.user.id); // nunca o próprio usuário
-  if (!target) return;
-  const { count } = await createAdminClient().from("profiles").select("id", { count: "exact", head: true }).eq("role", "ADMIN");
+  if (!target || target.role === "CREATOR") return; // o Criador não muda de função pelo painel
+  const { count } = await createAdminClient().from("profiles").select("id", { count: "exact", head: true }).in("role", ["ADMIN", "CREATOR"]);
   if (target.role === "ADMIN" && role.data !== "ADMIN" && (count ?? 0) <= 1) return; // mantém ao menos um admin
   const supabase = await createClient(); // RLS + trigger também exigem admin com MFA
   await supabase.from("profiles").update({ role: role.data }).eq("id", target.id);

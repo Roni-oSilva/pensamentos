@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import type { Role } from "@/lib/constants";
+import { isAdminRole, type Role } from "@/lib/constants";
 
 const ITEMS: { href: string; label: string; adminOnly?: boolean }[] = [
   { href: "/admin", label: "Dashboard" },
@@ -25,7 +25,7 @@ const ITEMS: { href: string; label: string; adminOnly?: boolean }[] = [
 export function AdminNav({ role }: { role: Role }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
-  const items = ITEMS.filter((i) => !i.adminOnly || role === "ADMIN");
+  const items = ITEMS.filter((i) => !i.adminOnly || isAdminRole(role));
   const isActive = (i: { href: string }) =>
     i.href === "/admin" ? path === i.href : path === i.href || (path.startsWith(i.href + "/") && !ITEMS.some((o) => o.href !== i.href && o.href.startsWith(i.href + "/") && path.startsWith(o.href)));
   const current = items.find(isActive) ?? items[0]!;

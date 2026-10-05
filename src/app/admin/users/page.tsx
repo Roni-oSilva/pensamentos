@@ -6,7 +6,7 @@ import { removeUser, setUserBlocked, setUserRole } from "@/actions/admin";
 import { AdminTitle, Table } from "@/components/admin/ui";
 import { ConfirmButton } from "@/components/ui/ConfirmButton";
 import { Pager } from "@/components/ui/Pager";
-import { ROLES, ROLE_LABEL, type Role } from "@/lib/constants";
+import { ASSIGNABLE_ROLES, ROLE_LABEL, type Role } from "@/lib/constants";
 import { escapeLike, formatDate } from "@/lib/utils";
 
 export const metadata = { title: "Usuários" };
@@ -55,10 +55,10 @@ export default async function AdminUsers({ searchParams }: { searchParams: Promi
               <td className="px-4 py-3"><Link href={`/perfil/${u.username}`} className="text-white hover:underline">@{u.username}</Link><p className="text-xs text-ash-400">{formatDate(u.created_at)}{u.is_blocked && " · bloqueado"}</p></td>
               <td className="px-4 py-3 text-xs text-ash-300">{emailOf.get(u.id)}</td>
               <td className="px-4 py-3">
-                {self ? ROLE_LABEL[u.role] : (
+                {self || u.role === "CREATOR" ? ROLE_LABEL[u.role] : (
                   <form action={setUserRole} className="flex gap-1">
                     <input type="hidden" name="id" value={u.id} />
-                    <select name="role" defaultValue={u.role} aria-label="Função" className="field w-32 px-2 py-1 text-xs">{ROLES.map((r) => <option key={r} value={r}>{ROLE_LABEL[r]}</option>)}</select>
+                    <select name="role" defaultValue={u.role} aria-label="Função" className="field w-32 px-2 py-1 text-xs">{ASSIGNABLE_ROLES.map((r) => <option key={r} value={r}>{ROLE_LABEL[r]}</option>)}</select>
                     <ConfirmButton className="btn-ghost px-2 py-1 text-xs" title="Alterar função?" message={`Alterar a função de @${u.username}. Isso muda os privilégios dessa conta.`} confirmLabel="Alterar">OK</ConfirmButton>
                   </form>
                 )}
@@ -66,7 +66,7 @@ export default async function AdminUsers({ searchParams }: { searchParams: Promi
               <td className="px-4 py-3">{postCount.get(u.id) ?? 0}</td>
               <td className="px-4 py-3">{reportCount.get(u.id) ? <span className="badge border-blood text-red-300">{reportCount.get(u.id)}</span> : "—"}</td>
               <td className="px-4 py-3">
-                {self || u.role === "ADMIN" ? <span className="text-xs text-ash-500">protegido</span> : (
+                {self || u.role === "CREATOR" || (u.role === "ADMIN" && me.profile.role !== "CREATOR") ? <span className="text-xs text-ash-400">protegido</span> : (
                   <div className="flex flex-wrap gap-2">
                     <form action={setUserBlocked}>
                       <input type="hidden" name="id" value={u.id} /><input type="hidden" name="block" value={u.is_blocked ? "0" : "1"} />

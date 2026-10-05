@@ -1,6 +1,8 @@
+import { normalizeSupabaseUrl } from "@/lib/supabase-url";
+
 /** Leitura centralizada de variáveis de ambiente. A service role só é lida no servidor. */
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, "");
-export const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+export const SUPABASE_URL = normalizeSupabaseUrl(process.env.NEXT_PUBLIC_SUPABASE_URL);
 export const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
 
 export function requireServerEnv(name: "SUPABASE_SERVICE_ROLE_KEY" | "RATE_LIMIT_SALT"): string {

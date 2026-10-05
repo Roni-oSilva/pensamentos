@@ -112,3 +112,16 @@ describe("auditoria não registra segredos", async () => {
     expect(out.kind).toBe("FRASE");
   });
 });
+
+describe("normalizeSupabaseUrl (erros de colagem)", async () => {
+  const { normalizeSupabaseUrl } = await import("@/lib/supabase-url");
+  const ok = "https://tacjceqcletmergrjzzj.supabase.co";
+  it("aceita variações comuns", () => {
+    for (const v of [ok, `${ok}/`, ` ${ok} `, `"${ok}"`, `SUPABASE_URL=${ok}`, `NEXT_PUBLIC_SUPABASE_URL=${ok}`, "tacjceqcletmergrjzzj.supabase.co", `${ok}/rest/v1`])
+      expect(normalizeSupabaseUrl(v)).toBe(ok);
+  });
+  it("vazio vira string vazia e lixo gera erro explicativo", () => {
+    expect(normalizeSupabaseUrl("")).toBe("");
+    expect(() => normalizeSupabaseUrl("sb_publishable_abc123")).toThrow(/inválida/);
+  });
+});

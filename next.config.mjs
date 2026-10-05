@@ -1,13 +1,15 @@
-/** Host do Storage do Supabase (para next/image). Valor inválido não derruba o build: o erro é explicado. */
+/** Host do Storage do Supabase (para next/image). Tolera erros comuns de colagem na variável. */
 function supabaseHostname() {
-  const raw = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim();
-  if (!raw) return "localhost";
+  const v = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim();
+  if (!v) return "localhost";
+  const hosted = v.match(/([a-z0-9]{8,}\.supabase\.(?:co|in|net))/i);
+  if (hosted) return hosted[1].toLowerCase();
   try {
-    return new URL(raw).hostname;
+    return new URL(v.replace(/^["']|["']$/g, "")).hostname;
   } catch {
     throw new Error(
-      "NEXT_PUBLIC_SUPABASE_URL inválida. Use somente o endereço do projeto, no formato https://xxxxxxxx.supabase.co " +
-        "(sem aspas, sem espaços, sem o texto 'SUPABASE_URL=' na frente).",
+      `NEXT_PUBLIC_SUPABASE_URL inválida (recebido: ${v.length} caracteres, começa com "${v.slice(0, 8)}…"). ` +
+        "O valor deve ser o endereço do projeto, no formato https://xxxxxxxx.supabase.co",
     );
   }
 }

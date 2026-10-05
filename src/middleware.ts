@@ -1,10 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
+import { SUPABASE_URL } from "@/lib/env";
 
 const PROTECTED = ["/admin", "/configuracoes", "/favoritos", "/notificacoes", "/comunidade/nova"];
 
 function buildCsp(nonce: string): string {
-  const supabase = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+  const supabase = SUPABASE_URL;
   const dev = process.env.NODE_ENV !== "production";
   return [
     "default-src 'self'",

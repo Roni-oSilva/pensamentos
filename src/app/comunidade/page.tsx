@@ -24,10 +24,10 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
         <span className="mt-5 block"><Link href="/comunidade/nova" className="btn-primary">Publicar na comunidade</Link></span>
       </PageTitle>
       <div className="container-wide mt-10">
-        <div role="tablist" aria-label="Ordenação" className="mb-8 flex gap-1 overflow-x-auto border-b border-ink-700">
+        <div role="tablist" aria-label="Ordenação" className="mb-8 flex gap-1 overflow-x-auto border-b border-ink-700 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {TABS.map((t) => (
             <Link key={t.key} role="tab" aria-selected={t.key === sort} href={t.key === "recent" ? "/comunidade" : `/comunidade?ordem=${t.key}`}
-              className={`whitespace-nowrap border-b-2 px-4 py-3 text-sm transition-colors ${t.key === sort ? "border-white text-white" : "border-transparent text-ash-400 hover:text-ash-100"}`}>{t.label}</Link>
+              className={`flex min-h-[48px] flex-1 items-center justify-center whitespace-nowrap border-b-2 px-4 text-sm transition active:bg-ink-800 sm:flex-none ${t.key === sort ? "border-white text-white" : "border-transparent text-ash-400 hover:text-ash-100"}`}>{t.label}</Link>
           ))}
         </div>
         {posts.length ? <FeedList key={sort} initial={posts} hasMore={hasMore} signedIn={!!session} params={{ origin: "COMMUNITY", sort }} />

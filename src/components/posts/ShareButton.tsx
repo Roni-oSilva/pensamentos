@@ -79,9 +79,9 @@ export function ShareButton({ postId, path, title, text, count }: { postId: stri
           <div role="tablist" aria-label="Formato" className="grid grid-cols-3 gap-2">
             {MODES.map((m) => (
               <button key={m.id} role="tab" aria-selected={mode === m.id} type="button" onClick={() => { setMode(m.id); setNote(null); }}
-                className={`rounded-lg border p-3 text-left transition ${mode === m.id ? "border-poster bg-poster/10 text-white" : "border-ink-600 hover:border-ash-400"}`}>
+                className={`min-h-[52px] rounded-lg border p-3 text-left transition active:scale-95 max-[439px]:text-center ${mode === m.id ? "border-poster bg-poster/10 text-white" : "border-ink-600 hover:border-ash-400"}`}>
                 <span className="block font-poster text-lg uppercase tracking-wide">{m.title}</span>
-                <span className="mt-0.5 block text-[11px] leading-tight text-ash-400">{m.hint}</span>
+                <span className="mt-0.5 hidden text-[11px] leading-tight text-ash-400 min-[440px]:block">{m.hint}</span>
               </button>
             ))}
           </div>

@@ -12,7 +12,7 @@ export default async function Seguranca({ searchParams }: { searchParams: Promis
       <PageTitle eyebrow="Conta" title="Autenticação em duas etapas" />
       <div className="container-narrow mt-10 space-y-6">
         {required && <p role="alert" className="rounded-md border border-blood/60 bg-blood/10 px-4 py-3 text-sm text-red-200">O painel administrativo exige 2FA. Ative-o para continuar.</p>}
-        <MfaEnroll />
+        <MfaEnroll redirectTo={required ? "/admin" : undefined} />
       </div>
     </>
   );

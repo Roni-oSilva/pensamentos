@@ -5,7 +5,8 @@ import Image from "next/image";
 import { createClient } from "@/lib/supabase/client";
 
 /** Cadastro e desafio de TOTP (2FA) pelo Supabase Auth MFA. O segredo nunca passa pelo nosso servidor. */
-export function MfaEnroll() {
+export function MfaEnroll({ redirectTo }: { redirectTo?: string }) {
+  const router = useRouter();
   const supabase = createClient();
   const [factors, setFactors] = useState<{ id: string; status: string }[]>([]);
   const [enroll, setEnroll] = useState<{ id: string; qr: string; secret: string } | null>(null);
@@ -31,9 +32,10 @@ export function MfaEnroll() {
     const ch = await supabase.auth.mfa.challenge({ factorId: enroll.id });
     if (ch.error) return setMsg("Falha ao gerar desafio.");
     const v = await supabase.auth.mfa.verify({ factorId: enroll.id, challengeId: ch.data.id, code });
-    if (v.error) return setMsg("Código inválido.");
+    if (v.error) return setMsg("Código inválido. Use o código atual do app (muda a cada 30 segundos).");
     setEnroll(null); setCode(""); setMsg("Autenticação em duas etapas ativada."); await load();
     await supabase.auth.refreshSession();
+    if (redirectTo) { setMsg("Autenticação ativada. Abrindo o painel…"); router.replace(redirectTo); router.refresh(); }
   }
   async function disable(id: string) {
     if (!window.confirm("Desativar a autenticação em duas etapas?")) return;

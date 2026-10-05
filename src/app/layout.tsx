@@ -4,6 +4,7 @@ import "@fontsource-variable/inter/index.css";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
 import { BackBar } from "@/components/layout/BackBar";
 import { SITE_URL } from "@/lib/env";
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BackBar />
         <main id="conteudo" className="pb-8">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

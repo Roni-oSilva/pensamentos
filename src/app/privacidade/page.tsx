@@ -30,7 +30,7 @@ export default function Privacidade() {
       <h2>Retenção</h2>
       <p>Mantemos os dados enquanto a conta existir. Backups podem reter cópias por até 30 dias após a exclusão.</p>
       <h2>Cookies</h2>
-      <p>Usamos apenas cookies estritamente necessários (sessão de login). Não usamos cookies de publicidade.</p>
+      <p>Usamos apenas cookies estritamente necessários (sessão de login). Não usamos cookies de publicidade. Medimos o número de visitas com uma ferramenta de estatísticas sem cookies e sem identificar pessoas.</p>
       <h2>Contato do encarregado (DPO)</h2>
       <p>Defina aqui o e-mail de contato do responsável pelo projeto antes de publicar em produção.</p>
     </Legal>

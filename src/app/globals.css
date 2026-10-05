@@ -1,17 +1,36 @@
+/* Letra dos títulos e do nome "Igreja de Cristo": didone preta, alta e estreita (Bodoni Moda 900 condensada) */
+@font-face { font-family: "Church Condensed"; src: url("/fonts/church-condensed.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: dark;
+  /* Paleta ESCURA (padrão). Valores RGB separados por espaço, para o Tailwind aplicar transparência. */
+  --ink-950: 5 5 5; --ink-900: 10 10 10; --ink-800: 17 17 17; --ink-700: 26 26 26; --ink-600: 38 38 38; --ink-500: 58 58 58;
+  --ash-400: 115 115 115; --ash-300: 163 163 163; --ash-200: 212 212 212; --ash-100: 237 237 237;
+  --c-white: 255 255 255; --verse: 227 185 90; --prayer: 143 180 232;
   /* Pilhas de fontes do sistema: sem requisições a terceiros (privacidade/LGPD) e sem dependência de rede no build. */
   /* Leitura (texto das publicações): serifada do sistema */
   --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
   /* Pôster: Anton (títulos condensados) + Inter (texto), ambas auto-hospedadas via @fontsource */
-  --font-poster: "Anton", "Haettenschweiler", "Arial Narrow Bold", Impact, sans-serif;
+  --font-poster: "Church Condensed", "Bodoni MT Condensed", "Didot", "Anton", "Arial Narrow Bold", Impact, sans-serif;
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 }
-html { background: #050505; scroll-behavior: smooth; }
+/* Paleta CLARA (fundo branco, texto preto): escolhida pelo botão sol/lua */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink-950: 252 251 248; --ink-900: 245 243 238; --ink-800: 236 233 226; --ink-700: 224 220 211; --ink-600: 204 199 188; --ink-500: 168 162 150;
+  --ash-400: 106 101 94; --ash-300: 78 74 68; --ash-200: 48 45 41; --ash-100: 22 20 18;
+  --c-white: 10 9 8; --verse: 138 94 0; --prayer: 36 88 168;
+}
+/* Áreas que são sempre escuras (abertura com vídeo): mantêm a paleta escura mesmo no tema claro */
+.force-dark, .hero-stage {
+  color-scheme: dark;
+  --ink-950: 5 5 5; --ink-900: 10 10 10; --ink-800: 17 17 17; --ink-700: 26 26 26; --ink-600: 38 38 38; --ink-500: 58 58 58;
+  --ash-400: 115 115 115; --ash-300: 163 163 163; --ash-200: 212 212 212; --ash-100: 237 237 237; --c-white: 255 255 255;
+}
+html { background: rgb(var(--ink-950)); scroll-behavior: smooth; }
 body {
   @apply bg-ink-950 text-ash-200 font-sans antialiased;
   background-image: radial-gradient(60rem 30rem at 50% -10%, rgba(139, 30, 45, 0.10), transparent 60%);
@@ -134,8 +153,8 @@ body {
 
 .tilt { --mx: 50%; --my: 50%; --rx: 0deg; --ry: 0deg; position: relative; height: 100%; transform-style: preserve-3d; perspective: 900px; }
 .tilt-inner {
-  position: relative; height: 100%; overflow: hidden; border-radius: 0.75rem; border: 1px solid #262626;
-  background: radial-gradient(120% 80% at 0% 0%, rgba(232, 69, 60, 0.07), transparent 55%), linear-gradient(160deg, rgba(26, 26, 26, 0.85), rgba(10, 10, 10, 0.95));
+  position: relative; height: 100%; overflow: hidden; border-radius: 0.75rem; border: 1px solid rgb(var(--ink-600));
+  background: radial-gradient(120% 80% at 0% 0%, rgba(232, 69, 60, 0.07), transparent 55%), linear-gradient(160deg, rgb(var(--ink-700) / 0.85), rgb(var(--ink-900) / 0.95));
   transform: rotateX(var(--rx)) rotateY(var(--ry)); transition: transform 0.18s ease-out, border-color 0.3s, box-shadow 0.3s;
 }
 .tilt:hover .tilt-inner { border-color: rgba(232, 69, 60, 0.55); box-shadow: 0 24px 60px -24px rgba(232, 69, 60, 0.35); }
@@ -150,8 +169,7 @@ body {
 }
 .tilt-cross { font-family: serif; font-size: 6rem; top: 4.4rem; right: 1.4rem; }
 .tilt:hover .tilt-quote { opacity: 0.22; transform: translateY(6px) scale(1.06); }
-.tick { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #737373; }
+.tick { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgb(var(--ash-400)); }
 
-/* Nome "Igreja de Cristo": didone preta, alta e estreita (Bodoni Moda 900 esticada na vertical) */
-.church-name { display: inline-block; font-family: "Bodoni Moda", Didot, "Bodoni MT", Georgia, serif; font-weight: 900; line-height: 1; text-transform: uppercase;
-  letter-spacing: 0.01em; transform: scaleY(1.32); transform-origin: 50% 55%; padding-block: 0.12em; white-space: nowrap; }
+/* Nome "Igreja de Cristo" */
+.church-name { display: inline-block; font-family: var(--font-poster); font-weight: 900; line-height: 1; text-transform: uppercase; letter-spacing: 0.02em; white-space: nowrap; }

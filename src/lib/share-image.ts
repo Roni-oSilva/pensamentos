@@ -50,7 +50,7 @@ export const SHARE_BACKGROUNDS = [
 export const SHARE_BRAND = "Igreja de Cristo";
 
 export async function renderShareImage(text: string, bg: number | null = 1, signature?: string): Promise<Blob> {
-  await Promise.all([document.fonts.load("100px Anton"), document.fonts.load("900 64px 'Bodoni Moda'"), document.fonts.load("500 40px 'Inter Variable'")]).catch(() => undefined);
+  await Promise.all([document.fonts.load("900 90px 'Church Condensed'"), document.fonts.load("500 40px 'Inter Variable'")]).catch(() => undefined);
   const bgDef = SHARE_BACKGROUNDS.find((b) => b.id === bg);
   const photo = bgDef ? await loadImage(bgDef.src).catch(() => null) : null;
 
@@ -85,7 +85,7 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
   const top = 120 + (box.h - blockH) / 2 + 80;
   ctx.textAlign = "center"; ctx.textBaseline = "top";
   ctx.shadowColor = "rgba(0,0,0,0.75)"; ctx.shadowBlur = 24; ctx.shadowOffsetY = 4;
-  ctx.font = "180px Anton, Impact, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.85)";
+  ctx.font = "900 200px 'Church Condensed', Georgia, serif"; ctx.fillStyle = "rgba(255,255,255,0.85)";
   ctx.fillText("“", W / 2, top - 150);
   ctx.font = serif(f.px); ctx.fillStyle = "#f7f3ec";
   f.lines.forEach((l, i) => ctx.fillText(l, W / 2, top + i * lh));
@@ -101,12 +101,10 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
   ctx.beginPath(); ctx.moveTo(W / 2 - 220, H - 150); ctx.lineTo(W / 2 + 220, H - 150); ctx.stroke();
   ctx.font = "56px Georgia, serif"; ctx.fillStyle = "#e8453c";
   ctx.fillText("✝", W / 2, H - 150 + 4 - 16);
-  // nome em didone preta, esticada na vertical (mesma letra do site)
-  ctx.save();
-  ctx.translate(W / 2, H - 58); ctx.scale(1, 1.32);
-  ctx.font = "900 70px 'Bodoni Moda', Didot, Georgia, serif"; ctx.fillStyle = "#ffffff"; ctx.letterSpacing = "3px";
-  ctx.fillText(SHARE_BRAND.toUpperCase(), 0, 0);
-  ctx.restore(); ctx.letterSpacing = "0px";
+  // nome na mesma letra do site (didone preta condensada)
+  ctx.font = "900 94px 'Church Condensed', Didot, Georgia, serif"; ctx.fillStyle = "#ffffff"; ctx.letterSpacing = "4px";
+  ctx.fillText(SHARE_BRAND.toUpperCase(), W / 2 + 2, H - 58);
+  ctx.letterSpacing = "0px";
 
   return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"));
 }

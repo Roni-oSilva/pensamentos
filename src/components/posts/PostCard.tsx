@@ -19,8 +19,8 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
   const short = (post.kind === "FRASE" || isVerse || isPrayer || post.kind === "CONSELHO") && post.content.length < 220;
   const text = excerpt(post.content, featured ? 320 : 240);
   // cada tipo ganha um acento próprio: dourado para o versículo, azul-claro para a oração, vermelho para os demais
-  const accent = isVerse ? "text-[#e3b95a]" : isPrayer ? "text-[#8fb4e8]" : "text-poster";
-  const bar = isVerse ? "bg-[#e3b95a]" : isPrayer ? "bg-[#8fb4e8]" : "bg-poster";
+  const accent = isVerse ? "text-verse" : isPrayer ? "text-prayer" : "text-poster";
+  const bar = isVerse ? "bg-verse" : isPrayer ? "bg-prayer" : "bg-poster";
   return (
     <article className="h-full animate-rise">
       <TiltCard>
@@ -40,7 +40,7 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
               <span className="flex min-w-0 flex-1 items-center gap-3">
                 <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-950 bg-ink-900 text-lg leading-none text-poster">✝</span></span>
                 <span className="min-w-0">
-                  <span className="church-name block text-[0.8rem] text-white">Igreja de Cristo</span>
+                  <span className="church-name block text-[1.05rem] text-white">Igreja de Cristo</span>
                   <span className="block truncate text-xs text-ash-400">{post.published_at ? timeAgo(post.published_at) : ""}</span>
                 </span>
               </span>

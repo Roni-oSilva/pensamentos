@@ -5,6 +5,7 @@ import { signOut } from "@/actions/auth";
 import { Logo } from "@/components/ui/Logo";
 import { Avatar } from "@/components/ui/Avatar";
 import { MobileNav, type NavLink } from "./MobileNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 const LINKS: NavLink[] = [
   { href: "/frases", label: "Palavras" },
@@ -49,6 +50,7 @@ export async function Header() {
           ))}
         </nav>
         <div className="hidden items-center gap-3 md:flex">
+          <ThemeToggle />
           <form action="/explorar" role="search">
             <input name="q" type="search" placeholder="Buscar…" aria-label="Buscar" maxLength={80} className="field w-36 py-1.5 text-sm focus:w-52" />
           </form>
@@ -62,7 +64,7 @@ export async function Header() {
             </details>
           ) : account}
         </div>
-        <MobileNav links={LINKS}>{account}</MobileNav>
+        <div className="flex items-center gap-2 md:hidden"><ThemeToggle /><MobileNav links={LINKS}>{account}</MobileNav></div>
       </div>
     </header>
   );

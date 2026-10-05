@@ -131,7 +131,7 @@ export function HeroScroll() {
         <div className="hero-progress" aria-hidden><i /></div>
 
         <div className="hero-manifesto">
-          <p className="church-name text-[clamp(2rem,9vw,5.5rem)] tracking-[0.04em] text-white">Igreja de <span className="text-poster">Cristo</span></p>
+          <p className="church-name text-[clamp(2.8rem,13vw,7.5rem)] tracking-[0.03em] text-white">Igreja de <span className="text-poster">Cristo</span></p>
           <p className="max-w-4xl font-poster text-[clamp(1.6rem,5vw,3.4rem)] uppercase leading-[1] tracking-wide text-ash-200">
             Engrandecei a <span className="text-poster">Cristo.</span>
           </p>

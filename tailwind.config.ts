@@ -6,8 +6,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: { 950: "#050505", 900: "#0a0a0a", 800: "#111111", 700: "#1a1a1a", 600: "#262626", 500: "#3a3a3a" },
-        ash: { 400: "#737373", 300: "#a3a3a3", 200: "#d4d4d4", 100: "#ededed" },
+        ink: { 950: "rgb(var(--ink-950) / <alpha-value>)", 900: "rgb(var(--ink-900) / <alpha-value>)", 800: "rgb(var(--ink-800) / <alpha-value>)", 700: "rgb(var(--ink-700) / <alpha-value>)", 600: "rgb(var(--ink-600) / <alpha-value>)", 500: "rgb(var(--ink-500) / <alpha-value>)" },
+        ash: { 400: "rgb(var(--ash-400) / <alpha-value>)", 300: "rgb(var(--ash-300) / <alpha-value>)", 200: "rgb(var(--ash-200) / <alpha-value>)", 100: "rgb(var(--ash-100) / <alpha-value>)" },
+        white: "rgb(var(--c-white) / <alpha-value>)",
+        verse: "rgb(var(--verse) / <alpha-value>)",
+        prayer: "rgb(var(--prayer) / <alpha-value>)",
         blood: { DEFAULT: "#8b1e2d", soft: "#b4414f" },
         poster: "#e8453c",
       },
@@ -15,7 +18,7 @@ const config: Config = {
         display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         poster: ["var(--font-poster)", "Impact", "sans-serif"],
-        church: ["'Bodoni Moda'", "Didot", "Bodoni MT", "Georgia", "serif"],
+        church: ["var(--font-poster)", "Didot", "Georgia", "serif"],
       },
       keyframes: {
         rise: { "0%": { opacity: "0", transform: "translateY(8px)" }, "100%": { opacity: "1", transform: "none" } },

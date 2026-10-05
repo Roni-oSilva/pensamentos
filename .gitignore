@@ -17,3 +17,4 @@ next-env.d.ts
 # backups podem conter dados pessoais
 backups/
 *.dump
+/exports/

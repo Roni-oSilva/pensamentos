@@ -35,17 +35,20 @@ export async function signUp(_: FormState, fd: FormData): Promise<FormState> {
   if (!(await isSettingOn("registrations_open"))) return { error: "Os cadastros estão temporariamente fechados." };
 
   const supabase = await createClient();
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email: parsed.data.email,
     password: parsed.data.password,
     options: { data: { username: parsed.data.username }, emailRedirectTo: `${SITE_URL}/auth/callback?next=/` },
   });
-  if (error && error.code !== "user_already_exists") {
+  if (error?.code === "user_already_exists") return { error: "Este e-mail já tem uma conta. Use Entrar." };
+  if (error) {
     if (error.code === "weak_password") return { error: "Senha fraca demais. Escolha outra." };
     console.error(`[signup] ${error.status ?? ""} ${error.code ?? ""} ${error.message}`);
     return { error: `${GENERIC_ERROR} (${error.status ?? "?"} ${error.code ?? "sem código"}: ${error.message.slice(0, 140)})` };
   }
-  // Resposta idêntica para e-mail novo ou existente (evita enumeração de contas)
+  // Confirmação de e-mail desligada no Supabase: a sessão já vem pronta, então entra direto.
+  if (data.session) redirect("/");
+  // Confirmação ligada: resposta idêntica para e-mail novo ou existente (evita enumeração de contas)
   return { success: "Enviamos um link de confirmação para o seu e-mail. Abra-o para ativar a conta." };
 }
 

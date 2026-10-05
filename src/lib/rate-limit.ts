@@ -52,14 +52,14 @@ export async function allow(action: RateAction, ...identity: string[]): Promise<
     if (error) {
       // Falha de infraestrutura: registra o motivo (sem dados do usuário) e guarda a categoria para a mensagem.
       console.error(`[rate-limit] RPC falhou: ${error.code ?? ""} ${error.message}`);
-      lastFailure = classify(error.message);
+      lastFailure = `${classify(error.message)} | ${error.code ?? "sem código"}: ${error.message.slice(0, 140)}`;
       return false;
     }
     return data === true;
   } catch (e) {
     const msg = e instanceof Error ? e.message : "desconhecida";
     console.error(`[rate-limit] exceção: ${msg}`);
-    lastFailure = /RATE_LIMIT_SALT|SERVICE_ROLE/.test(msg) ? "variável de ambiente ausente na Vercel" : classify(msg);
+    lastFailure = `${/RATE_LIMIT_SALT|SERVICE_ROLE/.test(msg) ? "variável de ambiente ausente na Vercel" : classify(msg)} | ${msg.slice(0, 140)}`;
     return false;
   }
 }

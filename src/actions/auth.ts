@@ -35,6 +35,24 @@ export async function signUp(_: FormState, fd: FormData): Promise<FormState> {
   if (!(await isSettingOn("registrations_open"))) return { error: "Os cadastros estão temporariamente fechados." };
 
   const supabase = await createClient();
+
+  // Padrão: a conta nasce já confirmada (sem e-mail, sem limite de envio do Supabase) e a pessoa entra direto.
+  // Defina REQUIRE_EMAIL_CONFIRMATION=true na Vercel para voltar a exigir o link de confirmação por e-mail.
+  if (process.env.REQUIRE_EMAIL_CONFIRMATION !== "true") {
+    const { error: createErr } = await createAdminClient().auth.admin.createUser({
+      email: parsed.data.email, password: parsed.data.password, email_confirm: true, user_metadata: { username: parsed.data.username },
+    });
+    if (createErr) {
+      if (createErr.code === "email_exists" || createErr.code === "user_already_exists") return { error: "Este e-mail já tem uma conta. Use Entrar." };
+      if (createErr.code === "weak_password") return { error: "Senha fraca demais. Escolha outra." };
+      console.error(`[signup] ${createErr.status ?? ""} ${createErr.code ?? ""} ${createErr.message}`);
+      return { error: `${GENERIC_ERROR} (${createErr.status ?? "?"} ${createErr.code ?? "sem código"}: ${createErr.message.slice(0, 140)})` };
+    }
+    const { error: loginErr } = await supabase.auth.signInWithPassword({ email: parsed.data.email, password: parsed.data.password });
+    if (loginErr) return { success: "Conta criada! Agora é só entrar com seu e-mail e senha." };
+    redirect("/");
+  }
+
   const { data, error } = await supabase.auth.signUp({
     email: parsed.data.email,
     password: parsed.data.password,

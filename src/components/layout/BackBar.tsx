@@ -28,7 +28,11 @@ export function BackBar() {
   useEffect(() => {
     if (first.current) first.current = false;
     else if (fromPop.current) write(read() - 1);
-    else write(read() + 1);
+    else {
+      write(read() + 1);
+      // O Next não volta ao topo quando o layout tem cabeçalho fixo: páginas novas abriam na altura da anterior
+      if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
     fromPop.current = false;
     setDepth(read());
   }, [pathname]);

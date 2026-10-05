@@ -14,6 +14,39 @@ export function FeedList({ initial, hasMore: initialHasMore, signedIn, params }:
   const [pending, start] = useTransition();
   const sentinel = useRef<HTMLDivElement>(null);
   const busy = useRef(false);
+  const storeKey = `heresias:feed:${JSON.stringify(params)}`;
+
+  // Volta para a lista: restaura o que já foi carregado e a posição de rolagem (em vez de recarregar do zero)
+  useEffect(() => {
+    try {
+      if (Date.now() - Number(sessionStorage.getItem("heresias:popped") ?? 0) > 4000) return; // só ao voltar
+      const raw = sessionStorage.getItem(storeKey);
+      if (!raw) return;
+      const s = JSON.parse(raw) as { posts: PostWithViewer[]; hasMore: boolean; page: number; y: number; at: number };
+      if (Date.now() - s.at > 30 * 60_000 || !s.posts.length) return;
+      setPosts(s.posts); setHasMore(s.hasMore); setPage(s.page);
+      requestAnimationFrame(() => window.scrollTo(0, s.y));
+    } catch { /* sem storage: segue com a lista inicial */ }
+  }, [storeKey]);
+  const snap = useRef({ posts, hasMore, page });
+  snap.current = { posts, hasMore, page };
+  const yRef = useRef(0);
+  useEffect(() => {
+    const onScroll = () => { yRef.current = window.scrollY; };
+    const save = () => { try { sessionStorage.setItem(storeKey, JSON.stringify({ ...snap.current, y: yRef.current, at: Date.now() })); } catch { /* ignora */ } };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("pagehide", save);
+    return () => { save(); window.removeEventListener("scroll", onScroll); window.removeEventListener("pagehide", save); };
+  }, [storeKey]);
+  // curtidas/favoritos feitos nos cartões entram no que será restaurado
+  useEffect(() => {
+    const on = (e: Event) => {
+      const { id, patch } = (e as CustomEvent<{ id: string; patch: Partial<PostWithViewer> }>).detail;
+      setPosts((cur) => cur.map((p) => (p.id === id ? { ...p, ...patch } : p)));
+    };
+    window.addEventListener("heresias:post", on);
+    return () => window.removeEventListener("heresias:post", on);
+  }, []);
 
   const more = useCallback(() => {
     if (busy.current || !hasMore) return;

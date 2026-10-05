@@ -24,6 +24,7 @@ export function ActionBar(p: Props) {
     fn();
   }
   type S = { on: boolean; n: number };
+  const announce = (patch: Record<string, unknown>) => window.dispatchEvent(new CustomEvent("heresias:post", { detail: { id: p.postId, patch } }));
   function flip(cur: S, set: (s: S) => void, act: (id: string) => Promise<{ ok: true; active: boolean } | { ok: false; error: string }>) {
     const target = !cur.on;
     const at = (on: boolean): S => ({ on, n: Math.max(0, cur.n + (on === cur.on ? 0 : on ? 1 : -1)) });
@@ -32,7 +33,7 @@ export function ActionBar(p: Props) {
     start(async () => {
       try {
         const r = await act(p.postId);
-        if (!r.ok) { set(cur); setError(r.error); } else set(at(r.active));
+        if (!r.ok) { set(cur); setError(r.error); } else { set(at(r.active)); announce(act === toggleLike ? { liked: r.active, like_count: at(r.active).n } : { favorited: r.active, favorite_count: at(r.active).n }); }
       } catch { set(cur); setError("Não foi possível concluir a ação. Tente novamente."); }
     });
   }

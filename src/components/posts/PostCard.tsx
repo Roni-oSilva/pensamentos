@@ -21,25 +21,28 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
       <TiltCard>
         <span className="tilt-quote" aria-hidden>“</span>
         <div className="relative flex h-full flex-col gap-4 p-6">
-          <header className="flex items-center gap-3">
-            {post.origin === "COMMUNITY" && post.author ? (
+          <header className="flex items-start gap-3">
+            {post.author ? (
               <Link href={`/perfil/${post.author.username}`} className="group/a flex min-w-0 flex-1 items-center gap-3 active:opacity-80">
-                <span className="rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="block rounded-full border-2 border-ink-950"><Avatar src={post.author.avatar_url} name={post.author.username} size={38} /></span></span>
+                <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="block rounded-full border-2 border-ink-950"><Avatar src={post.author.avatar_url} name={post.author.username} size={40} /></span></span>
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-medium text-white group-hover/a:text-poster">{post.author.display_name || post.author.username}</span>
-                  <span className="tick block truncate">@{post.author.username}</span>
+                  <span className="block truncate text-xs text-ash-400">@{post.author.username}{post.published_at ? ` · ${timeAgo(post.published_at)}` : ""}</span>
                 </span>
               </Link>
             ) : (
               <span className="flex min-w-0 flex-1 items-center gap-3">
-                <span className="rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-[38px] w-[38px] place-items-center rounded-full border-2 border-ink-950 bg-ink-900 font-poster text-lg leading-none text-poster">H</span></span>
+                <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-950 bg-ink-900 font-poster text-lg leading-none text-poster">H</span></span>
                 <span className="min-w-0">
                   <span className="block truncate text-sm font-medium text-white">Heresias</span>
-                  <span className="tick block truncate">Oficial</span>
+                  <span className="block truncate text-xs text-ash-400">{post.published_at ? timeAgo(post.published_at) : ""}</span>
                 </span>
               </span>
             )}
-            <span className="tick shrink-0 text-right"><span className="inline-flex items-center gap-2"><span className="h-px w-4 bg-poster" />{KIND_LABEL[post.kind]}</span><span className="block normal-case tracking-normal">{post.published_at ? timeAgo(post.published_at) : ""}</span></span>
+            <span className="tick flex shrink-0 flex-col items-end gap-1 pt-0.5">
+              <span className="inline-flex items-center gap-2"><span className="h-px w-4 bg-poster" />{KIND_LABEL[post.kind]}</span>
+              {post.origin === "OFFICIAL" && <span className="rounded-full border border-poster/60 px-2 py-px text-[9px] text-poster">Oficial</span>}
+            </span>
           </header>
           {post.image_url && (
             <Link href={path} className="relative block aspect-[16/10] overflow-hidden rounded-md border border-ink-700">

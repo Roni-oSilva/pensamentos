@@ -182,7 +182,7 @@ body {
 }
 .tilt:hover .tilt-inner::before { opacity: 1; }
 .tilt-quote {
-  position: absolute; right: 1.1rem; top: 1.9rem; font-family: var(--font-poster); font-size: 7rem; line-height: 1; color: #e8453c; opacity: 0.08;
+  position: absolute; right: 1.1rem; top: 4.6rem; z-index: 0; font-family: var(--font-poster); font-size: 7rem; line-height: 1; color: #e8453c; opacity: 0.08;
   transition: transform 0.4s, opacity 0.4s; pointer-events: none;
 }
 .tilt:hover .tilt-quote { opacity: 0.22; transform: translateY(6px) scale(1.06); }

@@ -6,7 +6,7 @@ import { ReportButton } from "@/components/moderation/ReportButton";
 import { ShareButton } from "./ShareButton";
 
 interface Props {
-  postId: string; path: string; title: string; signedIn: boolean;
+  postId: string; path: string; title: string; text: string; signedIn: boolean;
   liked: boolean; favorited: boolean; likes: number; comments: number; favorites: number; shares: number;
 }
 
@@ -39,7 +39,7 @@ export function ActionBar(p: Props) {
           <svg width="16" height="16" viewBox="0 0 24 24" fill={fav.on ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.6"><path d="M6 3h12v18l-6-4-6 4z" /></svg>
           <span>{fav.n}</span>
         </button>
-        <ShareButton postId={p.postId} path={p.path} title={p.title} count={p.shares} />
+        <ShareButton postId={p.postId} path={p.path} title={p.title} text={p.text} count={p.shares} />
         <span className="ml-auto"><ReportButton targetType="POST" targetId={p.postId} signedIn={p.signedIn} /></span>
       </div>
       {error && <p role="alert" className="mt-2 text-xs text-red-300">{error}</p>}

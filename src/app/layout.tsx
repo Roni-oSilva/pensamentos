@@ -1,4 +1,6 @@
 import type { Metadata, Viewport } from "next";
+import "@fontsource/anton/latin-400.css";
+import "@fontsource-variable/inter/index.css";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";

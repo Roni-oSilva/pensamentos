@@ -12,7 +12,7 @@ export async function CommentSection({ postId }: { postId: string }) {
 
   return (
     <section id="comentarios" aria-labelledby="comentarios-h" className="space-y-6">
-      <h2 id="comentarios-h" className="font-display text-3xl text-white">Comentários <span className="text-ash-400">({comments.length})</span></h2>
+      <h2 id="comentarios-h" className="font-poster uppercase tracking-wide text-3xl text-white">Comentários <span className="text-ash-400">({comments.length})</span></h2>
       <CommentForm postId={postId} signedIn={!!session} />
       {roots.length === 0 ? <p className="text-sm text-ash-400">Ninguém falou ainda. Seja o primeiro a quebrar o silêncio.</p> : (
         <ul className="space-y-8">

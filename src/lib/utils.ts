@@ -39,3 +39,14 @@ export function excerpt(text: string, max = 160): string {
   const t = text.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
   return t.length > max ? `${t.slice(0, max - 1)}…` : t;
 }
+
+const ENTITIES: Record<string, string> = { "&amp;": "&", "&lt;": "<", "&gt;": ">", "&quot;": '"', "&#39;": "'", "&nbsp;": " " };
+
+/** HTML (conteúdo oficial) → texto puro com parágrafos preservados; usado em compartilhamento. */
+export function toPlainText(html: string, max = 700): string {
+  const t = html
+    .replace(/<\/(p|h2|h3|li|blockquote)>/gi, "\n").replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]*>/g, "")
+    .replace(/&(amp|lt|gt|quot|#39|nbsp);/g, (m) => ENTITIES[m] ?? m)
+    .replace(/[ \t]+/g, " ").replace(/\n{3,}/g, "\n\n").trim();
+  return t.length > max ? `${t.slice(0, max - 1)}…` : t;
+}

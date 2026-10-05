@@ -9,7 +9,7 @@ export default async function MfaPage({ searchParams }: { searchParams: Promise<
   await requireUser("/mfa");
   return (
     <div className="container-narrow flex min-h-[70vh] max-w-md flex-col justify-center py-16">
-      <h1 className="mb-3 font-display text-5xl text-white">Verificação</h1>
+      <h1 className="mb-3 font-poster uppercase tracking-wide text-5xl text-white">Verificação</h1>
       <p className="mb-8 text-ash-400">Confirme sua identidade com o código do app autenticador.</p>
       <MfaChallenge next={next} />
     </div>

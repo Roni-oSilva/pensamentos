@@ -40,7 +40,7 @@ export default async function ProfilePage({ params }: Props) {
         <Avatar src={profile.avatar_url} name={profile.username} size={96} />
         <div className="flex-1 space-y-3">
           <div>
-            <h1 className="font-display text-5xl text-white">{profile.display_name ?? profile.username}</h1>
+            <h1 className="font-poster uppercase tracking-wide text-5xl text-white">{profile.display_name ?? profile.username}</h1>
             <p className="text-ash-400">@{profile.username}{profile.role !== "USER" && <span className="badge ml-3">{ROLE_LABEL[profile.role]}</span>}</p>
           </div>
           {profile.bio && <p className="preline max-w-xl text-ash-300">{profile.bio}</p>}
@@ -76,7 +76,7 @@ export default async function ProfilePage({ params }: Props) {
       )}
 
       <section className="mt-12" aria-labelledby="pubs-h">
-        <h2 id="pubs-h" className="mb-6 font-display text-4xl text-white">Publicações</h2>
+        <h2 id="pubs-h" className="mb-6 font-poster uppercase tracking-wide text-4xl text-white">Publicações</h2>
         {feed.posts.length ? <FeedList initial={feed.posts} hasMore={feed.hasMore} signedIn={!!session} params={{ sort: "recent", authorId: profile.id }} />
           : <EmptyState title="Nada publicado ainda." />}
       </section>

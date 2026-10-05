@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import type { PostWithViewer } from "@/lib/types";
 import { KIND_LABEL, ROLE_LABEL, STATUS_LABEL } from "@/lib/constants";
-import { excerpt, formatDate, compact } from "@/lib/utils";
+import { excerpt, formatDate, compact, toPlainText } from "@/lib/utils";
 import { Avatar } from "@/components/ui/Avatar";
 import { CommentSection } from "@/components/comments/CommentSection";
 import { PostBody } from "./PostBody";
@@ -30,7 +30,7 @@ export function PostDetail({ post, signedIn }: { post: PostWithViewer; signedIn:
           <time dateTime={post.published_at ?? post.created_at}>{formatDate(post.published_at ?? post.created_at)}</time>
           <span>{compact(post.view_count)} visualizações</span>
         </div>
-        {post.title && <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl">{post.title}</h1>}
+        {post.title && <h1 className="font-poster uppercase tracking-wide text-4xl leading-tight text-white sm:text-5xl">{post.title}</h1>}
       </header>
       {post.image_url && (
         <div className="relative mb-8 aspect-[16/10] overflow-hidden rounded-lg border border-ink-700">
@@ -49,7 +49,7 @@ export function PostDetail({ post, signedIn }: { post: PostWithViewer; signedIn:
       )}
       <div className="mt-6">
         {published && (
-          <ActionBar postId={post.id} path={postPath(post)} title={post.title ?? excerpt(post.content, 80)} signedIn={signedIn}
+          <ActionBar postId={post.id} path={postPath(post)} title={post.title ?? excerpt(post.content, 80)} text={toPlainText(post.content)} signedIn={signedIn}
             liked={post.liked} favorited={post.favorited} likes={post.like_count} comments={post.comment_count} favorites={post.favorite_count} shares={post.share_count} />
         )}
       </div>

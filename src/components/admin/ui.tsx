@@ -4,7 +4,7 @@ import { STATUS_LABEL, type PostStatus } from "@/lib/constants";
 export function AdminTitle({ title, children }: { title: string; children?: React.ReactNode }) {
   return (
     <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-      <h1 className="font-display text-4xl text-white">{title}</h1>
+      <h1 className="font-poster uppercase tracking-wide text-4xl text-white">{title}</h1>
       {children}
     </div>
   );

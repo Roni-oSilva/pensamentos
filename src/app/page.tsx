@@ -1,9 +1,18 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
 import { listCategories, listPosts } from "@/lib/data";
+import { HeroScroll } from "@/components/home/HeroScroll";
 import { PostGrid } from "@/components/posts/PostGrid";
 import { Section } from "@/components/ui/Section";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { Reveal } from "@/components/ui/Reveal";
+import { TiltCard } from "@/components/ui/TiltCard";
+
+const STEPS = [
+  { n: "01", title: "Leia", text: "Frases e reflexões que incomodam na medida certa. Sem pressa, sem algoritmo.", href: "/frases", cta: "Ver frases" },
+  { n: "02", title: "Guarde", text: "Curta, favorite e volte depois. Cada heresia pode virar um cartão em PNG para compartilhar.", href: "/explorar", cta: "Explorar" },
+  { n: "03", title: "Publique", text: "Crie sua conta e deixe a sua própria heresia na comunidade. Tudo passa por moderação.", href: "/comunidade/nova", cta: "Publicar" },
+];
 
 export default async function Home() {
   const session = await getSession();
@@ -19,24 +28,34 @@ export default async function Home() {
 
   return (
     <>
-      <section className="container-wide flex min-h-[78vh] flex-col justify-center py-20">
-        <p className="eyebrow mb-6 animate-rise">Um arquivo de pensamentos incômodos</p>
-        <h1 className="animate-rise font-display text-6xl font-medium uppercase leading-[0.95] tracking-tight text-white sm:text-8xl lg:text-9xl" style={{ animationDelay: "80ms" }}>
-          Heresias<br /><span className="text-ash-400">que passam</span><br />pela minha<br />cabeça
-        </h1>
-        <p className="mt-8 max-w-xl animate-rise text-lg text-ash-300" style={{ animationDelay: "160ms" }}>
-          Frases, reflexões e poemas que chegam sem pedir licença. Leia, discorde, guarde — e deixe a sua própria heresia na comunidade.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-3 animate-rise" style={{ animationDelay: "240ms" }}>
-          <Link href="/heresia" prefetch={false} className="btn-primary px-6 py-3">Mostrar uma heresia</Link>
-          <Link href="/comunidade" className="btn-ghost px-6 py-3">Explorar a comunidade</Link>
+      <noscript><style>{".reveal{opacity:1!important;transform:none!important}.hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}"}</style></noscript>
+      <HeroScroll />
+
+      <section className="container-wide -mt-8 pb-4" aria-label="Como funciona">
+        <div className="grid gap-5 md:grid-cols-3">
+          {STEPS.map((s, i) => (
+            <Reveal key={s.n} delay={i * 120}>
+              <TiltCard>
+                <Link href={s.href} className="relative flex h-full min-h-56 flex-col justify-between gap-8 p-7">
+                  <span className="font-poster text-7xl leading-none text-poster/90">{s.n}</span>
+                  <div className="space-y-2">
+                    <h2 className="font-poster text-4xl uppercase tracking-wide text-white">{s.title}</h2>
+                    <p className="text-sm leading-relaxed text-ash-300">{s.text}</p>
+                    <span className="tick inline-flex items-center gap-2 pt-2 text-ash-200">{s.cta} <span aria-hidden>→</span></span>
+                  </div>
+                </Link>
+              </TiltCard>
+            </Reveal>
+          ))}
         </div>
       </section>
 
       {categories.length > 0 && (
-        <nav aria-label="Categorias" className="container-wide flex flex-wrap gap-2 border-y border-ink-700 py-5">
-          {categories.map((c) => <Link key={c.id} href={`/categoria/${c.slug}`} className="badge px-4 py-1.5 hover:border-ash-300 hover:text-white">{c.name}</Link>)}
-        </nav>
+        <Reveal className="container-wide mt-14">
+          <nav aria-label="Categorias" className="flex flex-wrap gap-2 border-y border-ink-700 py-5">
+            {categories.map((c) => <Link key={c.id} href={`/categoria/${c.slug}`} className="badge px-4 py-1.5 transition hover:-translate-y-0.5 hover:border-poster hover:text-white">{c.name}</Link>)}
+          </nav>
+        </Reveal>
       )}
 
       <Section eyebrow="Oficial" title="Últimas publicações" href="/frases">

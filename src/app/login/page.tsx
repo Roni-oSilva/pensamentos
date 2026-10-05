@@ -11,7 +11,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   if (await getSession()) redirect(next);
   return (
     <div className="container-narrow flex min-h-[70vh] max-w-md flex-col justify-center py-16">
-      <h1 className="mb-8 font-display text-5xl text-white">Entrar</h1>
+      <h1 className="mb-8 font-poster uppercase tracking-wide text-5xl text-white">Entrar</h1>
       {sp.erro && <p role="alert" className="mb-6 rounded-md border border-blood/60 bg-blood/10 px-3 py-2 text-sm text-red-200">O link é inválido ou expirou. Tente novamente.</p>}
       <LoginForm next={next} />
     </div>

@@ -31,7 +31,7 @@ export default async function Moderation() {
                 {p.author && <Link className="link-muted" href={`/perfil/${p.author.username}`}>@{p.author.username}</Link>}
                 <span>{timeAgo(p.created_at)}</span>
               </div>
-              {p.title && <h2 className="font-display text-2xl text-white">{p.title}</h2>}
+              {p.title && <h2 className="font-poster uppercase tracking-wide text-2xl text-white">{p.title}</h2>}
               {p.image_url && <Image src={p.image_url} alt="Imagem enviada pelo autor" width={640} height={400} className="h-auto max-h-64 w-auto rounded-md border border-ink-700" />}
               <PostBody content={p.content} origin="COMMUNITY" />
               <PostModerationActions id={p.id} status="PENDING" origin="COMMUNITY" viewerRole={s.profile.role} />

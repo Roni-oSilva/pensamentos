@@ -26,6 +26,8 @@ export async function middleware(request: NextRequest) {
   const nonce = btoa(crypto.randomUUID());
   const csp = buildCsp(nonce);
   const requestHeaders = new Headers(request.headers);
+  // Cabeçalhos de identidade só podem vir do próprio middleware: descarta qualquer valor enviado pelo cliente.
+  requestHeaders.delete("x-auth-uid"); requestHeaders.delete("x-auth-email");
   requestHeaders.set("x-nonce", nonce);
   requestHeaders.set("Content-Security-Policy", csp);
 

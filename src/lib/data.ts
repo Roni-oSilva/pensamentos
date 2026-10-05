@@ -148,3 +148,35 @@ export async function isSettingOn(key: "registrations_open" | "community_open"):
   const { data } = await supabase.from("site_settings").select("value").eq("key", key).maybeSingle();
   return data?.value !== false;
 }
+
+export interface Voice {
+  authorId: string; username: string; name: string; avatar: string | null; official: boolean;
+  posts: { id: string; path: string; title: string | null; text: string; at: string }[];
+}
+
+/** Quem publicou nos últimos 7 dias, agrupado por pessoa (mais recente primeiro) — alimenta as "bolinhas". */
+export async function listRecentVoices(limitAuthors = 14, perAuthor = 5): Promise<Voice[]> {
+  const supabase = await createClient();
+  const since = new Date(Date.now() - 7 * 86_400_000).toISOString();
+  const { data } = await supabase.from("posts")
+    .select("id, title, content, origin, published_at, author_id, author:profiles!posts_author_id_fkey(username, display_name, avatar_url, role)")
+    .eq("status", "PUBLISHED").gte("published_at", since).order("published_at", { ascending: false }).limit(80);
+  type Row = { id: string; title: string | null; content: string; origin: "OFFICIAL" | "COMMUNITY"; published_at: string; author_id: string;
+    author: { username: string; display_name: string | null; avatar_url: string | null; role: string } | { username: string; display_name: string | null; avatar_url: string | null; role: string }[] | null };
+  const byAuthor = new Map<string, Voice>();
+  for (const r of (data ?? []) as unknown as Row[]) {
+    const a = Array.isArray(r.author) ? r.author[0] : r.author;
+    if (!a) continue;
+    let v = byAuthor.get(r.author_id);
+    if (!v) {
+      if (byAuthor.size >= limitAuthors) continue;
+      v = { authorId: r.author_id, username: a.username, name: a.display_name || a.username, avatar: a.avatar_url, official: r.origin === "OFFICIAL", posts: [] };
+      byAuthor.set(r.author_id, v);
+    }
+    if (v.posts.length < perAuthor) {
+      const text = r.content.replace(/<[^>]*>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim().slice(0, 420);
+      v.posts.push({ id: r.id, path: r.origin === "OFFICIAL" ? `/frases/${r.id}` : `/comunidade/${r.id}`, title: r.title, text, at: r.published_at });
+    }
+  }
+  return [...byAuthor.values()];
+}

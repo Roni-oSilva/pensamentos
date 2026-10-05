@@ -1,20 +1,28 @@
 import "server-only";
 import { cache } from "react";
+import { headers } from "next/headers";
 import { notFound, redirect } from "next/navigation";
 import type { User } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
 import type { Profile } from "@/lib/types";
 
-export interface Session { user: User; profile: Profile }
+export interface Session { user: Pick<User, "id" | "email">; profile: Profile }
 
 /** Usuário autenticado (validado no Auth server) + perfil. Cacheado por requisição. */
 export const getSession = cache(async (): Promise<Session | null> => {
   const supabase = await createClient();
-  const { data } = await supabase.auth.getUser();
-  if (!data.user) return null;
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", data.user.id).maybeSingle();
+  // O middleware já validou o token no Auth server e repassou o usuário (cabeçalho que o cliente não consegue forjar).
+  const h = await headers();
+  const uid = h.get("x-auth-uid");
+  let user: Session["user"] | null = uid ? { id: uid, email: h.get("x-auth-email") || undefined } : null;
+  if (!user) {
+    const { data } = await supabase.auth.getUser();
+    user = data.user ? { id: data.user.id, email: data.user.email } : null;
+  }
+  if (!user) return null;
+  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
   if (!profile || profile.is_blocked) return null;
-  return { user: data.user, profile: profile as Profile };
+  return { user, profile: profile as Profile };
 });
 
 export async function requireUser(next = "/"): Promise<Session> {

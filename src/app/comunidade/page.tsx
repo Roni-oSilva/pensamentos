@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getSession } from "@/lib/auth";
-import { listPosts, type Sort } from "@/lib/data";
+import { VoicesBar } from "@/components/community/VoicesBar";
+import { listPosts, listRecentVoices, type Sort } from "@/lib/data";
 import { FeedList } from "@/components/posts/FeedList";
 import { PageTitle } from "@/components/ui/Section";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -16,14 +17,15 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
   const { ordem } = await searchParams;
   const sort = (TABS.find((t) => t.key === ordem)?.key ?? "recent") as Sort;
   const session = await getSession();
-  const { posts, hasMore } = await listPosts({ origin: "COMMUNITY", sort }, session?.user.id ?? null);
+  const [{ posts, hasMore }, voices] = await Promise.all([listPosts({ origin: "COMMUNITY", sort }, session?.user.id ?? null), listRecentVoices()]);
   return (
     <>
       <PageTitle eyebrow="Comunidade" title="Vozes">
         <span>Publicações de quem faz parte. Tudo passa por moderação antes de aparecer.</span>
         <span className="mt-5 block"><Link href="/comunidade/nova" className="btn-primary">Publicar na comunidade</Link></span>
       </PageTitle>
-      <div className="container-wide mt-10">
+      <div className="mt-8"><VoicesBar voices={voices} signedIn={!!session} /></div>
+      <div className="container-wide mt-8">
         <div role="tablist" aria-label="Ordenação" className="mb-8 flex gap-1 overflow-x-auto border-b border-ink-700 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {TABS.map((t) => (
             <Link key={t.key} role="tab" aria-selected={t.key === sort} href={t.key === "recent" ? "/comunidade" : `/comunidade?ordem=${t.key}`}

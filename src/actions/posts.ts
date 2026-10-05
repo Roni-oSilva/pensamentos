@@ -32,13 +32,13 @@ export async function saveCommunityPost(_: FormState, fd: FormData): Promise<For
   if (!parsed.success) return { error: firstError(parsed.error) };
   const d = parsed.data;
 
-  if (!(await allow("post", s.user.id))) return { error: rateLimitMessage };
+  if (!(await allow("post", s.user.id))) return { error: rateLimitMessage() };
   if (!editingId && !(await isSettingOn("community_open"))) return { error: "A comunidade não está aceitando novas publicações no momento." };
 
   let imageUrl = d.imageUrl;
   const file = fd.get("image");
   if (file instanceof File && file.size > 0) {
-    if (!(await allow("upload", s.user.id))) return { error: rateLimitMessage };
+    if (!(await allow("upload", s.user.id))) return { error: rateLimitMessage() };
     const up = await uploadImage(supabase, "community", s.user.id, file);
     if (!up.ok) return { error: up.error };
     imageUrl = up.url;

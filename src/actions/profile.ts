@@ -18,7 +18,7 @@ export async function updateProfile(_: FormState, fd: FormData): Promise<FormSta
   const patch: Record<string, unknown> = { username: parsed.data.username, display_name: parsed.data.displayName, bio: parsed.data.bio };
   const file = fd.get("avatar");
   if (file instanceof File && file.size > 0) {
-    if (!(await allow("upload", s.user.id))) return { error: rateLimitMessage };
+    if (!(await allow("upload", s.user.id))) return { error: rateLimitMessage() };
     const up = await uploadImage(supabase, "avatars", s.user.id, file);
     if (!up.ok) return { error: up.error };
     patch.avatar_url = up.url;

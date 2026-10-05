@@ -15,7 +15,7 @@ async function toggle(table: "likes" | "favorites", action: "like" | "favorite",
   const s = await actionSession();
   if (!s) return { ok: false, error: "Entre para continuar." };
   if (!idSchema.safeParse(postId).success) return { ok: false, error: GENERIC_ERROR };
-  if (!(await allow(action, s.user.id))) return { ok: false, error: rateLimitMessage };
+  if (!(await allow(action, s.user.id))) return { ok: false, error: rateLimitMessage() };
   const supabase = await createClient();
   const { data: existing } = await supabase.from(table).select("post_id").eq("user_id", s.user.id).eq("post_id", postId).maybeSingle();
   if (existing) {
@@ -37,7 +37,7 @@ export async function toggleFollow(targetId: string): Promise<Toggle> {
   const s = await actionSession();
   if (!s) return { ok: false, error: "Entre para continuar." };
   if (!idSchema.safeParse(targetId).success || targetId === s.user.id) return { ok: false, error: GENERIC_ERROR };
-  if (!(await allow("follow", s.user.id))) return { ok: false, error: rateLimitMessage };
+  if (!(await allow("follow", s.user.id))) return { ok: false, error: rateLimitMessage() };
   const supabase = await createClient();
   const { data: existing } = await supabase.from("follows").select("following_id").eq("follower_id", s.user.id).eq("following_id", targetId).maybeSingle();
   if (existing) {
@@ -53,7 +53,7 @@ export async function addComment(input: { postId: string; parentId?: string | nu
   if (!s) return { ok: false, error: "Entre para comentar." };
   const parsed = commentSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: firstError(parsed.error) };
-  if (!(await allow("comment", s.user.id))) return { ok: false, error: rateLimitMessage };
+  if (!(await allow("comment", s.user.id))) return { ok: false, error: rateLimitMessage() };
   const supabase = await createClient();
   const { error } = await supabase.from("comments").insert({
     post_id: parsed.data.postId, parent_id: parsed.data.parentId, body: parsed.data.body, author_id: s.user.id,
@@ -75,7 +75,7 @@ export async function submitReport(input: { targetType: string; targetId: string
   if (!s) return { ok: false, error: "Entre para denunciar." };
   const parsed = reportSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: firstError(parsed.error) };
-  if (!(await allow("report", s.user.id))) return { ok: false, error: rateLimitMessage };
+  if (!(await allow("report", s.user.id))) return { ok: false, error: rateLimitMessage() };
   const d = parsed.data;
   if (d.targetType === "PROFILE" && d.targetId === s.user.id) return { ok: false, error: "Você não pode denunciar a si mesmo." };
   const supabase = await createClient();

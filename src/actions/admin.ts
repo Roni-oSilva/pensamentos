@@ -71,7 +71,7 @@ export async function saveOfficialPost(_: FormState, fd: FormData): Promise<Form
 export async function uploadEditorImage(fd: FormData): Promise<Result<{ url: string }>> {
   const s = await gate("admin");
   if (!s) return { ok: false, error: FORBIDDEN };
-  if (!(await allow("upload", s.user.id))) return { ok: false, error: rateLimitMessage };
+  if (!(await allow("upload", s.user.id))) return { ok: false, error: rateLimitMessage() };
   const file = fd.get("file");
   if (!(file instanceof File)) return { ok: false, error: "Arquivo ausente." };
   const up = await uploadImage(await createClient(), "admin", s.user.id, file);

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
-import { listCategories, listPosts, listRecentVoices } from "@/lib/data";
-import { VoicesBar } from "@/components/community/VoicesBar";
+import { listCategories, listPosts } from "@/lib/data";
 import { HeroScroll } from "@/components/home/HeroScroll";
 import { PostGrid } from "@/components/posts/PostGrid";
 import { Section } from "@/components/ui/Section";
@@ -18,12 +17,11 @@ const STEPS = [
 export default async function Home() {
   const session = await getSession();
   const uid = session?.user.id ?? null;
-  const [latest, top, community, categories, voices] = await Promise.all([
+  const [latest, top, community, categories] = await Promise.all([
     listPosts({ origin: "OFFICIAL", sort: "recent" }, uid),
     listPosts({ origin: "OFFICIAL", sort: "likes" }, uid),
     listPosts({ origin: "COMMUNITY", sort: "recent" }, uid),
     listCategories(),
-    listRecentVoices(),
   ]);
   const featured = latest.posts.slice(0, 3);
   const mostLiked = top.posts.filter((p) => p.like_count > 0).slice(0, 3);
@@ -32,8 +30,6 @@ export default async function Home() {
     <>
       <noscript><style>{".reveal{opacity:1!important;transform:none!important}.hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}"}</style></noscript>
       <HeroScroll />
-
-      <section className="pb-6 pt-2" aria-label="Quem publicou recentemente"><VoicesBar voices={voices} signedIn={!!session} /></section>
 
       <section className="container-wide -mt-8 pb-4" aria-label="Como funciona">
         <div className="grid gap-5 md:grid-cols-3">

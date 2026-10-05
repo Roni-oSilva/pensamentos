@@ -187,5 +187,3 @@ body {
 }
 .tilt:hover .tilt-quote { opacity: 0.22; transform: translateY(6px) scale(1.06); }
 .tick { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #737373; }
-
-@keyframes story { from { transform: scaleX(0); } to { transform: scaleX(1); } }

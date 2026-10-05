@@ -28,7 +28,7 @@ export default async function Home() {
 
   return (
     <>
-      <noscript><style>{".reveal{opacity:1!important;transform:none!important}.hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}"}</style></noscript>
+      <noscript><style>{".reveal{opacity:1!important;transform:none!important}.hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}.cine-hand,.cine-butterfly{opacity:1!important}"}</style></noscript>
       <HeroScroll />
 
       <section className="container-wide -mt-8 pb-4" aria-label="Como funciona">

@@ -3,11 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-const LETTERS = "HERESIAS".split("");
-
 /**
- * Abertura da home: o nome "HERESIAS" se abre ao rolar a página, a mão se afasta da borboleta
- * e o manifesto aparece. O progresso (0→1) vira a variável CSS --p; toda a animação é CSS.
+ * Abertura cinematográfica da home, guiada pelo scroll (sem nenhum texto de título):
+ * a mão sai do borrado para o nítido, a luz cresce, a borboleta sobe até a luz, tudo escurece
+ * e sobra o símbolo brilhante — então o manifesto aparece. O progresso (0→1) vira a variável CSS --p.
  */
 export function HeroScroll() {
   const root = useRef<HTMLDivElement>(null);
@@ -27,7 +26,7 @@ export function HeroScroll() {
       const total = r.height - (window.innerHeight - stickyTop);
       const p = total > 0 ? Math.min(1, Math.max(0, (stickyTop - r.top) / total)) : 0;
       el.style.setProperty("--p", p.toFixed(4));
-      el.dataset.phase = p > 0.55 ? "open" : "closed";
+      el.dataset.phase = p > 0.8 ? "open" : "closed";
     };
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     update();
@@ -51,24 +50,18 @@ export function HeroScroll() {
     <div ref={root} className="hero" data-phase="closed" onPointerMove={onPointerMove}>
       <div className="hero-stage">
         <h1 className="sr-only">Heresias que passam pela minha cabeça</h1>
-        <div className="hero-glow" aria-hidden />
-        <div className="hero-slit" aria-hidden />
 
-        {/* microtipografia de pôster */}
-        <p className="hero-micro left-1/2 top-[4.5vh] -translate-x-1/2 tracking-[0.5em]" aria-hidden>I Heresias</p>
-        <p className="hero-micro hero-vertical right-[2vw] top-[22vh] hidden md:block" aria-hidden>Metamorfose</p>
+        <div className="cine-red" aria-hidden />
+        <div className="cine-fog cine-fog-a" aria-hidden><i /><i /><i /></div>
+        <div className="cine-fog cine-fog-b" aria-hidden><i /><i /><i /></div>
+        <div className="cine-light" aria-hidden><div className="cine-rays" /></div>
 
-        <div className="hero-title" aria-hidden>
-          {LETTERS.map((l, i) => (
-            <span key={i} className="hero-letter" style={{ "--d": ((i - 3.5) / 3.5).toFixed(3) } as React.CSSProperties}>{l}</span>
-          ))}
-        </div>
+        <Image src="/hero/hand.webp" alt="" width={240} height={548} priority className="cine-hand" aria-hidden />
+        <div className="cine-veil" aria-hidden />
+        <div className="cine-butterfly" aria-hidden><Image src="/hero/butterfly.webp" alt="" width={178} height={156} priority /></div>
 
-        <div className="hero-figure" aria-hidden>
-          <Image src="/hero/hand.webp" alt="" width={240} height={548} priority className="hero-hand" />
-          <div className="hero-butterfly"><Image src="/hero/butterfly.webp" alt="" width={178} height={156} priority className="h-auto w-full" /></div>
-        </div>
-
+        <div className="cine-grain" aria-hidden />
+        <div className="cine-vignette" aria-hidden />
 
         <div className="scroll-hint text-center text-[10px] uppercase tracking-[0.4em] text-ash-300" aria-hidden>Role<span /></div>
 

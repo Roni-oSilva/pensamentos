@@ -42,7 +42,8 @@ export async function signUp(_: FormState, fd: FormData): Promise<FormState> {
   });
   if (error && error.code !== "user_already_exists") {
     if (error.code === "weak_password") return { error: "Senha fraca demais. Escolha outra." };
-    return { error: GENERIC_ERROR };
+    console.error(`[signup] ${error.status ?? ""} ${error.code ?? ""} ${error.message}`);
+    return { error: `${GENERIC_ERROR} (${error.status ?? "?"} ${error.code ?? "sem código"}: ${error.message.slice(0, 140)})` };
   }
   // Resposta idêntica para e-mail novo ou existente (evita enumeração de contas)
   return { success: "Enviamos um link de confirmação para o seu e-mail. Abra-o para ativar a conta." };

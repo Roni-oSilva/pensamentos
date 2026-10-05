@@ -1,6 +1,17 @@
-const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
-  ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).hostname
-  : "localhost";
+/** Host do Storage do Supabase (para next/image). Valor inválido não derruba o build: o erro é explicado. */
+function supabaseHostname() {
+  const raw = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim();
+  if (!raw) return "localhost";
+  try {
+    return new URL(raw).hostname;
+  } catch {
+    throw new Error(
+      "NEXT_PUBLIC_SUPABASE_URL inválida. Use somente o endereço do projeto, no formato https://xxxxxxxx.supabase.co " +
+        "(sem aspas, sem espaços, sem o texto 'SUPABASE_URL=' na frente).",
+    );
+  }
+}
+const supabaseHost = supabaseHostname();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

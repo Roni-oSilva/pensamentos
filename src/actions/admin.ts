@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { actionSession } from "@/lib/auth";
 import { audit } from "@/lib/audit";
-import { allow, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
+import { allow, rateLimitMessage } from "@/lib/rate-limit";
 import { firstError, idSchema, nameSchema, officialPostSchema, roleSchema, statusSchema } from "@/lib/validation";
 import { isStorageUrl, sanitizeRichHtml } from "@/lib/sanitize";
 import { uploadImage } from "@/lib/upload";
@@ -71,7 +71,7 @@ export async function saveOfficialPost(_: FormState, fd: FormData): Promise<Form
 export async function uploadEditorImage(fd: FormData): Promise<Result<{ url: string }>> {
   const s = await gate("admin");
   if (!s) return { ok: false, error: FORBIDDEN };
-  if (!(await allow("upload", s.user.id))) return { ok: false, error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("upload", s.user.id))) return { ok: false, error: rateLimitMessage };
   const file = fd.get("file");
   if (!(file instanceof File)) return { ok: false, error: "Arquivo ausente." };
   const up = await uploadImage(await createClient(), "admin", s.user.id, file);

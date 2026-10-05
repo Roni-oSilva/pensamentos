@@ -33,22 +33,40 @@ function digest(value: string): string {
   return createHash("sha256").update(`${salt}:${value}`).digest("hex").slice(0, 32);
 }
 
+let lastFailure: string | null = null;
+
+function classify(message: string): string {
+  if (/api key|jwt|apikey|unauthor|invalid/i.test(message)) return "chave do servidor inválida";
+  if (/permission|denied|not found|function|schema cache/i.test(message)) return "função ou permissão ausente no banco";
+  if (/fetch|network|timeout|econn/i.test(message)) return "sem conexão com o banco";
+  return "falha desconhecida";
+}
+
 /** Retorna true se a ação é permitida. Falha FECHADA em caso de erro no banco. */
 export async function allow(action: RateAction, ...identity: string[]): Promise<boolean> {
-  const rule = RATE_RULES[action];
-  const key = `${action}:${identity.map(digest).join(":")}`;
+  lastFailure = null;
   try {
+    const rule = RATE_RULES[action];
+    const key = `${action}:${identity.map(digest).join(":")}`;
     const { data, error } = await createAdminClient().rpc("rate_limit_hit", { p_key: key, p_limit: rule.limit, p_window_seconds: rule.window });
     if (error) {
-      // Falha de infraestrutura (ex.: função ausente, chave inválida). Registra o MOTIVO (sem dados do usuário) para diagnóstico.
-      console.error(`[rate-limit] RPC rate_limit_hit falhou: ${error.code ?? ""} ${error.message}`);
+      // Falha de infraestrutura: registra o motivo (sem dados do usuário) e guarda a categoria para a mensagem.
+      console.error(`[rate-limit] RPC falhou: ${error.code ?? ""} ${error.message}`);
+      lastFailure = classify(error.message);
       return false;
     }
     return data === true;
   } catch (e) {
-    console.error(`[rate-limit] exceção: ${e instanceof Error ? e.message : "desconhecida"}`);
+    const msg = e instanceof Error ? e.message : "desconhecida";
+    console.error(`[rate-limit] exceção: ${msg}`);
+    lastFailure = /RATE_LIMIT_SALT|SERVICE_ROLE/.test(msg) ? "variável de ambiente ausente na Vercel" : classify(msg);
     return false;
   }
 }
 
-export const RATE_LIMIT_MESSAGE = "Muitas tentativas. Aguarde um pouco e tente novamente.";
+/** Mensagem para quando allow() devolve false: limite real ou falha do limitador (nesse caso, a categoria). */
+export function rateLimitMessage(): string {
+  return lastFailure
+    ? `Não foi possível verificar o limite de tentativas agora (${lastFailure}). Avise o administrador do site.`
+    : "Muitas tentativas. Aguarde um pouco e tente novamente.";
+}

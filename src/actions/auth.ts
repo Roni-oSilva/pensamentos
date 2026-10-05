@@ -5,7 +5,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { actionSession } from "@/lib/auth";
 import { SITE_URL } from "@/lib/env";
-import { allow, clientIp, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
+import { allow, clientIp, rateLimitMessage } from "@/lib/rate-limit";
 import { emailSchema, firstError, loginSchema, passwordSchema, signupSchema } from "@/lib/validation";
 import { safeRedirect } from "@/lib/utils";
 import { isSettingOn } from "@/lib/data";
@@ -15,7 +15,7 @@ export async function signIn(_: FormState, fd: FormData): Promise<FormState> {
   const parsed = loginSchema.safeParse({ email: str(fd, "email"), password: str(fd, "password") });
   if (!parsed.success) return { error: "E-mail ou senha incorretos." };
   const ip = await clientIp();
-  if (!(await allow("login", ip)) || !(await allow("login", parsed.data.email))) return { error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("login", ip)) || !(await allow("login", parsed.data.email))) return { error: rateLimitMessage };
 
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword(parsed.data);
@@ -31,7 +31,7 @@ export async function signUp(_: FormState, fd: FormData): Promise<FormState> {
     email: str(fd, "email"), password: str(fd, "password"), username: str(fd, "username"), accept: str(fd, "accept"),
   });
   if (!parsed.success) return { error: firstError(parsed.error) };
-  if (!(await allow("signup", await clientIp()))) return { error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("signup", await clientIp()))) return { error: rateLimitMessage };
   if (!(await isSettingOn("registrations_open"))) return { error: "Os cadastros estão temporariamente fechados." };
 
   const supabase = await createClient();
@@ -52,7 +52,7 @@ export async function requestPasswordReset(_: FormState, fd: FormData): Promise<
   const email = emailSchema.safeParse(str(fd, "email"));
   const ok: FormState = { success: "Se o e-mail estiver cadastrado, você receberá as instruções em instantes." };
   if (!email.success) return ok;
-  if (!(await allow("reset", await clientIp())) || !(await allow("reset", email.data))) return { error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("reset", await clientIp())) || !(await allow("reset", email.data))) return { error: rateLimitMessage };
   const supabase = await createClient();
   await supabase.auth.resetPasswordForEmail(email.data, { redirectTo: `${SITE_URL}/auth/callback?next=/configuracoes/senha` });
   return ok;
@@ -75,7 +75,7 @@ async function freshEmailSession(supabase: Awaited<ReturnType<typeof createClien
 export async function changePassword(_: FormState, fd: FormData): Promise<FormState> {
   const s = await actionSession();
   if (!s) return { error: "Sessão expirada. Entre novamente." };
-  if (!(await allow("password", s.user.id))) return { error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("password", s.user.id))) return { error: rateLimitMessage };
   const next = passwordSchema.safeParse(str(fd, "password"));
   if (!next.success) return { error: firstError(next.error) };
   if (next.data !== str(fd, "confirm")) return { error: "As senhas não coincidem." };
@@ -99,7 +99,7 @@ export async function deleteAccount(_: FormState, fd: FormData): Promise<FormSta
   if (!s) return { error: "Sessão expirada. Entre novamente." };
   if (s.profile.role === "ADMIN") return { error: "Contas administrativas não podem ser excluídas por aqui." };
   if (str(fd, "confirm") !== s.profile.username) return { error: "Digite seu nome de usuário para confirmar." };
-  if (!(await allow("password", s.user.id))) return { error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("password", s.user.id))) return { error: rateLimitMessage };
 
   const supabase = await createClient();
   const { error: authErr } = await supabase.auth.signInWithPassword({ email: s.user.email ?? "", password: str(fd, "password") });

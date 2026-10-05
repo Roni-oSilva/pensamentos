@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { actionSession } from "@/lib/auth";
-import { allow, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
+import { allow, rateLimitMessage } from "@/lib/rate-limit";
 import { firstError, profileSchema } from "@/lib/validation";
 import { uploadImage } from "@/lib/upload";
 import { FORBIDDEN, GENERIC_ERROR, str, type FormState } from "./_shared";
@@ -18,7 +18,7 @@ export async function updateProfile(_: FormState, fd: FormData): Promise<FormSta
   const patch: Record<string, unknown> = { username: parsed.data.username, display_name: parsed.data.displayName, bio: parsed.data.bio };
   const file = fd.get("avatar");
   if (file instanceof File && file.size > 0) {
-    if (!(await allow("upload", s.user.id))) return { error: RATE_LIMIT_MESSAGE };
+    if (!(await allow("upload", s.user.id))) return { error: rateLimitMessage };
     const up = await uploadImage(supabase, "avatars", s.user.id, file);
     if (!up.ok) return { error: up.error };
     patch.avatar_url = up.url;

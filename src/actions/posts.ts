@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { actionSession } from "@/lib/auth";
-import { allow, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
+import { allow, rateLimitMessage } from "@/lib/rate-limit";
 import { communityPostSchema, firstError, idSchema } from "@/lib/validation";
 import { isOwnedImageUrl } from "@/lib/sanitize";
 import { isSettingOn } from "@/lib/data";
@@ -32,13 +32,13 @@ export async function saveCommunityPost(_: FormState, fd: FormData): Promise<For
   if (!parsed.success) return { error: firstError(parsed.error) };
   const d = parsed.data;
 
-  if (!(await allow("post", s.user.id))) return { error: RATE_LIMIT_MESSAGE };
+  if (!(await allow("post", s.user.id))) return { error: rateLimitMessage };
   if (!editingId && !(await isSettingOn("community_open"))) return { error: "A comunidade não está aceitando novas publicações no momento." };
 
   let imageUrl = d.imageUrl;
   const file = fd.get("image");
   if (file instanceof File && file.size > 0) {
-    if (!(await allow("upload", s.user.id))) return { error: RATE_LIMIT_MESSAGE };
+    if (!(await allow("upload", s.user.id))) return { error: rateLimitMessage };
     const up = await uploadImage(supabase, "community", s.user.id, file);
     if (!up.ok) return { error: up.error };
     imageUrl = up.url;

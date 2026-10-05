@@ -9,8 +9,8 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   // Gate de TODAS as rotas /admin: autenticado + role ADMIN/MODERATOR + MFA (AAL2). Demais → 404.
   const s = await requireStaff();
   return (
-    <div className="container-wide grid gap-8 py-10 lg:grid-cols-[14rem_1fr]">
-      <aside className="lg:sticky lg:top-24 lg:self-start">
+    <div className="container-wide grid gap-4 pb-10 lg:grid-cols-[14rem_1fr] lg:gap-8 lg:py-10">
+      <aside className="contents lg:block lg:sticky lg:top-24 lg:self-start">
         <p className="eyebrow mb-3 hidden lg:block">Painel · {s.profile.role === "ADMIN" ? "Admin" : "Moderação"}</p>
         <AdminNav role={s.profile.role} />
       </aside>

@@ -56,8 +56,28 @@ body {
 }
 
 @layer components {
-  .action { @apply inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-sm tabular-nums transition-colors hover:bg-ink-800 hover:text-white; }
+  /* Barra de ações: 4 botões grandes (alvo de toque ≥ 44px) no celular; compacta no desktop */
+  .action-bar { @apply grid grid-cols-4 gap-2 sm:flex sm:flex-wrap sm:items-center sm:gap-1; }
+  .action {
+    @apply relative inline-flex min-h-[46px] select-none items-center justify-center gap-1.5 rounded-xl border border-ink-700 bg-ink-800/60 px-2 text-sm tabular-nums text-ash-300
+      transition duration-150 [-webkit-tap-highlight-color:transparent] hover:border-ash-400 hover:bg-ink-800 hover:text-white active:scale-90 active:bg-ink-700
+      sm:min-h-0 sm:rounded-md sm:border-transparent sm:bg-transparent sm:px-2.5 sm:py-1.5 sm:hover:border-transparent;
+  }
+  .action[aria-pressed="true"] { @apply border-poster/60 bg-poster/10 text-white; }
+  .action[aria-pressed="true"] svg { animation: pop 0.4s cubic-bezier(0.2, 1.6, 0.4, 1); }
+  .action .count { @apply font-medium; }
 }
+@keyframes pop { 0% { transform: scale(0.6); } 55% { transform: scale(1.35); } 100% { transform: scale(1); } }
+@keyframes burst { 0% { opacity: 0.7; transform: scale(0.4); } 100% { opacity: 0; transform: scale(1.8); } }
+.action[aria-pressed="true"]::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 2px solid #e8453c; pointer-events: none; animation: burst 0.5s ease-out forwards; }
+
+/* Toque (celular/tablet): campos legíveis sem zoom no iOS e botões com área maior */
+@media (pointer: coarse) {
+  .btn { min-height: 44px; }
+  .field { min-height: 46px; font-size: 16px; }
+  select.field { padding-right: 2rem; }
+}
+.scroll-hint { background: linear-gradient(90deg, #0a0a0a 30%, transparent) left / 24px 100% no-repeat local, linear-gradient(90deg, #0a0a0a 30%, transparent) right / 24px 100% no-repeat local; }
 
 /* ───────────── Hero com scroll (home) ───────────── */
 .hero { --p: 0; --mx: 0; --my: 0; position: relative; height: calc(330vh - 4rem); }

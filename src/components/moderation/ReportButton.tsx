@@ -19,7 +19,7 @@ export function ReportButton({ targetType, targetId, signedIn, label = "Denuncia
 
   return (
     <>
-      <button type="button" className="text-xs text-ash-400 underline-offset-4 hover:text-ash-100 hover:underline"
+      <button type="button" className="px-3 py-2 text-xs text-ash-400 underline-offset-4 hover:text-ash-100 hover:underline sm:px-0 sm:py-0"
         onClick={() => (signedIn ? ref.current?.showModal() : (window.location.href = "/login"))}>{label}</button>
       <dialog ref={ref} className="w-[min(92vw,28rem)] rounded-lg border border-ink-600 bg-ink-900 p-0 text-ash-200 backdrop:bg-black/70">
         <form onSubmit={onSubmit} className="space-y-4 p-6">

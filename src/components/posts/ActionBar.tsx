@@ -28,6 +28,7 @@ export function ActionBar(p: Props) {
     const target = !cur.on;
     const at = (on: boolean): S => ({ on, n: Math.max(0, cur.n + (on === cur.on ? 0 : on ? 1 : -1)) });
     set(at(target));
+    if (target && typeof navigator !== "undefined") navigator.vibrate?.(12); // retorno tátil no celular
     start(async () => {
       try {
         const r = await act(p.postId);
@@ -38,23 +39,23 @@ export function ActionBar(p: Props) {
 
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-1 text-ash-300">
+      <div className="action-bar text-ash-300">
         <button type="button" className="action" aria-pressed={like.on} aria-label={like.on ? "Descurtir" : "Curtir"}
           onClick={() => guard(() => flip(like, setLike, toggleLike))}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill={like.on ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.6" className={like.on ? "text-blood-soft" : ""}><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" /></svg>
-          <span>{like.n}</span>
+          <span className="count">{like.n}</span>
         </button>
         <Link href={`${p.path}#comentarios`} className="action" aria-label="Comentários">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z" /></svg>
-          <span>{p.comments}</span>
+          <span className="count">{p.comments}</span>
         </Link>
         <button type="button" className="action" aria-pressed={fav.on} aria-label={fav.on ? "Remover dos favoritos" : "Favoritar"}
           onClick={() => guard(() => flip(fav, setFav, toggleFavorite))}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill={fav.on ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.6"><path d="M6 3h12v18l-6-4-6 4z" /></svg>
-          <span>{fav.n}</span>
+          <span className="count">{fav.n}</span>
         </button>
         <ShareButton postId={p.postId} path={p.path} title={p.title} text={p.text} count={p.shares} />
-        <span className="ml-auto"><ReportButton targetType="POST" targetId={p.postId} signedIn={p.signedIn} /></span>
+        <span className="col-span-4 flex justify-center border-t border-ink-700 pt-2 sm:ml-auto sm:col-span-1 sm:border-0 sm:pt-0"><ReportButton targetType="POST" targetId={p.postId} signedIn={p.signedIn} /></span>
       </div>
       {error && <p role="alert" className="mt-2 text-xs text-red-300">{error}</p>}
     </div>

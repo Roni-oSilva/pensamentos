@@ -62,7 +62,7 @@ export function ShareButton({ postId, path, title, text, count }: { postId: stri
     <>
       <button type="button" onClick={open} className="action" aria-label="Compartilhar" aria-haspopup="dialog">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13" /></svg>
-        <span>{shares}</span>
+        <span className="count">{shares}</span>
       </button>
 
       <dialog ref={ref} aria-labelledby={`share-${postId}`} onClick={(e) => e.target === ref.current && close()}

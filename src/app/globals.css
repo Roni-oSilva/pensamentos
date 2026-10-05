@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* Pilhas de fontes do sistema: sem requisições a terceiros (privacidade/LGPD) e sem dependência de rede no build. */
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+html { background: #050505; scroll-behavior: smooth; }
+body {
+  @apply bg-ink-950 text-ash-200 font-sans antialiased;
+  background-image: radial-gradient(60rem 30rem at 50% -10%, rgba(139, 30, 45, 0.10), transparent 60%);
+  background-attachment: fixed;
+}
+::selection { background: #8b1e2d; color: #fff; }
+:focus-visible { outline: 2px solid #b4414f; outline-offset: 2px; }
+
+@layer components {
+  .container-narrow { @apply mx-auto w-full max-w-3xl px-5; }
+  .container-wide { @apply mx-auto w-full max-w-6xl px-5; }
+  .field {
+    @apply w-full rounded-md border border-ink-600 bg-ink-900 px-3.5 py-2.5 text-[15px] text-ash-100 placeholder:text-ash-400 transition-colors focus:border-ash-300 focus:outline-none;
+  }
+  .label { @apply mb-1.5 block text-xs uppercase tracking-[0.18em] text-ash-400; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border px-4 py-2.5 text-sm font-medium transition duration-150 disabled:cursor-not-allowed disabled:opacity-50 active:scale-[0.98];
+  }
+  .btn-primary { @apply btn border-ash-100 bg-ash-100 text-ink-950 hover:bg-white; }
+  .btn-ghost { @apply btn border-ink-600 text-ash-200 hover:border-ash-400 hover:bg-ink-800; }
+  .btn-danger { @apply btn border-blood bg-blood/20 text-red-200 hover:bg-blood/40; }
+  .card { @apply rounded-lg border border-ink-700 bg-ink-900/70 backdrop-blur-sm transition-colors; }
+  .link-muted { @apply text-ash-300 underline decoration-ink-500 underline-offset-4 transition-colors hover:text-white hover:decoration-ash-300; }
+  .badge { @apply inline-flex items-center rounded-full border border-ink-600 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-ash-300; }
+  .eyebrow { @apply text-xs uppercase tracking-[0.3em] text-ash-400; }
+}
+
+.rich { @apply font-display text-xl leading-relaxed text-ash-100; }
+.rich p { @apply my-4; }
+.rich h2 { @apply mt-8 text-3xl; }
+.rich h3 { @apply mt-6 text-2xl; }
+.rich blockquote { @apply my-6 border-l-2 border-blood pl-5 italic text-ash-300; }
+.rich hr { @apply my-10 border-ink-600; }
+.rich ul { @apply my-4 list-disc pl-6; }
+.rich ol { @apply my-4 list-decimal pl-6; }
+.rich a { @apply underline underline-offset-4 decoration-blood-soft; }
+.rich img { @apply my-6 h-auto max-w-full rounded-md; }
+.preline { white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+@layer components {
+  .action { @apply inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-sm tabular-nums transition-colors hover:bg-ink-800 hover:text-white; }
+}

@@ -1,0 +1,19 @@
+node_modules
+.next
+out
+build
+coverage
+*.tsbuildinfo
+next-env.d.ts
+# secrets — nunca versionar
+.env
+.env.*
+!.env.example
+.vercel
+.supabase
+*.pem
+*.log
+.DS_Store
+# backups podem conter dados pessoais
+backups/
+*.dump

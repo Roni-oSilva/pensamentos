@@ -56,13 +56,7 @@ export function HeroScroll() {
 
         {/* microtipografia de pôster */}
         <p className="hero-micro left-1/2 top-[4.5vh] -translate-x-1/2 tracking-[0.5em]" aria-hidden>I Heresias</p>
-        <div className="hero-micro left-[4vw] right-[4vw] top-[9vh] flex items-center justify-between rounded-full border border-ash-300/40 px-5 py-2.5 max-md:text-[8px]" aria-hidden>
-          <span>Série escultura</span><span>Evolução sem amarras</span>
-        </div>
-        <p className="hero-micro hero-vertical left-[2vw] top-[22vh] hidden md:block" aria-hidden>Pôster conceitual</p>
-        <p className="hero-micro hero-vertical left-[2vw] top-[40vh] hidden rotate-180 md:block" aria-hidden>Vol. 01</p>
         <p className="hero-micro hero-vertical right-[2vw] top-[22vh] hidden md:block" aria-hidden>Metamorfose</p>
-        <p className="hero-micro hero-vertical right-[2vw] top-[52vh] hidden md:block" aria-hidden>Edição 01</p>
 
         <div className="hero-title" aria-hidden>
           {LETTERS.map((l, i) => (
@@ -75,12 +69,6 @@ export function HeroScroll() {
           <div className="hero-butterfly"><Image src="/hero/butterfly.webp" alt="" width={178} height={156} priority className="h-auto w-full" /></div>
         </div>
 
-        <p className="hero-micro hero-copy bottom-[9vh] left-[5vw] hidden lg:block" aria-hidden>
-          Algumas fraturas são necessárias. O que parece quebrado costuma ser o primeiro sinal de crescimento. A forma antiga começa a cair, abrindo espaço para algo mais forte, mais leve e mais vivo.
-        </p>
-        <p className="hero-micro hero-copy bottom-[9vh] right-[5vw] hidden text-right lg:block" aria-hidden>
-          Todo pensamento incômodo começa quando soltamos o que já não nos serve. No espaço entre o colapso e a recuperação, uma nova identidade toma forma — não um retorno, mas uma versão mais honesta do que sempre esperou ser revelado.
-        </p>
 
         <div className="scroll-hint text-center text-[10px] uppercase tracking-[0.4em] text-ash-300" aria-hidden>Role<span /></div>
 

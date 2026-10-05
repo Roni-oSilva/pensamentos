@@ -39,9 +39,14 @@ export async function allow(action: RateAction, ...identity: string[]): Promise<
   const key = `${action}:${identity.map(digest).join(":")}`;
   try {
     const { data, error } = await createAdminClient().rpc("rate_limit_hit", { p_key: key, p_limit: rule.limit, p_window_seconds: rule.window });
-    if (error) return false;
+    if (error) {
+      // Falha de infraestrutura (ex.: função ausente, chave inválida). Registra o MOTIVO (sem dados do usuário) para diagnóstico.
+      console.error(`[rate-limit] RPC rate_limit_hit falhou: ${error.code ?? ""} ${error.message}`);
+      return false;
+    }
     return data === true;
-  } catch {
+  } catch (e) {
+    console.error(`[rate-limit] exceção: ${e instanceof Error ? e.message : "desconhecida"}`);
     return false;
   }
 }

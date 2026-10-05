@@ -4,7 +4,7 @@ import StarterKit from "@tiptap/starter-kit";
 import Image from "@tiptap/extension-image";
 import Placeholder from "@tiptap/extension-placeholder";
 import { useState } from "react";
-import { uploadEditorImage } from "@/actions/admin";
+import { uploadDirect } from "@/components/ui/ImageUploadField";
 
 /** Editor rico (TipTap). O HTML é sanitizado de novo no servidor — nunca confiar neste valor. */
 export function RichEditor({ name = "content", initialHtml = "" }: { name?: string; initialHtml?: string }) {
@@ -43,8 +43,7 @@ export function RichEditor({ name = "content", initialHtml = "" }: { name?: stri
   async function addImage(file: File | undefined) {
     if (!file) return;
     setError(null);
-    const fd = new FormData(); fd.set("file", file);
-    const r = await uploadEditorImage(fd);
+    const r = await uploadDirect("admin", file);
     if (!r.ok) return setError(r.error);
     editor!.chain().focus().setImage({ src: r.url, alt: "" }).run();
   }

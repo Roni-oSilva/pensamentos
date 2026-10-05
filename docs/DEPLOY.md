@@ -27,7 +27,7 @@ Verifique: *Database → Tables* — todas as tabelas devem mostrar **RLS enable
 - **SMTP próprio** (recomendado em produção) para entregabilidade e limites maiores.
 
 ## 4. Configurar Storage
-Os buckets são criados pela migration `0004`. Confirme em *Storage*: `avatars` (2 MB), `community` (5 MB), `admin` (8 MB), todos JPEG/PNG/WebP. Leitura pública (URLs com UUID), escrita só na pasta do próprio usuário (`<user_id>/…`); bucket `admin` só para staff.
+Os buckets são criados pela migration `0004`. Confirme em *Storage*: `avatars` (2 MB), `community` (50 MB), `admin` (50 MB; migration `0005`). O limite global do projeto em *Storage → Settings* precisa ser ≥ 50 MB (padrão do plano gratuito), todos JPEG/PNG/WebP. Leitura pública (URLs com UUID), escrita só na pasta do próprio usuário (`<user_id>/…`); bucket `admin` só para staff.
 
 ## 5. Variáveis de ambiente
 | Variável | Onde | Observação |

@@ -27,7 +27,7 @@ export const MAX_TAGS = 5;
 
 export const IMAGE_RULES = {
   avatars: { maxBytes: 2 * 1024 * 1024 },
-  community: { maxBytes: 5 * 1024 * 1024 },
-  admin: { maxBytes: 8 * 1024 * 1024 },
+  community: { maxBytes: 50 * 1024 * 1024 },
+  admin: { maxBytes: 50 * 1024 * 1024 },
 } as const;
 export type Bucket = keyof typeof IMAGE_RULES;

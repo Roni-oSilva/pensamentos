@@ -34,7 +34,7 @@ Posts da comunidade só podem ser inseridos como `DRAFT`/`PENDING` (RLS). O auto
 - URLs de imagem enviadas pelo cliente são validadas (host do projeto + bucket + pasta do usuário).
 
 ## Uploads
-Limite por bucket (2/5/8 MB), tipos JPEG/PNG/WebP (SVG proibido), extensão **e** MIME **e** assinatura binária (magic bytes) conferidos no servidor, nome gerado pelo servidor (`<uid>/<uuid>.<ext>`, nome original descartado), upload feito com o **cliente do usuário** (as políticas de Storage valem), rate limit de 12 uploads/10 min.
+Limite por bucket (avatars 2 MB; community e admin 50 MB), tipos JPEG/PNG/WebP (SVG proibido), extensão **e** MIME **e** assinatura binária (magic bytes) conferidos no servidor, nome gerado pelo servidor (`<uid>/<uuid>.<ext>`, nome original descartado), upload feito com o **cliente do usuário** (as políticas de Storage valem). Imagens grandes vão **direto do navegador ao Storage** por URL assinada de uso único (a Vercel limita o corpo a ~4,5 MB); o servidor emite a URL (`requestUpload`) e confere o arquivo depois (`finishUpload`: assinatura binária + tamanho, apagando se inválido), rate limit de 12 uploads/10 min.
 
 ## Rate limiting
 Tabela `rate_limits` (janela fixa) acessada só por `service_role` via RPC `rate_limit_hit` — funciona em serverless. Falha **fechada** (se o limitador falhar, bloqueia). IP é guardado como hash com sal (`RATE_LIMIT_SALT`).

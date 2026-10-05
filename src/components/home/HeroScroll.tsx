@@ -1,40 +1,56 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 /**
- * Abertura cinematográfica da home, guiada pelo scroll (sem nenhum texto de título):
- * a mão sai do borrado para o nítido, a luz cresce, a borboleta sobe até a luz, tudo escurece
- * e sobra o símbolo brilhante — então o manifesto aparece. O progresso (0→1) vira a variável CSS --p.
+ * Home: o vídeo avança conforme a rolagem (scroll scrubbing). O progresso (0→1) vira a variável CSS --p;
+ * o tempo do vídeo segue o scroll com suavização, e no final o manifesto entra por cima.
+ * Sem texto de título: só imagem, luz, grão e movimento.
  */
 export function HeroScroll() {
   const root = useRef<HTMLDivElement>(null);
+  const video = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const el = root.current;
-    if (!el) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      el.dataset.phase = "open";
-      return;
-    }
+    const el = root.current, v = video.current;
+    if (!el || !v) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { el.dataset.phase = "open"; return; }
+
+    let target = 0.4;    // tempo (s) pedido pelo scroll
+    let current = 0.4;   // tempo (s) exibido, suavizado
     let raf = 0;
-    const update = () => {
-      raf = 0;
+    const stickyTop = 64; // altura do cabeçalho
+
+    const readScroll = () => {
       const r = el.getBoundingClientRect();
-      const stickyTop = 64; // altura do cabeçalho
       const total = r.height - (window.innerHeight - stickyTop);
       const p = total > 0 ? Math.min(1, Math.max(0, (stickyTop - r.top) / total)) : 0;
       el.style.setProperty("--p", p.toFixed(4));
       el.dataset.phase = p > 0.8 ? "open" : "closed";
+      const dur = Number.isFinite(v.duration) && v.duration > 0 ? v.duration : 11.4;
+      target = 0.4 + Math.min(1, p / 0.82) * Math.max(0, dur - 0.45); // começa no 1º quadro com imagem (0,4 s)
+      kick();
     };
-    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    const tick = () => {
+      raf = 0;
+      current += (target - current) * 0.16;           // suaviza o "arrasto" do vídeo
+      if (Math.abs(target - current) < 0.004) current = target;
+      if (Math.abs(v.currentTime - current) > 1 / 48) { try { v.currentTime = current; } catch { /* vídeo ainda carregando */ } }
+      if (current !== target) kick();
+    };
+    const kick = () => { if (!raf) raf = requestAnimationFrame(tick); };
+
+    // iOS/Safari só libera o "seek" depois de um play/pause mudo
+    v.muted = true;
+    v.play().then(() => v.pause()).catch(() => { /* sem autoplay: o seek ainda funciona na maioria dos navegadores */ });
+    v.addEventListener("loadedmetadata", readScroll);
+    readScroll();
+    window.addEventListener("scroll", readScroll, { passive: true });
+    window.addEventListener("resize", readScroll);
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("scroll", readScroll);
+      window.removeEventListener("resize", readScroll);
+      v.removeEventListener("loadedmetadata", readScroll);
       if (raf) cancelAnimationFrame(raf);
     };
   }, []);
@@ -51,19 +67,17 @@ export function HeroScroll() {
       <div className="hero-stage">
         <h1 className="sr-only">Heresias que passam pela minha cabeça</h1>
 
-        <div className="cine-red" aria-hidden />
-        <div className="cine-fog cine-fog-a" aria-hidden><i /><i /><i /></div>
-        <div className="cine-fog cine-fog-b" aria-hidden><i /><i /><i /></div>
-        <div className="cine-light" aria-hidden><div className="cine-rays" /></div>
-
-        <Image src="/hero/hand.webp" alt="" width={240} height={548} priority className="cine-hand" aria-hidden />
-        <div className="cine-veil" aria-hidden />
-        <div className="cine-butterfly" aria-hidden><Image src="/hero/butterfly.webp" alt="" width={178} height={156} priority /></div>
-
+        <video ref={video} className="hero-video" muted playsInline preload="auto" poster="/hero/intro-poster.jpg" aria-hidden tabIndex={-1} disablePictureInPicture>
+          <source src="/hero/intro.mp4" type="video/mp4" />
+          <source src="/hero/intro.webm" type="video/webm" />
+        </video>
+        <div className="hero-glow-edge" aria-hidden />
+        <div className="hero-flicker" aria-hidden />
         <div className="cine-grain" aria-hidden />
         <div className="cine-vignette" aria-hidden />
 
         <div className="scroll-hint text-center text-[10px] uppercase tracking-[0.4em] text-ash-300" aria-hidden>Role<span /></div>
+        <div className="hero-progress" aria-hidden><i /></div>
 
         <div className="hero-manifesto">
           <p className="eyebrow">Manifesto</p>
@@ -72,8 +86,9 @@ export function HeroScroll() {
           </p>
           <p className="max-w-lg text-ash-300">Frases, reflexões e poemas que chegam sem pedir licença. Leia, discorde, guarde — e deixe a sua própria heresia na comunidade.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/heresia" prefetch={false} className="btn-primary px-7 py-3.5 uppercase tracking-widest">Mostrar uma heresia</Link>
-            <Link href="/comunidade" className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Explorar a comunidade</Link>
+            <Link href="/frases" className="btn-primary px-7 py-3.5 uppercase tracking-widest">Ler as frases</Link>
+            <Link href="/heresia" prefetch={false} className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Mostrar uma heresia</Link>
+            <Link href="/comunidade" className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Comunidade</Link>
           </div>
         </div>
       </div>

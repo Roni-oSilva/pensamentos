@@ -6,6 +6,9 @@ import { Logo } from "@/components/ui/Logo";
 import { Avatar } from "@/components/ui/Avatar";
 import { MobileNav, type NavLink } from "./MobileNav";
 import { ThemeToggle } from "./ThemeToggle";
+import { NotificationBell } from "./NotificationBell";
+import { isAdminRole } from "@/lib/constants";
+import type { AdminPending, NotifItem } from "@/lib/notifications";
 
 const LINKS: NavLink[] = [
   { href: "/frases", label: "Palavras" },
@@ -18,10 +21,22 @@ const LINKS: NavLink[] = [
 export async function Header() {
   const session = await getSession();
   let unread = 0;
+  let items: NotifItem[] = [];
+  let admin: AdminPending | null = null;
   if (session) {
     const supabase = await createClient();
-    const { count } = await supabase.from("notifications").select("id", { count: "exact", head: true }).is("read_at", null);
-    unread = count ?? 0;
+    const staff = session.profile.role !== "USER";
+    const head = { count: "exact", head: true } as const;
+    const [unreadQ, listQ, postsQ, reportsQ, feedbackQ] = await Promise.all([
+      supabase.from("notifications").select("id", head).is("read_at", null),
+      supabase.from("notifications").select("id, type, post_id, read_at, created_at, actor:profiles!notifications_actor_id_fkey(username, avatar_url)").order("created_at", { ascending: false }).limit(6),
+      staff ? supabase.from("posts").select("id", head).eq("status", "PENDING") : null,
+      staff ? supabase.from("reports").select("id", head).eq("status", "PENDING") : null,
+      staff && isAdminRole(session.profile.role) ? supabase.from("feedback").select("id", head).eq("status", "NEW") : null,
+    ]);
+    unread = unreadQ.count ?? 0;
+    items = ((listQ.data ?? []) as unknown as (Omit<NotifItem, "read"> & { read_at: string | null })[]).map(({ read_at, ...n }) => ({ ...n, read: !!read_at }));
+    if (staff) admin = { posts: postsQ?.count ?? 0, reports: reportsQ?.count ?? 0, feedback: feedbackQ?.count ?? 0 };
   }
   const isStaff = session && session.profile.role !== "USER";
 
@@ -52,6 +67,7 @@ export async function Header() {
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           <ThemeToggle />
+          {session && <NotificationBell unread={unread} items={items} admin={admin} />}
           <form action="/explorar" role="search">
             <input name="q" type="search" placeholder="Buscar…" aria-label="Buscar" maxLength={80} className="field w-36 py-1.5 text-sm focus:w-52" />
           </form>
@@ -65,7 +81,7 @@ export async function Header() {
             </details>
           ) : account}
         </div>
-        <div className="flex items-center gap-2 md:hidden"><ThemeToggle /><MobileNav links={LINKS}>{account}</MobileNav></div>
+        <div className="flex items-center gap-2 md:hidden"><ThemeToggle />{session && <NotificationBell unread={unread} items={items} admin={admin} />}<MobileNav links={LINKS}>{account}</MobileNav></div>
       </div>
     </header>
   );

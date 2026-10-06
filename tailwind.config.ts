@@ -22,9 +22,10 @@ const config: Config = {
       },
       keyframes: {
         rise: { "0%": { opacity: "0", transform: "translateY(8px)" }, "100%": { opacity: "1", transform: "none" } },
+        bell: { "0%,100%": { transform: "rotate(0)" }, "15%": { transform: "rotate(14deg)" }, "30%": { transform: "rotate(-12deg)" }, "45%": { transform: "rotate(8deg)" }, "60%": { transform: "rotate(-5deg)" }, "75%": { transform: "rotate(2deg)" } },
         flicker: { "0%,100%": { opacity: "1" }, "50%": { opacity: ".82" } },
       },
-      animation: { rise: "rise .5s ease-out both", flicker: "flicker 6s ease-in-out infinite" },
+      animation: { rise: "rise .5s ease-out both", flicker: "flicker 6s ease-in-out infinite", bell: "bell 1.2s ease-in-out 1" },
     },
   },
   plugins: [typography],

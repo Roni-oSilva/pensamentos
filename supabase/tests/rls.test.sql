@@ -185,6 +185,20 @@ select pg_temp.assert_eq((select role::text from public.profiles where id = '000
 select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
 select pg_temp.assert_eq(public.is_admin(), false, 'usuário comum não é admin');
 
+-- 7d. Feedback (ajuda/sugestões) ---------------------------------------------------------------
+select pg_temp.as_su();
+insert into public.feedback (kind, message) values ('SUGGESTION', 'Coloquem um modo claro, por favor');
+select pg_temp.as_anon();
+select pg_temp.must_fail($$insert into public.feedback (kind, message) values ('HELP', 'tentativa anonima')$$, 'anônimo não grava feedback direto');
+select pg_temp.must_see_zero('public.feedback', 'anônimo não lê feedback');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.must_fail($$insert into public.feedback (kind, message) values ('HELP', 'tentativa de usuario')$$, 'usuário comum não grava feedback direto');
+select pg_temp.must_see_zero('public.feedback', 'usuário comum não lê feedback');
+select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2'); -- o admin do teste tem 2FA verificado
+select pg_temp.assert_eq((select count(*) from public.feedback)::int, 1, 'admin lê feedback');
+update public.feedback set status = 'DONE';
+select pg_temp.assert_eq((select status from public.feedback limit 1), 'DONE', 'admin atualiza status do feedback');
+
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();
 update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b2';

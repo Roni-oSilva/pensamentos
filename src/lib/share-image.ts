@@ -47,6 +47,11 @@ export const SHARE_BACKGROUNDS = [
   { id: 3, src: "/share/bg3.webp", label: "Pomba" },
   { id: 4, src: "/share/bg4.webp", label: "Mãos" },
   { id: 5, src: "/share/bg5.webp", label: "Água" },
+  { id: 6, src: "/share/bg6.webp", label: "Bíblia na grama" },
+  { id: 7, src: "/share/bg7.webp", label: "Mar" },
+  { id: 8, src: "/share/bg8.webp", label: "Nuvens e campo" },
+  { id: 9, src: "/share/bg9.webp", label: "Nuvens azuis" },
+  { id: 10, src: "/share/bg10.webp", label: "Flores" },
 ] as const;
 
 export const SHARE_BRAND = "Igreja de Cristo";
@@ -72,10 +77,19 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
     g.addColorStop(0, "#26201c"); g.addColorStop(1, "#050505");
     ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
   }
-  // escurece para dar leitura (mais forte no meio e embaixo)
-  ctx.fillStyle = "rgba(0,0,0,0.2)"; ctx.fillRect(0, 0, W, H);
+  // escurece para dar leitura. Fotos claras (mar, nuvens) recebem mais escurecimento; as escuras, menos.
+  const lum = (() => {
+    const t = document.createElement("canvas"); t.width = 24; t.height = 30;
+    const c = t.getContext("2d"); if (!c) return 0.3;
+    c.drawImage(canvas, 0, 0, 24, 30);
+    const d = c.getImageData(0, 6, 24, 18).data; let sum = 0;
+    for (let i = 0; i < d.length; i += 4) sum += (0.2126 * d[i]! + 0.7152 * d[i + 1]! + 0.0722 * d[i + 2]!) / 255;
+    return sum / (d.length / 4);
+  })();
+  const flat = Math.min(0.62, Math.max(0.2, 0.2 + (lum - 0.25) * 0.95));
+  ctx.fillStyle = `rgba(0,0,0,${flat.toFixed(3)})`; ctx.fillRect(0, 0, W, H);
   const shade = ctx.createLinearGradient(0, 0, 0, H);
-  shade.addColorStop(0, "rgba(0,0,0,0.22)"); shade.addColorStop(0.5, "rgba(0,0,0,0.34)"); shade.addColorStop(1, "rgba(0,0,0,0.85)");
+  shade.addColorStop(0, "rgba(0,0,0,0.18)"); shade.addColorStop(0.5, "rgba(0,0,0,0.28)"); shade.addColorStop(1, "rgba(0,0,0,0.85)");
   ctx.fillStyle = shade; ctx.fillRect(0, 0, W, H);
 
   // frase, centralizada

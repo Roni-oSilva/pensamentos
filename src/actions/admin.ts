@@ -250,3 +250,23 @@ export async function deleteMedia(fd: FormData) {
   await audit("media.delete", "media", id.data, { bucket: m.bucket });
   revalidatePath("/admin/media");
 }
+
+/* ------------------------------ Dúvidas, ajuda e sugestões ------------------------------ */
+
+export async function setFeedbackStatus(fd: FormData) {
+  const s = await gate("admin");
+  const id = idSchema.safeParse(str(fd, "id"));
+  const status = str(fd, "status");
+  if (!s || !id.success || !["NEW", "READ", "DONE"].includes(status)) return;
+  await (await createClient()).from("feedback").update({ status }).eq("id", id.data);
+  revalidatePath("/admin/feedback");
+}
+
+export async function deleteFeedback(fd: FormData) {
+  const s = await gate("admin");
+  const id = idSchema.safeParse(str(fd, "id"));
+  if (!s || !id.success) return;
+  await (await createClient()).from("feedback").delete().eq("id", id.data);
+  await audit("feedback.delete", "feedback", id.data);
+  revalidatePath("/admin/feedback");
+}

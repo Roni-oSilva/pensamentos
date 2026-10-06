@@ -8,6 +8,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { BackBar } from "@/components/layout/BackBar";
+import { HelpButton } from "@/components/layout/HelpButton";
 import { SITE_URL } from "@/lib/env";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <BackBar />
         <main id="conteudo" className="pb-8">{children}</main>
         <Footer />
+        <HelpButton />
         <Analytics />
       </body>
     </html>

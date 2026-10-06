@@ -16,6 +16,7 @@ export const RATE_RULES = {
   favorite: { limit: 80, window: 60 },
   follow: { limit: 30, window: 60 },
   report: { limit: 10, window: 3600 },
+  feedback: { limit: 5, window: 3600 },
   upload: { limit: 12, window: 600 },
   share: { limit: 30, window: 60 },
   view: { limit: 1, window: 3600 },

@@ -76,3 +76,11 @@ export const nameSchema = z.string().transform(cleanText).pipe(z.string().min(2)
 export function firstError(err: z.ZodError): string {
   return err.issues[0]?.message ?? "Dados inválidos";
 }
+
+export const FEEDBACK_KINDS = ["QUESTION", "HELP", "SUGGESTION"] as const;
+export const feedbackSchema = z.object({
+  kind: z.enum(FEEDBACK_KINDS),
+  message: z.string().transform(cleanText).pipe(z.string().min(5, "Escreva pelo menos 5 letras").max(2000, "Máximo de 2000 caracteres")),
+  contact: z.string().transform(cleanText).pipe(z.string().max(120, "Contato muito longo")).optional().transform((v) => v || null),
+  page: z.string().max(200).regex(/^\//).optional().catch(undefined),
+});

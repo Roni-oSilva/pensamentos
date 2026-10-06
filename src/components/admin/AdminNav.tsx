@@ -13,6 +13,7 @@ const ITEMS: { href: string; label: string; adminOnly?: boolean }[] = [
   { href: "/admin/users", label: "Usuários", adminOnly: true },
   { href: "/admin/comments", label: "Comentários" },
   { href: "/admin/reports", label: "Denúncias" },
+  { href: "/admin/feedback", label: "Mensagens", adminOnly: true },
   { href: "/admin/categories", label: "Categorias", adminOnly: true },
   { href: "/admin/tags", label: "Tags", adminOnly: true },
   { href: "/admin/media", label: "Mídia", adminOnly: true },

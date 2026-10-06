@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HelpLink } from "./HelpLink";
 
 export function Footer() {
   return (
@@ -9,6 +10,7 @@ export function Footer() {
           <Link className="link-muted" href="/privacidade">Privacidade</Link>
           <Link className="link-muted" href="/termos">Termos de uso</Link>
           <Link className="link-muted" href="/diretrizes">Diretrizes da comunidade</Link>
+          <HelpLink />
         </nav>
         <p>© {new Date().getFullYear()} <span className="church-name text-base text-ash-200">Igreja de <span className="church-accent text-poster">Cristo</span></span></p>
       </div>

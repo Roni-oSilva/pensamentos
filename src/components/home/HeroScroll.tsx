@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { ChurchMark } from "@/components/ui/ChurchMark";
 import { useEffect, useRef, useState } from "react";
 
 const COUNT = 171; // quadros (15 por segundo, ~11,4 s)
@@ -131,7 +132,8 @@ export function HeroScroll() {
         <div className="hero-progress" aria-hidden><i /></div>
 
         <div className="hero-manifesto">
-          <p className="church-name text-[clamp(2.8rem,13vw,7.5rem)] tracking-[0.03em] text-white">Igreja de <span className="text-poster">Cristo</span></p>
+          <ChurchMark className="h-20 w-auto text-white sm:h-28" />
+          <p className="church-name text-[clamp(2.1rem,10vw,7.5rem)] tracking-[0.02em] text-white">Igreja de <span className="text-poster">Cristo</span></p>
           <p className="max-w-4xl font-poster text-[clamp(1.6rem,5vw,3.4rem)] uppercase leading-[1] tracking-wide text-ash-200">
             Engrandecei a <span className="text-poster">Cristo.</span>
           </p>

@@ -1,5 +1,7 @@
 /** Gera o PNG de compartilhamento no navegador (canvas): imagem de fundo à escolha, a frase e SEMPRE a marca "Igreja de Cristo". */
 
+import { MARK_BODY, MARK_TRAIL, MARK_VIEWBOX } from "@/lib/church-mark";
+
 const W = 1080, H = 1350;
 
 function loadImage(src: string): Promise<HTMLImageElement> {
@@ -95,12 +97,18 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
   }
   ctx.shadowColor = "transparent";
 
-  // marca (sempre presente): cruz + nome da igreja, embaixo ao centro
+  // marca (sempre presente): a igreja (logo oficial) + nome, embaixo ao centro
   ctx.textBaseline = "alphabetic"; ctx.textAlign = "center";
-  ctx.strokeStyle = "rgba(255,255,255,0.45)"; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(W / 2 - 220, H - 150); ctx.lineTo(W / 2 + 220, H - 150); ctx.stroke();
-  ctx.font = "56px Georgia, serif"; ctx.fillStyle = "#e8453c";
-  ctx.fillText("✝", W / 2, H - 150 + 4 - 16);
+  {
+    const h = 96, k = h / MARK_VIEWBOX.h, w = MARK_VIEWBOX.w * k;
+    ctx.save();
+    ctx.translate(W / 2 - w / 2, H - 262); ctx.scale(k, k); ctx.translate(-MARK_VIEWBOX.x, -MARK_VIEWBOX.y);
+    const beam = ctx.createLinearGradient(0, 0, 52, 0);
+    beam.addColorStop(0, "rgba(232,69,60,0)"); beam.addColorStop(0.55, "#f59e0b"); beam.addColorStop(1, "#ffe9a8");
+    ctx.fillStyle = beam; ctx.fill(new Path2D(MARK_TRAIL));
+    ctx.fillStyle = "#ffffff"; ctx.fill(new Path2D(MARK_BODY), "evenodd");
+    ctx.restore();
+  }
   // nome na mesma letra do site (didone preta condensada)
   ctx.font = "900 94px 'Church Condensed', Didot, Georgia, serif"; ctx.fillStyle = "#ffffff"; ctx.letterSpacing = "4px";
   ctx.fillText(SHARE_BRAND.toUpperCase(), W / 2 + 2, H - 58);

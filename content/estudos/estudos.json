@@ -96,6 +96,36 @@
             "Escolha um horário fixo e leia um capítulo de João por dia, em voz alta, nos próximos três dias.",
             "Ao ler, anote três respostas: o que o texto diz, o que significa e o que vou fazer com ele."
           ],
+          "simbolo": "livro",
+          "curiosidades": [
+            "O Salmo 119 é o capítulo mais longo da Bíblia (176 versículos) e o Salmo 117 é o mais curto.",
+            "A Bíblia completa já foi traduzida para mais de 700 idiomas, e partes dela para milhares de línguas.",
+            "Os livros do Novo Testamento foram escritos em grego comum, a língua do dia a dia do mundo antigo, e não em um grego “religioso”."
+          ],
+          "linha": [
+            {
+              "ano": "1628",
+              "fato": "Nasce João Ferreira de Almeida, em Portugal."
+            },
+            {
+              "ano": "1681",
+              "fato": "É impresso o Novo Testamento de Almeida em português."
+            },
+            {
+              "ano": "1947",
+              "fato": "Descobertos os manuscritos do Mar Morto."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 1"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Entendes o que lês?, de Gordon Fee e Douglas Stuart"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -186,6 +216,40 @@
           "pratica": [
             "Escreva três características de Deus e um versículo para cada uma (por exemplo: santo, Isaías 6:3).",
             "Antes de dormir, agradeça a Deus por algo que mostra o cuidado de Criador sobre a sua vida."
+          ],
+          "simbolo": "sol",
+          "curiosidades": [
+            "Gênesis 1:1 tem apenas sete palavras no hebraico original.",
+            "O nome de Deus revelado a Moisés, YHWH, aparece mais de seis mil vezes no Antigo Testamento.",
+            "Os judeus recitam o Shemá (“Ouve, Israel”) de manhã e à noite até hoje."
+          ],
+          "linha": [
+            {
+              "ano": "354",
+              "fato": "Nasce Agostinho em Tagaste, no norte da África."
+            },
+            {
+              "ano": "386",
+              "fato": "Agostinho se converte em Milão."
+            },
+            {
+              "ano": "c. 400",
+              "fato": "Escreve as Confissões."
+            },
+            {
+              "ano": "430",
+              "fato": "Morre em Hipona."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Confissões, de Agostinho (Livro I)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Conhecendo a Deus, de J. I. Packer"
+            }
           ],
           "minutos": 5
         },
@@ -278,6 +342,40 @@
             "Leia João 1:1-18 e sublinhe tudo o que o texto diz sobre quem Jesus é.",
             "Conte a alguém da sua família ou da igreja por que Jesus é importante para você, em duas frases."
           ],
+          "simbolo": "cruz",
+          "curiosidades": [
+            "“Cristo” vem do grego Christós, tradução da palavra hebraica Mashiach (Messias), que significa “ungido”.",
+            "A tradição fala em 318 bispos reunidos em Niceia, em 325.",
+            "Atanásio foi exilado várias vezes, e em uma delas passou algum tempo escondido no deserto."
+          ],
+          "linha": [
+            {
+              "ano": "325",
+              "fato": "Concílio de Niceia declara que o Filho é da mesma substância do Pai."
+            },
+            {
+              "ano": "367",
+              "fato": "Atanásio lista os 27 livros do Novo Testamento."
+            },
+            {
+              "ano": "373",
+              "fato": "Morre Atanásio."
+            },
+            {
+              "ano": "451",
+              "fato": "Concílio de Calcedônia."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Livro",
+              "titulo": "Cristianismo Puro e Simples, de C. S. Lewis"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "A Cruz de Cristo, de John Stott"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -368,6 +466,40 @@
           "pratica": [
             "Escreva em um papel “Pela graça sou salvo” e coloque num lugar visível por uma semana.",
             "Pense em alguém que lhe fez mal. Peça a Deus ajuda para tratá-lo com a mesma graça que você recebeu."
+          ],
+          "simbolo": "coracao",
+          "curiosidades": [
+            "O epitáfio de John Newton, que ele mesmo pediu, o descreve como alguém que foi “um incrédulo e libertino” e servo de traficantes, mas foi preservado e perdoado pela rica misericórdia de Cristo.",
+            "“Amazing Grace” é um dos hinos mais gravados e cantados da história.",
+            "Newton ficou cego nos últimos anos de vida, mas continuou a pregar."
+          ],
+          "linha": [
+            {
+              "ano": "1725",
+              "fato": "Nasce John Newton, em Londres."
+            },
+            {
+              "ano": "1748",
+              "fato": "A tempestade que muda a sua vida."
+            },
+            {
+              "ano": "1779",
+              "fato": "O hino é publicado nos Olney Hymns."
+            },
+            {
+              "ano": "1807",
+              "fato": "Morre Newton; no mesmo ano o Reino Unido proíbe o tráfico de escravos."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Cante",
+              "titulo": "Maravilhosa Graça (John Newton)"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Efésios 2"
+            }
           ],
           "minutos": 5
         },
@@ -460,6 +592,40 @@
             "Escolha um ato concreto de amor (visitar, ajudar, perdoar, doar) e faça-o ainda esta semana.",
             "Leia Tiago 2:14-26 com uma pergunta: onde a minha fé precisa aparecer em ações?"
           ],
+          "simbolo": "arvore",
+          "curiosidades": [
+            "As 95 teses foram escritas em latim e logo traduzidas para o alemão. A imprensa de Gutenberg as espalhou pela Europa em poucas semanas.",
+            "Lutero traduziu o Novo Testamento para o alemão em cerca de dez a onze semanas, escondido no castelo de Wartburg.",
+            "Lutero se casou com Katharina von Bora, uma ex-freira, e tiveram seis filhos."
+          ],
+          "linha": [
+            {
+              "ano": "1483",
+              "fato": "Nasce Martinho Lutero."
+            },
+            {
+              "ano": "1517",
+              "fato": "As 95 teses em Wittenberg."
+            },
+            {
+              "ano": "1521",
+              "fato": "A Dieta de Worms."
+            },
+            {
+              "ano": "1534",
+              "fato": "Bíblia completa em alemão."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Prefácio de Lutero à Epístola aos Romanos"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Tiago 2"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -550,6 +716,36 @@
           "pratica": [
             "Todo dia, peça: “Espírito Santo, enche-me hoje”. Anote ao fim do dia onde o viu agir.",
             "Leia Gálatas 5:22-23 e escolha um fruto para pedir a Deus nesta semana."
+          ],
+          "simbolo": "pomba",
+          "curiosidades": [
+            "Pentecostes vem do grego pentekosté, “quinquagésimo”: cinquenta dias depois da Páscoa.",
+            "A Bíblia usa vários símbolos do Espírito: vento, fogo, água, óleo e pomba.",
+            "Whitefield pregava com tanta voz que, segundo se conta, era ouvido a grande distância ao ar livre."
+          ],
+          "linha": [
+            {
+              "ano": "1714",
+              "fato": "Nasce George Whitefield, em Gloucester."
+            },
+            {
+              "ano": "1739",
+              "fato": "Começa a pregar ao ar livre."
+            },
+            {
+              "ano": "1770",
+              "fato": "Morre em Newburyport, Massachusetts."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Atos 2"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Gálatas 5"
+            }
           ],
           "minutos": 5
         },
@@ -642,6 +838,40 @@
             "Escreva em uma página o seu testemunho: como você conheceu Jesus (ou o que ainda falta para entregar a vida a ele).",
             "Converse com um líder ou irmão de confiança sobre batismo, se ainda não se batizou."
           ],
+          "simbolo": "agua",
+          "curiosidades": [
+            "John Wesley anotou que sentiu o coração “estranhamente aquecido” por volta das nove da noite de 24 de maio de 1738.",
+            "A palavra “metodista” começou como apelido dado por colegas aos Wesley, por viverem com tanta disciplina.",
+            "Wesley viajou centenas de milhares de quilômetros a cavalo durante o seu ministério, segundo estimativas."
+          ],
+          "linha": [
+            {
+              "ano": "1703",
+              "fato": "Nasce John Wesley."
+            },
+            {
+              "ano": "1738",
+              "fato": "Experiência na rua Aldersgate."
+            },
+            {
+              "ano": "1739",
+              "fato": "Começa a pregar ao ar livre."
+            },
+            {
+              "ano": "1791",
+              "fato": "Morre Wesley."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 3"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "O Peregrino, de John Bunyan"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -732,6 +962,36 @@
           "pratica": [
             "Procure uma igreja local, se ainda não tem, e visite no próximo culto. Se já tem, ofereça-se para servir em uma tarefa.",
             "Escreva uma mensagem de ânimo para um irmão e envie hoje."
+          ],
+          "simbolo": "igreja",
+          "curiosidades": [
+            "Na Bíblia, a palavra “igreja” aparece nos evangelhos apenas em Mateus (16:18 e 18:17); o termo se torna comum em Atos e nas cartas.",
+            "Os cristãos se reuniram por séculos em casas. Um dos prédios de igreja mais antigos que se conhece, em Dura-Europos, na Síria, era uma casa adaptada, por volta de 240.",
+            "Perpétua escreveu em primeira pessoa o diário da prisão, um documento raro e muito antigo."
+          ],
+          "linha": [
+            {
+              "ano": "c. 30",
+              "fato": "Pentecostes: nasce a igreja."
+            },
+            {
+              "ano": "203",
+              "fato": "Martírio de Perpétua e Felicidade."
+            },
+            {
+              "ano": "313",
+              "fato": "Edito de Milão: fim das perseguições oficiais."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Atos 2:42-47"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "A Paixão de Perpétua e Felicidade"
+            }
           ],
           "minutos": 5
         }
@@ -831,6 +1091,36 @@
             "Leia João 1:1-18 em voz alta e sublinhe todas as palavras que se referem a Jesus.",
             "Conte a alguém uma coisa que você aprendeu hoje sobre Jesus."
           ],
+          "simbolo": "luz",
+          "curiosidades": [
+            "João 1:1 começa com as mesmas palavras de Gênesis 1:1: “No princípio”.",
+            "Na arte cristã antiga, o evangelista João é representado por uma águia.",
+            "Policarpo foi, segundo a tradição, ensinado pelo próprio apóstolo João."
+          ],
+          "linha": [
+            {
+              "ano": "c. 69",
+              "fato": "Nasce Policarpo de Esmirna."
+            },
+            {
+              "ano": "c. 90",
+              "fato": "Data tradicional do evangelho de João."
+            },
+            {
+              "ano": "c. 155",
+              "fato": "Martírio de Policarpo."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Apocalipse 2:8-11"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "O Martírio de Policarpo (texto antigo)"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -922,6 +1212,36 @@
             "Escreva o nome de uma pessoa que ainda não conhece Jesus e convide-a a “vir e ver”: um culto, uma conversa, um livro.",
             "Leia Isaías 53 devagar e anote o que mais toca você."
           ],
+          "simbolo": "cruz",
+          "curiosidades": [
+            "Em Caná, as seis talhas de pedra tinham, juntas, centenas de litros. O primeiro sinal de Jesus foi muito generoso.",
+            "“Cordeiro de Deus” em latim é Agnus Dei, expressão que ainda aparece em muitas liturgias.",
+            "Morávios de Herrnhut oraram por turnos, de dia e de noite, por mais de cem anos."
+          ],
+          "linha": [
+            {
+              "ano": "1722",
+              "fato": "Fundação de Herrnhut."
+            },
+            {
+              "ano": "1727",
+              "fato": "Reconciliação e início da vigília de oração."
+            },
+            {
+              "ano": "1732",
+              "fato": "Dober e Nitschmann partem para o Caribe."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Isaías 53"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Êxodo 12"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -1011,6 +1331,40 @@
           "pratica": [
             "Memorize João 3:16 e diga-o em voz alta, trocando “o mundo” pelo nome de alguém que você ama.",
             "Ore por um missionário ou povo ainda não alcançado esta semana."
+          ],
+          "simbolo": "coracao",
+          "curiosidades": [
+            "Nicodemos só aparece no evangelho de João (caps. 3, 7 e 19).",
+            "João 3:16 é um dos versículos mais citados e traduzidos do mundo.",
+            "Hudson Taylor adotou as roupas e o penteado dos chineses para ser mais próximo do povo."
+          ],
+          "linha": [
+            {
+              "ano": "1832",
+              "fato": "Nasce Hudson Taylor."
+            },
+            {
+              "ano": "1854",
+              "fato": "Chega à China."
+            },
+            {
+              "ano": "1865",
+              "fato": "Funda a Missão para o Interior da China."
+            },
+            {
+              "ano": "1905",
+              "fato": "Morre Hudson Taylor."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 3:1-21"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "O Segredo Espiritual de Hudson Taylor"
+            }
           ],
           "minutos": 5
         },
@@ -1102,6 +1456,40 @@
             "Pense em alguém que a sociedade ou você tende a ignorar. Cumprimente, ouça e ofereça ajuda concreta.",
             "Leia João 4:1-42 e responda: o que Jesus fez para ganhar a confiança da mulher?"
           ],
+          "simbolo": "agua",
+          "curiosidades": [
+            "O poço de Jacó, onde Jesus falou com a mulher, ainda é visitado hoje, perto de Nablus, na Cisjordânia.",
+            "Era o meio-dia (“hora sexta”): ninguém ia buscar água nesse horário. A mulher foi ao poço fora do horário comum.",
+            "Essa conversa é uma das mais longas de Jesus com uma única pessoa nos evangelhos."
+          ],
+          "linha": [
+            {
+              "ano": "1867",
+              "fato": "Nasce Amy Carmichael."
+            },
+            {
+              "ano": "1895",
+              "fato": "Chega à Índia."
+            },
+            {
+              "ano": "1901",
+              "fato": "Resgata a menina Preena; começa a obra de Dohnavur."
+            },
+            {
+              "ano": "1951",
+              "fato": "Morre Amy Carmichael."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 4:1-42"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "If (Se), de Amy Carmichael"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -1191,6 +1579,40 @@
           "pratica": [
             "Hoje, antes de qualquer outra coisa, ore e leia um trecho da Bíblia como quem se alimenta.",
             "Entregue a Deus uma necessidade material e agradeça antecipadamente."
+          ],
+          "simbolo": "pao",
+          "curiosidades": [
+            "Belém, onde Jesus nasceu, quer dizer “casa do pão”.",
+            "O maná foi dado a Israel por quarenta anos (Êxodo 16).",
+            "Müller nunca pediu dinheiro, nem em cartas nem em reuniões: contava somente a Deus."
+          ],
+          "linha": [
+            {
+              "ano": "1805",
+              "fato": "Nasce George Müller."
+            },
+            {
+              "ano": "1825",
+              "fato": "Conversão."
+            },
+            {
+              "ano": "1836",
+              "fato": "Abre o primeiro orfanato em Bristol."
+            },
+            {
+              "ano": "1898",
+              "fato": "Morre Müller."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 6"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "George Müller of Bristol, de A. T. Pierson"
+            }
           ],
           "minutos": 5
         },
@@ -1282,6 +1704,40 @@
             "Há algo escondido na sua vida? Confesse a Deus e, se necessário, a um irmão de confiança.",
             "Pense em uma injustiça próxima de você e em um passo pequeno que possa dar."
           ],
+          "simbolo": "sol",
+          "curiosidades": [
+            "É o único momento nos evangelhos em que se diz que Jesus escreveu algo: ele escreveu no chão (João 8:6-8).",
+            "Wilberforce e amigos formaram a chamada Seita de Clapham, que lutou por reformas sociais.",
+            "O tráfico de escravos foi proibido no Império Britânico em 1807, mas a escravidão só terminou em 1833."
+          ],
+          "linha": [
+            {
+              "ano": "1759",
+              "fato": "Nasce William Wilberforce."
+            },
+            {
+              "ano": "1785",
+              "fato": "Conversão."
+            },
+            {
+              "ano": "1807",
+              "fato": "Fim do tráfico de escravos."
+            },
+            {
+              "ano": "1833",
+              "fato": "Aprovada a abolição da escravidão."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 8"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Amazing Grace: William Wilberforce, de Eric Metaxas"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -1371,6 +1827,36 @@
           "pratica": [
             "Reserve cinco minutos em silêncio para “ouvir a voz do Pastor”: leia um versículo e pergunte o que ele diz hoje.",
             "Ore por alguém que parece distante do rebanho."
+          ],
+          "simbolo": "cajado",
+          "curiosidades": [
+            "Davi, Moisés e Amós foram pastores antes de serem chamados por Deus.",
+            "Pastores do Oriente têm um som próprio, e as ovelhas reconhecem a voz do dono.",
+            "Jim Elliot e quatro amigos tinham entre 27 e 32 anos quando foram mortos em 1956."
+          ],
+          "linha": [
+            {
+              "ano": "1949",
+              "fato": "Jim Elliot escreve em seu diário a frase que o marcou."
+            },
+            {
+              "ano": "1956",
+              "fato": "Cinco missionários são mortos no Equador."
+            },
+            {
+              "ano": "1958",
+              "fato": "Elisabeth Elliot passa a viver entre os waodani."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Salmo 23"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Através dos Portais do Esplendor, de Elisabeth Elliot"
+            }
           ],
           "minutos": 5
         },
@@ -1462,6 +1948,40 @@
             "Escolha uma situação de luto ou perda sua ou de alguém próximo e leia João 11:17-44 em oração.",
             "Escreva uma carta de ânimo para alguém que sofreu uma perda."
           ],
+          "simbolo": "tumulo",
+          "curiosidades": [
+            "A vila de Betânia hoje se chama al-Eizariya, “lugar de Lázaro”, em árabe.",
+            "“Jesus chorou” (João 11:35) é o versículo mais curto da Bíblia em português.",
+            "A família de Corrie ten Boom construiu um esconderijo atrás de uma parede falsa no quarto dela."
+          ],
+          "linha": [
+            {
+              "ano": "1892",
+              "fato": "Nasce Corrie ten Boom."
+            },
+            {
+              "ano": "1944",
+              "fato": "Presa com a família; Betsie morre em Ravensbrück."
+            },
+            {
+              "ano": "1947",
+              "fato": "Perdoa o ex-guarda, em Munique."
+            },
+            {
+              "ano": "1983",
+              "fato": "Morre Corrie."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Livro",
+              "titulo": "O Refúgio Secreto, de Corrie ten Boom"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "João 11"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -1551,6 +2071,40 @@
           "pratica": [
             "Faça um serviço escondido: lave a louça de alguém, ajude em casa, limpe um espaço da igreja, sem avisar.",
             "Perdoe alguém e dê o primeiro passo de reconciliação."
+          ],
+          "simbolo": "maos",
+          "curiosidades": [
+            "“Quinta-feira Santa” se diz Maundy Thursday em inglês, de mandatum, “mandamento” em latim, por causa de João 13:34.",
+            "Em Israel, as pessoas andavam de sandálias em estradas empoeiradas. Lavar os pés era um serviço comum à entrada das casas.",
+            "O Exército de Salvação ficou conhecido pelas bandas, pelas sopas e pelo serviço aos pobres."
+          ],
+          "linha": [
+            {
+              "ano": "1829",
+              "fato": "Nasce Catherine Booth."
+            },
+            {
+              "ano": "1855",
+              "fato": "Casa-se com William Booth."
+            },
+            {
+              "ano": "1878",
+              "fato": "Surge o nome Exército de Salvação."
+            },
+            {
+              "ano": "1890",
+              "fato": "Morre Catherine Booth."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 13"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Filipenses 2:1-11"
+            }
           ],
           "minutos": 5
         },
@@ -1642,6 +2196,36 @@
             "Por sete dias, comece o dia com cinco minutos: leia João 15:1-11 e diga ao Senhor “permaneço em ti”.",
             "Identifique algo na sua vida que o afasta de Jesus e entregue a ele."
           ],
+          "simbolo": "videira",
+          "curiosidades": [
+            "Uma videira precisa de poda forte; sem ela, produz folhas, mas pouco fruto.",
+            "Em Isaías 5, Israel é uma vinha amada que deu uvas bravas.",
+            "Andrew Murray escreveu mais de 200 livros, muitos até hoje traduzidos."
+          ],
+          "linha": [
+            {
+              "ano": "c. 700 a.C.",
+              "fato": "Isaías canta a canção da vinha."
+            },
+            {
+              "ano": "1828",
+              "fato": "Nasce Andrew Murray."
+            },
+            {
+              "ano": "1917",
+              "fato": "Morre Andrew Murray."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 15"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Permanecei em Cristo, de Andrew Murray"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -1732,6 +2316,40 @@
             "Ore por três irmãos de igrejas ou grupos diferentes do seu. Peça unidade.",
             "Reconcilie-se com alguém com quem você está em desacordo."
           ],
+          "simbolo": "igreja",
+          "curiosidades": [
+            "É a oração mais longa de Jesus registrada nos evangelhos.",
+            "Herrnhut significa “sob a guarda do Senhor”.",
+            "A oração de Jesus pela unidade foi inspiração para encontros entre igrejas de muitas tradições."
+          ],
+          "linha": [
+            {
+              "ano": "1700",
+              "fato": "Nasce Zinzendorf."
+            },
+            {
+              "ano": "1722",
+              "fato": "Fundação de Herrnhut."
+            },
+            {
+              "ano": "13 ago 1727",
+              "fato": "Reconciliação durante a Ceia."
+            },
+            {
+              "ano": "27 ago 1727",
+              "fato": "Começa a vigília de oração."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 17"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Efésios 4:1-6"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -1821,6 +2439,36 @@
           "pratica": [
             "Leia João 19 e 20 em uma só sentada e escreva em uma frase o que mais impactou você.",
             "Cante ou ouça um hino sobre a cruz e ofereça sua vida a Jesus em oração."
+          ],
+          "simbolo": "cruz",
+          "curiosidades": [
+            "Tetélestai (“está consumado”) aparece em recibos de papiro da época como “pago por completo”.",
+            "Isaac Watts escreveu cerca de 750 hinos.",
+            "Os evangelhos registram que a primeira testemunha da ressurreição foi uma mulher, Maria Madalena, em uma época em que o testemunho feminino pesava pouco."
+          ],
+          "linha": [
+            {
+              "ano": "1674",
+              "fato": "Nasce Isaac Watts."
+            },
+            {
+              "ano": "1707",
+              "fato": "Publica “Quando contemplo a cruz maravilhosa”."
+            },
+            {
+              "ano": "1748",
+              "fato": "Morre Isaac Watts."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "João 19 a 21"
+            },
+            {
+              "tipo": "Cante",
+              "titulo": "Ao contemplar a cruz (Isaac Watts)"
+            }
           ],
           "minutos": 5
         }
@@ -1920,6 +2568,40 @@
             "Escolha um lugar e um horário fixos para orar por dez minutos nesta semana.",
             "Use A.C.S.A.: adore, confesse, interceda e agradeça, em uma só oração."
           ],
+          "simbolo": "maos",
+          "curiosidades": [
+            "“Aba”, palavra usada por Jesus no Getsêmani (Marcos 14:36), é um termo carinhoso de filho para o pai.",
+            "Daniel orava três vezes por dia, mesmo quando isso era proibido (Daniel 6:10).",
+            "Susana tinha dezenove filhos e ainda criava momentos de oração."
+          ],
+          "linha": [
+            {
+              "ano": "1669",
+              "fato": "Nasce Susana Wesley."
+            },
+            {
+              "ano": "1703",
+              "fato": "Nasce John Wesley."
+            },
+            {
+              "ano": "1707",
+              "fato": "Nasce Charles Wesley."
+            },
+            {
+              "ano": "1742",
+              "fato": "Morre Susana Wesley."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Lucas 11:1-13"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Filipenses 4:4-9"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -2008,6 +2690,36 @@
           "pratica": [
             "Ore o Pai Nosso devagar, parando em cada frase para dizê-la com as suas palavras.",
             "Hoje, perdoe de coração quem lhe deve algo e peça a Deus ajuda nisso."
+          ],
+          "simbolo": "coracao",
+          "curiosidades": [
+            "No evangelho de Lucas o Pai Nosso é mais curto que em Mateus.",
+            "A Didaquê, texto cristão antigo, manda orar o Pai Nosso três vezes ao dia.",
+            "Lutero escreveu sua carta sobre oração para o seu barbeiro."
+          ],
+          "linha": [
+            {
+              "ano": "1483",
+              "fato": "Nasce Lutero."
+            },
+            {
+              "ano": "1535",
+              "fato": "Escreve “Uma maneira simples de orar”."
+            },
+            {
+              "ano": "1546",
+              "fato": "Morre Lutero."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Mateus 6:5-15"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Uma maneira simples de orar, de Martinho Lutero"
+            }
           ],
           "minutos": 5
         },
@@ -2100,6 +2812,40 @@
             "Ore o Salmo 23 em voz alta, trocando as frases por suas palavras.",
             "Leia o Salmo 13 e escreva uma oração sua, a partir dele, sobre algo que o preocupa."
           ],
+          "simbolo": "livro",
+          "curiosidades": [
+            "O Salmo 119 é um acróstico em hebraico: cada grupo de oito versos começa com uma letra do alfabeto.",
+            "Na tradição, 73 salmos são atribuídos a Davi.",
+            "Os salmos de lamento formam a maior categoria do livro."
+          ],
+          "linha": [
+            {
+              "ano": "1509",
+              "fato": "Nasce João Calvino."
+            },
+            {
+              "ano": "1557",
+              "fato": "Publica o comentário aos Salmos."
+            },
+            {
+              "ano": "1562",
+              "fato": "Conclui-se o Saltério de Genebra."
+            },
+            {
+              "ano": "1564",
+              "fato": "Morre Calvino."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Salmos 23, 51 e 121"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Prefácio de Calvino ao Comentário dos Salmos"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -2191,6 +2937,40 @@
             "Escreva um pedido antigo e uma frase de entrega: “Seja feita a tua vontade”. Ore todos os dias por uma semana.",
             "Leia 2 Coríntios 12:7-10 e anote o que Deus disse a Paulo."
           ],
+          "simbolo": "luz",
+          "curiosidades": [
+            "Joni pinta com a boca e produziu muitas obras e cartões.",
+            "Os salmistas perguntam “até quando?” mais de uma vez: Deus aceita nossas perguntas.",
+            "Jesus orou três vezes no Getsêmani, e o Pai respondeu enviando-lhe força, e não afastando o cálice."
+          ],
+          "linha": [
+            {
+              "ano": "1949",
+              "fato": "Nasce Joni Eareckson Tada."
+            },
+            {
+              "ano": "1967",
+              "fato": "Acidente que a deixa tetraplégica."
+            },
+            {
+              "ano": "1976",
+              "fato": "Publica o livro Joni."
+            },
+            {
+              "ano": "1979",
+              "fato": "Funda o ministério Joni and Friends."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Livro",
+              "titulo": "Joni, de Joni Eareckson Tada"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "2 Coríntios 12:7-10"
+            }
+          ],
           "minutos": 5
         },
         {
@@ -2281,6 +3061,1153 @@
           "pratica": [
             "Faça uma lista de cinco pessoas e ore por uma delas por dia, durante a semana.",
             "Avise a alguém que você está orando por ele e pergunte pelo que pode orar."
+          ],
+          "simbolo": "igreja",
+          "curiosidades": [
+            "Agostinho e Mônica tiveram uma conversa famosa sobre a vida eterna, em Óstia, pouco antes de ela morrer.",
+            "Epafras é elogiado por Paulo porque “se esforça sempre” em oração (Colossenses 4:12).",
+            "Jesus intercede por nós agora, à direita do Pai (Hebreus 7:25)."
+          ],
+          "linha": [
+            {
+              "ano": "c. 331",
+              "fato": "Nasce Mônica."
+            },
+            {
+              "ano": "386",
+              "fato": "Conversão de Agostinho."
+            },
+            {
+              "ano": "387",
+              "fato": "Morre Mônica, em Óstia."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Confissões, de Agostinho (Livro IX)"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Colossenses 4:2-4"
+            }
+          ],
+          "minutos": 5
+        }
+      ]
+    },
+    {
+      "slug": "avivamentos-e-avivalistas",
+      "titulo": "Avivamentos e Avivalistas",
+      "descricao": "Nove aulas sobre o que é avivamento e sobre as vezes em que Deus visitou o seu povo: Josias, Jonathan Edwards, os Wesley, Finney, a oração de 1857, Moody, o País de Gales, Azusa Street e as Hébridas.",
+      "nivel": "Intermediário",
+      "aulas": [
+        {
+          "titulo": "O que é avivamento",
+          "resumo": "Avivamento é Deus fazendo reviver o seu povo: arrependimento, volta à Palavra e uma nova fome por ele.",
+          "versiculo": {
+            "ref": "Salmos 85:6",
+            "texto": "Não tornarás tu a vivificar-nos, para que o teu povo se alegre em ti?"
+          },
+          "texto": [
+            "A palavra “avivar” quer dizer dar vida de novo. Avivamento não é evento, show nem estratégia: é Deus visitando o seu povo que esfriou. A Bíblia mostra esse padrão várias vezes. O povo se afasta, Deus fala, o povo se arrepende e a vida volta.",
+            "Não é o mesmo que evangelismo. Evangelismo anuncia o evangelho a quem não crê. Avivamento desperta quem já é da igreja. Quando os crentes são reavivados, o evangelismo cresce, as famílias se reconciliam e a vida da cidade muda.",
+            "Em todos os avivamentos da Bíblia e da história, se repetem sinais: a Palavra volta ao centro, o pecado é levado a sério, a oração aumenta, há alegria e amor, e as pessoas são movidas a servir e a anunciar Jesus.",
+            "O avivamento é sempre graça: não podemos fabricá-lo. Mas podemos clamar, preparar o coração e viver de modo que não impeçamos a obra de Deus."
+          ],
+          "apoio": [
+            "Habacuque 3:2",
+            "Neemias 8",
+            "Atos 2:41-47",
+            "2 Crônicas 7:14"
+          ],
+          "reflexao": "Você sente a sua vida espiritual quente, morna ou fria? O que você precisa pedir a Deus hoje?",
+          "oracao": "Senhor, aviva a tua obra, a começar por mim. Desperta o meu coração, a minha casa e a tua igreja. Em nome de Jesus, amém.",
+          "quiz": [
+            {
+              "pergunta": "O que significa avivar?",
+              "opcoes": [
+                "Dar vida de novo",
+                "Fazer uma campanha",
+                "Criar uma igreja"
+              ],
+              "correta": 0,
+              "explicacao": "Avivar é fazer reviver o que esfriou."
+            },
+            {
+              "pergunta": "Avivamento é principalmente…",
+              "opcoes": [
+                "Obra de Deus que desperta o seu povo",
+                "Um evento organizado",
+                "Uma técnica de pregação"
+              ],
+              "correta": 0,
+              "explicacao": "O avivamento é graça de Deus, e não resultado de método."
+            },
+            {
+              "pergunta": "Qual livro foi achado no templo no tempo de Josias?",
+              "opcoes": [
+                "O Livro da Lei",
+                "Os Salmos",
+                "O Evangelho de João"
+              ],
+              "correta": 0,
+              "explicacao": "O Livro da Lei despertou o rei e o povo."
+            }
+          ],
+          "ordem": 1,
+          "contexto": "Josias tinha apenas oito anos quando se tornou rei de Judá (2 Reis 22). Aos dezesseis, começou a buscar o Deus de Davi, e aos vinte limpou o país dos ídolos. No décimo oitavo ano do seu reinado, durante a reforma do templo, o sacerdote Hilquias achou o Livro da Lei, esquecido havia anos. Quando o rei o ouviu ser lido, rasgou as suas vestes. Foi aí que o avivamento começou de fato.",
+          "aprofundamento": [
+            "Padrão bíblico. O avivamento de Josias tem cinco passos: a Palavra é redescoberta, o rei se humilha, o povo renova a aliança, os ídolos são destruídos e a Páscoa é celebrada com alegria (2 Reis 23; 2 Crônicas 34-35). Também aparecem a profetisa Hulda, consultada pelo rei (2 Reis 22:14-20), e a ênfase em obedecer ao que está escrito. Em Neemias 8, o povo chora ao ouvir a lei, e Esdras o anima a se alegrar: “a alegria do Senhor é a vossa força”.",
+            "Avivamento e Pentecostes. Joel 2 prometia o derramar do Espírito sobre toda carne. Em Atos 2, Pedro explica que isso se cumpria. O Pentecostes é o maior avivamento: em um dia, cerca de três mil se uniram à igreja, e o resultado foi ensino, comunhão, oração e generosidade (Atos 2:42-47). Essa é a medida bíblica do que Deus faz.",
+            "Avivamento e reforma. Os avivamentos têm dois lados: o toque do Espírito e o retorno à Palavra. Sem a Palavra, a emoção se perde; sem o Espírito, a doutrina fica fria. Os dois se unem na cruz de Cristo. Por isso toda reforma verdadeira tem dimensão pessoal (arrependimento) e comunitária (justiça, unidade e missão)."
+          ],
+          "termos": [
+            {
+              "termo": "Avivamento",
+              "definicao": "Visita especial de Deus que desperta o seu povo para uma vida nova."
+            },
+            {
+              "termo": "Arrependimento",
+              "definicao": "Mudança de mente e de direção diante de Deus."
+            },
+            {
+              "termo": "Aliança",
+              "definicao": "Compromisso solene entre Deus e o seu povo."
+            }
+          ],
+          "heroi": {
+            "nome": "Josias e a profetisa Hulda",
+            "periodo": "séc. VII a.C.",
+            "titulo": "Rei de Judá e profetisa que confirmou a Palavra",
+            "historia": [
+              "Josias foi coroado criança, depois de um reinado de maldade do pai e do avô. Cresceu buscando a Deus. Quando o Livro da Lei foi achado, ele o fez ler diante de todo o povo, e o rei renovou a aliança com o Senhor.",
+              "Antes disso, o rei enviou uma comitiva à profetisa Hulda, que confirmou que a palavra encontrada era de Deus e que o juízo viria, mas que o coração arrependido de Josias seria poupado. É um dos raros momentos em que uma mulher profetisa orienta um rei.",
+              "O rei destruiu os altares pagãos e celebrou uma Páscoa como não se via desde os dias dos juízes. A Bíblia diz que antes dele nenhum rei se converteu ao Senhor como ele (2 Reis 23:25)."
+            ],
+            "licao": "Quando a Palavra de Deus é achada, ouvida e obedecida, o povo é reavivado."
+          },
+          "pratica": [
+            "Leia 2 Reis 22 e 23 em duas etapas. Anote o que Josias fez ao ouvir a Palavra.",
+            "Escolha um “ídolo” pequeno da sua vida (tempo perdido, redes sociais, rancor) e entregue-o a Deus."
+          ],
+          "simbolo": "livro",
+          "curiosidades": [
+            "O livro encontrado no templo é geralmente identificado como Deuteronômio, ou parte dele.",
+            "Josias reinou por 31 anos, de 640 a 609 a.C.",
+            "A profetisa Hulda é uma das poucas mulheres profetas nomeadas no Antigo Testamento."
+          ],
+          "linha": [
+            {
+              "ano": "c. 640 a.C.",
+              "fato": "Josias se torna rei, aos 8 anos."
+            },
+            {
+              "ano": "c. 622 a.C.",
+              "fato": "O Livro da Lei é encontrado e lido."
+            },
+            {
+              "ano": "609 a.C.",
+              "fato": "Morre Josias."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "2 Reis 22 e 23"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Neemias 8"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "Jonathan Edwards e o Grande Avivamento",
+          "resumo": "No século XVIII, Deus visitou as colônias americanas. Jonathan Edwards viu, descreveu e examinou esse avivamento com a Bíblia.",
+          "versiculo": {
+            "ref": "Zacarias 4:6",
+            "texto": "Não por força nem por violência, mas pelo meu Espírito, diz o Senhor dos Exércitos."
+          },
+          "texto": [
+            "No começo do século XVIII, muitas igrejas das colônias americanas viviam na formalidade. Em 1734 e 1735, na cidade de Northampton, em Massachusetts, o pastor Jonathan Edwards pregou sobre a justificação pela fé. De repente, jovens e adultos passaram a buscar a Deus, a orar e a se arrepender.",
+            "Em 1739 e 1740, George Whitefield chegou às colônias e pregou a multidões, e o movimento ficou conhecido como o Grande Avivamento. Milhares se converteram, igrejas se encheram e nasceram novas escolas e missões.",
+            "Edwards pregou o célebre sermão “Pecadores nas mãos de um Deus irado”, em 1741, e também escreveu sobre como reconhecer uma obra verdadeira do Espírito. Ele tinha cuidado: nem toda emoção forte vem de Deus, nem toda ausência de emoção é falta de vida.",
+            "O Grande Avivamento mostra que Deus pode agir com poder, e que a igreja precisa de discernimento para não confundir entusiasmo com fruto."
+          ],
+          "apoio": [
+            "Atos 2:41",
+            "1 João 4:1-3",
+            "Gálatas 5:22-23"
+          ],
+          "reflexao": "Como você tem discernido o que é obra do Espírito e o que é apenas emoção?",
+          "oracao": "Espírito Santo, visita a tua igreja como fizeste em outros tempos. Dá-nos fome, humildade e discernimento. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Onde começou o avivamento de Edwards em 1734?",
+              "opcoes": [
+                "Northampton, Massachusetts",
+                "Londres",
+                "Jerusalém"
+              ],
+              "correta": 0,
+              "explicacao": "Foi na igreja de Northampton, onde Edwards era pastor."
+            },
+            {
+              "pergunta": "Qual era o cuidado de Edwards?",
+              "opcoes": [
+                "Discernir uma obra verdadeira do Espírito",
+                "Evitar a Bíblia",
+                "Proibir o louvor"
+              ],
+              "correta": 0,
+              "explicacao": "Ele escreveu sobre as marcas de uma obra verdadeira de Deus."
+            },
+            {
+              "pergunta": "O que Edwards usou como medida para avaliar um avivamento?",
+              "opcoes": [
+                "A Bíblia e os frutos",
+                "O tamanho da multidão",
+                "As emoções fortes"
+              ],
+              "correta": 0,
+              "explicacao": "Ele ensinou a examinar os frutos à luz de 1 João 4."
+            }
+          ],
+          "ordem": 2,
+          "contexto": "Em 1741, o sermão de Edwards em Enfield, Connecticut, foi lido quase sem gestos, mas muitos choraram. Ele pregava um Deus santo e misericordioso. O avivamento causou também divisões: alguns viam sinais de Deus em tudo, outros condenavam tudo. Edwards procurou um caminho equilibrado, com a Bíblia como medida.",
+          "aprofundamento": [
+            "Marcas de uma obra genuína. Em “Distinguishing Marks”, de 1741, Edwards, com base em 1 João 4, resumiu sinais de uma obra verdadeira do Espírito: Jesus é honrado (v. 2-3), o pecado e o mundo perdem poder (v. 4-5), a Escritura é amada (v. 6), a verdade é defendida e o amor a Deus e ao próximo cresce (v. 7-8). Efeitos como lágrimas, desmaios ou êxtases não provam nem refutam nada.",
+            "Afeições religiosas. Em “Religious Affections” (1746), Edwards explicou que a verdadeira religião está no coração, nas “afeições” (amor, alegria, temor, esperança), mas que o teste são os frutos duradouros, sobretudo a prática da santidade. A experiência sem obediência é suspeita; a obediência sem amor é fria.",
+            "Soberania e responsabilidade. Edwards cria que Deus é soberano em despertar quem quer e quando quer, e ao mesmo tempo chamava todos ao arrependimento. Oração e pregação são os meios que Deus usa. Ele disse que o povo de Deus não deve esperar passivamente, mas pedir com fervor."
+          ],
+          "termos": [
+            {
+              "termo": "Afeições religiosas",
+              "definicao": "Os desejos e emoções profundos do coração dirigidos a Deus."
+            },
+            {
+              "termo": "Discernimento",
+              "definicao": "Capacidade de avaliar o que vem de Deus pela Palavra."
+            },
+            {
+              "termo": "Soberania de Deus",
+              "definicao": "O governo de Deus sobre tudo, inclusive sobre quando e como ele age."
+            }
+          ],
+          "heroi": {
+            "nome": "Jonathan Edwards e Sarah Pierpont Edwards",
+            "periodo": "1703–1758; 1710–1758",
+            "titulo": "Pastor-teólogo e esposa do Grande Avivamento",
+            "historia": [
+              "Jonathan Edwards nasceu em Connecticut, filho e neto de pastores. Estudou em Yale e se tornou pastor em Northampton. Casou-se com Sarah Pierpont em 1727. Tiveram onze filhos e uma casa marcada por oração e leitura.",
+              "Sarah teve uma profunda experiência de Deus durante o avivamento, que Jonathan usou, com delicadeza, como exemplo de uma obra verdadeira. Para ele, a alegria dela no Senhor e o caráter humilde e amoroso provavam que a graça era real.",
+              "Em 1750, a igreja de Northampton o demitiu por causa de divergências sobre quem podia participar da Ceia. Edwards foi servir aos indígenas em Stockbridge, onde escreveu grandes obras. Em 1758 foi chamado a presidir o College of New Jersey (hoje Princeton), mas morreu meses depois, após uma vacina contra a varíola. Sarah faleceu pouco depois dele."
+            ],
+            "licao": "Um coração apaixonado por Deus e uma mente iluminada pela Palavra caminham juntos."
+          },
+          "pratica": [
+            "Leia 1 João 4:1-8 e liste as marcas de uma obra verdadeira de Deus.",
+            "Leia um versículo sobre o amor de Deus e passe cinco minutos agradecendo, sem pedir nada."
+          ],
+          "simbolo": "chama",
+          "curiosidades": [
+            "Aos 19 e 20 anos, Edwards escreveu setenta resoluções para a vida cristã.",
+            "O sermão “Pecadores nas mãos de um Deus irado” foi pregado em Enfield em 8 de julho de 1741.",
+            "Edwards e Sarah criaram onze filhos, e alguns de seus descendentes tiveram posições importantes na sociedade americana."
+          ],
+          "linha": [
+            {
+              "ano": "1703",
+              "fato": "Nasce Jonathan Edwards."
+            },
+            {
+              "ano": "1734-35",
+              "fato": "Avivamento em Northampton."
+            },
+            {
+              "ano": "1741",
+              "fato": "Sermão em Enfield."
+            },
+            {
+              "ano": "1758",
+              "fato": "Morre Jonathan Edwards."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Pecadores nas mãos de um Deus irado (sermão de Edwards)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Afeições Religiosas, de Jonathan Edwards"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "Os Wesley e o avivamento na Inglaterra",
+          "resumo": "Enquanto a América despertava, a Inglaterra era sacudida pela pregação ao ar livre, pelos pequenos grupos e pelos hinos dos Wesley.",
+          "versiculo": {
+            "ref": "Romanos 10:14",
+            "texto": "Como, pois, invocarão aquele em quem não creram? e como crerão naquele de quem não ouviram falar? e como ouvirão, se não há quem pregue?"
+          },
+          "texto": [
+            "A Inglaterra do século XVIII vivia mudanças grandes: indústria nascente, pobreza, bebedeira, violência e igrejas distantes do povo. Os pobres e os mineiros raramente entravam em um templo.",
+            "John Wesley e George Whitefield levaram o evangelho ao povo: pregavam ao ar livre, em campos, praças e minas. Wesley organizou os convertidos em pequenos grupos, as “classes”, para orar, estudar a Bíblia e se corrigirem uns aos outros. Assim a fé se transformava em vida.",
+            "Carlos Wesley, irmão de João, escreveu milhares de hinos que ensinavam teologia ao povo cantando. A música foi um dos grandes veículos do avivamento.",
+            "O resultado foi uma mudança social: escolas, cuidado com os doentes, combate à embriaguez e, mais tarde, a luta contra a escravidão. Alguns historiadores sugerem que o avivamento também ajudou a Inglaterra a atravessar esse período sem uma revolução violenta como a francesa."
+          ],
+          "apoio": [
+            "Atos 17:6",
+            "Tiago 5:16",
+            "Colossenses 3:16"
+          ],
+          "reflexao": "Quem pode ajudar você a crescer na fé e prestar contas em um pequeno grupo?",
+          "oracao": "Senhor, levanta pregadores, cantores e discípulos que levem o evangelho a quem ainda não ouviu. Amém.",
+          "quiz": [
+            {
+              "pergunta": "O que eram as “classes” de Wesley?",
+              "opcoes": [
+                "Pequenos grupos de discipulado",
+                "Escolas de música",
+                "Reuniões de autoridades"
+              ],
+              "correta": 0,
+              "explicacao": "Eram grupos pequenos para orar, aprender e prestar contas."
+            },
+            {
+              "pergunta": "O que os hinos de Carlos Wesley faziam?",
+              "opcoes": [
+                "Ensinavam o evangelho cantando",
+                "Substituíam a Bíblia",
+                "Eram só para cultos fechados"
+              ],
+              "correta": 0,
+              "explicacao": "Seus hinos levaram a teologia e o louvor ao povo."
+            },
+            {
+              "pergunta": "Qual era o lema de Wesley sobre a pregação?",
+              "opcoes": [
+                "“O mundo é a minha paróquia”",
+                "“Só dentro do templo”",
+                "“Apenas para eruditos”"
+              ],
+              "correta": 0,
+              "explicacao": "Wesley levou o evangelho a campos e minas."
+            }
+          ],
+          "ordem": 3,
+          "contexto": "A Inglaterra do século XVIII era marcada pelo ceticismo, pela embriaguez e pela desigualdade. As igrejas oficiais tinham pouco alcance entre os trabalhadores. Os Wesley e Whitefield foram impedidos de pregar em muitos púlpitos e, então, foram ao povo. Wesley dizia que o mundo era a sua paróquia.",
+          "aprofundamento": [
+            "Pregação ao ar livre. Em 1739, Whitefield convenceu Wesley a pregar ao ar livre, o que ele a princípio achou indecoroso. Foram milhares de sermões em campos, praças, mercados e minas. A decisão mostrou que a mensagem precisa ir onde o povo está. Wesley cavalgava milhares de quilômetros todos os anos.",
+            "Santidade prática. Wesley ensinava que a salvação é pela graça, mediante a fé, e que a graça leva a uma vida santa, de amor a Deus e ao próximo. Organizou a vida em sociedades, classes e grupos de prestação de contas, e cuidou dos pobres, dos presos e dos doentes. Ele cria que a fé verdadeira se vê em obras de misericórdia.",
+            "Hinos e Palavra. Carlos Wesley escreveu mais de seis mil hinos, entre eles “O for a Thousand Tongues to Sing” e “Hark! The Herald Angels Sing”. Os hinos ensinavam doutrina de modo que os analfabetos podiam gravar. A Bíblia, a oração e o canto formavam a vida da comunidade."
+          ],
+          "termos": [
+            {
+              "termo": "Metodismo",
+              "definicao": "Movimento iniciado por Wesley que enfatizava o novo nascimento e a vida santa em método e disciplina."
+            },
+            {
+              "termo": "Classe",
+              "definicao": "Pequeno grupo de crentes que se reunia semanalmente para orar e prestar contas."
+            },
+            {
+              "termo": "Santidade",
+              "definicao": "Vida separada para Deus, que reflete o caráter de Cristo."
+            }
+          ],
+          "heroi": {
+            "nome": "Selina Hastings, a Condessa de Huntingdon",
+            "periodo": "1707–1791",
+            "titulo": "Nobre que sustentou o avivamento",
+            "historia": [
+              "Selina nasceu em uma família nobre e se casou com o conde de Huntingdon. Em 1739, convenceu-se do evangelho depois de ouvir os pregadores metodistas, e passou a usar a sua posição para servi-los.",
+              "Abriu seu palácio para pregações a nobres que dificilmente iriam a um campo, nomeou George Whitefield como seu capelão e fundou dezenas de capelas. Em 1768, criou o Trevecca College, para formar pregadores, a maioria sem recursos.",
+              "Vendeu joias e gastou fortuna para a obra. Morreu em 1791. A rede de igrejas que ela sustentou, a Conexão da Condessa de Huntingdon, continua até hoje. Ela mostra que também os que têm recursos e influência podem servir ao avivamento."
+            ],
+            "licao": "Pregadores levam a mensagem, e os que sustentam, oram e abrem portas também são parte da obra."
+          },
+          "pratica": [
+            "Ofereça algo seu (tempo, casa, dinheiro, influência) para apoiar um trabalho do evangelho.",
+            "Escreva um versículo de um hino de que você gosta e pense no que ele ensina."
+          ],
+          "simbolo": "chama",
+          "curiosidades": [
+            "Estima-se que Wesley tenha pregado dezenas de milhares de sermões.",
+            "Charles Wesley escreveu mais de seis mil hinos.",
+            "Selina Hastings sustentou dezenas de capelas e a formação de pregadores com os seus próprios recursos."
+          ],
+          "linha": [
+            {
+              "ano": "1707",
+              "fato": "Nascem Charles Wesley e Selina Hastings."
+            },
+            {
+              "ano": "1739",
+              "fato": "Pregação ao ar livre."
+            },
+            {
+              "ano": "1768",
+              "fato": "Fundação do Trevecca College."
+            },
+            {
+              "ano": "1788",
+              "fato": "Morre Charles Wesley."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Cante",
+              "titulo": "O for a Thousand Tongues to Sing (Charles Wesley)"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Romanos 10:9-17"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "Finney e o Segundo Grande Avivamento",
+          "resumo": "No início do século XIX, avivamentos varreram os Estados Unidos. Charles Finney se tornou o avivalista mais conhecido, e também o mais debatido.",
+          "versiculo": {
+            "ref": "Atos 3:19",
+            "texto": "Arrependei-vos, pois, e convertei-vos, para que sejam apagados os vossos pecados."
+          },
+          "texto": [
+            "Depois da Independência americana, a fé enfraqueceu. Em 1801, um grande encontro em Cane Ridge, no Kentucky, reuniu milhares de pessoas em um acampamento de vários dias e marcou o início do Segundo Grande Avivamento.",
+            "Charles Finney era advogado e se converteu em 1821. Na década de 1820 e 1830 pregou no interior de Nova Iorque e em cidades como Rochester, onde muitas pessoas se converteram. Ele pregava com franqueza, apelando à decisão imediata e à responsabilidade de cada um.",
+            "Seus métodos e algumas ideias teológicas foram muito debatidos. Críticos temiam que a ênfase no esforço humano obscurecesse a obra soberana de Deus, e que técnicas pudessem produzir resultados superficiais. A igreja aprendeu com isso a combinar o chamado ao arrependimento com a dependência total do Espírito.",
+            "Finney também ensinou e pregou contra a escravidão, e foi professor e presidente do Oberlin College, onde estudaram homens e mulheres, brancos e negros."
+          ],
+          "apoio": [
+            "Atos 2:38",
+            "Lucas 13:3",
+            "Efésios 2:8-9"
+          ],
+          "reflexao": "Há uma decisão de arrependimento que você tem adiado?",
+          "oracao": "Senhor, dá-nos pregação ousada e humilde, e um povo que se arrepende de verdade. Que dependamos sempre do teu Espírito. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Onde aconteceu o grande encontro de 1801?",
+              "opcoes": [
+                "Cane Ridge, Kentucky",
+                "Wittenberg",
+                "Roma"
+              ],
+              "correta": 0,
+              "explicacao": "Cane Ridge marcou o início do Segundo Grande Avivamento."
+            },
+            {
+              "pergunta": "Qual era a profissão de Finney antes de pregar?",
+              "opcoes": [
+                "Advogado",
+                "Marinheiro",
+                "Médico"
+              ],
+              "correta": 0,
+              "explicacao": "Finney era advogado quando se converteu."
+            },
+            {
+              "pergunta": "Como Finney se converteu?",
+              "opcoes": [
+                "Orando sozinho em um bosque",
+                "Em um culto com Wesley",
+                "Lendo Calvino"
+              ],
+              "correta": 0,
+              "explicacao": "Ele se rendeu a Cristo orando em um bosque, em 1821."
+            }
+          ],
+          "ordem": 4,
+          "contexto": "Cane Ridge reuniu, em agosto de 1801, algo entre 10 mil e 20 mil pessoas em acampamento. Houve manifestações fortes: choro, quedas, danças. Alguns admiraram, outros se escandalizaram. Foi o começo de um novo tipo de reunião, o “acampamento” (camp meeting), que moldou a vida da igreja americana por décadas.",
+          "aprofundamento": [
+            "Responsabilidade humana e soberania divina. Finney insistia que o pecador pode e deve se arrepender agora, e que a igreja deve orar e agir com ousadia. Seus críticos, entre eles teólogos reformados, temiam que ele subestimasse a obra de Deus na conversão e confundisse decisão com regeneração. A Bíblia mantém as duas verdades: Deus age (Filipenses 2:13) e nós respondemos (Atos 17:30).",
+            "Métodos e fruto. Finney introduziu “novas medidas”: reuniões prolongadas, oração em voz alta por pessoas pelo nome, a “banca dos ansiosos”, em que quem queria decidir se sentava na frente. Cada igreja precisa avaliar métodos com a Bíblia, lembrando que técnica não converte ninguém. Só o Espírito faz nascer de novo.",
+            "Mulheres e santidade. O Segundo Grande Avivamento abriu espaço para a atuação de mulheres, como Phoebe Palmer (1807–1874), que liderava em Nova Iorque a “Reunião das Terças-Feiras para a Promoção da Santidade”. Ela defendeu, com base em Joel 2 e Atos 2, que as mulheres também são chamadas a testemunhar e ensinar. Seus textos influenciaram o movimento de santidade."
+          ],
+          "termos": [
+            {
+              "termo": "Regeneração",
+              "definicao": "Obra do Espírito que dá vida nova ao pecador."
+            },
+            {
+              "termo": "Acampamento (camp meeting)",
+              "definicao": "Reunião de vários dias ao ar livre, com pregações, orações e cantos."
+            },
+            {
+              "termo": "Movimento de santidade",
+              "definicao": "Movimento que enfatizava a vida santa e a plena consagração a Deus."
+            }
+          ],
+          "heroi": {
+            "nome": "Charles Finney",
+            "periodo": "1792–1875",
+            "titulo": "Advogado e avivalista",
+            "historia": [
+              "Finney era advogado em Adams, Nova Iorque. Em outubro de 1821, depois de ler a Bíblia e orar sozinho em um bosque, entregou-se a Cristo. Disse que sentiu o Espírito descer sobre ele. Deixou a advocacia e passou a pregar.",
+              "A sua pregação sem rodeios e a ênfase na oração geraram avivamentos em cidades como Rochester, em 1830 e 1831. Ele escreveu as “Palestras sobre Avivamentos” (1835), muito lidas. Foi também professor e, depois, presidente da faculdade de Oberlin, onde apoiou a educação de mulheres e negros e o fim da escravidão.",
+              "Finney fala da necessidade de oração e arrependimento, mas deve ser lido com atenção, pois algumas de suas ideias teológicas foram contestadas por muitos cristãos. Aprender com ele inclui o chamado urgente à conversão e o cuidado de manter Deus no centro."
+            ],
+            "licao": "Há ousadia em chamar as pessoas a decidir. Mas só a graça de Deus converte."
+          },
+          "pratica": [
+            "Escreva o nome de alguém a quem você pode falar de Jesus com clareza e carinho esta semana.",
+            "Leia Filipenses 2:12-13 e anote como Deus age e nós também agimos."
+          ],
+          "simbolo": "chama",
+          "curiosidades": [
+            "Em Cane Ridge, em 1801, estima-se que entre 10 mil e 20 mil pessoas se reuniram, em uma região em que pouca gente morava.",
+            "Oberlin College foi uma das primeiras escolas superiores dos Estados Unidos a aceitar alunos negros e mulheres.",
+            "Nas reuniões de Finney, quem queria decidir se sentava na primeira fila, a chamada “banca dos ansiosos”."
+          ],
+          "linha": [
+            {
+              "ano": "1801",
+              "fato": "Cane Ridge, Kentucky."
+            },
+            {
+              "ano": "1821",
+              "fato": "Conversão de Finney."
+            },
+            {
+              "ano": "1830-31",
+              "fato": "Avivamento em Rochester."
+            },
+            {
+              "ano": "1835",
+              "fato": "Publica Palestras sobre Avivamentos."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Livro",
+              "titulo": "Palestras sobre Avivamentos, de Charles Finney"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Atos 3"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "O avivamento de oração de 1857",
+          "resumo": "Em plena crise econômica, um leigo abriu uma reunião de oração ao meio-dia. Ela se espalhou por cidades e igrejas.",
+          "versiculo": {
+            "ref": "Jeremias 33:3",
+            "texto": "Clama a mim, e responder-te-ei, e anunciar-te-ei coisas grandes e firmes que não sabes."
+          },
+          "texto": [
+            "Em 1857, os Estados Unidos entravam em uma grave crise financeira. Em Nova Iorque, um homem comum, Jeremiah Lanphier, foi contratado por uma igreja para visitar a vizinhança e convidar as pessoas à fé. Ele decidiu abrir uma reunião de oração ao meio-dia, para comerciantes e trabalhadores na hora do almoço.",
+            "No primeiro dia, 23 de setembro de 1857, apenas seis pessoas apareceram. Em poucas semanas, o salão estava lotado e foi preciso abrir outros andares. A reunião se multiplicou por Nova Iorque e por muitas cidades americanas e canadenses.",
+            "Foi um avivamento sem grandes pregadores famosos: leigos, empresários, mulheres e jovens oravam, liam a Bíblia e testemunhavam. Estimativas falam de centenas de milhares de conversões em poucos meses.",
+            "A lição é simples: oração perseverante, regular e humilde prepara o terreno. O que parecia pequeno, seis pessoas orando, Deus usou para alcançar uma nação."
+          ],
+          "apoio": [
+            "Mateus 18:19-20",
+            "Atos 1:14",
+            "Filipenses 4:6"
+          ],
+          "reflexao": "Quais horários da sua semana podem virar “reunião de oração” com um ou dois irmãos?",
+          "oracao": "Pai, ensina-nos a orar em unidade e perseverança. Faz de nossas reuniões pequenas um lugar onde o céu toca a terra. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Quantas pessoas vieram na primeira reunião de Lanphier?",
+              "opcoes": [
+                "Seis",
+                "Seiscentas",
+                "Seis mil"
+              ],
+              "correta": 0,
+              "explicacao": "A primeira reunião teve apenas seis pessoas."
+            },
+            {
+              "pergunta": "Qual a principal característica do avivamento de 1857?",
+              "opcoes": [
+                "A oração de leigos",
+                "Um grande orador",
+                "Uma nova doutrina"
+              ],
+              "correta": 0,
+              "explicacao": "Foi um avivamento de oração, liderado por gente comum."
+            },
+            {
+              "pergunta": "Quem foi Jeremiah Lanphier?",
+              "opcoes": [
+                "Um empresário que abriu a reunião de oração ao meio-dia",
+                "Um rei de Israel",
+                "Um missionário na China"
+              ],
+              "correta": 0,
+              "explicacao": "Lanphier era um leigo que iniciou a reunião de Fulton Street."
+            }
+          ],
+          "ordem": 5,
+          "contexto": "A crise de 1857 levou à falência milhares de empresas, e muitos viram suas economias desaparecerem. Era um tempo de medo, mas também de busca. A reunião de Lanphier foi pensada para pessoas com pouco tempo: cada um podia entrar e sair, e a oração era breve. Era um modelo simples e acessível.",
+          "aprofundamento": [
+            "Oração unida. Jesus ensinou que o Pai atende a oração em comum (Mateus 18:19). Atos 1:14 e 2:42 mostram a igreja “perseverando unânime em oração”. As reuniões de oração de 1857 retomaram esse costume: curtas, abertas, sem grandes líderes, com pedidos e testemunhos. Cada um orava poucos minutos, e o Espírito conduzia.",
+            "O papel dos leigos. O avivamento de 1857 foi marcado pela participação de pessoas comuns: comerciantes, costureiras, funcionários. Isso concretiza o sacerdócio de todos os crentes (1 Pedro 2:9). Não é preciso ser pastor para orar, convidar e testemunhar.",
+            "Oração e missão. A oração não é fuga, mas combustível. Muitas conversões aconteceram porque as pessoas oravam por nome. Em 1858, o avivamento chegou à Irlanda do Norte, à Escócia e ao País de Gales, e depois inspirou missões ao redor do mundo."
+          ],
+          "termos": [
+            {
+              "termo": "Sacerdócio de todos os crentes",
+              "definicao": "Todo cristão tem acesso direto a Deus e pode servi-lo."
+            },
+            {
+              "termo": "Unanimidade",
+              "definicao": "Estar de um mesmo ânimo, em acordo e unidade."
+            },
+            {
+              "termo": "Perseverança",
+              "definicao": "Continuar firme, sem desistir."
+            }
+          ],
+          "heroi": {
+            "nome": "Jeremiah Lanphier",
+            "periodo": "1809–1898",
+            "titulo": "Empresário e missionário leigo de Nova Iorque",
+            "historia": [
+              "Lanphier era comerciante em Nova Iorque e se converteu em um avivamento anterior. Em 1857, foi contratado como missionário leigo da Igreja Reformada Holandesa da rua Fulton.",
+              "Preocupado com os que trabalhavam no centro, distribuiu convites para uma reunião de oração ao meio-dia, às quartas-feiras. Em 23 de setembro, sentou-se sozinho por meia hora até que aparecesse alguém. Chegaram seis. Na semana seguinte, vinte. Logo, quarenta. Depois, centenas.",
+              "Ele não buscou fama. Permaneceu em seu trabalho humilde, e por décadas continuou servindo à igreja. A reunião de Fulton Street se tornou símbolo de um avivamento que veio da oração perseverante."
+            ],
+            "licao": "Deus se agrada de uma fidelidade pequena e constante."
+          },
+          "pratica": [
+            "Combine com um amigo de orar juntos por dez minutos, uma vez por semana, por 30 dias.",
+            "Faça uma lista de dez pessoas e ore por elas pelo nome durante a semana."
+          ],
+          "simbolo": "maos",
+          "curiosidades": [
+            "As reuniões de Fulton Street eram curtas e abertas: cada pessoa orava poucos minutos.",
+            "Em 1859, avivamentos semelhantes ocorreram na Irlanda do Norte, Escócia e Gales.",
+            "O avivamento de 1857-58 foi chamado “Grande Avivamento de Oração” e atingiu leigos e profissionais."
+          ],
+          "linha": [
+            {
+              "ano": "23 set 1857",
+              "fato": "Primeira reunião: seis pessoas."
+            },
+            {
+              "ano": "1858",
+              "fato": "O avivamento se espalha pelas cidades americanas."
+            },
+            {
+              "ano": "1859",
+              "fato": "Avivamento na Irlanda do Norte."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Jeremias 33:2-3"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Mateus 18:19-20"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "Moody e o evangelho para as multidões",
+          "resumo": "Dwight L. Moody, um vendedor de sapatos sem formação teológica, pregou a milhões e fundou escolas, e mostrou o valor de uma vida entregue.",
+          "versiculo": {
+            "ref": "Romanos 12:1",
+            "texto": "Rogo-vos, pois, irmãos, pela compaixão de Deus, que apresenteis os vossos corpos em sacrifício vivo, santo e agradável a Deus, que é o vosso culto racional."
+          },
+          "texto": [
+            "Moody nasceu em 1837, em Massachusetts, em uma família pobre. Foi vendedor de sapatos em Boston e, em 1855, um professor de escola dominical, Edward Kimball, falou-lhe de Cristo na loja onde trabalhava. Moody creu.",
+            "Em Chicago, dedicou-se a ensinar crianças pobres e a trabalhar com jovens. Na década de 1870, junto com o cantor Ira Sankey, fez campanhas na Inglaterra e na Escócia que reuniram multidões. Voltando aos Estados Unidos, continuou a pregar em grandes cidades.",
+            "Moody não tinha estudo formal, mas amava a Bíblia e as pessoas. Fundou escolas, como a que hoje se chama Instituto Bíblico Moody, e incentivou o envio de missionários. Seu estilo era claro, direto e cheio de histórias.",
+            "Conta-se que um amigo lhe disse que o mundo ainda veria o que Deus faria com alguém inteiramente consagrado a ele. Moody respondeu que queria ser esse homem. Em todo avivamento, Deus usa pessoas entregues, ainda que sem destaque."
+          ],
+          "apoio": [
+            "Atos 4:13",
+            "1 Coríntios 1:26-29",
+            "Mateus 28:19-20"
+          ],
+          "reflexao": "O que significa para você entregar a Deus o “corpo inteiro”: o tempo, o trabalho, o dinheiro, os dons?",
+          "oracao": "Senhor, usa a minha vida como usaste a de Moody: simples, entregue e disponível. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Qual era a profissão de Moody quando se converteu?",
+              "opcoes": [
+                "Vendedor de sapatos",
+                "Pastor",
+                "Professor de teologia"
+              ],
+              "correta": 0,
+              "explicacao": "Moody vendia sapatos em Boston."
+            },
+            {
+              "pergunta": "Quem cantava nas campanhas de Moody?",
+              "opcoes": [
+                "Ira Sankey",
+                "Carlos Wesley",
+                "Isaac Watts"
+              ],
+              "correta": 0,
+              "explicacao": "Ira Sankey foi seu parceiro de música."
+            },
+            {
+              "pergunta": "Quem falou de Cristo a Moody na loja de sapatos?",
+              "opcoes": [
+                "Edward Kimball",
+                "George Müller",
+                "Carlos Wesley"
+              ],
+              "correta": 0,
+              "explicacao": "Kimball, seu professor de escola dominical, o levou a Cristo."
+            }
+          ],
+          "ordem": 6,
+          "contexto": "O mundo de Moody era o da industrialização: milhares de pessoas vindas do campo, vivendo em cortiços, sem escolas, em cidades como Chicago. Ele via crianças soltas pelas ruas e decidiu ir até elas. A sua escola dominical chegou a ter centenas de crianças. Em 1871, o grande incêndio de Chicago destruiu sua igreja e sua casa, mas a obra continuou.",
+          "aprofundamento": [
+            "Mensagem simples. Moody pregava três coisas: a ruína do homem pelo pecado, a redenção por Cristo e a regeneração pelo Espírito. Em vez de debates, usava histórias. Para ele, o evangelho cabia em poucas palavras, mas exigia decisão e vida nova. Sua preocupação era alcançar os que não frequentavam igreja.",
+            "Capacitação do Espírito. Em 1871, Moody relatou uma experiência marcante de plenitude do Espírito, que lhe deu nova ousadia. Ele insistia que a obra cristã exige poder do alto (Atos 1:8). Muitos pregadores o consideravam o exemplo de que Deus usa quem se rende, não os mais talentosos.",
+            "Educação e missões. Moody fundou escolas, uma escola bíblica em Chicago (1886) para treinar leigos, e promoveu encontros de estudantes que impulsionaram o movimento missionário. Ele acreditava que o avivamento deve gerar discípulos, treino e envio."
+          ],
+          "termos": [
+            {
+              "termo": "Plenitude do Espírito",
+              "definicao": "Ser dirigido e capacitado de modo contínuo pelo Espírito Santo."
+            },
+            {
+              "termo": "Escola dominical",
+              "definicao": "Ensino bíblico semanal, especialmente para crianças."
+            },
+            {
+              "termo": "Consagração",
+              "definicao": "Entrega completa da vida a Deus."
+            }
+          ],
+          "heroi": {
+            "nome": "Dwight L. Moody",
+            "periodo": "1837–1899",
+            "titulo": "Evangelista e fundador de escolas",
+            "historia": [
+              "Moody, filho de uma viúva pobre, cresceu em Massachusetts com pouca instrução. Aos 17 anos foi trabalhar em uma loja de sapatos em Boston. O professor da escola dominical, Edward Kimball, foi à loja falar-lhe de Cristo. Moody creu.",
+              "Mudou-se para Chicago e dedicou-se aos pobres. Durante a guerra civil americana, trabalhou com soldados e jovens. Em 1873, viajou à Grã-Bretanha e viu multidões abraçarem a fé. Voltou famoso, mas continuou a viver com simplicidade e a investir em educação.",
+              "Sua esposa, Emma, e outros colaboradores foram parte essencial. Entre as músicas das suas campanhas estavam hinos de Fanny Crosby (1820–1915), cega desde bebê, que escreveu milhares de hinos. Moody morreu em 1899. Segundo o relato, suas últimas palavras foram que a terra se afastava e o céu se abria diante dele."
+            ],
+            "licao": "Deus não procura os mais talentosos, mas os que se entregam por completo."
+          },
+          "pratica": [
+            "Pense em uma criança ou jovem a quem você pode ensinar a Palavra de Deus esta semana.",
+            "Escreva em uma frase: “Hoje me entrego a Deus em…” e complete com sua vida concreta."
+          ],
+          "simbolo": "cruz",
+          "curiosidades": [
+            "O Instituto Bíblico Moody, fundado em 1886, existe até hoje e também mantém uma rádio e uma editora.",
+            "Fanny Crosby escreveu mais de oito mil letras de hinos e ficou cega ainda bebê.",
+            "Antes de ficar conhecido no mundo, Moody ensinou crianças pobres nas ruas de Chicago."
+          ],
+          "linha": [
+            {
+              "ano": "1837",
+              "fato": "Nasce D. L. Moody."
+            },
+            {
+              "ano": "1855",
+              "fato": "Converte-se em Boston."
+            },
+            {
+              "ano": "1873",
+              "fato": "Campanhas na Grã-Bretanha."
+            },
+            {
+              "ano": "1886",
+              "fato": "Funda o Instituto Moody."
+            },
+            {
+              "ano": "1899",
+              "fato": "Morre Moody."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Romanos 12"
+            },
+            {
+              "tipo": "Cante",
+              "titulo": "Hinos de Fanny Crosby, como “Segurança Bendita”"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "O avivamento de Gales (1904-1905)",
+          "resumo": "No País de Gales, uma jovem testemunhou, um mineiro orou e as igrejas se encheram. O avivamento valorizou a oração, a confissão e o cântico.",
+          "versiculo": {
+            "ref": "Joel 2:28",
+            "texto": "E há de ser que, depois, derramarei o meu Espírito sobre toda a carne, e vossos filhos e vossas filhas profetizarão, os vossos velhos terão sonhos, os vossos jovens terão visões."
+          },
+          "texto": [
+            "Em fevereiro de 1904, em New Quay, uma jovem de 17 anos, Florrie Evans, levantou-se em uma reunião e disse que amava Jesus de todo o coração. Esse testemunho comoveu muita gente e se tornou uma das fagulhas do avivamento.",
+            "No final do mesmo ano, um jovem mineiro de carvão, Evan Roberts, de 26 anos, começou a realizar reuniões na sua cidade, Loughor. Ele pedia quatro coisas: confessar pecados a Deus, abandonar tudo o que fosse duvidoso, obedecer ao Espírito e confessar Cristo publicamente. As reuniões duravam horas, com oração espontânea, cânticos e confissões.",
+            "Em poucos meses, dezenas de milhares se converteram. Muitos relatam que as tabernas esvaziaram, as dívidas foram pagas e as famílias se reconciliaram. A notícia chegou a outros países e inspirou avivamentos em várias nações.",
+            "Evan Roberts, esgotado, afastou-se da vida pública e viveu longos anos em reclusão. A história lembra que o avivamento é obra de Deus, e que seus instrumentos precisam de cuidado e descanso."
+          ],
+          "apoio": [
+            "Atos 2:17",
+            "Tiago 5:16",
+            "Salmos 126"
+          ],
+          "reflexao": "Há alguma confissão que você precisa fazer, a Deus ou a alguém, para viver um recomeço?",
+          "oracao": "Senhor, derrama o teu Espírito sobre jovens e velhos, sobre homens e mulheres. Começa por mim. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Quem foi Florrie Evans?",
+              "opcoes": [
+                "Uma jovem cujo testemunho acendeu o avivamento em Gales",
+                "Uma rainha",
+                "Uma missionária na Índia"
+              ],
+              "correta": 0,
+              "explicacao": "O testemunho dela em New Quay foi uma das fagulhas do avivamento."
+            },
+            {
+              "pergunta": "Qual era a profissão de Evan Roberts?",
+              "opcoes": [
+                "Mineiro de carvão",
+                "Médico",
+                "Soldado"
+              ],
+              "correta": 0,
+              "explicacao": "Evan Roberts trabalhou nas minas de carvão."
+            },
+            {
+              "pergunta": "Em qual lugar começou o avivamento de Evan Roberts?",
+              "opcoes": [
+                "Loughor, no País de Gales",
+                "Londres",
+                "Roma"
+              ],
+              "correta": 0,
+              "explicacao": "As reuniões de Roberts começaram em Loughor, em 1904."
+            }
+          ],
+          "ordem": 7,
+          "contexto": "O País de Gales era conhecido pelos corais, pelas minas de carvão e pelos cultos em galês. No fim do século XIX, as igrejas tinham perdido força. Pregadores e leigos oravam por um novo derramar. Em 1904, as orações começaram a ser respondidas. O avivamento ficou famoso pela espontaneidade: muitos cultos não tinham programa, e o povo orava, cantava e testemunhava.",
+          "aprofundamento": [
+            "A oração e a confissão. As reuniões eram marcadas por oração aberta e confissão pública de pecados. Muitos devolviam objetos furtados e reparavam ofensas. Isso corresponde ao ensino bíblico de 1 João 1:9 e Tiago 5:16. A confissão é parte do que a Bíblia chama de “frutos dignos de arrependimento” (Mateus 3:8).",
+            "Música e comunhão. O canto congregacional era central. A música unia as pessoas e preparava os corações. Hoje ainda se fala da alegria do povo, das famílias reconciliadas e das mudanças nos hábitos da cidade.",
+            "Os limites. Alguns líderes se preocuparam com excessos e com pessoas que se sentiam guiadas por impressões sem a Bíblia. A igreja aprendeu a testar tudo (1 Tessalonicenses 5:21) e a cuidar dos líderes. O avivamento foi curto, mas deixou marcas por décadas e inspirou outros movimentos pelo mundo."
+          ],
+          "termos": [
+            {
+              "termo": "Confissão",
+              "definicao": "Reconhecer o pecado diante de Deus e, quando cabe, dos outros."
+            },
+            {
+              "termo": "Espontaneidade",
+              "definicao": "Reunião sem roteiro rígido, aberta à condução do Espírito."
+            },
+            {
+              "termo": "Discernimento",
+              "definicao": "Examinar tudo à luz da Bíblia e reter o que é bom."
+            }
+          ],
+          "heroi": {
+            "nome": "Evan Roberts",
+            "periodo": "1878–1951",
+            "titulo": "Jovem mineiro e avivalista de Gales",
+            "historia": [
+              "Evan Roberts trabalhou nas minas desde menino. Frequentava a igreja e passou anos orando por avivamento. Em 1904, sentiu o chamado para pregar na sua região e iniciou reuniões simples em sua igreja, em Loughor.",
+              "Em pouco tempo, a notícia correu, e as reuniões lotaram igrejas e capelas, com horas de oração e cântico. Roberts era humilde e pedia que o povo olhasse para Cristo, e não para ele. Ele contou com a ajuda de irmãs e de colaboradoras, como Jessie Penn-Lewis, que escreveu sobre a obra.",
+              "Em 1906, esgotado emocional e fisicamente, retirou-se da vida pública. Viveu o restante da vida em silêncio e oração, em Cardiff, até 1951. A sua vida lembra que todo servo de Deus precisa de descanso e de uma comunidade que o cuide."
+            ],
+            "licao": "Deus usa gente comum, mas gente comum precisa de cuidado e de descanso."
+          },
+          "pratica": [
+            "Faça hoje uma confissão sincera a Deus, nomeando um pecado sem desculpas. Receba o perdão (1 João 1:9).",
+            "Cante ou ouça um hino que fale de entrega e rendição e ore a partir dele."
+          ],
+          "simbolo": "pomba",
+          "curiosidades": [
+            "Segundo a história popular, nas minas de Gales os cavalos de carga estranharam a mudança de vocabulário dos mineiros, que deixaram de blasfemar. É uma anedota conhecida, mas difícil de comprovar.",
+            "Estima-se que, em 1904 e 1905, cerca de cem mil pessoas se converteram no avivamento galês.",
+            "O avivamento teve forte presença de mulheres e jovens."
+          ],
+          "linha": [
+            {
+              "ano": "Fev 1904",
+              "fato": "Testemunho de Florrie Evans, em New Quay."
+            },
+            {
+              "ano": "Nov 1904",
+              "fato": "Reuniões de Evan Roberts em Loughor."
+            },
+            {
+              "ano": "1905",
+              "fato": "Auge do avivamento."
+            },
+            {
+              "ano": "1906",
+              "fato": "Evan Roberts se retira da vida pública."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Joel 2:12-29"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Salmo 126"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "Azusa Street e o avivamento pentecostal",
+          "resumo": "Em 1906, em Los Angeles, um pregador negro filho de ex-escravos liderou reuniões em que brancos, negros, latinos e asiáticos adoravam juntos. O movimento se espalhou pelo mundo e chegou ao Brasil.",
+          "versiculo": {
+            "ref": "Gálatas 3:28",
+            "texto": "Nisto não há judeu nem grego; não há servo nem livre; não há macho nem fêmea; porque todos vós sois um em Cristo Jesus."
+          },
+          "texto": [
+            "No início do século XX, muitos cristãos desejavam mais do Espírito Santo. Em 1906, um pastor negro, William J. Seymour, começou reuniões em uma antiga igreja metodista na rua Azusa, em Los Angeles. Em pouco tempo, pessoas de várias origens e classes passaram a se reunir, orar e louvar, algo raro numa época de forte segregação.",
+            "Os cultos duravam o dia todo. Falava-se de salvação, cura, santidade e do batismo no Espírito Santo, com o dom de línguas. O movimento chamado pentecostal cresceu e hoje reúne centenas de milhões de cristãos.",
+            "No Brasil, em 1910 e 1911, dois missionários suecos, Gunnar Vingren e Daniel Berg, fundaram em Belém a Assembleia de Deus. No mesmo período, o italiano Luigi Francescon iniciou a Congregação Cristã no Brasil. Esse legado moldou grande parte do cristianismo brasileiro.",
+            "Cristãos sinceros divergem sobre alguns dons e ênfases. O que nos une é Cristo, a cruz e a Palavra. Vale aprender com o que há de comum: fome de Deus, alegria na adoração e a certeza de que o Espírito é para todos."
+          ],
+          "apoio": [
+            "Atos 2:1-21",
+            "1 Coríntios 12:12-13",
+            "Efésios 4:1-6"
+          ],
+          "reflexao": "Você consegue adorar ao lado de pessoas de outra cor, classe ou denominação? O que pode mudar?",
+          "oracao": "Senhor, derruba os muros que nos dividem. Une os teus filhos na adoração e no amor. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Quem liderou as reuniões da rua Azusa?",
+              "opcoes": [
+                "William J. Seymour",
+                "Martinho Lutero",
+                "George Müller"
+              ],
+              "correta": 0,
+              "explicacao": "Seymour foi o pastor das reuniões de Azusa Street."
+            },
+            {
+              "pergunta": "Quem fundou a Assembleia de Deus em Belém?",
+              "opcoes": [
+                "Gunnar Vingren e Daniel Berg",
+                "João Wesley",
+                "Charles Finney"
+              ],
+              "correta": 0,
+              "explicacao": "Dois suecos, Vingren e Berg, começaram a igreja em 1911."
+            },
+            {
+              "pergunta": "Onde começou a Assembleia de Deus no Brasil?",
+              "opcoes": [
+                "Belém, no Pará",
+                "Rio de Janeiro",
+                "Brasília"
+              ],
+              "correta": 0,
+              "explicacao": "A Assembleia de Deus começou em Belém, em 1911."
+            }
+          ],
+          "ordem": 8,
+          "contexto": "No início do século XX, os Estados Unidos viviam a segregação racial. A rua Azusa ficava num bairro pobre e misturado de Los Angeles. Seymour, que não podia estudar na sala por ser negro, ouvia as aulas do corredor. Mesmo assim, aprendeu a ensinar. Ao receber o convite para pregar em Los Angeles, foi, mesmo sem apoio.",
+          "aprofundamento": [
+            "Pentecostalismo. Os pentecostais ensinam que o batismo no Espírito Santo é uma experiência posterior à conversão, geralmente acompanhada de línguas, e valorizam dons como cura e profecia. Outros cristãos creem que o batismo no Espírito ocorre na conversão e que alguns dons cessaram. Todos concordam que o Espírito Santo habita nos crentes e que o seu fruto é o amor.",
+            "Unidade e justiça. Em Azusa, brancos, negros, latinos e asiáticos oravam juntos, e mulheres tinham voz. Era um sinal de Gálatas 3:28 em ação. Com o tempo, a segregação voltou a dividir muitos grupos, mas aquela memória permanece como desafio para a igreja: o avivamento verdadeiro derruba muros.",
+            "Brasil. A Assembleia de Deus começou em Belém, em 1911, com Gunnar Vingren e Daniel Berg; a Congregação Cristã, em 1910, com Luigi Francescon. Em poucas décadas, o pentecostalismo se espalhou por todo o país. Hoje, o Brasil é um dos maiores países evangélicos do mundo. Vale sempre voltar à Bíblia para avaliar o que se prega e se pratica."
+          ],
+          "termos": [
+            {
+              "termo": "Batismo no Espírito Santo",
+              "definicao": "Expressão com sentidos diferentes entre os cristãos; ligada à promessa de Atos 1:5 e 2."
+            },
+            {
+              "termo": "Línguas",
+              "definicao": "Dom espiritual de falar em idiomas por obra do Espírito (1 Coríntios 12-14)."
+            },
+            {
+              "termo": "Segregação",
+              "definicao": "Separação forçada entre pessoas por raça ou classe."
+            }
+          ],
+          "heroi": {
+            "nome": "William J. Seymour",
+            "periodo": "1870–1922",
+            "titulo": "Pastor da Missão da Fé Apostólica, na rua Azusa",
+            "historia": [
+              "Seymour nasceu em Louisiana, filho de pessoas que haviam sido escravizadas. Perdeu a visão de um olho por causa da varíola. Trabalhou em hotéis e estudou a Bíblia com dedicação, mesmo com muitas barreiras.",
+              "Em 1906, foi a Los Angeles pregar em uma igreja que logo o afastou por causa da sua mensagem. Começou, então, a orar em uma casa e, depois, na antiga igreja da rua Azusa. As reuniões, que duraram cerca de três anos, atraíram multidões e visitantes de muitos países.",
+              "Seymour, humilde e manso, dizia que o amor era a prova de um batismo verdadeiro no Espírito. Morreu em 1922. Hoje, é lembrado como um dos grandes pioneiros de um dos movimentos que mais cresce no mundo cristão."
+            ],
+            "licao": "O Espírito Santo une povos que o mundo divide."
+          },
+          "pratica": [
+            "Visite ou ore por uma igreja diferente da sua, com respeito e abertura para aprender.",
+            "Leia Gálatas 3:26-29 e pense em um muro que você pode ajudar a derrubar."
+          ],
+          "simbolo": "pomba",
+          "curiosidades": [
+            "O prédio da rua Azusa, 312, era uma antiga igreja que tinha sido usada como depósito. Foi demolido em 1931.",
+            "Seymour dizia que a prova do batismo no Espírito Santo era o amor.",
+            "A Assembleia de Deus no Brasil nasceu com um nome diferente, Missão da Fé Apostólica, e foi renomeada em 1918."
+          ],
+          "linha": [
+            {
+              "ano": "Abr 1906",
+              "fato": "Início das reuniões na rua Azusa."
+            },
+            {
+              "ano": "1910",
+              "fato": "Congregação Cristã no Brasil."
+            },
+            {
+              "ano": "1911",
+              "fato": "Assembleia de Deus em Belém."
+            },
+            {
+              "ano": "1922",
+              "fato": "Morre William Seymour."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Atos 2"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Gálatas 3:23-29"
+            }
+          ],
+          "minutos": 5
+        },
+        {
+          "titulo": "Avivamento hoje: o que Deus procura",
+          "resumo": "O que Deus busca em todo avivamento: humildade, oração, arrependimento e fidelidade à Palavra. E o que podemos fazer hoje.",
+          "versiculo": {
+            "ref": "2 Crônicas 7:14",
+            "texto": "Se o meu povo, que se chama pelo meu nome, se humilhar, e orar, e buscar a minha face, e se converter dos seus maus caminhos, então eu ouvirei dos céus, e perdoarei os seus pecados, e sararei a sua terra."
+          },
+          "texto": [
+            "Quando Salomão dedicou o templo, Deus lhe respondeu com uma promessa. As condições são quatro: humilhar-se, orar, buscar a face de Deus e converter-se. As promessas são três: Deus ouvirá dos céus, perdoará o pecado e sarará a terra. Esse padrão aparece em todos os avivamentos.",
+            "Nem toda empolgação é avivamento. Os sinais são os do Espírito: Cristo exaltado, pecado abominado, Palavra amada, verdade defendida e amor aumentado (1 João 4). Fruto duradouro é o teste: vidas transformadas, famílias restauradas, serviço aos pobres e missões.",
+            "Devemos ter cuidado com o oposto: o cinismo de quem diz que nada pode acontecer, e a pressa de quem fabrica experiências. Avivamento não se programa. Mas podemos pedir, preparar o coração, perdoar, ler a Bíblia, orar juntos e agir no que já sabemos.",
+            "Comece em casa. Os grandes avivamentos começaram quando alguém decidiu se arrepender e orar. Que a próxima história seja a sua, a da sua família e a da sua igreja."
+          ],
+          "apoio": [
+            "Neemias 8-9",
+            "Oseias 10:12",
+            "Apocalipse 3:14-22"
+          ],
+          "reflexao": "Qual das quatro condições de 2 Crônicas 7:14 é a mais difícil para você agora?",
+          "oracao": "Pai, humilhamo-nos diante de ti. Ouve-nos, perdoa-nos e aviva-nos de novo, para a glória de Jesus. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Quais são as condições de 2 Crônicas 7:14?",
+              "opcoes": [
+                "Humilhar-se, orar, buscar a face e converter-se",
+                "Pagar dízimo e jejuar",
+                "Construir templos"
+              ],
+              "correta": 0,
+              "explicacao": "O texto lista quatro respostas do povo."
+            },
+            {
+              "pergunta": "Qual o melhor teste de um avivamento genuíno?",
+              "opcoes": [
+                "Fruto duradouro e Cristo exaltado",
+                "Tamanho da multidão",
+                "Emoção forte"
+              ],
+              "correta": 0,
+              "explicacao": "Os frutos e a exaltação de Cristo mostram a obra do Espírito."
+            },
+            {
+              "pergunta": "Quem eram Peggy e Christine Smith?",
+              "opcoes": [
+                "Duas irmãs idosas que oraram pelo avivamento nas Hébridas",
+                "Duas rainhas da Escócia",
+                "Duas missionárias na África"
+              ],
+              "correta": 0,
+              "explicacao": "Duas irmãs idosas oraram por semanas antes do avivamento."
+            }
+          ],
+          "ordem": 9,
+          "contexto": "O avivamento das Hébridas começou em 1949, na ilha de Lewis, na Escócia. Duas irmãs idosas, Peggy e Christine Smith, de Barvas, oravam por avivamento. Uma era cega, a outra se movia com dificuldade por causa da artrite. Duas noites por semana, elas se ajoelhavam em casa e pediam a Deus que visitasse a ilha. Pediram então a um pastor que viesse pregar, e Duncan Campbell foi convidado.",
+          "aprofundamento": [
+            "Condições. O que Deus procura aparece em 2 Crônicas 7:14: humildade, oração, busca da face e conversão. Isaías 57:15 diz que Deus habita com o contrito e o abatido. A oração das irmãs Smith e de um pequeno grupo de jovens e pastores precedeu a obra. Em geral, os avivamentos começam em intercessão persistente.",
+            "Sinais. Além das marcas de 1 João 4, vê-se o temor do Senhor (Atos 2:43), a Palavra no centro (Atos 6:7), o amor entre os irmãos (João 13:35) e o zelo por missões (Atos 13:1-3). Os frutos também são sociais: perdão de dívidas, fim de inimizades, cuidado dos pobres, justiça. Se não há esses frutos, é preciso rever o que chamamos de avivamento.",
+            "Perigos. Entre os riscos estão o culto ao pregador, a busca de experiências sem raízes na Bíblia, a ênfase no espetáculo e o orgulho espiritual. Os grandes avivalistas sempre insistiram em manter a cruz no centro, a Bíblia como medida e a humildade como atitude."
+          ],
+          "termos": [
+            {
+              "termo": "Intercessão",
+              "definicao": "Orar a Deus em favor de outros."
+            },
+            {
+              "termo": "Contrição",
+              "definicao": "Coração quebrantado diante de Deus."
+            },
+            {
+              "termo": "Temor do Senhor",
+              "definicao": "Reverência diante da santidade de Deus."
+            }
+          ],
+          "heroi": {
+            "nome": "Peggy e Christine Smith, e Duncan Campbell",
+            "periodo": "séc. XX",
+            "titulo": "Intercessoras e o pregador do avivamento das Hébridas",
+            "historia": [
+              "Peggy e Christine Smith moravam em uma pequena casa em Barvas, na ilha de Lewis. Já passavam dos oitenta anos. Peggy era cega, e Christine ficava curvada pela artrite. Diziam que tinham recebido de Deus uma promessa de avivamento, e passavam noites inteiras orando por isso.",
+              "Pediram aos pastores que reunissem o povo, e o pregador Duncan Campbell foi convidado. Em dezembro de 1949, os cultos começaram e as igrejas ficaram pequenas. Dizem que, em dias de reunião, o povo se reunia em casas e saía pelas ruas, com um temor profundo da presença de Deus.",
+              "O avivamento durou alguns anos e mudou vilarejos inteiros. Campbell sempre lembrava que o mérito era da oração das irmãs e do povo, e não dele."
+            ],
+            "licao": "O avivamento pode começar com duas idosas de joelhos. A oração humilde move a mão de Deus."
+          },
+          "pratica": [
+            "Escolha um tempo, mesmo que curto, para orar todos os dias pelo avivamento da sua igreja e cidade por 30 dias.",
+            "Procure um irmão ou irmã idoso e peça-lhe que ore por você e pelos seus. Agradeça e ouça a sua história."
+          ],
+          "simbolo": "maos",
+          "curiosidades": [
+            "Lewis é a maior ilha das Hébridas Exteriores, e a língua gaélica ainda é falada ali.",
+            "As irmãs Smith oravam duas noites por semana, durante meses.",
+            "Duncan Campbell (1898–1972) era escocês e pregou em muitas partes da Escócia e das ilhas."
+          ],
+          "linha": [
+            {
+              "ano": "1949",
+              "fato": "As irmãs Smith pedem oração por avivamento."
+            },
+            {
+              "ano": "Dez 1949",
+              "fato": "Duncan Campbell chega a Lewis."
+            },
+            {
+              "ano": "1950-52",
+              "fato": "O avivamento alcança várias aldeias das ilhas."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "2 Crônicas 7:14"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Isaías 57:15"
+            }
           ],
           "minutos": 5
         }

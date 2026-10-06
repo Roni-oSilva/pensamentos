@@ -2,7 +2,7 @@
 
 > Textos bíblicos citados na tradução Almeida Corrigida Fiel (domínio público). Revisar com a liderança antes de publicar.
 
-**3 trilhas, 25 aulas, 75 perguntas de quiz e 1 plano de leitura de 30 dias.**
+**4 trilhas, 34 aulas, 102 perguntas de quiz e 1 plano de leitura de 30 dias.**
 
 ## Trilha: Fundamentos da Fé
 
@@ -22,6 +22,8 @@ Os cristãos creem que, por trás de cada autor humano, o próprio Deus falava. 
 A Bíblia se divide em Antigo Testamento, que prepara a vinda de Cristo, e Novo Testamento, que anuncia Cristo e a vida da igreja. Uma boa forma de começar é pelos evangelhos, principalmente João, e depois ler os Salmos para aprender a conversar com Deus.
 
 Ler a Bíblia pede três hábitos simples: ler com regularidade, ler pedindo ajuda a Deus e ler perguntando o que o texto diz, o que ele significa e o que muda em mim.
+
+*Símbolo do banner: livro*
 
 #### Contexto
 
@@ -57,6 +59,23 @@ A tradução foi revisada muitas vezes ao longo dos séculos, e é a base das B�
 
 - Escolha um horário fixo e leia um capítulo de João por dia, em voz alta, nos próximos três dias.
 - Ao ler, anote três respostas: o que o texto diz, o que significa e o que vou fazer com ele.
+
+#### Você sabia?
+
+- O Salmo 119 é o capítulo mais longo da Bíblia (176 versículos) e o Salmo 117 é o mais curto.
+- A Bíblia completa já foi traduzida para mais de 700 idiomas, e partes dela para milhares de línguas.
+- Os livros do Novo Testamento foram escritos em grego comum, a língua do dia a dia do mundo antigo, e não em um grego “religioso”.
+
+#### Linha do tempo
+
+- **1628**: Nasce João Ferreira de Almeida, em Portugal.
+- **1681**: É impresso o Novo Testamento de Almeida em português.
+- **1947**: Descobertos os manuscritos do Mar Morto.
+
+#### Para ler e cantar
+
+- Leia: João 1
+- Livro: Entendes o que lês?, de Gordon Fee e Douglas Stuart
 
 **Para ler também:** Salmos 119:105; Hebreus 4:12; Josué 1:8
 
@@ -99,6 +118,8 @@ Entre os atributos de Deus, a Bíblia destaca que ele é santo, totalmente puro 
 
 Conhecer Deus não é só saber informações sobre ele. É confiar, obedecer e amar. O primeiro e maior mandamento é amar o Senhor de todo o coração, de toda a alma e de todo o entendimento.
 
+*Símbolo do banner: sol*
+
 #### Contexto
 
 No mundo antigo, cada povo tinha vários deuses para a chuva, a guerra e a fertilidade. Quando Israel ouvia “o Senhor é único”, isso era uma ruptura. A oração central do povo, o Shemá (Deuteronômio 6:4-9), declarava que há um só Deus, que merece todo o amor. Mais tarde, Jesus citou esse texto como o maior mandamento.
@@ -133,6 +154,24 @@ Nas Confissões, ele escreve a oração que resume a sua busca: “Fizeste-nos p
 
 - Escreva três características de Deus e um versículo para cada uma (por exemplo: santo, Isaías 6:3).
 - Antes de dormir, agradeça a Deus por algo que mostra o cuidado de Criador sobre a sua vida.
+
+#### Você sabia?
+
+- Gênesis 1:1 tem apenas sete palavras no hebraico original.
+- O nome de Deus revelado a Moisés, YHWH, aparece mais de seis mil vezes no Antigo Testamento.
+- Os judeus recitam o Shemá (“Ouve, Israel”) de manhã e à noite até hoje.
+
+#### Linha do tempo
+
+- **354**: Nasce Agostinho em Tagaste, no norte da África.
+- **386**: Agostinho se converte em Milão.
+- **c. 400**: Escreve as Confissões.
+- **430**: Morre em Hipona.
+
+#### Para ler e cantar
+
+- Leia: Confissões, de Agostinho (Livro I)
+- Livro: Conhecendo a Deus, de J. I. Packer
 
 **Para ler também:** Gênesis 1:1; 1 João 4:8; Isaías 6:3; Mateus 28:19
 
@@ -175,6 +214,8 @@ Três dias depois, Jesus ressuscitou. A ressurreição é a prova de que o seu s
 
 Reconhecer Jesus como Senhor e Salvador é entregar a ele a direção da vida. Quem faz isso recebe perdão, nova vida e a certeza de que pertence a Deus.
 
+*Símbolo do banner: cruz*
+
 #### Contexto
 
 Nos primeiros séculos, muitos se perguntavam: Jesus é um homem escolhido, um anjo, um semideus? Por volta de 318, o presbítero Ário, de Alexandria, ensinava que o Filho foi criado e que “houve um tempo em que não existia”. A igreja se dividiu. Em 325, o imperador Constantino convocou o Concílio de Niceia para resolver a questão.
@@ -209,6 +250,24 @@ Escreveu Sobre a Encarnação, onde explica que Deus, o Filho, se fez homem para
 
 - Leia João 1:1-18 e sublinhe tudo o que o texto diz sobre quem Jesus é.
 - Conte a alguém da sua família ou da igreja por que Jesus é importante para você, em duas frases.
+
+#### Você sabia?
+
+- “Cristo” vem do grego Christós, tradução da palavra hebraica Mashiach (Messias), que significa “ungido”.
+- A tradição fala em 318 bispos reunidos em Niceia, em 325.
+- Atanásio foi exilado várias vezes, e em uma delas passou algum tempo escondido no deserto.
+
+#### Linha do tempo
+
+- **325**: Concílio de Niceia declara que o Filho é da mesma substância do Pai.
+- **367**: Atanásio lista os 27 livros do Novo Testamento.
+- **373**: Morre Atanásio.
+- **451**: Concílio de Calcedônia.
+
+#### Para ler e cantar
+
+- Livro: Cristianismo Puro e Simples, de C. S. Lewis
+- Livro: A Cruz de Cristo, de John Stott
 
 **Para ler também:** João 1:1; João 1:14; 1 Coríntios 15:3-4; Filipenses 2:5-11
 
@@ -251,6 +310,8 @@ Isso traz paz e também humildade. Paz, porque a nossa salvação não depende d
 
 A graça também é o modo como Deus nos trata todos os dias: força quando estamos fracos, perdão quando falhamos e recomeço quando caímos.
 
+*Símbolo do banner: coracao*
+
 #### Contexto
 
 Paulo escreve aos Efésios vindo de uma cultura em que tudo dependia de mérito, status ou favor. Os judeus confiavam na lei; os gregos, na sabedoria; os romanos, no poder. Em Efésios 2, ele começa dizendo que estávamos mortos em delitos e pecados (v. 1), e só então diz que Deus, “sendo rico em misericórdia”, nos deu vida com Cristo. Não é uma melhoria, é uma ressurreição.
@@ -285,6 +346,24 @@ Ali escreveu o hino “Amazing Grace” (“Maravilhosa Graça”), publicado em
 
 - Escreva em um papel “Pela graça sou salvo” e coloque num lugar visível por uma semana.
 - Pense em alguém que lhe fez mal. Peça a Deus ajuda para tratá-lo com a mesma graça que você recebeu.
+
+#### Você sabia?
+
+- O epitáfio de John Newton, que ele mesmo pediu, o descreve como alguém que foi “um incrédulo e libertino” e servo de traficantes, mas foi preservado e perdoado pela rica misericórdia de Cristo.
+- “Amazing Grace” é um dos hinos mais gravados e cantados da história.
+- Newton ficou cego nos últimos anos de vida, mas continuou a pregar.
+
+#### Linha do tempo
+
+- **1725**: Nasce John Newton, em Londres.
+- **1748**: A tempestade que muda a sua vida.
+- **1779**: O hino é publicado nos Olney Hymns.
+- **1807**: Morre Newton; no mesmo ano o Reino Unido proíbe o tráfico de escravos.
+
+#### Para ler e cantar
+
+- Cante: Maravilhosa Graça (John Newton)
+- Leia: Efésios 2
 
 **Para ler também:** Romanos 3:23-24; Romanos 6:23; Tito 2:11-12; 2 Coríntios 12:9
 
@@ -327,6 +406,8 @@ Por isso a vida cristã tem frutos visíveis: amor ao próximo, perdão, honesti
 
 A pergunta não é “quanto eu preciso fazer para ser salvo?”, e sim “como posso demonstrar com a minha vida a fé que tenho em Cristo?”.
 
+*Símbolo do banner: arvore*
+
 #### Contexto
 
 A carta de Tiago foi escrita provavelmente por Tiago, irmão de Jesus e líder da igreja de Jerusalém, para cristãos judeus espalhados. Muitos diziam “tenho fé” e viviam sem amor. Tiago não ataca a fé; ele ataca uma fé de fachada. Paulo, por sua vez, escrevia contra quem queria somar obras da lei à graça para ser aceito por Deus. Os dois combatem erros diferentes.
@@ -361,6 +442,24 @@ Traduziu a Bíblia para o alemão e deixou claro que a fé verdadeira não fica 
 
 - Escolha um ato concreto de amor (visitar, ajudar, perdoar, doar) e faça-o ainda esta semana.
 - Leia Tiago 2:14-26 com uma pergunta: onde a minha fé precisa aparecer em ações?
+
+#### Você sabia?
+
+- As 95 teses foram escritas em latim e logo traduzidas para o alemão. A imprensa de Gutenberg as espalhou pela Europa em poucas semanas.
+- Lutero traduziu o Novo Testamento para o alemão em cerca de dez a onze semanas, escondido no castelo de Wartburg.
+- Lutero se casou com Katharina von Bora, uma ex-freira, e tiveram seis filhos.
+
+#### Linha do tempo
+
+- **1483**: Nasce Martinho Lutero.
+- **1517**: As 95 teses em Wittenberg.
+- **1521**: A Dieta de Worms.
+- **1534**: Bíblia completa em alemão.
+
+#### Para ler e cantar
+
+- Leia: Prefácio de Lutero à Epístola aos Romanos
+- Leia: Tiago 2
 
 **Para ler também:** Efésios 2:10; Gálatas 5:6; Tiago 2:14-26; Mateus 7:16-20
 
@@ -403,6 +502,8 @@ Ele também produz em nós o seu fruto: amor, alegria, paz, longanimidade, benig
 
 Viver no Espírito é andar com ele no dia a dia: ouvir a Palavra, orar, obedecer e não entristecê-lo com pecado persistente.
 
+*Símbolo do banner: pomba*
+
 #### Contexto
 
 Antes de subir ao céu, Jesus mandou os discípulos esperarem em Jerusalém (Atos 1:4-5). No dia de Pentecostes, cinquenta dias depois da Páscoa, o Espírito veio e a igreja nasceu. Gente de muitas nações ouviu o evangelho na própria língua (Atos 2). Foi o oposto de Babel: Deus uniu povos diferentes em Cristo.
@@ -437,6 +538,23 @@ O Grande Avivamento do século XVIII mudou a Inglaterra e as colônias. Whitefie
 
 - Todo dia, peça: “Espírito Santo, enche-me hoje”. Anote ao fim do dia onde o viu agir.
 - Leia Gálatas 5:22-23 e escolha um fruto para pedir a Deus nesta semana.
+
+#### Você sabia?
+
+- Pentecostes vem do grego pentekosté, “quinquagésimo”: cinquenta dias depois da Páscoa.
+- A Bíblia usa vários símbolos do Espírito: vento, fogo, água, óleo e pomba.
+- Whitefield pregava com tanta voz que, segundo se conta, era ouvido a grande distância ao ar livre.
+
+#### Linha do tempo
+
+- **1714**: Nasce George Whitefield, em Gloucester.
+- **1739**: Começa a pregar ao ar livre.
+- **1770**: Morre em Newburyport, Massachusetts.
+
+#### Para ler e cantar
+
+- Leia: Atos 2
+- Leia: Gálatas 5
 
 **Para ler também:** Atos 2:1-4; Romanos 8:14-16; Gálatas 5:22-23; 1 Coríntios 12:4-7
 
@@ -479,6 +597,8 @@ Quem crê recebe perdão total, uma nova identidade e o direito de ser chamado f
 
 O batismo nas águas é o testemunho público dessa nova vida: mostra que morremos com Cristo e ressuscitamos com ele. É um passo de obediência de quem já creu.
 
+*Símbolo do banner: agua*
+
 #### Contexto
 
 Nicodemos era fariseu, membro do Sinédrio e mestre da lei. Tinha tudo o que a religião da época podia dar, e mesmo assim foi à noite falar com Jesus. A resposta foi dura e libertadora: “é necessário nascer de novo” (João 3:7). Não adiantava melhorar. Era preciso começar de novo, pelo alto.
@@ -513,6 +633,24 @@ A partir daí, pregou por mais de cinquenta anos, a cavalo, pelo interior da Ing
 
 - Escreva em uma página o seu testemunho: como você conheceu Jesus (ou o que ainda falta para entregar a vida a ele).
 - Converse com um líder ou irmão de confiança sobre batismo, se ainda não se batizou.
+
+#### Você sabia?
+
+- John Wesley anotou que sentiu o coração “estranhamente aquecido” por volta das nove da noite de 24 de maio de 1738.
+- A palavra “metodista” começou como apelido dado por colegas aos Wesley, por viverem com tanta disciplina.
+- Wesley viajou centenas de milhares de quilômetros a cavalo durante o seu ministério, segundo estimativas.
+
+#### Linha do tempo
+
+- **1703**: Nasce John Wesley.
+- **1738**: Experiência na rua Aldersgate.
+- **1739**: Começa a pregar ao ar livre.
+- **1791**: Morre Wesley.
+
+#### Para ler e cantar
+
+- Leia: João 3
+- Livro: O Peregrino, de John Bunyan
 
 **Para ler também:** Atos 3:19; 1 João 1:9; 2 Coríntios 5:17; Romanos 6:3-4
 
@@ -555,6 +693,8 @@ Viver em comunidade exige humildade. Haverá diferenças e falhas, porque a igre
 
 Esta comunidade online não substitui a igreja local, mas pode ser um lugar de encorajamento, partilha de versículos e oração. Procure também uma igreja onde você possa servir e ser cuidado.
 
+*Símbolo do banner: igreja*
+
 #### Contexto
 
 A palavra grega para igreja, ekklesía, significava “assembleia convocada”. Os primeiros cristãos se reuniam em casas, por medo e por falta de prédios. Eram um povo estranho: escravos e livres, judeus e gregos, ricos e pobres, sentados à mesma mesa. Em Atos 2:42-47 vemos o seu estilo de vida: ensino, comunhão, ceia e oração.
@@ -589,6 +729,23 @@ Felicidade deu à luz na prisão, e uma irmã da igreja adotou a menina. Perpét
 
 - Procure uma igreja local, se ainda não tem, e visite no próximo culto. Se já tem, ofereça-se para servir em uma tarefa.
 - Escreva uma mensagem de ânimo para um irmão e envie hoje.
+
+#### Você sabia?
+
+- Na Bíblia, a palavra “igreja” aparece nos evangelhos apenas em Mateus (16:18 e 18:17); o termo se torna comum em Atos e nas cartas.
+- Os cristãos se reuniram por séculos em casas. Um dos prédios de igreja mais antigos que se conhece, em Dura-Europos, na Síria, era uma casa adaptada, por volta de 240.
+- Perpétua escreveu em primeira pessoa o diário da prisão, um documento raro e muito antigo.
+
+#### Linha do tempo
+
+- **c. 30**: Pentecostes: nasce a igreja.
+- **203**: Martírio de Perpétua e Felicidade.
+- **313**: Edito de Milão: fim das perseguições oficiais.
+
+#### Para ler e cantar
+
+- Leia: Atos 2:42-47
+- Leia: A Paixão de Perpétua e Felicidade
 
 **Para ler também:** Atos 2:42-47; 1 Coríntios 12:12-27; Efésios 4:1-6; Colossenses 3:12-14
 
@@ -635,6 +792,8 @@ João também apresenta João Batista, que veio testemunhar da luz. A luz brilha
 
 O objetivo do evangelho, que ele declara no fim, é que creiamos em Jesus e, crendo, tenhamos vida em seu nome. Leia o livro com essa pergunta: quem é Jesus para mim?
 
+*Símbolo do banner: luz*
+
 #### Contexto
 
 O evangelho de João foi escrito, segundo a tradição, pelo apóstolo João, já idoso, em Éfeso, no fim do primeiro século. Os outros evangelhos contam a vida de Jesus de forma narrativa; João escolhe sinais e discursos para provar quem Jesus é (João 20:30-31). A palavra grega “Logos” (Verbo) era conhecida tanto por judeus, para quem a Palavra de Deus criou o mundo (Gênesis 1), quanto por gregos, que viam no Logos a razão que ordena o universo. João diz às duas culturas: esse Logos é uma pessoa, e se chama Jesus.
@@ -669,6 +828,23 @@ Foi morto por volta do ano 155. O relato do seu martírio é um dos mais antigos
 
 - Leia João 1:1-18 em voz alta e sublinhe todas as palavras que se referem a Jesus.
 - Conte a alguém uma coisa que você aprendeu hoje sobre Jesus.
+
+#### Você sabia?
+
+- João 1:1 começa com as mesmas palavras de Gênesis 1:1: “No princípio”.
+- Na arte cristã antiga, o evangelista João é representado por uma águia.
+- Policarpo foi, segundo a tradição, ensinado pelo próprio apóstolo João.
+
+#### Linha do tempo
+
+- **c. 69**: Nasce Policarpo de Esmirna.
+- **c. 90**: Data tradicional do evangelho de João.
+- **c. 155**: Martírio de Policarpo.
+
+#### Para ler e cantar
+
+- Leia: Apocalipse 2:8-11
+- Leia: O Martírio de Policarpo (texto antigo)
 
 **Para ler também:** João 1:1-18; Colossenses 1:15-17; Filipenses 2:6-8
 
@@ -711,6 +887,8 @@ No capítulo 2, Jesus faz o seu primeiro sinal em Caná, transformando água em 
 
 Maria disse aos serviçais: “Fazei tudo quanto vos disser”. É um bom resumo do discipulado: confiar e obedecer.
 
+*Símbolo do banner: cruz*
+
 #### Contexto
 
 Os judeus esperavam o Messias de muitas formas: rei, profeta, sacerdote, libertador. João Batista apresenta um sinal diferente: um Cordeiro. Cordeiros eram oferecidos no templo todos os dias, na Páscoa (Êxodo 12), e o profeta Isaías falava de um servo levado “como um cordeiro ao matadouro” (Isaías 53:7). Em Caná, o primeiro sinal acontece em um casamento, e a água que enchia talhas de purificação se transforma em vinho: o tempo de Deus chegou.
@@ -745,6 +923,23 @@ Em poucas décadas, os morávios enviaram missionários a muitos lugares: Caribe
 
 - Escreva o nome de uma pessoa que ainda não conhece Jesus e convide-a a “vir e ver”: um culto, uma conversa, um livro.
 - Leia Isaías 53 devagar e anote o que mais toca você.
+
+#### Você sabia?
+
+- Em Caná, as seis talhas de pedra tinham, juntas, centenas de litros. O primeiro sinal de Jesus foi muito generoso.
+- “Cordeiro de Deus” em latim é Agnus Dei, expressão que ainda aparece em muitas liturgias.
+- Morávios de Herrnhut oraram por turnos, de dia e de noite, por mais de cem anos.
+
+#### Linha do tempo
+
+- **1722**: Fundação de Herrnhut.
+- **1727**: Reconciliação e início da vigília de oração.
+- **1732**: Dober e Nitschmann partem para o Caribe.
+
+#### Para ler e cantar
+
+- Leia: Isaías 53
+- Leia: Êxodo 12
 
 **Para ler também:** João 1:35-51; João 2:1-11; Isaías 53:7; 1 Pedro 1:18-19
 
@@ -787,6 +982,8 @@ O versículo 16 mostra a origem de tudo: o amor. Deus amou, e esse amor é concr
 
 Jesus não veio para condenar o mundo, mas para que o mundo fosse salvo por ele. Quem rejeita a luz permanece nas trevas; quem vem para a luz, vive.
 
+*Símbolo do banner: coracao*
+
 #### Contexto
 
 Nicodemos era “principal entre os judeus” e “mestre em Israel”. Foi de noite, talvez por receio dos colegas, talvez porque durante o dia havia multidões. Na cultura judaica, a noite era um tempo de estudo. Jesus transforma o encontro em uma lição sobre o que Deus faz no coração. Mais adiante, Nicodemos defende Jesus no Sinédrio (João 7:50-51) e ajuda a sepultá-lo (João 19:39-40).
@@ -821,6 +1018,24 @@ Enfrentou grandes dores: perdeu a esposa Maria e vários filhos. Mesmo assim, at
 
 - Memorize João 3:16 e diga-o em voz alta, trocando “o mundo” pelo nome de alguém que você ama.
 - Ore por um missionário ou povo ainda não alcançado esta semana.
+
+#### Você sabia?
+
+- Nicodemos só aparece no evangelho de João (caps. 3, 7 e 19).
+- João 3:16 é um dos versículos mais citados e traduzidos do mundo.
+- Hudson Taylor adotou as roupas e o penteado dos chineses para ser mais próximo do povo.
+
+#### Linha do tempo
+
+- **1832**: Nasce Hudson Taylor.
+- **1854**: Chega à China.
+- **1865**: Funda a Missão para o Interior da China.
+- **1905**: Morre Hudson Taylor.
+
+#### Para ler e cantar
+
+- Leia: João 3:1-21
+- Livro: O Segredo Espiritual de Hudson Taylor
 
 **Para ler também:** João 3:1-21; Números 21:4-9; Romanos 5:8
 
@@ -863,6 +1078,8 @@ Quando ela pergunta sobre o lugar certo para adorar, Jesus responde que o essenc
 
 Muitos samaritanos creram, primeiro por causa do testemunho dela e depois por terem ouvido Jesus pessoalmente. Um testemunho simples pode abrir portas para muitos.
 
+*Símbolo do banner: agua*
+
 #### Contexto
 
 Judeus e samaritanos se desprezavam havia séculos. Os samaritanos eram descendentes de israelitas misturados com povos estrangeiros e tinham o seu templo no monte Gerizim. Para ir da Judeia à Galileia, os judeus rigorosos faziam um desvio. Jesus “precisava” passar por Samaria (João 4:4): era um compromisso divino. Ele pede água a uma mulher, quebrando três barreiras: de etnia, de gênero e de reputação.
@@ -897,6 +1114,24 @@ Depois de uma queda, em 1931, ficou acamada por vinte anos e, mesmo assim, escre
 
 - Pense em alguém que a sociedade ou você tende a ignorar. Cumprimente, ouça e ofereça ajuda concreta.
 - Leia João 4:1-42 e responda: o que Jesus fez para ganhar a confiança da mulher?
+
+#### Você sabia?
+
+- O poço de Jacó, onde Jesus falou com a mulher, ainda é visitado hoje, perto de Nablus, na Cisjordânia.
+- Era o meio-dia (“hora sexta”): ninguém ia buscar água nesse horário. A mulher foi ao poço fora do horário comum.
+- Essa conversa é uma das mais longas de Jesus com uma única pessoa nos evangelhos.
+
+#### Linha do tempo
+
+- **1867**: Nasce Amy Carmichael.
+- **1895**: Chega à Índia.
+- **1901**: Resgata a menina Preena; começa a obra de Dohnavur.
+- **1951**: Morre Amy Carmichael.
+
+#### Para ler e cantar
+
+- Leia: João 4:1-42
+- Livro: If (Se), de Amy Carmichael
 
 **Para ler também:** João 4:1-42; Isaías 55:1; Apocalipse 21:6
 
@@ -939,6 +1174,8 @@ Muitos acharam difícil o ensino e se afastaram. Jesus perguntou aos doze se tam
 
 Vir a Jesus e crer nele é o que sacia. Não é um esforço para merecer, mas uma confiança diária, como comer todos os dias.
 
+*Símbolo do banner: pao*
+
 #### Contexto
 
 Os cinco mil são alimentados perto da Páscoa (João 6:4). Os judeus lembravam o maná que Deus deu no deserto, durante quarenta anos. A multidão quer fazer de Jesus rei porque ele resolve o problema da fome, mas Jesus se afasta. No dia seguinte, em Cafarnaum, ele explica o significado do sinal: o verdadeiro pão não é o maná, e sim ele mesmo.
@@ -973,6 +1210,24 @@ Há um relato de que, certa manhã, não havia comida para o café das crianças
 
 - Hoje, antes de qualquer outra coisa, ore e leia um trecho da Bíblia como quem se alimenta.
 - Entregue a Deus uma necessidade material e agradeça antecipadamente.
+
+#### Você sabia?
+
+- Belém, onde Jesus nasceu, quer dizer “casa do pão”.
+- O maná foi dado a Israel por quarenta anos (Êxodo 16).
+- Müller nunca pediu dinheiro, nem em cartas nem em reuniões: contava somente a Deus.
+
+#### Linha do tempo
+
+- **1805**: Nasce George Müller.
+- **1825**: Conversão.
+- **1836**: Abre o primeiro orfanato em Bristol.
+- **1898**: Morre Müller.
+
+#### Para ler e cantar
+
+- Leia: João 6
+- Livro: George Müller of Bristol, de A. T. Pierson
 
 **Para ler também:** João 6:1-15; João 6:60-69; Mateus 4:4
 
@@ -1015,6 +1270,8 @@ Jesus promete: “Se vós permanecerdes na minha palavra, verdadeiramente sereis
 
 Seguir a luz é um ato diário: ler a Palavra, obedecer e deixar que Cristo ilumine até os cantos escondidos do coração.
 
+*Símbolo do banner: sol*
+
 #### Contexto
 
 A Festa dos Tabernáculos, em Jerusalém, incluía duas cerimônias: o derramar da água e a iluminação de grandes candelabros no pátio do templo. É nesse cenário que Jesus diz “Eu sou a luz do mundo” (João 8:12). Os candelabros iluminavam a cidade; Jesus afirma que a verdadeira luz está nele. A cena da mulher adúltera, no início do capítulo, embora ausente de alguns manuscritos antigos, é amplamente aceita pela igreja e combina com o ensino do capítulo: luz que expõe e graça que restaura.
@@ -1049,6 +1306,24 @@ Continuou lutando pela libertação dos que ainda eram escravizados. Em 1833, po
 
 - Há algo escondido na sua vida? Confesse a Deus e, se necessário, a um irmão de confiança.
 - Pense em uma injustiça próxima de você e em um passo pequeno que possa dar.
+
+#### Você sabia?
+
+- É o único momento nos evangelhos em que se diz que Jesus escreveu algo: ele escreveu no chão (João 8:6-8).
+- Wilberforce e amigos formaram a chamada Seita de Clapham, que lutou por reformas sociais.
+- O tráfico de escravos foi proibido no Império Britânico em 1807, mas a escravidão só terminou em 1833.
+
+#### Linha do tempo
+
+- **1759**: Nasce William Wilberforce.
+- **1785**: Conversão.
+- **1807**: Fim do tráfico de escravos.
+- **1833**: Aprovada a abolição da escravidão.
+
+#### Para ler e cantar
+
+- Leia: João 8
+- Livro: Amazing Grace: William Wilberforce, de Eric Metaxas
 
 **Para ler também:** João 8:1-11; João 8:31-36; Salmos 27:1
 
@@ -1091,6 +1366,8 @@ Há uma diferença entre o pastor e o mercenário. O mercenário foge quando o l
 
 Jesus ainda fala de “outras ovelhas”, que ainda não estão no rebanho, e promete que haverá um só rebanho e um só Pastor. A missão da igreja é chamar essas ovelhas.
 
+*Símbolo do banner: cajado*
+
 #### Contexto
 
 Na Palestina, o pastor era uma figura familiar. Dormia na entrada do aprisco, fazendo de si mesmo a “porta”. Conhecia as ovelhas pelo nome e as conduzia, indo à frente. No Antigo Testamento, Deus é o pastor de Israel (Salmos 23; 80:1) e os líderes infiéis são chamados de maus pastores (Ezequiel 34). Ao dizer “Eu sou o bom pastor”, Jesus assume o papel que Deus prometeu assumir: “eu mesmo buscarei as minhas ovelhas” (Ezequiel 34:11).
@@ -1125,6 +1402,23 @@ Dois anos depois, Elisabeth e Rachel Saint, irmã de um dos mortos, foram morar 
 
 - Reserve cinco minutos em silêncio para “ouvir a voz do Pastor”: leia um versículo e pergunte o que ele diz hoje.
 - Ore por alguém que parece distante do rebanho.
+
+#### Você sabia?
+
+- Davi, Moisés e Amós foram pastores antes de serem chamados por Deus.
+- Pastores do Oriente têm um som próprio, e as ovelhas reconhecem a voz do dono.
+- Jim Elliot e quatro amigos tinham entre 27 e 32 anos quando foram mortos em 1956.
+
+#### Linha do tempo
+
+- **1949**: Jim Elliot escreve em seu diário a frase que o marcou.
+- **1956**: Cinco missionários são mortos no Equador.
+- **1958**: Elisabeth Elliot passa a viver entre os waodani.
+
+#### Para ler e cantar
+
+- Leia: Salmo 23
+- Livro: Através dos Portais do Esplendor, de Elisabeth Elliot
 
 **Para ler também:** Salmos 23; Ezequiel 34:11-16; 1 Pedro 2:25
 
@@ -1167,6 +1461,8 @@ Diante do túmulo, Jesus gritou: “Lázaro, vem para fora!”, e o morto saiu. 
 
 Se você enfrenta uma perda, saiba que Jesus se importa, chora com você e tem a última palavra.
 
+*Símbolo do banner: tumulo*
+
 #### Contexto
 
 Betânia ficava a poucos quilômetros de Jerusalém. Maria, Marta e Lázaro eram amigos próximos de Jesus. Quando Lázaro adoeceu, Jesus demorou dois dias para ir. Para o povo da época, quatro dias depois da morte já não havia esperança, porque a tradição dizia que a alma ainda rondava o corpo por três dias. Jesus escolhe esse momento para mostrar que nenhum limite o detém.
@@ -1201,6 +1497,24 @@ Depois da guerra, viajou por dezenas de países falando de Jesus e do perdão. E
 
 - Escolha uma situação de luto ou perda sua ou de alguém próximo e leia João 11:17-44 em oração.
 - Escreva uma carta de ânimo para alguém que sofreu uma perda.
+
+#### Você sabia?
+
+- A vila de Betânia hoje se chama al-Eizariya, “lugar de Lázaro”, em árabe.
+- “Jesus chorou” (João 11:35) é o versículo mais curto da Bíblia em português.
+- A família de Corrie ten Boom construiu um esconderijo atrás de uma parede falsa no quarto dela.
+
+#### Linha do tempo
+
+- **1892**: Nasce Corrie ten Boom.
+- **1944**: Presa com a família; Betsie morre em Ravensbrück.
+- **1947**: Perdoa o ex-guarda, em Munique.
+- **1983**: Morre Corrie.
+
+#### Para ler e cantar
+
+- Livro: O Refúgio Secreto, de Corrie ten Boom
+- Leia: João 11
 
 **Para ler também:** João 11:1-44; 1 Coríntios 15:54-57; 1 Tessalonicenses 4:13-14
 
@@ -1243,6 +1557,8 @@ Então deu o novo mandamento: amar como ele amou. Esse amor serve, perdoa, se sa
 
 Na mesma noite, Jesus anunciou a traição de Judas e a negação de Pedro. Mesmo assim, amou “até o fim”. O amor de Cristo não desiste de nós.
 
+*Símbolo do banner: maos*
+
 #### Contexto
 
 A última ceia acontece na véspera da Páscoa. Nenhum servo estava ali para lavar os pés, como era costume. O mais baixo dos serviços era feito por escravos não judeus. Ninguém se levanta, até que Jesus o faz. Ele sabia que “o Pai tinha confiado tudo às suas mãos” (v. 3) e, justamente por saber, serve. A liderança de Jesus é uma liderança de serviço.
@@ -1277,6 +1593,24 @@ A missão alimentava os famintos, acolhia ex-presidiários e pessoas sem teto, e
 
 - Faça um serviço escondido: lave a louça de alguém, ajude em casa, limpe um espaço da igreja, sem avisar.
 - Perdoe alguém e dê o primeiro passo de reconciliação.
+
+#### Você sabia?
+
+- “Quinta-feira Santa” se diz Maundy Thursday em inglês, de mandatum, “mandamento” em latim, por causa de João 13:34.
+- Em Israel, as pessoas andavam de sandálias em estradas empoeiradas. Lavar os pés era um serviço comum à entrada das casas.
+- O Exército de Salvação ficou conhecido pelas bandas, pelas sopas e pelo serviço aos pobres.
+
+#### Linha do tempo
+
+- **1829**: Nasce Catherine Booth.
+- **1855**: Casa-se com William Booth.
+- **1878**: Surge o nome Exército de Salvação.
+- **1890**: Morre Catherine Booth.
+
+#### Para ler e cantar
+
+- Leia: João 13
+- Leia: Filipenses 2:1-11
 
 **Para ler também:** João 13:1-17; João 13:35; 1 João 3:16-18
 
@@ -1319,6 +1653,8 @@ O fruto inclui caráter, amor, alegria, obras e pessoas alcançadas. E o resulta
 
 Também aqui Jesus nos chama de amigos, não de servos, porque nos revelou tudo o que ouviu do Pai. E promete o Espírito da verdade para nos guiar.
 
+*Símbolo do banner: videira*
+
 #### Contexto
 
 A videira era símbolo de Israel (Salmos 80:8-16; Isaías 5:1-7). Em Isaías 5, Israel é a vinha que decepciona o Senhor, pois dá uvas bravas. Jesus afirma ser “a videira verdadeira”: ele é o Israel fiel, em quem o povo de Deus dá fruto. Esta fala acontece no caminho para o Getsêmani (João 14:31), na última noite, entre palavras de consolo e despedida.
@@ -1353,6 +1689,23 @@ Murray insistia que a vida cristã não é um esforço para imitar Cristo, mas a
 
 - Por sete dias, comece o dia com cinco minutos: leia João 15:1-11 e diga ao Senhor “permaneço em ti”.
 - Identifique algo na sua vida que o afasta de Jesus e entregue a ele.
+
+#### Você sabia?
+
+- Uma videira precisa de poda forte; sem ela, produz folhas, mas pouco fruto.
+- Em Isaías 5, Israel é uma vinha amada que deu uvas bravas.
+- Andrew Murray escreveu mais de 200 livros, muitos até hoje traduzidos.
+
+#### Linha do tempo
+
+- **c. 700 a.C.**: Isaías canta a canção da vinha.
+- **1828**: Nasce Andrew Murray.
+- **1917**: Morre Andrew Murray.
+
+#### Para ler e cantar
+
+- Leia: João 15
+- Livro: Permanecei em Cristo, de Andrew Murray
 
 **Para ler também:** João 15:1-17; Gálatas 5:22-23; Salmos 1:1-3
 
@@ -1395,6 +1748,8 @@ Depois, ora pelos discípulos: pede proteção, santificação pela verdade e al
 
 Por fim, ora por nós, “os que pela sua palavra hão de crer nele”. O seu pedido principal é a unidade: “que todos sejam um”, para que o mundo creia. Saber que Jesus orou por você é uma fonte de coragem.
 
+*Símbolo do banner: igreja*
+
 #### Contexto
 
 João 17 acontece no cenáculo ou no caminho do Getsêmani. É a oração mais longa de Jesus registrada, e a única que mostra o que ele pede a favor da igreja. É chamada “oração sacerdotal”, porque Jesus age como sumo sacerdote, intercedendo pelo povo (Hebreus 7:25). Ao ouvi-la, os discípulos aprendem que o Pai ouve o Filho e que somos amados com o mesmo amor (v. 23).
@@ -1429,6 +1784,24 @@ Essa oração produziu uma comunidade unida e missionária, que enviou dezenas d
 
 - Ore por três irmãos de igrejas ou grupos diferentes do seu. Peça unidade.
 - Reconcilie-se com alguém com quem você está em desacordo.
+
+#### Você sabia?
+
+- É a oração mais longa de Jesus registrada nos evangelhos.
+- Herrnhut significa “sob a guarda do Senhor”.
+- A oração de Jesus pela unidade foi inspiração para encontros entre igrejas de muitas tradições.
+
+#### Linha do tempo
+
+- **1700**: Nasce Zinzendorf.
+- **1722**: Fundação de Herrnhut.
+- **13 ago 1727**: Reconciliação durante a Ceia.
+- **27 ago 1727**: Começa a vigília de oração.
+
+#### Para ler e cantar
+
+- Leia: João 17
+- Leia: Efésios 4:1-6
 
 **Para ler também:** João 17:1-26; Hebreus 7:25; Romanos 8:34
 
@@ -1471,6 +1844,8 @@ Tomé duvidou até ver. Jesus o encontrou com paciência e ouviu a sua confissã
 
 Pedro foi restaurado à beira do lago: três vezes confessou o seu amor, e três vezes Jesus lhe confiou as suas ovelhas. O evangelho termina com missão. Tendo crido, agora você é chamado a seguir e a servir.
 
+*Símbolo do banner: cruz*
+
 #### Contexto
 
 João conta a paixão com grande atenção à soberania de Jesus: ele entrega a vida, e não a perde. Os soldados o prendem, mas caem ao chão quando ele diz “Sou eu” (18:6). Pilatos o interroga, mas é Jesus quem fala de reinos (18:36). No Gólgota, uma tabuleta em três línguas declara: Jesus Nazareno, Rei dos Judeus. Cada detalhe cumpre a Escritura.
@@ -1505,6 +1880,23 @@ Ficou conhecido como “o pai do hino inglês”. Seus textos moldaram a adoraç
 
 - Leia João 19 e 20 em uma só sentada e escreva em uma frase o que mais impactou você.
 - Cante ou ouça um hino sobre a cruz e ofereça sua vida a Jesus em oração.
+
+#### Você sabia?
+
+- Tetélestai (“está consumado”) aparece em recibos de papiro da época como “pago por completo”.
+- Isaac Watts escreveu cerca de 750 hinos.
+- Os evangelhos registram que a primeira testemunha da ressurreição foi uma mulher, Maria Madalena, em uma época em que o testemunho feminino pesava pouco.
+
+#### Linha do tempo
+
+- **1674**: Nasce Isaac Watts.
+- **1707**: Publica “Quando contemplo a cruz maravilhosa”.
+- **1748**: Morre Isaac Watts.
+
+#### Para ler e cantar
+
+- Leia: João 19 a 21
+- Cante: Ao contemplar a cruz (Isaac Watts)
 
 **Para ler também:** João 19:16-30; João 20:1-31; João 21:15-19
 
@@ -1551,6 +1943,8 @@ Orar não é tentar convencer um Deus relutante. É alinhar o nosso coração ao
 
 Comece pequeno: um tempo diário, mesmo curto, em um lugar tranquilo. Pode ser antes de dormir ou ao acordar. O importante é a constância.
 
+*Símbolo do banner: maos*
+
 #### Contexto
 
 A carta aos Filipenses foi escrita da prisão, provavelmente em Roma. Paulo, acorrentado, escreve sobre alegria e paz. “Não estejais inquietos por coisa alguma” era um mandamento surpreendente, vindo de quem tinha motivos de sobra para se inquietar. A solução que ele dá não é negar a dor, mas transformá-la em oração.
@@ -1585,6 +1979,24 @@ Dois de seus filhos, João e Carlos Wesley, tornaram-se grandes pregadores e fun
 
 - Escolha um lugar e um horário fixos para orar por dez minutos nesta semana.
 - Use A.C.S.A.: adore, confesse, interceda e agradeça, em uma só oração.
+
+#### Você sabia?
+
+- “Aba”, palavra usada por Jesus no Getsêmani (Marcos 14:36), é um termo carinhoso de filho para o pai.
+- Daniel orava três vezes por dia, mesmo quando isso era proibido (Daniel 6:10).
+- Susana tinha dezenove filhos e ainda criava momentos de oração.
+
+#### Linha do tempo
+
+- **1669**: Nasce Susana Wesley.
+- **1703**: Nasce John Wesley.
+- **1707**: Nasce Charles Wesley.
+- **1742**: Morre Susana Wesley.
+
+#### Para ler e cantar
+
+- Leia: Lucas 11:1-13
+- Leia: Filipenses 4:4-9
 
 **Para ler também:** Lucas 11:1; 1 Tessalonicenses 5:17; Marcos 1:35
 
@@ -1627,6 +2039,8 @@ Em seguida, Jesus nos ensina a pedir pelo pão de cada dia (dependência), pelo 
 
 Use o Pai Nosso como roteiro: adore, entregue a sua vontade, peça, perdoe e peça proteção. Termine reconhecendo que o reino, o poder e a glória pertencem a Deus.
 
+*Símbolo do banner: coracao*
+
 #### Contexto
 
 Mateus 6 faz parte do Sermão do Monte. Antes do Pai Nosso, Jesus critica a oração de aparência (v. 5), em que se ora para ser visto, e a oração com muitas palavras vazias (v. 7). Em Lucas 11, um discípulo pede: “Senhor, ensina-nos a orar”. A resposta é o Pai Nosso, não para ser repetido como mágica, mas como um modelo para guiar a conversa.
@@ -1661,6 +2075,23 @@ Lutero comparava a oração a um barbeiro que precisa estar atento à navalha. O
 
 - Ore o Pai Nosso devagar, parando em cada frase para dizê-la com as suas palavras.
 - Hoje, perdoe de coração quem lhe deve algo e peça a Deus ajuda nisso.
+
+#### Você sabia?
+
+- No evangelho de Lucas o Pai Nosso é mais curto que em Mateus.
+- A Didaquê, texto cristão antigo, manda orar o Pai Nosso três vezes ao dia.
+- Lutero escreveu sua carta sobre oração para o seu barbeiro.
+
+#### Linha do tempo
+
+- **1483**: Nasce Lutero.
+- **1535**: Escreve “Uma maneira simples de orar”.
+- **1546**: Morre Lutero.
+
+#### Para ler e cantar
+
+- Leia: Mateus 6:5-15
+- Leia: Uma maneira simples de orar, de Martinho Lutero
 
 **Para ler também:** Mateus 6:5-15; Lucas 11:1-4
 
@@ -1703,6 +2134,8 @@ Os salmistas também mostram que podemos ser honestos: chorar, perguntar “até
 
 Experimente orar o Salmo 23 (confiança), o Salmo 51 (arrependimento) e o Salmo 121 (proteção).
 
+*Símbolo do banner: livro*
+
 #### Contexto
 
 O livro de Salmos reúne 150 orações e cânticos escritos ao longo de cerca de mil anos. Era o hinário e o livro de orações de Israel. Jesus os citou na cruz (“Deus meu, por que me desamparaste?”, Salmos 22:1) e muitos dos seus ensinos os usam. Os primeiros cristãos cantavam e oravam os salmos nas reuniões (Colossenses 3:16).
@@ -1737,6 +2170,24 @@ Em Genebra, incentivou o canto dos salmos pelo povo. O Saltério de Genebra (156
 
 - Ore o Salmo 23 em voz alta, trocando as frases por suas palavras.
 - Leia o Salmo 13 e escreva uma oração sua, a partir dele, sobre algo que o preocupa.
+
+#### Você sabia?
+
+- O Salmo 119 é um acróstico em hebraico: cada grupo de oito versos começa com uma letra do alfabeto.
+- Na tradição, 73 salmos são atribuídos a Davi.
+- Os salmos de lamento formam a maior categoria do livro.
+
+#### Linha do tempo
+
+- **1509**: Nasce João Calvino.
+- **1557**: Publica o comentário aos Salmos.
+- **1562**: Conclui-se o Saltério de Genebra.
+- **1564**: Morre Calvino.
+
+#### Para ler e cantar
+
+- Leia: Salmos 23, 51 e 121
+- Leia: Prefácio de Calvino ao Comentário dos Salmos
 
 **Para ler também:** Salmos 23; Salmos 51; Salmos 121; Colossenses 3:16
 
@@ -1779,6 +2230,8 @@ Enquanto esperamos, podemos perseverar. Jesus contou a parábola da viúva persi
 
 Por fim, lembre-se de que o Espírito intercede por nós com gemidos inexprimíveis quando não sabemos o que pedir.
 
+*Símbolo do banner: luz*
+
 #### Contexto
 
 Os salmistas sentiram o silêncio de Deus: “Por que te escondes?” (Salmos 10:1). Jó sofreu e ficou sem respostas, até que Deus falou, não para explicar tudo, mas para se revelar. Jesus, no Getsêmani, orou três vezes para que o cálice passasse, e depois entregou: “Não se faça a minha vontade, mas a tua”. O silêncio aparente de Deus faz parte da vida de fé.
@@ -1813,6 +2266,24 @@ Em 1979 fundou o ministério Joni and Friends, que serve pessoas com deficiênci
 
 - Escreva um pedido antigo e uma frase de entrega: “Seja feita a tua vontade”. Ore todos os dias por uma semana.
 - Leia 2 Coríntios 12:7-10 e anote o que Deus disse a Paulo.
+
+#### Você sabia?
+
+- Joni pinta com a boca e produziu muitas obras e cartões.
+- Os salmistas perguntam “até quando?” mais de uma vez: Deus aceita nossas perguntas.
+- Jesus orou três vezes no Getsêmani, e o Pai respondeu enviando-lhe força, e não afastando o cálice.
+
+#### Linha do tempo
+
+- **1949**: Nasce Joni Eareckson Tada.
+- **1967**: Acidente que a deixa tetraplégica.
+- **1976**: Publica o livro Joni.
+- **1979**: Funda o ministério Joni and Friends.
+
+#### Para ler e cantar
+
+- Livro: Joni, de Joni Eareckson Tada
+- Leia: 2 Coríntios 12:7-10
 
 **Para ler também:** 2 Coríntios 12:7-10; Lucas 18:1-8; Romanos 8:26-28; Salmos 13
 
@@ -1855,6 +2326,8 @@ Faça uma lista simples: família, amigos, líderes, enfermos, pessoas que ainda
 
 Nesta comunidade, você pode usar o Fórum e as publicações para compartilhar motivos de oração e orar pelos irmãos. Quando Deus responder, compartilhe o testemunho.
 
+*Símbolo do banner: igreja*
+
 #### Contexto
 
 Na Bíblia, a oração por outros é parte central da fé. Abraão intercedeu por Sodoma (Gênesis 18), Moisés por Israel (Êxodo 32), Samuel pelo povo (1 Samuel 12:23), Paulo pelas igrejas (Efésios 1; Filipenses 1). Jesus orou por Pedro: “eu roguei por ti, para que a tua fé não desfaleça” (Lucas 22:32). Epafras “se esforça sempre por vós nas orações” (Colossenses 4:12).
@@ -1890,6 +2363,23 @@ Mônica morreu em Óstia, a caminho de casa, em 387, pouco depois de ver a oraç
 - Faça uma lista de cinco pessoas e ore por uma delas por dia, durante a semana.
 - Avise a alguém que você está orando por ele e pergunte pelo que pode orar.
 
+#### Você sabia?
+
+- Agostinho e Mônica tiveram uma conversa famosa sobre a vida eterna, em Óstia, pouco antes de ela morrer.
+- Epafras é elogiado por Paulo porque “se esforça sempre” em oração (Colossenses 4:12).
+- Jesus intercede por nós agora, à direita do Pai (Hebreus 7:25).
+
+#### Linha do tempo
+
+- **c. 331**: Nasce Mônica.
+- **386**: Conversão de Agostinho.
+- **387**: Morre Mônica, em Óstia.
+
+#### Para ler e cantar
+
+- Leia: Confissões, de Agostinho (Livro IX)
+- Leia: Colossenses 4:2-4
+
 **Para ler também:** Efésios 6:18; Colossenses 4:2-4; 1 Timóteo 2:1-2; Filipenses 1:3-11
 
 **Reflexão:** Quem Deus colocou no seu coração para você orar hoje?
@@ -1915,6 +2405,872 @@ Mônica morreu em Óstia, a caminho de casa, em 387, pouco depois de ver a oraç
    - ▫️ Julgar
    - ▫️ Evitar
    - _A oração mútua fortalece a comunhão._
+
+## Trilha: Avivamentos e Avivalistas
+
+Nove aulas sobre o que é avivamento e sobre as vezes em que Deus visitou o seu povo: Josias, Jonathan Edwards, os Wesley, Finney, a oração de 1857, Moody, o País de Gales, Azusa Street e as Hébridas.
+
+### Aula 1. O que é avivamento (5 min)
+
+*Avivamento é Deus fazendo reviver o seu povo: arrependimento, volta à Palavra e uma nova fome por ele.*
+
+> “Não tornarás tu a vivificar-nos, para que o teu povo se alegre em ti?”  
+> **Salmos 85:6**
+
+A palavra “avivar” quer dizer dar vida de novo. Avivamento não é evento, show nem estratégia: é Deus visitando o seu povo que esfriou. A Bíblia mostra esse padrão várias vezes. O povo se afasta, Deus fala, o povo se arrepende e a vida volta.
+
+Não é o mesmo que evangelismo. Evangelismo anuncia o evangelho a quem não crê. Avivamento desperta quem já é da igreja. Quando os crentes são reavivados, o evangelismo cresce, as famílias se reconciliam e a vida da cidade muda.
+
+Em todos os avivamentos da Bíblia e da história, se repetem sinais: a Palavra volta ao centro, o pecado é levado a sério, a oração aumenta, há alegria e amor, e as pessoas são movidas a servir e a anunciar Jesus.
+
+O avivamento é sempre graça: não podemos fabricá-lo. Mas podemos clamar, preparar o coração e viver de modo que não impeçamos a obra de Deus.
+
+*Símbolo do banner: livro*
+
+#### Contexto
+
+Josias tinha apenas oito anos quando se tornou rei de Judá (2 Reis 22). Aos dezesseis, começou a buscar o Deus de Davi, e aos vinte limpou o país dos ídolos. No décimo oitavo ano do seu reinado, durante a reforma do templo, o sacerdote Hilquias achou o Livro da Lei, esquecido havia anos. Quando o rei o ouviu ser lido, rasgou as suas vestes. Foi aí que o avivamento começou de fato.
+
+#### Aprofundamento
+
+Padrão bíblico. O avivamento de Josias tem cinco passos: a Palavra é redescoberta, o rei se humilha, o povo renova a aliança, os ídolos são destruídos e a Páscoa é celebrada com alegria (2 Reis 23; 2 Crônicas 34-35). Também aparecem a profetisa Hulda, consultada pelo rei (2 Reis 22:14-20), e a ênfase em obedecer ao que está escrito. Em Neemias 8, o povo chora ao ouvir a lei, e Esdras o anima a se alegrar: “a alegria do Senhor é a vossa força”.
+
+Avivamento e Pentecostes. Joel 2 prometia o derramar do Espírito sobre toda carne. Em Atos 2, Pedro explica que isso se cumpria. O Pentecostes é o maior avivamento: em um dia, cerca de três mil se uniram à igreja, e o resultado foi ensino, comunhão, oração e generosidade (Atos 2:42-47). Essa é a medida bíblica do que Deus faz.
+
+Avivamento e reforma. Os avivamentos têm dois lados: o toque do Espírito e o retorno à Palavra. Sem a Palavra, a emoção se perde; sem o Espírito, a doutrina fica fria. Os dois se unem na cruz de Cristo. Por isso toda reforma verdadeira tem dimensão pessoal (arrependimento) e comunitária (justiça, unidade e missão).
+
+#### Termos
+
+- **Avivamento**: Visita especial de Deus que desperta o seu povo para uma vida nova.
+- **Arrependimento**: Mudança de mente e de direção diante de Deus.
+- **Aliança**: Compromisso solene entre Deus e o seu povo.
+
+#### Herói da fé: Josias e a profetisa Hulda (séc. VII a.C.)
+
+*Rei de Judá e profetisa que confirmou a Palavra*
+
+Josias foi coroado criança, depois de um reinado de maldade do pai e do avô. Cresceu buscando a Deus. Quando o Livro da Lei foi achado, ele o fez ler diante de todo o povo, e o rei renovou a aliança com o Senhor.
+
+Antes disso, o rei enviou uma comitiva à profetisa Hulda, que confirmou que a palavra encontrada era de Deus e que o juízo viria, mas que o coração arrependido de Josias seria poupado. É um dos raros momentos em que uma mulher profetisa orienta um rei.
+
+O rei destruiu os altares pagãos e celebrou uma Páscoa como não se via desde os dias dos juízes. A Bíblia diz que antes dele nenhum rei se converteu ao Senhor como ele (2 Reis 23:25).
+
+**Lição:** Quando a Palavra de Deus é achada, ouvida e obedecida, o povo é reavivado.
+
+#### Para praticar esta semana
+
+- Leia 2 Reis 22 e 23 em duas etapas. Anote o que Josias fez ao ouvir a Palavra.
+- Escolha um “ídolo” pequeno da sua vida (tempo perdido, redes sociais, rancor) e entregue-o a Deus.
+
+#### Você sabia?
+
+- O livro encontrado no templo é geralmente identificado como Deuteronômio, ou parte dele.
+- Josias reinou por 31 anos, de 640 a 609 a.C.
+- A profetisa Hulda é uma das poucas mulheres profetas nomeadas no Antigo Testamento.
+
+#### Linha do tempo
+
+- **c. 640 a.C.**: Josias se torna rei, aos 8 anos.
+- **c. 622 a.C.**: O Livro da Lei é encontrado e lido.
+- **609 a.C.**: Morre Josias.
+
+#### Para ler e cantar
+
+- Leia: 2 Reis 22 e 23
+- Leia: Neemias 8
+
+**Para ler também:** Habacuque 3:2; Neemias 8; Atos 2:41-47; 2 Crônicas 7:14
+
+**Reflexão:** Você sente a sua vida espiritual quente, morna ou fria? O que você precisa pedir a Deus hoje?
+
+**Oração:** Senhor, aviva a tua obra, a começar por mim. Desperta o meu coração, a minha casa e a tua igreja. Em nome de Jesus, amém.
+
+**Quiz**
+
+1. O que significa avivar?
+   - ✅ Dar vida de novo
+   - ▫️ Fazer uma campanha
+   - ▫️ Criar uma igreja
+   - _Avivar é fazer reviver o que esfriou._
+
+2. Avivamento é principalmente…
+   - ✅ Obra de Deus que desperta o seu povo
+   - ▫️ Um evento organizado
+   - ▫️ Uma técnica de pregação
+   - _O avivamento é graça de Deus, e não resultado de método._
+
+3. Qual livro foi achado no templo no tempo de Josias?
+   - ✅ O Livro da Lei
+   - ▫️ Os Salmos
+   - ▫️ O Evangelho de João
+   - _O Livro da Lei despertou o rei e o povo._
+
+### Aula 2. Jonathan Edwards e o Grande Avivamento (5 min)
+
+*No século XVIII, Deus visitou as colônias americanas. Jonathan Edwards viu, descreveu e examinou esse avivamento com a Bíblia.*
+
+> “Não por força nem por violência, mas pelo meu Espírito, diz o Senhor dos Exércitos.”  
+> **Zacarias 4:6**
+
+No começo do século XVIII, muitas igrejas das colônias americanas viviam na formalidade. Em 1734 e 1735, na cidade de Northampton, em Massachusetts, o pastor Jonathan Edwards pregou sobre a justificação pela fé. De repente, jovens e adultos passaram a buscar a Deus, a orar e a se arrepender.
+
+Em 1739 e 1740, George Whitefield chegou às colônias e pregou a multidões, e o movimento ficou conhecido como o Grande Avivamento. Milhares se converteram, igrejas se encheram e nasceram novas escolas e missões.
+
+Edwards pregou o célebre sermão “Pecadores nas mãos de um Deus irado”, em 1741, e também escreveu sobre como reconhecer uma obra verdadeira do Espírito. Ele tinha cuidado: nem toda emoção forte vem de Deus, nem toda ausência de emoção é falta de vida.
+
+O Grande Avivamento mostra que Deus pode agir com poder, e que a igreja precisa de discernimento para não confundir entusiasmo com fruto.
+
+*Símbolo do banner: chama*
+
+#### Contexto
+
+Em 1741, o sermão de Edwards em Enfield, Connecticut, foi lido quase sem gestos, mas muitos choraram. Ele pregava um Deus santo e misericordioso. O avivamento causou também divisões: alguns viam sinais de Deus em tudo, outros condenavam tudo. Edwards procurou um caminho equilibrado, com a Bíblia como medida.
+
+#### Aprofundamento
+
+Marcas de uma obra genuína. Em “Distinguishing Marks”, de 1741, Edwards, com base em 1 João 4, resumiu sinais de uma obra verdadeira do Espírito: Jesus é honrado (v. 2-3), o pecado e o mundo perdem poder (v. 4-5), a Escritura é amada (v. 6), a verdade é defendida e o amor a Deus e ao próximo cresce (v. 7-8). Efeitos como lágrimas, desmaios ou êxtases não provam nem refutam nada.
+
+Afeições religiosas. Em “Religious Affections” (1746), Edwards explicou que a verdadeira religião está no coração, nas “afeições” (amor, alegria, temor, esperança), mas que o teste são os frutos duradouros, sobretudo a prática da santidade. A experiência sem obediência é suspeita; a obediência sem amor é fria.
+
+Soberania e responsabilidade. Edwards cria que Deus é soberano em despertar quem quer e quando quer, e ao mesmo tempo chamava todos ao arrependimento. Oração e pregação são os meios que Deus usa. Ele disse que o povo de Deus não deve esperar passivamente, mas pedir com fervor.
+
+#### Termos
+
+- **Afeições religiosas**: Os desejos e emoções profundos do coração dirigidos a Deus.
+- **Discernimento**: Capacidade de avaliar o que vem de Deus pela Palavra.
+- **Soberania de Deus**: O governo de Deus sobre tudo, inclusive sobre quando e como ele age.
+
+#### Herói da fé: Jonathan Edwards e Sarah Pierpont Edwards (1703–1758; 1710–1758)
+
+*Pastor-teólogo e esposa do Grande Avivamento*
+
+Jonathan Edwards nasceu em Connecticut, filho e neto de pastores. Estudou em Yale e se tornou pastor em Northampton. Casou-se com Sarah Pierpont em 1727. Tiveram onze filhos e uma casa marcada por oração e leitura.
+
+Sarah teve uma profunda experiência de Deus durante o avivamento, que Jonathan usou, com delicadeza, como exemplo de uma obra verdadeira. Para ele, a alegria dela no Senhor e o caráter humilde e amoroso provavam que a graça era real.
+
+Em 1750, a igreja de Northampton o demitiu por causa de divergências sobre quem podia participar da Ceia. Edwards foi servir aos indígenas em Stockbridge, onde escreveu grandes obras. Em 1758 foi chamado a presidir o College of New Jersey (hoje Princeton), mas morreu meses depois, após uma vacina contra a varíola. Sarah faleceu pouco depois dele.
+
+**Lição:** Um coração apaixonado por Deus e uma mente iluminada pela Palavra caminham juntos.
+
+#### Para praticar esta semana
+
+- Leia 1 João 4:1-8 e liste as marcas de uma obra verdadeira de Deus.
+- Leia um versículo sobre o amor de Deus e passe cinco minutos agradecendo, sem pedir nada.
+
+#### Você sabia?
+
+- Aos 19 e 20 anos, Edwards escreveu setenta resoluções para a vida cristã.
+- O sermão “Pecadores nas mãos de um Deus irado” foi pregado em Enfield em 8 de julho de 1741.
+- Edwards e Sarah criaram onze filhos, e alguns de seus descendentes tiveram posições importantes na sociedade americana.
+
+#### Linha do tempo
+
+- **1703**: Nasce Jonathan Edwards.
+- **1734-35**: Avivamento em Northampton.
+- **1741**: Sermão em Enfield.
+- **1758**: Morre Jonathan Edwards.
+
+#### Para ler e cantar
+
+- Leia: Pecadores nas mãos de um Deus irado (sermão de Edwards)
+- Livro: Afeições Religiosas, de Jonathan Edwards
+
+**Para ler também:** Atos 2:41; 1 João 4:1-3; Gálatas 5:22-23
+
+**Reflexão:** Como você tem discernido o que é obra do Espírito e o que é apenas emoção?
+
+**Oração:** Espírito Santo, visita a tua igreja como fizeste em outros tempos. Dá-nos fome, humildade e discernimento. Amém.
+
+**Quiz**
+
+1. Onde começou o avivamento de Edwards em 1734?
+   - ✅ Northampton, Massachusetts
+   - ▫️ Londres
+   - ▫️ Jerusalém
+   - _Foi na igreja de Northampton, onde Edwards era pastor._
+
+2. Qual era o cuidado de Edwards?
+   - ✅ Discernir uma obra verdadeira do Espírito
+   - ▫️ Evitar a Bíblia
+   - ▫️ Proibir o louvor
+   - _Ele escreveu sobre as marcas de uma obra verdadeira de Deus._
+
+3. O que Edwards usou como medida para avaliar um avivamento?
+   - ✅ A Bíblia e os frutos
+   - ▫️ O tamanho da multidão
+   - ▫️ As emoções fortes
+   - _Ele ensinou a examinar os frutos à luz de 1 João 4._
+
+### Aula 3. Os Wesley e o avivamento na Inglaterra (5 min)
+
+*Enquanto a América despertava, a Inglaterra era sacudida pela pregação ao ar livre, pelos pequenos grupos e pelos hinos dos Wesley.*
+
+> “Como, pois, invocarão aquele em quem não creram? e como crerão naquele de quem não ouviram falar? e como ouvirão, se não há quem pregue?”  
+> **Romanos 10:14**
+
+A Inglaterra do século XVIII vivia mudanças grandes: indústria nascente, pobreza, bebedeira, violência e igrejas distantes do povo. Os pobres e os mineiros raramente entravam em um templo.
+
+John Wesley e George Whitefield levaram o evangelho ao povo: pregavam ao ar livre, em campos, praças e minas. Wesley organizou os convertidos em pequenos grupos, as “classes”, para orar, estudar a Bíblia e se corrigirem uns aos outros. Assim a fé se transformava em vida.
+
+Carlos Wesley, irmão de João, escreveu milhares de hinos que ensinavam teologia ao povo cantando. A música foi um dos grandes veículos do avivamento.
+
+O resultado foi uma mudança social: escolas, cuidado com os doentes, combate à embriaguez e, mais tarde, a luta contra a escravidão. Alguns historiadores sugerem que o avivamento também ajudou a Inglaterra a atravessar esse período sem uma revolução violenta como a francesa.
+
+*Símbolo do banner: chama*
+
+#### Contexto
+
+A Inglaterra do século XVIII era marcada pelo ceticismo, pela embriaguez e pela desigualdade. As igrejas oficiais tinham pouco alcance entre os trabalhadores. Os Wesley e Whitefield foram impedidos de pregar em muitos púlpitos e, então, foram ao povo. Wesley dizia que o mundo era a sua paróquia.
+
+#### Aprofundamento
+
+Pregação ao ar livre. Em 1739, Whitefield convenceu Wesley a pregar ao ar livre, o que ele a princípio achou indecoroso. Foram milhares de sermões em campos, praças, mercados e minas. A decisão mostrou que a mensagem precisa ir onde o povo está. Wesley cavalgava milhares de quilômetros todos os anos.
+
+Santidade prática. Wesley ensinava que a salvação é pela graça, mediante a fé, e que a graça leva a uma vida santa, de amor a Deus e ao próximo. Organizou a vida em sociedades, classes e grupos de prestação de contas, e cuidou dos pobres, dos presos e dos doentes. Ele cria que a fé verdadeira se vê em obras de misericórdia.
+
+Hinos e Palavra. Carlos Wesley escreveu mais de seis mil hinos, entre eles “O for a Thousand Tongues to Sing” e “Hark! The Herald Angels Sing”. Os hinos ensinavam doutrina de modo que os analfabetos podiam gravar. A Bíblia, a oração e o canto formavam a vida da comunidade.
+
+#### Termos
+
+- **Metodismo**: Movimento iniciado por Wesley que enfatizava o novo nascimento e a vida santa em método e disciplina.
+- **Classe**: Pequeno grupo de crentes que se reunia semanalmente para orar e prestar contas.
+- **Santidade**: Vida separada para Deus, que reflete o caráter de Cristo.
+
+#### Herói da fé: Selina Hastings, a Condessa de Huntingdon (1707–1791)
+
+*Nobre que sustentou o avivamento*
+
+Selina nasceu em uma família nobre e se casou com o conde de Huntingdon. Em 1739, convenceu-se do evangelho depois de ouvir os pregadores metodistas, e passou a usar a sua posição para servi-los.
+
+Abriu seu palácio para pregações a nobres que dificilmente iriam a um campo, nomeou George Whitefield como seu capelão e fundou dezenas de capelas. Em 1768, criou o Trevecca College, para formar pregadores, a maioria sem recursos.
+
+Vendeu joias e gastou fortuna para a obra. Morreu em 1791. A rede de igrejas que ela sustentou, a Conexão da Condessa de Huntingdon, continua até hoje. Ela mostra que também os que têm recursos e influência podem servir ao avivamento.
+
+**Lição:** Pregadores levam a mensagem, e os que sustentam, oram e abrem portas também são parte da obra.
+
+#### Para praticar esta semana
+
+- Ofereça algo seu (tempo, casa, dinheiro, influência) para apoiar um trabalho do evangelho.
+- Escreva um versículo de um hino de que você gosta e pense no que ele ensina.
+
+#### Você sabia?
+
+- Estima-se que Wesley tenha pregado dezenas de milhares de sermões.
+- Charles Wesley escreveu mais de seis mil hinos.
+- Selina Hastings sustentou dezenas de capelas e a formação de pregadores com os seus próprios recursos.
+
+#### Linha do tempo
+
+- **1707**: Nascem Charles Wesley e Selina Hastings.
+- **1739**: Pregação ao ar livre.
+- **1768**: Fundação do Trevecca College.
+- **1788**: Morre Charles Wesley.
+
+#### Para ler e cantar
+
+- Cante: O for a Thousand Tongues to Sing (Charles Wesley)
+- Leia: Romanos 10:9-17
+
+**Para ler também:** Atos 17:6; Tiago 5:16; Colossenses 3:16
+
+**Reflexão:** Quem pode ajudar você a crescer na fé e prestar contas em um pequeno grupo?
+
+**Oração:** Senhor, levanta pregadores, cantores e discípulos que levem o evangelho a quem ainda não ouviu. Amém.
+
+**Quiz**
+
+1. O que eram as “classes” de Wesley?
+   - ✅ Pequenos grupos de discipulado
+   - ▫️ Escolas de música
+   - ▫️ Reuniões de autoridades
+   - _Eram grupos pequenos para orar, aprender e prestar contas._
+
+2. O que os hinos de Carlos Wesley faziam?
+   - ✅ Ensinavam o evangelho cantando
+   - ▫️ Substituíam a Bíblia
+   - ▫️ Eram só para cultos fechados
+   - _Seus hinos levaram a teologia e o louvor ao povo._
+
+3. Qual era o lema de Wesley sobre a pregação?
+   - ✅ “O mundo é a minha paróquia”
+   - ▫️ “Só dentro do templo”
+   - ▫️ “Apenas para eruditos”
+   - _Wesley levou o evangelho a campos e minas._
+
+### Aula 4. Finney e o Segundo Grande Avivamento (5 min)
+
+*No início do século XIX, avivamentos varreram os Estados Unidos. Charles Finney se tornou o avivalista mais conhecido, e também o mais debatido.*
+
+> “Arrependei-vos, pois, e convertei-vos, para que sejam apagados os vossos pecados.”  
+> **Atos 3:19**
+
+Depois da Independência americana, a fé enfraqueceu. Em 1801, um grande encontro em Cane Ridge, no Kentucky, reuniu milhares de pessoas em um acampamento de vários dias e marcou o início do Segundo Grande Avivamento.
+
+Charles Finney era advogado e se converteu em 1821. Na década de 1820 e 1830 pregou no interior de Nova Iorque e em cidades como Rochester, onde muitas pessoas se converteram. Ele pregava com franqueza, apelando à decisão imediata e à responsabilidade de cada um.
+
+Seus métodos e algumas ideias teológicas foram muito debatidos. Críticos temiam que a ênfase no esforço humano obscurecesse a obra soberana de Deus, e que técnicas pudessem produzir resultados superficiais. A igreja aprendeu com isso a combinar o chamado ao arrependimento com a dependência total do Espírito.
+
+Finney também ensinou e pregou contra a escravidão, e foi professor e presidente do Oberlin College, onde estudaram homens e mulheres, brancos e negros.
+
+*Símbolo do banner: chama*
+
+#### Contexto
+
+Cane Ridge reuniu, em agosto de 1801, algo entre 10 mil e 20 mil pessoas em acampamento. Houve manifestações fortes: choro, quedas, danças. Alguns admiraram, outros se escandalizaram. Foi o começo de um novo tipo de reunião, o “acampamento” (camp meeting), que moldou a vida da igreja americana por décadas.
+
+#### Aprofundamento
+
+Responsabilidade humana e soberania divina. Finney insistia que o pecador pode e deve se arrepender agora, e que a igreja deve orar e agir com ousadia. Seus críticos, entre eles teólogos reformados, temiam que ele subestimasse a obra de Deus na conversão e confundisse decisão com regeneração. A Bíblia mantém as duas verdades: Deus age (Filipenses 2:13) e nós respondemos (Atos 17:30).
+
+Métodos e fruto. Finney introduziu “novas medidas”: reuniões prolongadas, oração em voz alta por pessoas pelo nome, a “banca dos ansiosos”, em que quem queria decidir se sentava na frente. Cada igreja precisa avaliar métodos com a Bíblia, lembrando que técnica não converte ninguém. Só o Espírito faz nascer de novo.
+
+Mulheres e santidade. O Segundo Grande Avivamento abriu espaço para a atuação de mulheres, como Phoebe Palmer (1807–1874), que liderava em Nova Iorque a “Reunião das Terças-Feiras para a Promoção da Santidade”. Ela defendeu, com base em Joel 2 e Atos 2, que as mulheres também são chamadas a testemunhar e ensinar. Seus textos influenciaram o movimento de santidade.
+
+#### Termos
+
+- **Regeneração**: Obra do Espírito que dá vida nova ao pecador.
+- **Acampamento (camp meeting)**: Reunião de vários dias ao ar livre, com pregações, orações e cantos.
+- **Movimento de santidade**: Movimento que enfatizava a vida santa e a plena consagração a Deus.
+
+#### Herói da fé: Charles Finney (1792–1875)
+
+*Advogado e avivalista*
+
+Finney era advogado em Adams, Nova Iorque. Em outubro de 1821, depois de ler a Bíblia e orar sozinho em um bosque, entregou-se a Cristo. Disse que sentiu o Espírito descer sobre ele. Deixou a advocacia e passou a pregar.
+
+A sua pregação sem rodeios e a ênfase na oração geraram avivamentos em cidades como Rochester, em 1830 e 1831. Ele escreveu as “Palestras sobre Avivamentos” (1835), muito lidas. Foi também professor e, depois, presidente da faculdade de Oberlin, onde apoiou a educação de mulheres e negros e o fim da escravidão.
+
+Finney fala da necessidade de oração e arrependimento, mas deve ser lido com atenção, pois algumas de suas ideias teológicas foram contestadas por muitos cristãos. Aprender com ele inclui o chamado urgente à conversão e o cuidado de manter Deus no centro.
+
+**Lição:** Há ousadia em chamar as pessoas a decidir. Mas só a graça de Deus converte.
+
+#### Para praticar esta semana
+
+- Escreva o nome de alguém a quem você pode falar de Jesus com clareza e carinho esta semana.
+- Leia Filipenses 2:12-13 e anote como Deus age e nós também agimos.
+
+#### Você sabia?
+
+- Em Cane Ridge, em 1801, estima-se que entre 10 mil e 20 mil pessoas se reuniram, em uma região em que pouca gente morava.
+- Oberlin College foi uma das primeiras escolas superiores dos Estados Unidos a aceitar alunos negros e mulheres.
+- Nas reuniões de Finney, quem queria decidir se sentava na primeira fila, a chamada “banca dos ansiosos”.
+
+#### Linha do tempo
+
+- **1801**: Cane Ridge, Kentucky.
+- **1821**: Conversão de Finney.
+- **1830-31**: Avivamento em Rochester.
+- **1835**: Publica Palestras sobre Avivamentos.
+
+#### Para ler e cantar
+
+- Livro: Palestras sobre Avivamentos, de Charles Finney
+- Leia: Atos 3
+
+**Para ler também:** Atos 2:38; Lucas 13:3; Efésios 2:8-9
+
+**Reflexão:** Há uma decisão de arrependimento que você tem adiado?
+
+**Oração:** Senhor, dá-nos pregação ousada e humilde, e um povo que se arrepende de verdade. Que dependamos sempre do teu Espírito. Amém.
+
+**Quiz**
+
+1. Onde aconteceu o grande encontro de 1801?
+   - ✅ Cane Ridge, Kentucky
+   - ▫️ Wittenberg
+   - ▫️ Roma
+   - _Cane Ridge marcou o início do Segundo Grande Avivamento._
+
+2. Qual era a profissão de Finney antes de pregar?
+   - ✅ Advogado
+   - ▫️ Marinheiro
+   - ▫️ Médico
+   - _Finney era advogado quando se converteu._
+
+3. Como Finney se converteu?
+   - ✅ Orando sozinho em um bosque
+   - ▫️ Em um culto com Wesley
+   - ▫️ Lendo Calvino
+   - _Ele se rendeu a Cristo orando em um bosque, em 1821._
+
+### Aula 5. O avivamento de oração de 1857 (5 min)
+
+*Em plena crise econômica, um leigo abriu uma reunião de oração ao meio-dia. Ela se espalhou por cidades e igrejas.*
+
+> “Clama a mim, e responder-te-ei, e anunciar-te-ei coisas grandes e firmes que não sabes.”  
+> **Jeremias 33:3**
+
+Em 1857, os Estados Unidos entravam em uma grave crise financeira. Em Nova Iorque, um homem comum, Jeremiah Lanphier, foi contratado por uma igreja para visitar a vizinhança e convidar as pessoas à fé. Ele decidiu abrir uma reunião de oração ao meio-dia, para comerciantes e trabalhadores na hora do almoço.
+
+No primeiro dia, 23 de setembro de 1857, apenas seis pessoas apareceram. Em poucas semanas, o salão estava lotado e foi preciso abrir outros andares. A reunião se multiplicou por Nova Iorque e por muitas cidades americanas e canadenses.
+
+Foi um avivamento sem grandes pregadores famosos: leigos, empresários, mulheres e jovens oravam, liam a Bíblia e testemunhavam. Estimativas falam de centenas de milhares de conversões em poucos meses.
+
+A lição é simples: oração perseverante, regular e humilde prepara o terreno. O que parecia pequeno, seis pessoas orando, Deus usou para alcançar uma nação.
+
+*Símbolo do banner: maos*
+
+#### Contexto
+
+A crise de 1857 levou à falência milhares de empresas, e muitos viram suas economias desaparecerem. Era um tempo de medo, mas também de busca. A reunião de Lanphier foi pensada para pessoas com pouco tempo: cada um podia entrar e sair, e a oração era breve. Era um modelo simples e acessível.
+
+#### Aprofundamento
+
+Oração unida. Jesus ensinou que o Pai atende a oração em comum (Mateus 18:19). Atos 1:14 e 2:42 mostram a igreja “perseverando unânime em oração”. As reuniões de oração de 1857 retomaram esse costume: curtas, abertas, sem grandes líderes, com pedidos e testemunhos. Cada um orava poucos minutos, e o Espírito conduzia.
+
+O papel dos leigos. O avivamento de 1857 foi marcado pela participação de pessoas comuns: comerciantes, costureiras, funcionários. Isso concretiza o sacerdócio de todos os crentes (1 Pedro 2:9). Não é preciso ser pastor para orar, convidar e testemunhar.
+
+Oração e missão. A oração não é fuga, mas combustível. Muitas conversões aconteceram porque as pessoas oravam por nome. Em 1858, o avivamento chegou à Irlanda do Norte, à Escócia e ao País de Gales, e depois inspirou missões ao redor do mundo.
+
+#### Termos
+
+- **Sacerdócio de todos os crentes**: Todo cristão tem acesso direto a Deus e pode servi-lo.
+- **Unanimidade**: Estar de um mesmo ânimo, em acordo e unidade.
+- **Perseverança**: Continuar firme, sem desistir.
+
+#### Herói da fé: Jeremiah Lanphier (1809–1898)
+
+*Empresário e missionário leigo de Nova Iorque*
+
+Lanphier era comerciante em Nova Iorque e se converteu em um avivamento anterior. Em 1857, foi contratado como missionário leigo da Igreja Reformada Holandesa da rua Fulton.
+
+Preocupado com os que trabalhavam no centro, distribuiu convites para uma reunião de oração ao meio-dia, às quartas-feiras. Em 23 de setembro, sentou-se sozinho por meia hora até que aparecesse alguém. Chegaram seis. Na semana seguinte, vinte. Logo, quarenta. Depois, centenas.
+
+Ele não buscou fama. Permaneceu em seu trabalho humilde, e por décadas continuou servindo à igreja. A reunião de Fulton Street se tornou símbolo de um avivamento que veio da oração perseverante.
+
+**Lição:** Deus se agrada de uma fidelidade pequena e constante.
+
+#### Para praticar esta semana
+
+- Combine com um amigo de orar juntos por dez minutos, uma vez por semana, por 30 dias.
+- Faça uma lista de dez pessoas e ore por elas pelo nome durante a semana.
+
+#### Você sabia?
+
+- As reuniões de Fulton Street eram curtas e abertas: cada pessoa orava poucos minutos.
+- Em 1859, avivamentos semelhantes ocorreram na Irlanda do Norte, Escócia e Gales.
+- O avivamento de 1857-58 foi chamado “Grande Avivamento de Oração” e atingiu leigos e profissionais.
+
+#### Linha do tempo
+
+- **23 set 1857**: Primeira reunião: seis pessoas.
+- **1858**: O avivamento se espalha pelas cidades americanas.
+- **1859**: Avivamento na Irlanda do Norte.
+
+#### Para ler e cantar
+
+- Leia: Jeremias 33:2-3
+- Leia: Mateus 18:19-20
+
+**Para ler também:** Mateus 18:19-20; Atos 1:14; Filipenses 4:6
+
+**Reflexão:** Quais horários da sua semana podem virar “reunião de oração” com um ou dois irmãos?
+
+**Oração:** Pai, ensina-nos a orar em unidade e perseverança. Faz de nossas reuniões pequenas um lugar onde o céu toca a terra. Amém.
+
+**Quiz**
+
+1. Quantas pessoas vieram na primeira reunião de Lanphier?
+   - ✅ Seis
+   - ▫️ Seiscentas
+   - ▫️ Seis mil
+   - _A primeira reunião teve apenas seis pessoas._
+
+2. Qual a principal característica do avivamento de 1857?
+   - ✅ A oração de leigos
+   - ▫️ Um grande orador
+   - ▫️ Uma nova doutrina
+   - _Foi um avivamento de oração, liderado por gente comum._
+
+3. Quem foi Jeremiah Lanphier?
+   - ✅ Um empresário que abriu a reunião de oração ao meio-dia
+   - ▫️ Um rei de Israel
+   - ▫️ Um missionário na China
+   - _Lanphier era um leigo que iniciou a reunião de Fulton Street._
+
+### Aula 6. Moody e o evangelho para as multidões (5 min)
+
+*Dwight L. Moody, um vendedor de sapatos sem formação teológica, pregou a milhões e fundou escolas, e mostrou o valor de uma vida entregue.*
+
+> “Rogo-vos, pois, irmãos, pela compaixão de Deus, que apresenteis os vossos corpos em sacrifício vivo, santo e agradável a Deus, que é o vosso culto racional.”  
+> **Romanos 12:1**
+
+Moody nasceu em 1837, em Massachusetts, em uma família pobre. Foi vendedor de sapatos em Boston e, em 1855, um professor de escola dominical, Edward Kimball, falou-lhe de Cristo na loja onde trabalhava. Moody creu.
+
+Em Chicago, dedicou-se a ensinar crianças pobres e a trabalhar com jovens. Na década de 1870, junto com o cantor Ira Sankey, fez campanhas na Inglaterra e na Escócia que reuniram multidões. Voltando aos Estados Unidos, continuou a pregar em grandes cidades.
+
+Moody não tinha estudo formal, mas amava a Bíblia e as pessoas. Fundou escolas, como a que hoje se chama Instituto Bíblico Moody, e incentivou o envio de missionários. Seu estilo era claro, direto e cheio de histórias.
+
+Conta-se que um amigo lhe disse que o mundo ainda veria o que Deus faria com alguém inteiramente consagrado a ele. Moody respondeu que queria ser esse homem. Em todo avivamento, Deus usa pessoas entregues, ainda que sem destaque.
+
+*Símbolo do banner: cruz*
+
+#### Contexto
+
+O mundo de Moody era o da industrialização: milhares de pessoas vindas do campo, vivendo em cortiços, sem escolas, em cidades como Chicago. Ele via crianças soltas pelas ruas e decidiu ir até elas. A sua escola dominical chegou a ter centenas de crianças. Em 1871, o grande incêndio de Chicago destruiu sua igreja e sua casa, mas a obra continuou.
+
+#### Aprofundamento
+
+Mensagem simples. Moody pregava três coisas: a ruína do homem pelo pecado, a redenção por Cristo e a regeneração pelo Espírito. Em vez de debates, usava histórias. Para ele, o evangelho cabia em poucas palavras, mas exigia decisão e vida nova. Sua preocupação era alcançar os que não frequentavam igreja.
+
+Capacitação do Espírito. Em 1871, Moody relatou uma experiência marcante de plenitude do Espírito, que lhe deu nova ousadia. Ele insistia que a obra cristã exige poder do alto (Atos 1:8). Muitos pregadores o consideravam o exemplo de que Deus usa quem se rende, não os mais talentosos.
+
+Educação e missões. Moody fundou escolas, uma escola bíblica em Chicago (1886) para treinar leigos, e promoveu encontros de estudantes que impulsionaram o movimento missionário. Ele acreditava que o avivamento deve gerar discípulos, treino e envio.
+
+#### Termos
+
+- **Plenitude do Espírito**: Ser dirigido e capacitado de modo contínuo pelo Espírito Santo.
+- **Escola dominical**: Ensino bíblico semanal, especialmente para crianças.
+- **Consagração**: Entrega completa da vida a Deus.
+
+#### Herói da fé: Dwight L. Moody (1837–1899)
+
+*Evangelista e fundador de escolas*
+
+Moody, filho de uma viúva pobre, cresceu em Massachusetts com pouca instrução. Aos 17 anos foi trabalhar em uma loja de sapatos em Boston. O professor da escola dominical, Edward Kimball, foi à loja falar-lhe de Cristo. Moody creu.
+
+Mudou-se para Chicago e dedicou-se aos pobres. Durante a guerra civil americana, trabalhou com soldados e jovens. Em 1873, viajou à Grã-Bretanha e viu multidões abraçarem a fé. Voltou famoso, mas continuou a viver com simplicidade e a investir em educação.
+
+Sua esposa, Emma, e outros colaboradores foram parte essencial. Entre as músicas das suas campanhas estavam hinos de Fanny Crosby (1820–1915), cega desde bebê, que escreveu milhares de hinos. Moody morreu em 1899. Segundo o relato, suas últimas palavras foram que a terra se afastava e o céu se abria diante dele.
+
+**Lição:** Deus não procura os mais talentosos, mas os que se entregam por completo.
+
+#### Para praticar esta semana
+
+- Pense em uma criança ou jovem a quem você pode ensinar a Palavra de Deus esta semana.
+- Escreva em uma frase: “Hoje me entrego a Deus em…” e complete com sua vida concreta.
+
+#### Você sabia?
+
+- O Instituto Bíblico Moody, fundado em 1886, existe até hoje e também mantém uma rádio e uma editora.
+- Fanny Crosby escreveu mais de oito mil letras de hinos e ficou cega ainda bebê.
+- Antes de ficar conhecido no mundo, Moody ensinou crianças pobres nas ruas de Chicago.
+
+#### Linha do tempo
+
+- **1837**: Nasce D. L. Moody.
+- **1855**: Converte-se em Boston.
+- **1873**: Campanhas na Grã-Bretanha.
+- **1886**: Funda o Instituto Moody.
+- **1899**: Morre Moody.
+
+#### Para ler e cantar
+
+- Leia: Romanos 12
+- Cante: Hinos de Fanny Crosby, como “Segurança Bendita”
+
+**Para ler também:** Atos 4:13; 1 Coríntios 1:26-29; Mateus 28:19-20
+
+**Reflexão:** O que significa para você entregar a Deus o “corpo inteiro”: o tempo, o trabalho, o dinheiro, os dons?
+
+**Oração:** Senhor, usa a minha vida como usaste a de Moody: simples, entregue e disponível. Amém.
+
+**Quiz**
+
+1. Qual era a profissão de Moody quando se converteu?
+   - ✅ Vendedor de sapatos
+   - ▫️ Pastor
+   - ▫️ Professor de teologia
+   - _Moody vendia sapatos em Boston._
+
+2. Quem cantava nas campanhas de Moody?
+   - ✅ Ira Sankey
+   - ▫️ Carlos Wesley
+   - ▫️ Isaac Watts
+   - _Ira Sankey foi seu parceiro de música._
+
+3. Quem falou de Cristo a Moody na loja de sapatos?
+   - ✅ Edward Kimball
+   - ▫️ George Müller
+   - ▫️ Carlos Wesley
+   - _Kimball, seu professor de escola dominical, o levou a Cristo._
+
+### Aula 7. O avivamento de Gales (1904-1905) (5 min)
+
+*No País de Gales, uma jovem testemunhou, um mineiro orou e as igrejas se encheram. O avivamento valorizou a oração, a confissão e o cântico.*
+
+> “E há de ser que, depois, derramarei o meu Espírito sobre toda a carne, e vossos filhos e vossas filhas profetizarão, os vossos velhos terão sonhos, os vossos jovens terão visões.”  
+> **Joel 2:28**
+
+Em fevereiro de 1904, em New Quay, uma jovem de 17 anos, Florrie Evans, levantou-se em uma reunião e disse que amava Jesus de todo o coração. Esse testemunho comoveu muita gente e se tornou uma das fagulhas do avivamento.
+
+No final do mesmo ano, um jovem mineiro de carvão, Evan Roberts, de 26 anos, começou a realizar reuniões na sua cidade, Loughor. Ele pedia quatro coisas: confessar pecados a Deus, abandonar tudo o que fosse duvidoso, obedecer ao Espírito e confessar Cristo publicamente. As reuniões duravam horas, com oração espontânea, cânticos e confissões.
+
+Em poucos meses, dezenas de milhares se converteram. Muitos relatam que as tabernas esvaziaram, as dívidas foram pagas e as famílias se reconciliaram. A notícia chegou a outros países e inspirou avivamentos em várias nações.
+
+Evan Roberts, esgotado, afastou-se da vida pública e viveu longos anos em reclusão. A história lembra que o avivamento é obra de Deus, e que seus instrumentos precisam de cuidado e descanso.
+
+*Símbolo do banner: pomba*
+
+#### Contexto
+
+O País de Gales era conhecido pelos corais, pelas minas de carvão e pelos cultos em galês. No fim do século XIX, as igrejas tinham perdido força. Pregadores e leigos oravam por um novo derramar. Em 1904, as orações começaram a ser respondidas. O avivamento ficou famoso pela espontaneidade: muitos cultos não tinham programa, e o povo orava, cantava e testemunhava.
+
+#### Aprofundamento
+
+A oração e a confissão. As reuniões eram marcadas por oração aberta e confissão pública de pecados. Muitos devolviam objetos furtados e reparavam ofensas. Isso corresponde ao ensino bíblico de 1 João 1:9 e Tiago 5:16. A confissão é parte do que a Bíblia chama de “frutos dignos de arrependimento” (Mateus 3:8).
+
+Música e comunhão. O canto congregacional era central. A música unia as pessoas e preparava os corações. Hoje ainda se fala da alegria do povo, das famílias reconciliadas e das mudanças nos hábitos da cidade.
+
+Os limites. Alguns líderes se preocuparam com excessos e com pessoas que se sentiam guiadas por impressões sem a Bíblia. A igreja aprendeu a testar tudo (1 Tessalonicenses 5:21) e a cuidar dos líderes. O avivamento foi curto, mas deixou marcas por décadas e inspirou outros movimentos pelo mundo.
+
+#### Termos
+
+- **Confissão**: Reconhecer o pecado diante de Deus e, quando cabe, dos outros.
+- **Espontaneidade**: Reunião sem roteiro rígido, aberta à condução do Espírito.
+- **Discernimento**: Examinar tudo à luz da Bíblia e reter o que é bom.
+
+#### Herói da fé: Evan Roberts (1878–1951)
+
+*Jovem mineiro e avivalista de Gales*
+
+Evan Roberts trabalhou nas minas desde menino. Frequentava a igreja e passou anos orando por avivamento. Em 1904, sentiu o chamado para pregar na sua região e iniciou reuniões simples em sua igreja, em Loughor.
+
+Em pouco tempo, a notícia correu, e as reuniões lotaram igrejas e capelas, com horas de oração e cântico. Roberts era humilde e pedia que o povo olhasse para Cristo, e não para ele. Ele contou com a ajuda de irmãs e de colaboradoras, como Jessie Penn-Lewis, que escreveu sobre a obra.
+
+Em 1906, esgotado emocional e fisicamente, retirou-se da vida pública. Viveu o restante da vida em silêncio e oração, em Cardiff, até 1951. A sua vida lembra que todo servo de Deus precisa de descanso e de uma comunidade que o cuide.
+
+**Lição:** Deus usa gente comum, mas gente comum precisa de cuidado e de descanso.
+
+#### Para praticar esta semana
+
+- Faça hoje uma confissão sincera a Deus, nomeando um pecado sem desculpas. Receba o perdão (1 João 1:9).
+- Cante ou ouça um hino que fale de entrega e rendição e ore a partir dele.
+
+#### Você sabia?
+
+- Segundo a história popular, nas minas de Gales os cavalos de carga estranharam a mudança de vocabulário dos mineiros, que deixaram de blasfemar. É uma anedota conhecida, mas difícil de comprovar.
+- Estima-se que, em 1904 e 1905, cerca de cem mil pessoas se converteram no avivamento galês.
+- O avivamento teve forte presença de mulheres e jovens.
+
+#### Linha do tempo
+
+- **Fev 1904**: Testemunho de Florrie Evans, em New Quay.
+- **Nov 1904**: Reuniões de Evan Roberts em Loughor.
+- **1905**: Auge do avivamento.
+- **1906**: Evan Roberts se retira da vida pública.
+
+#### Para ler e cantar
+
+- Leia: Joel 2:12-29
+- Leia: Salmo 126
+
+**Para ler também:** Atos 2:17; Tiago 5:16; Salmos 126
+
+**Reflexão:** Há alguma confissão que você precisa fazer, a Deus ou a alguém, para viver um recomeço?
+
+**Oração:** Senhor, derrama o teu Espírito sobre jovens e velhos, sobre homens e mulheres. Começa por mim. Amém.
+
+**Quiz**
+
+1. Quem foi Florrie Evans?
+   - ✅ Uma jovem cujo testemunho acendeu o avivamento em Gales
+   - ▫️ Uma rainha
+   - ▫️ Uma missionária na Índia
+   - _O testemunho dela em New Quay foi uma das fagulhas do avivamento._
+
+2. Qual era a profissão de Evan Roberts?
+   - ✅ Mineiro de carvão
+   - ▫️ Médico
+   - ▫️ Soldado
+   - _Evan Roberts trabalhou nas minas de carvão._
+
+3. Em qual lugar começou o avivamento de Evan Roberts?
+   - ✅ Loughor, no País de Gales
+   - ▫️ Londres
+   - ▫️ Roma
+   - _As reuniões de Roberts começaram em Loughor, em 1904._
+
+### Aula 8. Azusa Street e o avivamento pentecostal (5 min)
+
+*Em 1906, em Los Angeles, um pregador negro filho de ex-escravos liderou reuniões em que brancos, negros, latinos e asiáticos adoravam juntos. O movimento se espalhou pelo mundo e chegou ao Brasil.*
+
+> “Nisto não há judeu nem grego; não há servo nem livre; não há macho nem fêmea; porque todos vós sois um em Cristo Jesus.”  
+> **Gálatas 3:28**
+
+No início do século XX, muitos cristãos desejavam mais do Espírito Santo. Em 1906, um pastor negro, William J. Seymour, começou reuniões em uma antiga igreja metodista na rua Azusa, em Los Angeles. Em pouco tempo, pessoas de várias origens e classes passaram a se reunir, orar e louvar, algo raro numa época de forte segregação.
+
+Os cultos duravam o dia todo. Falava-se de salvação, cura, santidade e do batismo no Espírito Santo, com o dom de línguas. O movimento chamado pentecostal cresceu e hoje reúne centenas de milhões de cristãos.
+
+No Brasil, em 1910 e 1911, dois missionários suecos, Gunnar Vingren e Daniel Berg, fundaram em Belém a Assembleia de Deus. No mesmo período, o italiano Luigi Francescon iniciou a Congregação Cristã no Brasil. Esse legado moldou grande parte do cristianismo brasileiro.
+
+Cristãos sinceros divergem sobre alguns dons e ênfases. O que nos une é Cristo, a cruz e a Palavra. Vale aprender com o que há de comum: fome de Deus, alegria na adoração e a certeza de que o Espírito é para todos.
+
+*Símbolo do banner: pomba*
+
+#### Contexto
+
+No início do século XX, os Estados Unidos viviam a segregação racial. A rua Azusa ficava num bairro pobre e misturado de Los Angeles. Seymour, que não podia estudar na sala por ser negro, ouvia as aulas do corredor. Mesmo assim, aprendeu a ensinar. Ao receber o convite para pregar em Los Angeles, foi, mesmo sem apoio.
+
+#### Aprofundamento
+
+Pentecostalismo. Os pentecostais ensinam que o batismo no Espírito Santo é uma experiência posterior à conversão, geralmente acompanhada de línguas, e valorizam dons como cura e profecia. Outros cristãos creem que o batismo no Espírito ocorre na conversão e que alguns dons cessaram. Todos concordam que o Espírito Santo habita nos crentes e que o seu fruto é o amor.
+
+Unidade e justiça. Em Azusa, brancos, negros, latinos e asiáticos oravam juntos, e mulheres tinham voz. Era um sinal de Gálatas 3:28 em ação. Com o tempo, a segregação voltou a dividir muitos grupos, mas aquela memória permanece como desafio para a igreja: o avivamento verdadeiro derruba muros.
+
+Brasil. A Assembleia de Deus começou em Belém, em 1911, com Gunnar Vingren e Daniel Berg; a Congregação Cristã, em 1910, com Luigi Francescon. Em poucas décadas, o pentecostalismo se espalhou por todo o país. Hoje, o Brasil é um dos maiores países evangélicos do mundo. Vale sempre voltar à Bíblia para avaliar o que se prega e se pratica.
+
+#### Termos
+
+- **Batismo no Espírito Santo**: Expressão com sentidos diferentes entre os cristãos; ligada à promessa de Atos 1:5 e 2.
+- **Línguas**: Dom espiritual de falar em idiomas por obra do Espírito (1 Coríntios 12-14).
+- **Segregação**: Separação forçada entre pessoas por raça ou classe.
+
+#### Herói da fé: William J. Seymour (1870–1922)
+
+*Pastor da Missão da Fé Apostólica, na rua Azusa*
+
+Seymour nasceu em Louisiana, filho de pessoas que haviam sido escravizadas. Perdeu a visão de um olho por causa da varíola. Trabalhou em hotéis e estudou a Bíblia com dedicação, mesmo com muitas barreiras.
+
+Em 1906, foi a Los Angeles pregar em uma igreja que logo o afastou por causa da sua mensagem. Começou, então, a orar em uma casa e, depois, na antiga igreja da rua Azusa. As reuniões, que duraram cerca de três anos, atraíram multidões e visitantes de muitos países.
+
+Seymour, humilde e manso, dizia que o amor era a prova de um batismo verdadeiro no Espírito. Morreu em 1922. Hoje, é lembrado como um dos grandes pioneiros de um dos movimentos que mais cresce no mundo cristão.
+
+**Lição:** O Espírito Santo une povos que o mundo divide.
+
+#### Para praticar esta semana
+
+- Visite ou ore por uma igreja diferente da sua, com respeito e abertura para aprender.
+- Leia Gálatas 3:26-29 e pense em um muro que você pode ajudar a derrubar.
+
+#### Você sabia?
+
+- O prédio da rua Azusa, 312, era uma antiga igreja que tinha sido usada como depósito. Foi demolido em 1931.
+- Seymour dizia que a prova do batismo no Espírito Santo era o amor.
+- A Assembleia de Deus no Brasil nasceu com um nome diferente, Missão da Fé Apostólica, e foi renomeada em 1918.
+
+#### Linha do tempo
+
+- **Abr 1906**: Início das reuniões na rua Azusa.
+- **1910**: Congregação Cristã no Brasil.
+- **1911**: Assembleia de Deus em Belém.
+- **1922**: Morre William Seymour.
+
+#### Para ler e cantar
+
+- Leia: Atos 2
+- Leia: Gálatas 3:23-29
+
+**Para ler também:** Atos 2:1-21; 1 Coríntios 12:12-13; Efésios 4:1-6
+
+**Reflexão:** Você consegue adorar ao lado de pessoas de outra cor, classe ou denominação? O que pode mudar?
+
+**Oração:** Senhor, derruba os muros que nos dividem. Une os teus filhos na adoração e no amor. Amém.
+
+**Quiz**
+
+1. Quem liderou as reuniões da rua Azusa?
+   - ✅ William J. Seymour
+   - ▫️ Martinho Lutero
+   - ▫️ George Müller
+   - _Seymour foi o pastor das reuniões de Azusa Street._
+
+2. Quem fundou a Assembleia de Deus em Belém?
+   - ✅ Gunnar Vingren e Daniel Berg
+   - ▫️ João Wesley
+   - ▫️ Charles Finney
+   - _Dois suecos, Vingren e Berg, começaram a igreja em 1911._
+
+3. Onde começou a Assembleia de Deus no Brasil?
+   - ✅ Belém, no Pará
+   - ▫️ Rio de Janeiro
+   - ▫️ Brasília
+   - _A Assembleia de Deus começou em Belém, em 1911._
+
+### Aula 9. Avivamento hoje: o que Deus procura (5 min)
+
+*O que Deus busca em todo avivamento: humildade, oração, arrependimento e fidelidade à Palavra. E o que podemos fazer hoje.*
+
+> “Se o meu povo, que se chama pelo meu nome, se humilhar, e orar, e buscar a minha face, e se converter dos seus maus caminhos, então eu ouvirei dos céus, e perdoarei os seus pecados, e sararei a sua terra.”  
+> **2 Crônicas 7:14**
+
+Quando Salomão dedicou o templo, Deus lhe respondeu com uma promessa. As condições são quatro: humilhar-se, orar, buscar a face de Deus e converter-se. As promessas são três: Deus ouvirá dos céus, perdoará o pecado e sarará a terra. Esse padrão aparece em todos os avivamentos.
+
+Nem toda empolgação é avivamento. Os sinais são os do Espírito: Cristo exaltado, pecado abominado, Palavra amada, verdade defendida e amor aumentado (1 João 4). Fruto duradouro é o teste: vidas transformadas, famílias restauradas, serviço aos pobres e missões.
+
+Devemos ter cuidado com o oposto: o cinismo de quem diz que nada pode acontecer, e a pressa de quem fabrica experiências. Avivamento não se programa. Mas podemos pedir, preparar o coração, perdoar, ler a Bíblia, orar juntos e agir no que já sabemos.
+
+Comece em casa. Os grandes avivamentos começaram quando alguém decidiu se arrepender e orar. Que a próxima história seja a sua, a da sua família e a da sua igreja.
+
+*Símbolo do banner: maos*
+
+#### Contexto
+
+O avivamento das Hébridas começou em 1949, na ilha de Lewis, na Escócia. Duas irmãs idosas, Peggy e Christine Smith, de Barvas, oravam por avivamento. Uma era cega, a outra se movia com dificuldade por causa da artrite. Duas noites por semana, elas se ajoelhavam em casa e pediam a Deus que visitasse a ilha. Pediram então a um pastor que viesse pregar, e Duncan Campbell foi convidado.
+
+#### Aprofundamento
+
+Condições. O que Deus procura aparece em 2 Crônicas 7:14: humildade, oração, busca da face e conversão. Isaías 57:15 diz que Deus habita com o contrito e o abatido. A oração das irmãs Smith e de um pequeno grupo de jovens e pastores precedeu a obra. Em geral, os avivamentos começam em intercessão persistente.
+
+Sinais. Além das marcas de 1 João 4, vê-se o temor do Senhor (Atos 2:43), a Palavra no centro (Atos 6:7), o amor entre os irmãos (João 13:35) e o zelo por missões (Atos 13:1-3). Os frutos também são sociais: perdão de dívidas, fim de inimizades, cuidado dos pobres, justiça. Se não há esses frutos, é preciso rever o que chamamos de avivamento.
+
+Perigos. Entre os riscos estão o culto ao pregador, a busca de experiências sem raízes na Bíblia, a ênfase no espetáculo e o orgulho espiritual. Os grandes avivalistas sempre insistiram em manter a cruz no centro, a Bíblia como medida e a humildade como atitude.
+
+#### Termos
+
+- **Intercessão**: Orar a Deus em favor de outros.
+- **Contrição**: Coração quebrantado diante de Deus.
+- **Temor do Senhor**: Reverência diante da santidade de Deus.
+
+#### Herói da fé: Peggy e Christine Smith, e Duncan Campbell (séc. XX)
+
+*Intercessoras e o pregador do avivamento das Hébridas*
+
+Peggy e Christine Smith moravam em uma pequena casa em Barvas, na ilha de Lewis. Já passavam dos oitenta anos. Peggy era cega, e Christine ficava curvada pela artrite. Diziam que tinham recebido de Deus uma promessa de avivamento, e passavam noites inteiras orando por isso.
+
+Pediram aos pastores que reunissem o povo, e o pregador Duncan Campbell foi convidado. Em dezembro de 1949, os cultos começaram e as igrejas ficaram pequenas. Dizem que, em dias de reunião, o povo se reunia em casas e saía pelas ruas, com um temor profundo da presença de Deus.
+
+O avivamento durou alguns anos e mudou vilarejos inteiros. Campbell sempre lembrava que o mérito era da oração das irmãs e do povo, e não dele.
+
+**Lição:** O avivamento pode começar com duas idosas de joelhos. A oração humilde move a mão de Deus.
+
+#### Para praticar esta semana
+
+- Escolha um tempo, mesmo que curto, para orar todos os dias pelo avivamento da sua igreja e cidade por 30 dias.
+- Procure um irmão ou irmã idoso e peça-lhe que ore por você e pelos seus. Agradeça e ouça a sua história.
+
+#### Você sabia?
+
+- Lewis é a maior ilha das Hébridas Exteriores, e a língua gaélica ainda é falada ali.
+- As irmãs Smith oravam duas noites por semana, durante meses.
+- Duncan Campbell (1898–1972) era escocês e pregou em muitas partes da Escócia e das ilhas.
+
+#### Linha do tempo
+
+- **1949**: As irmãs Smith pedem oração por avivamento.
+- **Dez 1949**: Duncan Campbell chega a Lewis.
+- **1950-52**: O avivamento alcança várias aldeias das ilhas.
+
+#### Para ler e cantar
+
+- Leia: 2 Crônicas 7:14
+- Leia: Isaías 57:15
+
+**Para ler também:** Neemias 8-9; Oseias 10:12; Apocalipse 3:14-22
+
+**Reflexão:** Qual das quatro condições de 2 Crônicas 7:14 é a mais difícil para você agora?
+
+**Oração:** Pai, humilhamo-nos diante de ti. Ouve-nos, perdoa-nos e aviva-nos de novo, para a glória de Jesus. Amém.
+
+**Quiz**
+
+1. Quais são as condições de 2 Crônicas 7:14?
+   - ✅ Humilhar-se, orar, buscar a face e converter-se
+   - ▫️ Pagar dízimo e jejuar
+   - ▫️ Construir templos
+   - _O texto lista quatro respostas do povo._
+
+2. Qual o melhor teste de um avivamento genuíno?
+   - ✅ Fruto duradouro e Cristo exaltado
+   - ▫️ Tamanho da multidão
+   - ▫️ Emoção forte
+   - _Os frutos e a exaltação de Cristo mostram a obra do Espírito._
+
+3. Quem eram Peggy e Christine Smith?
+   - ✅ Duas irmãs idosas que oraram pelo avivamento nas Hébridas
+   - ▫️ Duas rainhas da Escócia
+   - ▫️ Duas missionárias na África
+   - _Duas irmãs idosas oraram por semanas antes do avivamento._
 
 ## Plano de leitura: João em 30 dias
 

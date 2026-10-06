@@ -6,6 +6,7 @@ import { getStudyState } from "@/lib/study/data";
 import { getLesson, getTrack } from "@/lib/study/content";
 import { LessonRunner } from "@/components/study/LessonRunner";
 import { LevelCard } from "@/components/study/LevelCard";
+import { LessonBanner, Medallion, SymbolIcon, Timeline } from "@/components/study/Art";
 
 export const dynamic = "force-dynamic";
 type Props = { params: Promise<{ trilha: string; aula: string }> };
@@ -40,6 +41,7 @@ export default async function Aula({ params }: Props) {
         <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl">{lesson.titulo}</h1>
         <p className="text-ash-300">{lesson.resumo} <span className="text-ash-400">· {lesson.minutos} min</span></p>
       </div>
+      <LessonBanner slug={track.slug} symbol={lesson.simbolo} label={`${track.titulo} · Aula ${lesson.ordem}`} verse={lesson.versiculo.ref} />
       <blockquote className="border-l-2 border-ash-100 pl-5">
         <p className="font-display text-2xl leading-snug text-white sm:text-3xl">“{lesson.versiculo.texto}”</p>
         <footer className="mt-2 text-sm text-ash-400">{lesson.versiculo.ref}</footer>
@@ -51,11 +53,21 @@ export default async function Aula({ params }: Props) {
         <dl className="space-y-3">{lesson.termos.map((t) => <div key={t.termo}><dt className="font-medium text-white">{t.termo}</dt><dd className="text-sm text-ash-300">{t.definicao}</dd></div>)}</dl>
       </section>
       <section className="rounded-xl border border-ash-100/40 p-5 sm:p-6" aria-labelledby="heroi-h">
-        <p id="heroi-h" className="eyebrow mb-2">Herói da fé</p>
-        <h2 className="font-display text-3xl leading-tight text-white">{lesson.heroi.nome}</h2>
-        <p className="mt-1 text-sm text-ash-400">{lesson.heroi.periodo} · {lesson.heroi.titulo}</p>
+        <p id="heroi-h" className="eyebrow mb-3">Herói da fé</p>
+        <div className="flex items-center gap-4">
+          <Medallion slug={track.slug} name={lesson.heroi.nome} symbol={lesson.simbolo} />
+          <div className="min-w-0"><h2 className="font-display text-3xl leading-tight text-white">{lesson.heroi.nome}</h2>
+          <p className="mt-1 text-sm text-ash-400">{lesson.heroi.periodo} · {lesson.heroi.titulo}</p></div>
+        </div>
         <div className="mt-4 space-y-4 text-ash-200">{lesson.heroi.historia.map((p, i) => <p key={i}>{p}</p>)}</div>
         <p className="mt-4 border-t border-ink-700 pt-4 text-white"><span className="text-ash-400">O que aprendemos: </span>{lesson.heroi.licao}</p>
+      </section>
+      <section className="space-y-3" aria-labelledby="linha-h"><h2 id="linha-h" className="eyebrow">Linha do tempo</h2><Timeline items={lesson.linha} /></section>
+      <section className="card space-y-3 p-5" aria-labelledby="curio-h"><h2 id="curio-h" className="eyebrow">Você sabia?</h2>
+        <ul className="space-y-3">{lesson.curiosidades.map((c, i) => <li key={i} className="flex gap-3 text-ash-200"><SymbolIcon name="luz" size={20} className="mt-1 shrink-0 text-ash-100" /><span>{c}</span></li>)}</ul>
+      </section>
+      <section className="space-y-3" aria-labelledby="ler-h"><h2 id="ler-h" className="eyebrow">Para ler e cantar</h2>
+        <ul className="space-y-2">{lesson.leitura.map((l) => <li key={l.titulo} className="flex gap-3 text-sm text-ash-200"><span className="w-14 shrink-0 text-ash-400">{l.tipo}</span><span>{l.titulo}</span></li>)}</ul>
       </section>
       <p className="text-sm text-ash-400"><span className="text-ash-200">Para ler também:</span> {lesson.apoio.join(" · ")}</p>
       <section className="card space-y-2 p-5"><h2 className="eyebrow">Reflexão</h2><p className="text-lg text-white">{lesson.reflexao}</p></section>

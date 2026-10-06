@@ -1,5 +1,7 @@
 import raw from "../../../content/estudos/estudos.json";
 
+export type SymbolName = "livro" | "sol" | "cruz" | "coracao" | "arvore" | "pomba" | "agua" | "igreja" | "pao" | "luz" | "cajado" | "tumulo" | "videira" | "maos" | "chama";
+
 export interface QuizQuestion { pergunta: string; opcoes: string[]; correta: number; explicacao: string }
 export interface Lesson {
   ordem: number; titulo: string; resumo: string; minutos: number;
@@ -7,6 +9,7 @@ export interface Lesson {
   contexto: string; aprofundamento: string[]; termos: { termo: string; definicao: string }[];
   heroi: { nome: string; periodo: string; titulo: string; historia: string[]; licao: string };
   pratica: string[];
+  simbolo: SymbolName; curiosidades: string[]; linha: { ano: string; fato: string }[]; leitura: { tipo: string; titulo: string }[];
 }
 export interface Track { slug: string; titulo: string; descricao: string; nivel: string; aulas: Lesson[] }
 export interface PlanDay { dia: number; leitura: string; tema: string }

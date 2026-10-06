@@ -5,6 +5,7 @@ import { PLAN, TRACKS } from "@/lib/study/content";
 import { PageTitle } from "@/components/ui/Section";
 import { LevelCard } from "@/components/study/LevelCard";
 import { ProgressBar } from "@/components/study/ProgressBar";
+import { TrackCover } from "@/components/study/Art";
 
 export const metadata = { title: "Estudos", description: "Trilhas de estudo bíblico da Igreja de Cristo, com progresso e níveis." };
 export const dynamic = "force-dynamic";
@@ -51,6 +52,7 @@ export default async function Estudos() {
               const finished = !!state?.trailsDone.has(t.slug);
               return (
                 <Link key={t.slug} href={`/estudos/${t.slug}`} className="card flex flex-col gap-4 p-5 transition hover:border-ash-400 active:scale-[0.995]">
+                  <TrackCover slug={t.slug} symbol={t.aulas[0]!.simbolo} />
                   <div className="flex items-center justify-between gap-3 text-xs text-ash-400"><span>{t.aulas.length} aulas · {t.nivel}</span>{finished && <span className="rounded-full border border-ash-100 px-2 py-0.5 text-ash-100">Concluída</span>}</div>
                   <h3 className="font-display text-3xl leading-tight text-white">{t.titulo}</h3>
                   <p className="line-clamp-3 text-sm text-ash-300">{t.descricao}</p>

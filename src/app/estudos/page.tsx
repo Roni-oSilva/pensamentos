@@ -8,13 +8,15 @@ import { ProgressBar } from "@/components/study/ProgressBar";
 import { TrackCover } from "@/components/study/Art";
 import { getBibleState } from "@/lib/bible-data";
 import { dayLabel, planDay, PLAN_DAYS } from "@/lib/bible-plan";
+import { getRanking } from "@/lib/study/ranking";
+import { Avatar } from "@/components/ui/Avatar";
 
 export const metadata = { title: "Estudos", description: "Trilhas de estudo bíblico da Igreja de Cristo, com progresso e níveis." };
 export const dynamic = "force-dynamic";
 
 export default async function Estudos() {
   const session = await getSession();
-  const [state, bible] = await Promise.all([session ? getStudyState(session.user.id) : null, getBibleState(session?.user.id ?? null)]);
+  const [state, bible, top] = await Promise.all([session ? getStudyState(session.user.id) : null, getBibleState(session?.user.id ?? null), getRanking("all", 3)]);
   const today = bible.currentDay ? planDay(bible.currentDay) : null;
   // próxima aula: primeira não concluída da trilha mais avançada ainda em andamento (ou da primeira trilha)
   let next: { href: string; label: string } | null = null;
@@ -45,6 +47,28 @@ export default async function Estudos() {
             <Link href="/login?next=/estudos" className="btn-primary">Entrar</Link>
           </div>
         )}
+
+        <section aria-labelledby="rank-h">
+          <Link href="/estudos/ranking" className="card flex flex-wrap items-center justify-between gap-5 p-5 transition hover:border-ash-400 sm:p-6">
+            <div className="min-w-0">
+              <h2 id="rank-h" className="eyebrow mb-1">Ranking</h2>
+              <p className="font-display text-3xl text-white">Quem mais aprendeu</p>
+              <p className="mt-1 text-sm text-ash-300">{top.length ? `Em 1º lugar: ${top[0]!.name}, com ${top[0]!.xp} XP.` : "Conclua uma aula e seja o primeiro do ranking."}</p>
+            </div>
+            <div className="flex items-center gap-4">
+              {top.length > 0 && (
+                <div className="flex -space-x-3" aria-hidden>
+                  {top.slice(0, 3).map((r, i) => (
+                    <span key={r.userId} className="rounded-full p-0.5" style={{ background: ["#f2c14e", "#c9d1d9", "#d08a4e"][i], zIndex: 3 - i }}>
+                      <Avatar src={r.avatarUrl} name={r.username} size={44} />
+                    </span>
+                  ))}
+                </div>
+              )}
+              <span className="btn-primary">Ver ranking →</span>
+            </div>
+          </Link>
+        </section>
 
         <section aria-labelledby="biblia-h">
           <Link href="/estudos/biblia" className="card relative block overflow-hidden p-5 transition hover:border-ash-400 sm:p-6">

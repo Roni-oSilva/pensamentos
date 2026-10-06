@@ -303,6 +303,35 @@ select pg_temp.assert_eq((select note from public.bible_plan_notes where day = 1
 select pg_temp.must_fail($$insert into public.bible_plan_marks (user_id, day) values ('00000000-0000-0000-0000-0000000000b1', 1)$$, 'anônimo não marca');
 select pg_temp.as_su();
 
+-- 7h. Ranking de XP e nível público ----------------------------------------------------------
+select pg_temp.as_su();
+-- b1: aula com quiz perfeito do bloco 7f (30) + trilha (100) + 2 dias da Bíblia do bloco 7g (10) = 140
+insert into public.study_trail_done (user_id, track_slug) values ('00000000-0000-0000-0000-0000000000b1', 'fundamentos-da-fe');
+-- b2: uma aula antiga, com quiz incompleto (20), feita há 2 meses
+insert into public.study_progress (user_id, track_slug, lesson_order, quiz_correct, quiz_total, completed_at) values ('00000000-0000-0000-0000-0000000000b2', 'fundamentos-da-fe', 1, 1, 3, now() - interval '62 days');
+select pg_temp.as_anon();
+select pg_temp.must_see_zero('public.study_progress', 'anônimo não lê o progresso dos outros');
+select pg_temp.must_fail($$select * from public.study_xp_rows(null)$$, 'soma interna não é pública');
+select pg_temp.assert_eq((select xp from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b1'), 140, 'XP no ranking segue a regra do app');
+select pg_temp.assert_eq((select pos from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b1')::int, 1, 'primeiro lugar no ranking geral');
+select pg_temp.assert_eq((select pos from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b2')::int, 2, 'segundo lugar no ranking geral');
+select pg_temp.assert_eq((select count(*) from public.study_ranking('month') where user_id = '00000000-0000-0000-0000-0000000000b2')::int, 0, 'ranking do mês ignora o que é antigo');
+select pg_temp.assert_eq((select pos from public.study_public_level('00000000-0000-0000-0000-0000000000b2'))::int, 2, 'nível público mostra a posição');
+select pg_temp.assert_eq((select xp from public.study_public_level('00000000-0000-0000-0000-0000000000b2')), 20, 'nível público mostra o XP');
+select pg_temp.as_su();
+insert into public.study_progress (user_id, track_slug, lesson_order, quiz_correct, quiz_total) values ('00000000-0000-0000-0000-00000000000a', 'fundamentos-da-fe', 1, 3, 3);
+select pg_temp.as_anon();
+select pg_temp.assert_eq((select count(*) from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-00000000000a')::int, 0, 'equipe não entra no ranking');
+select pg_temp.assert_eq((select xp from public.study_public_level('00000000-0000-0000-0000-00000000000a')), 30, 'equipe tem nível público');
+select pg_temp.assert_eq((select pos from public.study_public_level('00000000-0000-0000-0000-00000000000a')) is null, true, 'equipe fica sem posição');
+select pg_temp.as_su();
+update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b1';
+select pg_temp.as_anon();
+select pg_temp.assert_eq((select count(*) from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b1')::int, 0, 'bloqueado sai do ranking');
+select pg_temp.assert_eq((select pos from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b2')::int, 1, 'ranking recalcula sem o bloqueado');
+select pg_temp.as_su();
+update public.profiles set is_blocked = false where id = '00000000-0000-0000-0000-0000000000b1';
+
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();
 update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b2';

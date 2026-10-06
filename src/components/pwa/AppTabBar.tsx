@@ -26,7 +26,7 @@ export function AppTabBar({ meHref }: { meHref: string }) {
     { href: "/estudos", label: "Estudos", icon: I.study, active: path.startsWith("/estudos") },
     { href: "/comunidade", label: "Comunidade", icon: I.community, active: path.startsWith("/comunidade") || path.startsWith("/comunhao") },
     { href: "/forum", label: "Fórum", icon: I.forum, active: path.startsWith("/forum") },
-    { href: meHref, label: "Você", icon: I.me, active: path.startsWith("/perfil") || path.startsWith("/configuracoes") || path.startsWith("/login") },
+    { href: meHref, label: "Você", icon: I.me, active: path === meHref || path.startsWith("/configuracoes") || path.startsWith("/login") },
   ];
   return (
     <nav aria-label="Navegação do app" className="app-tabbar fixed inset-x-0 bottom-0 z-[58] border-t border-ink-700 bg-ink-950/95 backdrop-blur-md">

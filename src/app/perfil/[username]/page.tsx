@@ -10,8 +10,8 @@ import { FollowButton } from "@/components/profile/FollowButton";
 import { ReportButton } from "@/components/moderation/ReportButton";
 import { ROLE_LABEL, STATUS_LABEL, type PostStatus } from "@/lib/constants";
 import { compact, excerpt, formatDate } from "@/lib/utils";
-import { getStudyState } from "@/lib/study/data";
-import { LevelCard } from "@/components/study/LevelCard";
+import { getPublicLevel } from "@/lib/study/ranking";
+import { PublicLevelCard } from "@/components/study/PublicLevelCard";
 
 type Props = { params: Promise<{ username: string }> };
 
@@ -33,7 +33,7 @@ export default async function ProfilePage({ params }: Props) {
     listPosts({ authorId: profile.id, sort: "recent" }, session?.user.id ?? null),
     session && !isMe ? supabase.from("follows").select("following_id").eq("follower_id", session.user.id).eq("following_id", profile.id).maybeSingle() : Promise.resolve({ data: null }),
     isMe ? supabase.from("posts").select("id, title, content, status, origin").eq("author_id", profile.id).neq("status", "PUBLISHED").order("created_at", { ascending: false }).limit(30) : Promise.resolve({ data: [] }),
-    isMe ? getStudyState(profile.id) : Promise.resolve(null),
+    getPublicLevel(profile.id),
   ]);
 
   return (
@@ -63,15 +63,16 @@ export default async function ProfilePage({ params }: Props) {
         </div>
       </header>
 
-      {level && (
-        <section className="mt-10 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-stretch" aria-label="Seu nível">
-          <LevelCard info={level.info} />
-          <div className="flex flex-wrap items-center gap-2 md:flex-col md:justify-center">
+      {(level || isMe) && (
+        <section className="mt-10 grid gap-4 md:grid-cols-[minmax(0,1fr)_auto] md:items-stretch" aria-label="Nível nos estudos">
+          {level && <PublicLevelCard level={level} isMe={isMe} name={profile.display_name ?? profile.username} />}
+          {isMe && <div className="flex flex-wrap items-center gap-2 md:flex-col md:justify-center">
+            <Link href="/estudos/ranking" className="btn-ghost">Ranking</Link>
             <Link href="/estudos" className="btn-ghost">Estudos</Link>
             <Link href="/estudos/biblia" className="btn-ghost">Bíblia em um ano</Link>
             <Link href="/favoritos" className="btn-ghost">Favoritos</Link>
             <Link href="/configuracoes" className="btn-ghost">Configurações</Link>
-          </div>
+          </div>}
         </section>
       )}
 

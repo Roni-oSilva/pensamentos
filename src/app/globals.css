@@ -259,3 +259,12 @@ html[data-app] main > * { animation: app-in .18s ease-out both; }
 @media (prefers-reduced-motion: reduce) {
   .landing-rise, .landing-float, .landing-float-b, .landing-glow, .landing-dot { animation: none !important; }
 }
+
+/* Ranking dos estudos */
+.podium-rise { animation: podium-rise .7s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes podium-rise { from { opacity: 0; transform: translateY(28px) scale(.96); } to { opacity: 1; transform: none; } }
+.rank-row { animation: rank-in .5s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes rank-in { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+.crown-bob { animation: crown-bob 2.4s ease-in-out infinite; }
+@keyframes crown-bob { 0%, 100% { transform: translate(-50%, 0) rotate(-6deg); } 50% { transform: translate(-50%, -5px) rotate(6deg); } }
+@media (prefers-reduced-motion: reduce) { .podium-rise, .rank-row, .crown-bob { animation: none !important; } }

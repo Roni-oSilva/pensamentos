@@ -22,6 +22,7 @@ export const RATE_RULES = {
   forumVote: { limit: 80, window: 60 },
   poll: { limit: 20, window: 3600 },
   edit: { limit: 30, window: 600 },
+  study: { limit: 60, window: 600 },
   upload: { limit: 12, window: 600 },
   share: { limit: 30, window: 60 },
   view: { limit: 1, window: 3600 },

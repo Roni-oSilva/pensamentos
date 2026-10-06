@@ -253,6 +253,25 @@ select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
 select pg_temp.must_fail($$insert into public.poll_votes (poll_id, user_id, option_id) values ('40000000-0000-0000-0000-0000000000a1', '00000000-0000-0000-0000-0000000000b2', '41000000-0000-0000-0000-000000000001')$$, 'votação encerrada não recebe votos');
 select pg_temp.as_su();
 
+-- 7f. Área de Estudo ----------------------------------------------------------------------------
+select pg_temp.as_su();
+insert into public.study_progress (user_id, track_slug, lesson_order, quiz_correct, quiz_total) values ('00000000-0000-0000-0000-0000000000b1', 'fundamentos-da-fe', 1, 2, 2);
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.assert_eq((select count(*) from public.study_progress)::int, 1, 'membro vê o próprio progresso');
+select pg_temp.must_fail($$insert into public.study_progress (user_id, track_slug, lesson_order) values ('00000000-0000-0000-0000-0000000000b1', 'fundamentos-da-fe', 2)$$, 'membro não grava progresso direto (XP só pelo servidor)');
+select pg_temp.must_fail($$insert into public.study_plan_days (user_id, day) values ('00000000-0000-0000-0000-0000000000b1', 1)$$, 'membro não grava dia do plano direto');
+select pg_temp.must_fail($$insert into public.study_trail_done (user_id, track_slug) values ('00000000-0000-0000-0000-0000000000b1', 'fundamentos-da-fe')$$, 'membro não marca trilha concluída direto');
+insert into public.study_notes (user_id, track_slug, lesson_order, body) values ('00000000-0000-0000-0000-0000000000b1', 'fundamentos-da-fe', 1, 'minha anotação');
+update public.study_notes set body = 'anotação editada' where user_id = '00000000-0000-0000-0000-0000000000b1';
+select pg_temp.assert_eq((select body from public.study_notes), 'anotação editada', 'dono edita a anotação');
+select pg_temp.must_fail($$insert into public.study_notes (user_id, track_slug, lesson_order, body) values ('00000000-0000-0000-0000-0000000000b2', 'fundamentos-da-fe', 1, 'em nome de outro')$$, 'não anota em nome de outro');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_see_zero('public.study_progress', 'outro membro não vê o progresso alheio');
+select pg_temp.must_see_zero('public.study_notes', 'outro membro não vê as anotações alheias');
+select pg_temp.as_anon();
+select pg_temp.must_see_zero('public.study_notes', 'anônimo não vê anotações');
+select pg_temp.as_su();
+
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();
 update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b2';

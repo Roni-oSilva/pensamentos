@@ -14,6 +14,7 @@ const LINKS: NavLink[] = [
   { href: "/frases", label: "Palavras" },
   { href: "/comunidade", label: "Comunidade" },
   { href: "/comunhao", label: "Comunhão" },
+  { href: "/estudos", label: "Estudos" },
   { href: "/forum", label: "Fórum" },
   { href: "/explorar", label: "Explorar" },
   { href: "/palavra", label: "Palavra aleatória" },

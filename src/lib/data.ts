@@ -91,12 +91,6 @@ export async function getPost(id: string, viewerId: string | null): Promise<Post
   return p ?? null;
 }
 
-export async function randomPost(origin: "OFFICIAL" | "COMMUNITY" | null, viewerId: string | null) {
-  const supabase = await createClient();
-  const { data: id } = await supabase.rpc("random_post_id", { p_origin: origin });
-  return id ? getPost(id as string, viewerId) : null;
-}
-
 export async function listComments(postId: string): Promise<CommentRow[]> {
   const supabase = await createClient();
   const { data } = await supabase

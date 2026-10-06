@@ -66,7 +66,7 @@ export default async function Home() {
             <span aria-hidden className="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 font-serif text-[9rem] leading-none text-poster/10">✝</span>
             <blockquote className="relative mx-auto max-w-3xl font-display text-2xl italic leading-snug text-white sm:text-4xl">“Posso todas as coisas em Cristo que me fortalece.”</blockquote>
             <figcaption className="relative mt-5 text-xs font-medium uppercase tracking-[0.3em] text-verse">Filipenses 4:13</figcaption>
-            <div className="relative mt-8"><Link href="/palavra" prefetch={false} className="btn-ghost px-7">Receber uma palavra</Link></div>
+            <div className="relative mt-8"><Link href="/frases" className="btn-ghost px-7">Ler mais palavras</Link></div>
           </figure>
         </Reveal>
 

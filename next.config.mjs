@@ -17,7 +17,12 @@ const supabaseHost = supabaseHostname();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() { return [{ source: "/heresia", destination: "/palavra", permanent: true }]; },
+  async redirects() {
+    return [
+      { source: "/heresia", destination: "/frases", permanent: true },
+      { source: "/palavra", destination: "/frases", permanent: true }, // a “Palavra aleatória” saiu do site
+    ];
+  },
   poweredByHeader: false,
   reactStrictMode: true,
   images: {

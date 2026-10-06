@@ -24,7 +24,7 @@ export default function manifest(): MetadataRoute.Manifest {
       { src: "/pwa/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
     shortcuts: [
-      { name: "Palavra do dia", short_name: "Palavra", url: "/palavra?origem=atalho", icons: [{ src: "/pwa/shortcut-sol.png", sizes: "96x96", type: "image/png" }] },
+      { name: "Palavras", url: "/frases?origem=atalho", icons: [{ src: "/pwa/shortcut-sol.png", sizes: "96x96", type: "image/png" }] },
       { name: "Estudos", url: "/estudos?origem=atalho", icons: [{ src: "/pwa/shortcut-livro.png", sizes: "96x96", type: "image/png" }] },
       { name: "Comunidade", url: "/comunidade?origem=atalho", icons: [{ src: "/pwa/shortcut-igreja.png", sizes: "96x96", type: "image/png" }] },
       { name: "Fórum", url: "/forum?origem=atalho", icons: [{ src: "/pwa/shortcut-forum.png", sizes: "96x96", type: "image/png" }] },

@@ -17,7 +17,6 @@ const LINKS: NavLink[] = [
   { href: "/estudos", label: "Estudos" },
   { href: "/forum", label: "Fórum" },
   { href: "/explorar", label: "Explorar" },
-  { href: "/palavra", label: "Palavra aleatória" },
 ];
 
 export async function Header() {

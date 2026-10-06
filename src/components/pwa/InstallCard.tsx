@@ -44,7 +44,7 @@ export function InstallCard({ url }: { url: string }) {
         <p className="font-semibold text-white">No iPhone, são dois toques:</p>
         <ol className="mt-4 space-y-3 text-ash-200">
           <li className="flex gap-3"><Step n={1} /><span className="leading-8">Toque em <Chip><ShareIosIcon /> Compartilhar</Chip> na barra do Safari.</span></li>
-          <li className="flex gap-3"><Step n={2} /><span className="leading-8">Escolha <Chip><AddSquareIcon /> Adicionar à Tela de Início</Chip>.</span></li>
+          <li className="flex gap-3"><Step n={2} /><span className="leading-8">Escolha <Chip><AddSquareIcon /> Adicionar à Tela de Início</Chip></span></li>
         </ol>
         <p className="mt-4 text-sm text-ash-400">Se não aparecer, role a lista de opções para baixo.</p>
       </div>
@@ -55,6 +55,15 @@ export function InstallCard({ url }: { url: string }) {
       <div className={box}>
         <p className="font-semibold text-white">Abra esta página no Safari</p>
         <p className="mt-1 text-sm text-ash-300">No iPhone, a instalação funciona pelo Safari. Copie o link, abra o Safari e cole na barra de endereço.</p>
+        <button type="button" onClick={copy} className="btn-primary mt-4">{copied ? "Link copiado ✓" : "Copiar link"}</button>
+      </div>
+    );
+  }
+  if (state === "android-other") {
+    return (
+      <div className={box}>
+        <p className="font-semibold text-white">Abra esta página no Chrome</p>
+        <p className="mt-1 text-sm text-ash-300">Dentro do Instagram, Facebook ou WhatsApp não dá para instalar. Toque no menu <Chip><DotsIcon /></Chip> e escolha <Chip>Abrir no Chrome</Chip>, ou copie o link e cole no Chrome.</p>
         <button type="button" onClick={copy} className="btn-primary mt-4">{copied ? "Link copiado ✓" : "Copiar link"}</button>
       </div>
     );

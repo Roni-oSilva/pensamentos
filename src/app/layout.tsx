@@ -15,6 +15,7 @@ import { PwaRuntime } from "@/components/pwa/PwaRuntime";
 import { InstallBanner } from "@/components/pwa/InstallBanner";
 import { AppTabBar } from "@/components/pwa/AppTabBar";
 import { Toaster } from "@/components/feedback/Toaster";
+import { APP_COOKIE } from "@/lib/app-gate";
 
 // Telas de abertura do iPhone (largura × altura em pontos, densidade, arquivo em pixels).
 const SPLASH: [number, number, number][] = [[440, 956, 3], [430, 932, 3], [402, 874, 3], [393, 852, 3], [390, 844, 3], [428, 926, 3], [375, 812, 3], [414, 896, 2], [375, 667, 2]];
@@ -42,10 +43,26 @@ export const viewport: Viewport = { themeColor: "#050505", width: "device-width"
 
 // Aplica o tema salvo ANTES da primeira pintura (evita piscar). Padrão: escuro.
 // Também marca o modo app (instalado) e guarda o convite de instalação do Chrome antes do React carregar.
-const THEME_SCRIPT = `try{if(matchMedia("(display-mode: standalone)").matches||navigator.standalone){document.documentElement.dataset.app="1"}window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__bip=e})}catch(e){}try{var t=localStorage.getItem("igreja:theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;if(t==="light"){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#fcfbf8")}}}catch(e){}`;
+// No app instalado: grava o cookie do app (o servidor passa a mostrar o app, não a página de download) e,
+// se a página de download apareceu dentro do app (cookie ainda não existia), recarrega uma vez.
+const THEME_SCRIPT = `try{if(matchMedia("(display-mode: standalone)").matches||navigator.standalone){var d=document.documentElement;d.dataset.app="1";document.cookie="${APP_COOKIE}=1; path=/; max-age=34560000; samesite=lax"+(location.protocol==="https:"?"; secure":"");if(d.dataset.landing&&!sessionStorage.getItem("ic_rl")){sessionStorage.setItem("ic_rl","1");location.replace(location.pathname==="/app"?"/":location.href)}}window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();window.__bip=e})}catch(e){}try{var t=localStorage.getItem("igreja:theme");if(t==="light"||t==="dark"){document.documentElement.dataset.theme=t;if(t==="light"){var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content","#fcfbf8")}}}catch(e){}`;
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const nonce = (await headers()).get("x-nonce") ?? undefined; // a política de segurança só aceita script com nonce
+  const h = await headers();
+  const nonce = h.get("x-nonce") ?? undefined; // a política de segurança só aceita script com nonce
+  // Navegador fora do app: só a página de download, sem o menu do site.
+  if (h.get("x-landing") === "1") {
+    return (
+      <html lang="pt-BR" data-landing="1" style={{ background: "#050505", colorScheme: "dark" }} suppressHydrationWarning>
+        <head><script nonce={nonce} dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} /></head>
+        <body className="force-dark min-h-screen bg-ink-950">
+          <main id="conteudo">{children}</main>
+          <PwaRuntime />
+          <Analytics />
+        </body>
+      </html>
+    );
+  }
   const session = await getSession();
   const meHref = session ? `/perfil/${session.profile.username}` : "/login";
   return (

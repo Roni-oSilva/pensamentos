@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 import { SUPABASE_URL } from "@/lib/env";
+import { APP_COOKIE, APP_PARAM, showDownloadPage } from "@/lib/app-gate";
 
 const PROTECTED = ["/admin", "/configuracoes", "/favoritos", "/notificacoes", "/comunidade/nova"];
 
@@ -33,9 +34,38 @@ export async function middleware(request: NextRequest) {
   requestHeaders.set("x-nonce", nonce);
   requestHeaders.set("Content-Security-Policy", csp);
 
-  const { response, user } = await updateSession(request, requestHeaders);
-
+  // Fora do app instalado, o navegador mostra a página de download (no mesmo endereço).
+  const fromAppLaunch = request.nextUrl.searchParams.get(APP_PARAM.name) === APP_PARAM.value;
   const path = request.nextUrl.pathname;
+  requestHeaders.delete("x-landing"); requestHeaders.delete("x-landing-from");
+  if (showDownloadPage({
+    path,
+    method: request.method,
+    isAppCookie: request.cookies.get(APP_COOKIE)?.value === "1",
+    fromAppLaunch,
+    userAgent: request.headers.get("user-agent") ?? "",
+    isRouterRequest: request.headers.has("rsc") || request.headers.has("next-action") || request.headers.has("next-router-prefetch"),
+  })) {
+    requestHeaders.set("x-landing", "1");
+    requestHeaders.set("x-landing-from", path);
+    const url = request.nextUrl.clone();
+    url.pathname = "/app";
+    url.search = "";
+    const landing = NextResponse.rewrite(url, { request: { headers: requestHeaders } });
+    landing.headers.set("Content-Security-Policy", csp);
+    landing.headers.set("Vary", "Cookie");
+    return landing;
+  }
+  if (path === "/app" && request.cookies.get(APP_COOKIE)?.value !== "1") {
+    requestHeaders.set("x-landing", "1"); // a própria /app no navegador: página de download sem o menu do site
+    requestHeaders.set("x-landing-from", path);
+  }
+
+  const { response, user } = await updateSession(request, requestHeaders);
+  if (fromAppLaunch) {
+    response.cookies.set(APP_COOKIE, "1", { path: "/", maxAge: 60 * 60 * 24 * 400, sameSite: "lax", secure: request.nextUrl.protocol === "https:" });
+  }
+
   if (!user && PROTECTED.some((p) => path === p || path.startsWith(`${p}/`))) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";

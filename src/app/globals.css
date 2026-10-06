@@ -245,3 +245,17 @@ html[data-app] main > * { animation: app-in .18s ease-out both; }
   .toast-pill, .sparks i, .big-heart, .confetti i, html[data-app] main > * { animation: none !important; }
   .sparks, .confetti, .big-heart { display: none; }
 }
+
+/* Página de download (o site virou app) */
+.landing-rise { animation: landing-rise .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes landing-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+.landing-float { animation: landing-float 7s ease-in-out infinite; --r: -4deg; }
+.landing-float-b { animation: landing-float 8s ease-in-out -2.5s infinite; --r: 7deg; }
+@keyframes landing-float { 0%, 100% { transform: translateY(0) rotate(var(--r)); } 50% { transform: translateY(-14px) rotate(var(--r)); } }
+.landing-glow { animation: landing-glow 6s ease-in-out infinite; }
+@keyframes landing-glow { 0%, 100% { opacity: .75; } 50% { opacity: 1; } }
+.landing-dot { box-shadow: 0 0 0 0 rgba(252, 211, 77, .7); animation: landing-dot 2s infinite; }
+@keyframes landing-dot { 70% { box-shadow: 0 0 0 7px rgba(252, 211, 77, 0); } 100% { box-shadow: 0 0 0 0 rgba(252, 211, 77, 0); } }
+@media (prefers-reduced-motion: reduce) {
+  .landing-rise, .landing-float, .landing-float-b, .landing-glow, .landing-dot { animation: none !important; }
+}

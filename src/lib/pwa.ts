@@ -41,11 +41,12 @@ export function isStandalone(): boolean {
   return window.matchMedia("(display-mode: standalone)").matches || (navigator as unknown as { standalone?: boolean }).standalone === true;
 }
 
-export type Platform = "ios-safari" | "ios-other" | "android" | "desktop";
+export type Platform = "ios-safari" | "ios-other" | "android" | "android-other" | "desktop";
 export function detectPlatform(): Platform {
   const ua = navigator.userAgent;
   const ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
   if (ios) return /CriOS|FxiOS|EdgiOS|OPiOS|Instagram|FBAN|FBAV/i.test(ua) ? "ios-other" : "ios-safari";
-  if (/Android/i.test(ua)) return "android";
+  // navegadores de dentro de outros apps (Instagram, Facebook, WhatsApp…) não instalam: precisa abrir no Chrome
+  if (/Android/i.test(ua)) return /; wv\)|Instagram|FBAN|FBAV|FB_IAB|Line\/|TikTok|musical_ly/i.test(ua) ? "android-other" : "android";
   return "desktop";
 }

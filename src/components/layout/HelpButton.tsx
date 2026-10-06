@@ -43,7 +43,7 @@ export function HelpButton() {
   return (
     <>
       <button type="button" onClick={() => open("faq")} aria-haspopup="dialog" aria-label="Dúvidas, ajuda e sugestões"
-        className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-[55] inline-flex min-h-[48px] items-center gap-2 rounded-full border border-ink-500 bg-ink-900/95 px-4 text-sm font-medium text-ash-100 shadow-xl backdrop-blur transition hover:border-ash-300 hover:text-white active:scale-95">
+        className="help-fab no-print fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-4 z-[55] inline-flex min-h-[48px] items-center gap-2 rounded-full border border-ink-500 bg-ink-900/95 px-4 text-sm font-medium text-ash-100 shadow-xl backdrop-blur transition hover:border-ash-300 hover:text-white active:scale-95">
         <span aria-hidden className="grid h-7 w-7 place-items-center rounded-full bg-poster text-sm font-bold text-ink-950">?</span>
         Ajuda
       </button>

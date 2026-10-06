@@ -30,6 +30,14 @@ const nextConfig = {
     // CSP com nonce é aplicada no middleware; aqui ficam os demais cabeçalhos.
     return [
       {
+        // o service worker precisa ser sempre buscado de novo, para as atualizações chegarem
+        source: "/sw.js",
+        headers: [
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Service-Worker-Allowed", value: "/" },
+        ],
+      },
+      {
         source: "/(.*)",
         headers: [
           { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },

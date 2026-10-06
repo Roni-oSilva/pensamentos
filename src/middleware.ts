@@ -14,6 +14,8 @@ function buildCsp(nonce: string): string {
     `img-src 'self' data: blob: ${supabase}`,
     "font-src 'self' data:",
     `connect-src 'self' ${supabase} ${supabase.replace("https://", "wss://")}`,
+    "worker-src 'self'",
+    "manifest-src 'self'",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
@@ -47,5 +49,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|webp|ico|mp4|webm)$).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|sw.js|manifest.webmanifest|offline.html|.*\\.(?:svg|png|jpg|jpeg|webp|ico|mp4|webm)$).*)"],
 };

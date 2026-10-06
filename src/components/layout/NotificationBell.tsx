@@ -46,7 +46,7 @@ export function NotificationBell({ unread, items, admin }: Props) {
         )}
       </button>
       {open && (
-        <div role="menu" className="fixed inset-x-3 top-[4.25rem] z-50 max-h-[75vh] overflow-y-auto rounded-xl border border-ink-600 bg-ink-900 shadow-2xl md:absolute md:inset-x-auto md:right-0 md:top-full md:mt-2 md:w-96">
+        <div role="menu" className="notif-panel fixed inset-x-3 top-[4.25rem] z-50 max-h-[75vh] overflow-y-auto rounded-xl border border-ink-600 bg-ink-900 shadow-2xl md:absolute md:inset-x-auto md:right-0 md:top-full md:mt-2 md:w-96">
           {adminRows.length > 0 && (
             <div className="border-b border-ink-700 p-2">
               <p className="eyebrow px-2 pb-1 pt-1">Painel</p>

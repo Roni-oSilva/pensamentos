@@ -29,7 +29,7 @@ export function MobileNav({ links, children }: { links: NavLink[]; children?: Re
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
 
   const panel = (
-    <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-16 z-[60] overflow-y-auto overscroll-contain bg-ink-950 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-5 md:hidden"
+    <div id="mobile-menu" className="fixed inset-x-0 bottom-0 top-16 z-[60] overflow-y-auto overscroll-contain bg-ink-950 px-5 pb-[max(2rem,env(safe-area-inset-bottom))] pt-5 lg:hidden"
       onClick={(e) => { if ((e.target as HTMLElement).closest("a,button[type=submit]")) setOpen(false); }}>
       <form action="/explorar" role="search" className="mb-4">
         <input name="q" type="search" placeholder="Buscar versículos, frases, pessoas…" aria-label="Buscar" maxLength={80} className="field" />
@@ -47,7 +47,7 @@ export function MobileNav({ links, children }: { links: NavLink[]; children?: Re
   );
 
   return (
-    <div className="md:hidden">
+    <div className="lg:hidden">
       <button type="button" aria-expanded={open} aria-controls="mobile-menu" aria-label={open ? "Fechar menu" : "Abrir menu"}
         onClick={() => setOpen((v) => !v)} className="relative z-[70] inline-flex h-11 w-11 items-center justify-center rounded-lg border border-ink-600 active:scale-95">
         <span className="relative block h-3 w-5">

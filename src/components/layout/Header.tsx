@@ -48,13 +48,15 @@ export async function Header() {
       <Link className="btn-ghost" href="/favoritos">Favoritos</Link>
       <Link className="btn-ghost" href="/notificacoes">Notificações{unread > 0 ? ` (${unread})` : ""}</Link>
       <Link className="btn-ghost" href="/configuracoes">Configurações</Link>
+      <Link className="btn-ghost" href="/app">Baixar o app</Link>
       {isStaff && <Link className="btn-ghost" href="/admin">Painel</Link>}
       <form action={signOut}><button className="btn-ghost w-full" type="submit">Sair</button></form>
     </>
   ) : (
     <>
-      <Link className="btn-ghost" href="/login">Entrar</Link>
-      <Link className="btn-primary" href="/cadastro">Criar conta</Link>
+      <Link className="btn-ghost lg:hidden" href="/app">Baixar o app</Link>
+      <Link className="btn-ghost whitespace-nowrap" href="/login">Entrar</Link>
+      <Link className="btn-primary whitespace-nowrap" href="/cadastro">Criar conta</Link>
     </>
   );
 
@@ -62,15 +64,15 @@ export async function Header() {
     <header className="sticky top-0 z-50 border-b border-ink-700/80 bg-ink-950/85 backdrop-blur-md">
       <div className="container-wide flex h-16 items-center justify-between gap-4">
         <Logo />
-        <nav aria-label="Principal" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="Principal" className="hidden items-center gap-5 lg:flex xl:gap-7">
           {LINKS.map((l) => (
-            <Link key={l.href} href={l.href} className="text-sm tracking-wide text-ash-300 transition-colors hover:text-white">{l.label}</Link>
+            <Link key={l.href} href={l.href} className="whitespace-nowrap text-sm tracking-wide text-ash-300 transition-colors hover:text-white">{l.label}</Link>
           ))}
         </nav>
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <ThemeToggle />
           {session && <NotificationBell unread={unread} items={items} admin={admin} />}
-          <form action="/explorar" role="search">
+          <form action="/explorar" role="search" className="hidden xl:block">
             <input name="q" type="search" placeholder="Buscar…" aria-label="Buscar" maxLength={80} className="field w-36 py-1.5 text-sm focus:w-52" />
           </form>
           {session ? (
@@ -83,7 +85,7 @@ export async function Header() {
             </details>
           ) : account}
         </div>
-        <div className="flex items-center gap-2 md:hidden"><ThemeToggle />{session && <NotificationBell unread={unread} items={items} admin={admin} />}<MobileNav links={LINKS}>{account}</MobileNav></div>
+        <div className="flex items-center gap-2 lg:hidden"><ThemeToggle />{session && <NotificationBell unread={unread} items={items} admin={admin} />}<MobileNav links={LINKS}>{account}</MobileNav></div>
       </div>
     </header>
   );

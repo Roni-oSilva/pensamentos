@@ -2,13 +2,14 @@
 import { useCallback, useEffect, useRef, useState, useTransition } from "react";
 import { loadMorePosts } from "@/actions/feed";
 import type { PostWithViewer } from "@/lib/types";
+import { withPatch } from "@/lib/post-patches";
 import { PostCard } from "./PostCard";
 
 type Params = Parameters<typeof loadMorePosts>[0];
 
 /** Lista paginada: scroll infinito (IntersectionObserver) com botão de fallback. */
 export function FeedList({ initial, hasMore: initialHasMore, signedIn, params }: { initial: PostWithViewer[]; hasMore: boolean; signedIn: boolean; params: Omit<Params, "page"> }) {
-  const [posts, setPosts] = useState(initial);
+  const [posts, setPosts] = useState(() => initial.map(withPatch));
   const [hasMore, setHasMore] = useState(initialHasMore);
   const [page, setPage] = useState(0);
   const [pending, start] = useTransition();

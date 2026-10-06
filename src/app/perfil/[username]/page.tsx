@@ -23,20 +23,18 @@ export async function generateMetadata({ params }: Props) {
 export default async function ProfilePage({ params }: Props) {
   const { username } = await params;
   if (!/^[a-zA-Z0-9_]{3,24}$/.test(username)) notFound();
-  const profile = await getProfileByUsername(username);
+  const [profile, session] = await Promise.all([getProfileByUsername(username), getSession()]);
   if (!profile) notFound();
 
-  const session = await getSession();
   const isMe = session?.user.id === profile.id;
   const supabase = await createClient();
-  const [stats, feed, following, mine] = await Promise.all([
+  const [stats, feed, following, mine, level] = await Promise.all([
     getProfileStats(profile.id),
     listPosts({ authorId: profile.id, sort: "recent" }, session?.user.id ?? null),
     session && !isMe ? supabase.from("follows").select("following_id").eq("follower_id", session.user.id).eq("following_id", profile.id).maybeSingle() : Promise.resolve({ data: null }),
     isMe ? supabase.from("posts").select("id, title, content, status, origin").eq("author_id", profile.id).neq("status", "PUBLISHED").order("created_at", { ascending: false }).limit(30) : Promise.resolve({ data: [] }),
+    isMe ? getStudyState(profile.id) : Promise.resolve(null),
   ]);
-
-  const level = isMe ? await getStudyState(profile.id) : null;
 
   return (
     <div className="container-wide pt-14">

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { toast } from "@/lib/toast";
+import { getPatch, rememberPatch } from "@/lib/post-patches";
 import { toggleFavorite, toggleLike } from "@/actions/social";
 import { ReportButton } from "@/components/moderation/ReportButton";
 import { ShareButton } from "./ShareButton";
@@ -13,8 +14,9 @@ interface Props {
 
 export function ActionBar(p: Props) {
   // Estado local (não useOptimistic): a página não recarrega após a ação, então o valor precisa permanecer.
-  const [like, setLike] = useState({ on: p.liked, n: p.likes });
-  const [fav, setFav] = useState({ on: p.favorited, n: p.favorites });
+  // (com os ajustes feitos há pouco nesta aba, caso a tela tenha vindo da memória do roteador)
+  const [like, setLike] = useState(() => { const x = getPatch(p.postId); return { on: x?.liked ?? p.liked, n: x?.like_count ?? p.likes }; });
+  const [fav, setFav] = useState(() => { const x = getPatch(p.postId); return { on: x?.favorited ?? p.favorited, n: x?.favorite_count ?? p.favorites }; });
   const [busy, start] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [spark, setSpark] = useState(0); // reinicia a animação de faíscas a cada curtida
@@ -28,7 +30,10 @@ export function ActionBar(p: Props) {
     fn();
   }
   type S = { on: boolean; n: number };
-  const announce = (patch: Record<string, unknown>) => window.dispatchEvent(new CustomEvent("heresias:post", { detail: { id: p.postId, patch } }));
+  const announce = (patch: Parameters<typeof rememberPatch>[1]) => {
+    rememberPatch(p.postId, patch);
+    window.dispatchEvent(new CustomEvent("heresias:post", { detail: { id: p.postId, patch } }));
+  };
   function flip(cur: S, set: (s: S) => void, act: (id: string) => Promise<{ ok: true; active: boolean } | { ok: false; error: string }>) {
     const target = !cur.on;
     const at = (on: boolean): S => ({ on, n: Math.max(0, cur.n + (on === cur.on ? 0 : on ? 1 : -1)) });

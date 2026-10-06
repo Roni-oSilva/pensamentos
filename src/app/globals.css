@@ -238,9 +238,9 @@ html[data-app] .hero { display: none !important; }
   0% { opacity: 1; transform: rotate(var(--a)) translateY(0) rotate(0); }
   100% { opacity: 0; transform: rotate(var(--a)) translateY(calc(var(--d) * -1)) rotate(var(--r)); }
 }
-/* no app instalado, cada tela entra subindo de leve */
-html[data-app] main > * { animation: app-in .45s cubic-bezier(.2,.7,.2,1) both; }
-@keyframes app-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+/* no app instalado, cada tela entra subindo de leve (curto, para a troca de aba parecer instantânea) */
+html[data-app] main > * { animation: app-in .18s ease-out both; }
+@keyframes app-in { from { opacity: .4; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) {
   .toast-pill, .sparks i, .big-heart, .confetti i, html[data-app] main > * { animation: none !important; }
   .sparks, .confetti, .big-heart { display: none; }

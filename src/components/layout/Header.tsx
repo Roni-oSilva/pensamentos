@@ -10,6 +10,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const LINKS: NavLink[] = [
   { href: "/frases", label: "Palavras" },
   { href: "/comunidade", label: "Comunidade" },
+  { href: "/comunhao", label: "Comunhão" },
   { href: "/explorar", label: "Explorar" },
   { href: "/palavra", label: "Palavra aleatória" },
 ];

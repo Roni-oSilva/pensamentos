@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export function Section({ eyebrow, title, href, hrefLabel = "Ver tudo →", children }: { eyebrow?: string; title: string; href?: string; hrefLabel?: string; children: React.ReactNode }) {
+export function Section({ id, eyebrow, title, href, hrefLabel = "Ver tudo →", children }: { id?: string; eyebrow?: string; title: string; href?: string; hrefLabel?: string; children: React.ReactNode }) {
   return (
-    <section className="container-wide mt-20">
+    <section id={id} className="container-wide mt-20 scroll-mt-24">
       <div className="mb-8 flex items-end justify-between gap-4">
         <div>
           {eyebrow && <p className="eyebrow mb-2">{eyebrow}</p>}

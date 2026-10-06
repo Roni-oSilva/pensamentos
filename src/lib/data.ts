@@ -142,6 +142,13 @@ export async function searchUsers(term: string, limit = 12) {
   return (data ?? []) as { username: string; display_name: string | null; avatar_url: string | null; bio: string | null }[];
 }
 
+/** Membros mais recentes (perfis públicos), para a página Comunhão. */
+export async function listRecentMembers(limit = 14) {
+  const supabase = await createClient();
+  const { data } = await supabase.from("profiles").select("username, display_name, avatar_url").order("created_at", { ascending: false }).limit(limit);
+  return (data ?? []) as { username: string; display_name: string | null; avatar_url: string | null }[];
+}
+
 /** Configuração pública do site (site_settings é legível por todos; só ADMIN escreve). Padrão: aberto. */
 export async function isSettingOn(key: "registrations_open" | "community_open"): Promise<boolean> {
   const supabase = await createClient();

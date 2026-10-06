@@ -6,10 +6,10 @@ import { FormMessage } from "@/components/ui/FormMessage";
 import { COMMUNITY_KINDS, KIND_LABEL, type PostKind } from "@/lib/constants";
 import type { Category, Post } from "@/lib/types";
 
-export function PostForm({ post, categories }: { post?: Post; categories: Category[] }) {
+export function PostForm({ post, categories, defaultKind }: { post?: Post; categories: Category[]; defaultKind?: PostKind }) {
   const [state, action] = useActionState(saveCommunityPost, {});
   const [content, setContent] = useState(post?.content ?? "");
-  const [kind, setKind] = useState<PostKind>((post?.kind as PostKind) ?? "FRASE");
+  const [kind, setKind] = useState<PostKind>((post?.kind as PostKind) ?? defaultKind ?? "FRASE");
   const hint: Partial<Record<PostKind, string>> = {
     VERSICULO: "Escreva o versículo. Coloque a referência (ex.: João 3:16) no campo Título.",
     ORACAO: "Escreva a sua oração…", CONSELHO: "Compartilhe um conselho que edifique…", FRASE: "Escreva uma frase de fé…",

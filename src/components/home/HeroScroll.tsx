@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { ChurchMark } from "@/components/ui/ChurchMark";
 import { useEffect, useRef, useState } from "react";
 
@@ -132,17 +131,11 @@ export function HeroScroll() {
         <div className="hero-progress" aria-hidden><i /></div>
 
         <div className="hero-manifesto">
-          <ChurchMark className="h-20 w-auto text-white sm:h-28" />
-          <p className="church-name text-[clamp(2.1rem,10vw,7.5rem)] tracking-[0.02em] text-white">Igreja de <span className="text-poster">Cristo</span></p>
-          <p className="max-w-4xl font-poster text-[clamp(1.6rem,5vw,3.4rem)] uppercase leading-[1] tracking-wide text-ash-200">
-            Engrandecei a <span className="text-poster">Cristo.</span>
-          </p>
-          <p className="max-w-lg text-ash-300">Uma comunidade para compartilhar versículos, frases, pensamentos e conselhos. Leia, medite, guarde no coração e compartilhe a sua palavra com os irmãos.</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/frases" className="btn-primary px-7 py-3.5 uppercase tracking-widest">Ler as palavras</Link>
-            <Link href="/palavra" prefetch={false} className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Palavra aleatória</Link>
-            <Link href="/comunidade" className="btn-ghost px-7 py-3.5 uppercase tracking-widest">Comunidade</Link>
-          </div>
+          <ChurchMark className="h-24 w-auto text-white sm:h-32" />
+          <h2 className="church-name text-[clamp(2.1rem,10vw,7.5rem)] tracking-[0.02em] text-white">Igreja de <span className="text-poster">Cristo</span></h2>
+          <a href="#continuar" aria-label="Continuar para o conteúdo" className="mt-4 grid h-12 w-12 place-items-center rounded-full border border-white/30 text-white/80 transition hover:border-white hover:text-white active:scale-90">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="animate-bounce"><path d="m6 9 6 6 6-6" /></svg>
+          </a>
         </div>
       </div>
     </div>

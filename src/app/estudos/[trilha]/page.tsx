@@ -39,7 +39,7 @@ export default async function Trilha({ params }: { params: Promise<{ trilha: str
               <li key={a.ordem}>
                 <Link href={`/estudos/${track.slug}/${a.ordem}`} className={`flex min-h-[64px] items-center gap-4 rounded-xl border p-4 transition hover:border-ash-400 active:scale-[0.995] ${a.ordem === nextOrder ? "border-ash-100" : "border-ink-700"}`}>
                   <span aria-hidden className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border text-sm ${ok ? "border-ash-100 bg-ash-100 text-ink-950" : "border-ink-600 text-ash-300"}`}>{ok ? "✓" : a.ordem}</span>
-                  <span className="min-w-0 flex-1"><span className="block text-white">{a.titulo}</span><span className="block text-xs text-ash-400">{a.minutos} min · {a.versiculo.ref}</span></span>
+                  <span className="min-w-0 flex-1"><span className="block text-white">{a.titulo}</span><span className="block text-xs text-ash-400">{a.versiculo.ref}</span></span>
                   {a.ordem === nextOrder && <span className="text-xs text-ash-100">Próxima</span>}
                   <span className="sr-only">{ok ? "Concluída" : "Não concluída"}</span>
                 </Link>

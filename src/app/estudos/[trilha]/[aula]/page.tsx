@@ -40,7 +40,7 @@ export default async function Aula({ params }: Props) {
       <div className="space-y-4">
         <nav aria-label="Trilha" className="flex flex-wrap items-center gap-2 text-sm text-ash-400"><Link href="/estudos" className="link-muted">Estudos</Link><span>›</span><Link href={`/estudos/${track.slug}`} className="link-muted">{track.titulo}</Link><span>›</span><span>Aula {lesson.ordem} de {track.aulas.length}</span></nav>
         <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl">{lesson.titulo}</h1>
-        <p className="text-ash-300">{lesson.resumo} <span className="text-ash-400">· {lesson.minutos} min</span></p>
+        <p className="text-ash-300">{lesson.resumo}</p>
         <PrintButton />
       </div>
       <LessonBanner slug={track.slug} symbol={lesson.simbolo} label={`${track.titulo} · Aula ${lesson.ordem}`} verse={lesson.versiculo.ref} />

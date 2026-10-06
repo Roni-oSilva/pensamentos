@@ -4,7 +4,7 @@ export type SymbolName = "livro" | "sol" | "cruz" | "coracao" | "arvore" | "pomb
 
 export interface QuizQuestion { pergunta: string; opcoes: string[]; correta: number; explicacao: string }
 export interface Lesson {
-  ordem: number; titulo: string; resumo: string; minutos: number;
+  ordem: number; titulo: string; resumo: string;
   versiculo: { ref: string; texto: string }; texto: string[]; apoio: string[]; reflexao: string; oracao: string; quiz: QuizQuestion[];
   contexto: string; aprofundamento: string[]; termos: { termo: string; definicao: string }[];
   heroi: { nome: string; periodo: string; titulo: string; historia: string[]; licao: string };

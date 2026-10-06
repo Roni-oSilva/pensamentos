@@ -10,9 +10,15 @@ export interface RankRow {
   username: string;
   name: string;
   avatarUrl: string | null;
+  bio: string | null;
+  memberSince: string | null;
   xp: number;
   lessons: number;
+  perfect: number;    // quizzes sem errar
   trails: number;
+  planDays: number;
+  bibleDays: number;
+  lastAt: string | null; // último estudo/leitura
   level: LevelInfo;
 }
 
@@ -30,9 +36,13 @@ export async function getRanking(period: RankPeriod, limit = 50): Promise<RankRo
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("study_ranking", { period, lim: limit });
   if (error || !data) return [];
-  return (data as { pos: number; user_id: string; username: string; display_name: string | null; avatar_url: string | null; xp: number; lessons: number; trails: number }[]).map((r) => ({
+  type Raw = { pos: number; user_id: string; username: string; display_name: string | null; avatar_url: string | null; bio?: string | null; member_since?: string | null;
+    xp: number; lessons: number; perfect?: number; trails: number; plan_days?: number; bible_days?: number; last_at?: string | null };
+  return (data as Raw[]).map((r) => ({
     pos: Number(r.pos), userId: r.user_id, username: r.username, name: r.display_name || r.username, avatarUrl: r.avatar_url,
-    xp: r.xp, lessons: r.lessons, trails: r.trails, level: levelFor(r.xp),
+    bio: r.bio ?? null, memberSince: r.member_since ?? null,
+    xp: r.xp, lessons: r.lessons, perfect: r.perfect ?? 0, trails: r.trails, planDays: r.plan_days ?? 0, bibleDays: r.bible_days ?? 0, lastAt: r.last_at ?? null,
+    level: levelFor(r.xp),
   }));
 }
 

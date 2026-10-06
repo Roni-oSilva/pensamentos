@@ -11,8 +11,8 @@ describe("ranking: XP do banco igual ao do app", () => {
   });
   it("usa os mesmos valores no cálculo", () => {
     expect(sql).toMatch(new RegExp(`${XP.lesson} \\+ case when sp\\.quiz_total > 0 and sp\\.quiz_correct = sp\\.quiz_total then ${XP.perfectQuiz} else 0 end`));
-    expect(sql).toMatch(new RegExp(`select td\\.user_id, ${XP.trail}, 0, 1 from public\\.study_trail_done`));
-    expect(sql).toMatch(new RegExp(`select pd\\.user_id, ${XP.planDay}, 0, 0 from public\\.study_plan_days`));
-    expect(sql).toMatch(new RegExp(`select bm\\.user_id, ${XP.bibleDay}, 0, 0 from public\\.bible_plan_marks`));
+    expect(sql).toMatch(new RegExp(`select td\\.user_id, ${XP.trail}, 0, 0, 1, 0, 0, td\\.completed_at from public\\.study_trail_done`));
+    expect(sql).toMatch(new RegExp(`select pd\\.user_id, ${XP.planDay}, 0, 0, 0, 1, 0, pd\\.read_at from public\\.study_plan_days`));
+    expect(sql).toMatch(new RegExp(`select bm\\.user_id, ${XP.bibleDay}, 0, 0, 0, 0, 1, bm\\.marked_at from public\\.bible_plan_marks`));
   });
 });

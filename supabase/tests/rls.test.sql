@@ -314,6 +314,7 @@ select pg_temp.must_see_zero('public.study_progress', 'anônimo não lê o progr
 select pg_temp.must_fail($$select * from public.study_xp_rows(null)$$, 'soma interna não é pública');
 select pg_temp.assert_eq((select xp from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b1'), 140, 'XP no ranking segue a regra do app');
 select pg_temp.assert_eq((select pos from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b1')::int, 1, 'primeiro lugar no ranking geral');
+select pg_temp.assert_eq((select perfect::text || '/' || trails || '/' || bible_days || '/' || lessons from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b1'), '1/1/2/1', 'ranking detalha quiz perfeito, trilhas, Bíblia e aulas');
 select pg_temp.assert_eq((select pos from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b2')::int, 2, 'segundo lugar no ranking geral');
 select pg_temp.assert_eq((select count(*) from public.study_ranking('month') where user_id = '00000000-0000-0000-0000-0000000000b2')::int, 0, 'ranking do mês ignora o que é antigo');
 select pg_temp.assert_eq((select pos from public.study_public_level('00000000-0000-0000-0000-0000000000b2'))::int, 2, 'nível público mostra a posição');

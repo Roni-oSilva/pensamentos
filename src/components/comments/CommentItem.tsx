@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useTransition } from "react";
-import { deleteComment } from "@/actions/social";
+import { deleteComment, editComment } from "@/actions/social";
 import { Avatar } from "@/components/ui/Avatar";
 import { ReportButton } from "@/components/moderation/ReportButton";
 import { CommentForm } from "./CommentForm";
@@ -16,6 +16,17 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
   const [replying, setReplying] = useState(false);
   const [pending, start] = useTransition();
 
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [draft, setDraft] = useState("");
+  const [editError, setEditError] = useState<string | null>(null);
+
+  const saveEdit = (id: string) => start(async () => {
+    setEditError(null);
+    const r = await editComment({ id, body: draft });
+    if (!r.ok) { setEditError(r.error); return; }
+    setEditingId(null); router.refresh();
+  });
+
   const remove = (id: string) => {
     if (!window.confirm("Excluir este comentário? Esta ação não pode ser desfeita.")) return;
     start(async () => { await deleteComment(id); router.refresh(); });
@@ -28,11 +39,21 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-baseline gap-x-2 text-sm">
             {c.author ? <Link href={`/perfil/${c.author.username}`} className="font-medium text-white hover:underline">@{c.author.username}</Link> : <span>anônimo</span>}
-            <span className="text-xs text-ash-400">{timeAgo(c.created_at)}</span>
+            <span className="text-xs text-ash-400">{timeAgo(c.created_at)}{c.edited_at ? " · editado" : ""}</span>
           </div>
-          <p className="preline mt-1 text-[15px] text-ash-200">{c.body}</p>
+          {editingId === c.id ? (
+            <div className="mt-2 space-y-2">
+              <textarea value={draft} onChange={(e) => setDraft(e.target.value)} maxLength={1000} rows={3} className="field" aria-label="Editar comentário" autoFocus />
+              {editError && <p role="alert" className="text-sm text-red-300">{editError}</p>}
+              <div className="flex gap-2">
+                <button type="button" className="btn-primary" disabled={pending || !draft.trim()} onClick={() => saveEdit(c.id)}>{pending ? "Salvando…" : "Salvar"}</button>
+                <button type="button" className="btn-ghost" onClick={() => setEditingId(null)}>Cancelar</button>
+              </div>
+            </div>
+          ) : <p className="preline mt-1 text-[15px] text-ash-200">{c.body}</p>}
           <div className="mt-1.5 flex gap-4 text-xs text-ash-400">
             {!isReply && signedIn && <button type="button" onClick={() => setReplying((v) => !v)} className="hover:text-white">Responder</button>}
+            {viewerId === c.author_id && editingId !== c.id && <button type="button" onClick={() => { setEditingId(c.id); setDraft(c.body); setEditError(null); }} className="hover:text-white">Editar</button>}
             {(viewerId === c.author_id || canModerate) && <button type="button" disabled={pending} onClick={() => remove(c.id)} className="hover:text-red-300">Excluir</button>}
             {viewerId !== c.author_id && <ReportButton targetType="COMMENT" targetId={c.id} signedIn={signedIn} />}
           </div>

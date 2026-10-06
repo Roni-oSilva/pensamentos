@@ -101,7 +101,7 @@ export async function listComments(postId: string): Promise<CommentRow[]> {
   const supabase = await createClient();
   const { data } = await supabase
     .from("comments")
-    .select("id, post_id, parent_id, body, status, created_at, author_id, author:profiles!comments_author_id_fkey(username, display_name, avatar_url, role)")
+    .select("id, post_id, parent_id, body, status, created_at, edited_at, author_id, author:profiles!comments_author_id_fkey(username, display_name, avatar_url, role)")
     .eq("post_id", postId).eq("status", "VISIBLE").order("created_at", { ascending: true }).limit(200);
   return (data ?? []) as unknown as CommentRow[];
 }

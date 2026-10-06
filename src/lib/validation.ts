@@ -56,6 +56,19 @@ export const commentSchema = z.object({
   body: text(1000),
 });
 
+export const commentEditSchema = z.object({ id: uuidSchema, body: text(1000) });
+
+export const threadSchema = z.object({
+  title: z.string().transform(cleanText).pipe(z.string().min(5, "O título precisa de ao menos 5 caracteres").max(140)),
+  body: text(4000),
+});
+export const replySchema = z.object({ threadId: uuidSchema, body: text(1500) });
+export const pollSchema = z.object({
+  question: z.string().transform(cleanText).pipe(z.string().min(5, "Escreva a pergunta").max(200)),
+  options: z.array(z.string().transform(cleanText).pipe(z.string().max(80))).transform((a) => a.filter(Boolean))
+    .pipe(z.array(z.string()).min(2, "Informe ao menos 2 opções").max(8, "No máximo 8 opções")),
+});
+
 export const reportSchema = z.object({
   targetType: z.enum(REPORT_TARGETS),
   targetId: uuidSchema,

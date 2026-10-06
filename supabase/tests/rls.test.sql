@@ -98,7 +98,7 @@ select pg_temp.must_fail($$insert into public.likes (user_id, post_id) values ('
 insert into public.favorites (user_id, post_id) values ('00000000-0000-0000-0000-0000000000b2', '10000000-0000-0000-0000-000000000003');
 insert into public.comments (id, post_id, author_id, body) values ('20000000-0000-0000-0000-000000000001', '10000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-0000000000b2', '<script>alert(1)</script>');
 select pg_temp.must_fail($$insert into public.comments (post_id, author_id, body) values ('10000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-0000000000b1', 'falso')$$, 'bob não comenta como alice');
-select pg_temp.must_fail($$update public.comments set body = 'editado' where id = '20000000-0000-0000-0000-000000000001'$$, 'corpo do comentário imutável');
+select pg_temp.must_fail($$update public.comments set status = 'HIDDEN' where id = '20000000-0000-0000-0000-000000000001'$$, 'autor não oculta o próprio comentário (só a equipe)');
 select pg_temp.must_see_zero('public.audit_logs', 'bob não lê audit_logs');
 select pg_temp.must_fail($$select public.log_audit('x','y')$$, 'bob não escreve audit');
 select pg_temp.must_fail($$select public.admin_stats()$$, 'bob não vê estatísticas');
@@ -198,6 +198,60 @@ select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2'); -- o adm
 select pg_temp.assert_eq((select count(*) from public.feedback)::int, 1, 'admin lê feedback');
 update public.feedback set status = 'DONE';
 select pg_temp.assert_eq((select status from public.feedback limit 1), 'DONE', 'admin atualiza status do feedback');
+
+-- 7e. Fórum, votações e edição de comentários --------------------------------------------------
+select pg_temp.as_su();
+insert into public.comments (id, post_id, author_id, body) values ('20000000-0000-0000-0000-0000000000e1', '10000000-0000-0000-0000-000000000001', '00000000-0000-0000-0000-0000000000b1', 'texto original');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_affect_zero($$update public.comments set body = 'invadido' where id = '20000000-0000-0000-0000-0000000000e1'$$, 'outro usuário não edita comentário alheio');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+update public.comments set body = 'texto ajustado' where id = '20000000-0000-0000-0000-0000000000e1';
+select pg_temp.assert_eq((select body from public.comments where id = '20000000-0000-0000-0000-0000000000e1'), 'texto ajustado', 'autor edita o próprio comentário');
+select pg_temp.assert_eq((select edited_at is not null from public.comments where id = '20000000-0000-0000-0000-0000000000e1'), true, 'edição marca edited_at');
+select pg_temp.must_fail($$update public.comments set status = 'HIDDEN' where id = '20000000-0000-0000-0000-0000000000e1'$$, 'autor não muda o status do próprio comentário');
+select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2');
+select pg_temp.must_fail($$update public.comments set body = 'moderador reescreve' where id = '20000000-0000-0000-0000-0000000000e1'$$, 'staff não reescreve o texto de outro');
+update public.comments set status = 'HIDDEN' where id = '20000000-0000-0000-0000-0000000000e1';
+select pg_temp.as_su();
+delete from public.comments where id = '20000000-0000-0000-0000-0000000000e1';
+
+-- discussões
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+insert into public.forum_threads (id, author_id, title, body) values ('30000000-0000-0000-0000-0000000000f1', '00000000-0000-0000-0000-0000000000b1', 'As pessoas mudam?', 'O que vocês acham?');
+select pg_temp.must_fail($$insert into public.forum_threads (author_id, title, body) values ('00000000-0000-0000-0000-0000000000b2', 'Em nome de outro', 'x')$$, 'não cria discussão em nome de outro');
+select pg_temp.must_fail($$update public.forum_threads set reply_count = 999 where id = '30000000-0000-0000-0000-0000000000f1'$$, 'contador de respostas é protegido');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+insert into public.forum_replies (thread_id, author_id, body) values ('30000000-0000-0000-0000-0000000000f1', '00000000-0000-0000-0000-0000000000b2', 'Acredito que sim');
+insert into public.forum_votes (thread_id, user_id, value) values ('30000000-0000-0000-0000-0000000000f1', '00000000-0000-0000-0000-0000000000b2', 1);
+select pg_temp.assert_eq((select reply_count from public.forum_threads), 1, 'conta respostas');
+select pg_temp.assert_eq((select up_count from public.forum_threads), 1, 'conta 👍');
+update public.forum_votes set value = -1 where thread_id = '30000000-0000-0000-0000-0000000000f1';
+select pg_temp.assert_eq((select up_count * 10 + down_count from public.forum_threads), 1, 'trocar o voto move a contagem');
+select pg_temp.must_affect_zero($$update public.forum_threads set body = 'editado por outro' where id = '30000000-0000-0000-0000-0000000000f1'$$, 'outro usuário não edita a discussão');
+select pg_temp.as_anon();
+select pg_temp.assert_eq((select count(*) from public.forum_threads)::int, 1, 'anônimo lê discussões');
+select pg_temp.must_see_zero('public.forum_votes', 'anônimo não vê votos');
+
+-- votações: só o Criador abre
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.must_fail($$insert into public.polls (creator_id, question) values ('00000000-0000-0000-0000-0000000000b1', 'Posso criar votação?')$$, 'membro não abre votação');
+select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2');
+select pg_temp.must_fail($$insert into public.polls (creator_id, question) values ('00000000-0000-0000-0000-00000000000a', 'Admin cria votação?')$$, 'admin também não abre votação');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000c0');
+insert into public.polls (id, creator_id, question) values ('40000000-0000-0000-0000-0000000000a1', '00000000-0000-0000-0000-0000000000c0', 'Qual horário de oração?');
+insert into public.poll_options (id, poll_id, label, position) values ('41000000-0000-0000-0000-000000000001', '40000000-0000-0000-0000-0000000000a1', 'Manhã', 0), ('41000000-0000-0000-0000-000000000002', '40000000-0000-0000-0000-0000000000a1', 'Noite', 1);
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+insert into public.poll_votes (poll_id, user_id, option_id) values ('40000000-0000-0000-0000-0000000000a1', '00000000-0000-0000-0000-0000000000b1', '41000000-0000-0000-0000-000000000001');
+select pg_temp.must_fail($$insert into public.poll_votes (poll_id, user_id, option_id) values ('40000000-0000-0000-0000-0000000000a1', '00000000-0000-0000-0000-0000000000b1', '41000000-0000-0000-0000-000000000002')$$, 'um voto por pessoa');
+update public.poll_votes set option_id = '41000000-0000-0000-0000-000000000002';
+select pg_temp.assert_eq((select vote_count from public.poll_options where label = 'Noite'), 1, 'trocar voto move a contagem da enquete');
+select pg_temp.assert_eq((select vote_count from public.poll_options where label = 'Manhã'), 0, 'opção antiga perde o voto');
+select pg_temp.must_affect_zero($$update public.poll_options set vote_count = 100$$, 'contagem da enquete é protegida');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000c0');
+update public.polls set status = 'CLOSED';
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_fail($$insert into public.poll_votes (poll_id, user_id, option_id) values ('40000000-0000-0000-0000-0000000000a1', '00000000-0000-0000-0000-0000000000b2', '41000000-0000-0000-0000-000000000001')$$, 'votação encerrada não recebe votos');
+select pg_temp.as_su();
 
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();

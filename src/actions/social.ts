@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { actionSession } from "@/lib/auth";
 import { allow, clientIp } from "@/lib/rate-limit";
-import { commentSchema, firstError, idSchema, reportSchema } from "@/lib/validation";
+import { commentEditSchema, commentSchema, firstError, idSchema, reportSchema } from "@/lib/validation";
 import { rateLimitMessage } from "@/lib/rate-limit";
 import type { Result } from "@/lib/types";
 import { FORBIDDEN, GENERIC_ERROR } from "./_shared";
@@ -59,6 +59,18 @@ export async function addComment(input: { postId: string; parentId?: string | nu
     post_id: parsed.data.postId, parent_id: parsed.data.parentId, body: parsed.data.body, author_id: s.user.id,
   });
   return error ? { ok: false, error: GENERIC_ERROR } : { ok: true };
+}
+
+export async function editComment(input: { id: string; body: string }): Promise<Result> {
+  const s = await actionSession();
+  if (!s) return { ok: false, error: "Entre para continuar." };
+  const parsed = commentEditSchema.safeParse(input);
+  if (!parsed.success) return { ok: false, error: firstError(parsed.error) };
+  if (!(await allow("edit", s.user.id))) return { ok: false, error: rateLimitMessage() };
+  const supabase = await createClient();
+  // RLS + trigger: só o autor altera o texto
+  const { data, error } = await supabase.from("comments").update({ body: parsed.data.body }).eq("id", parsed.data.id).eq("author_id", s.user.id).select("id");
+  return error || !data?.length ? { ok: false, error: GENERIC_ERROR } : { ok: true };
 }
 
 export async function deleteComment(commentId: string): Promise<Result> {

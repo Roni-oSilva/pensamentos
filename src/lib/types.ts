@@ -53,6 +53,7 @@ export interface CommentRow {
   body: string;
   status: "VISIBLE" | "HIDDEN";
   created_at: string;
+  edited_at: string | null;
   author_id: string;
   author: AuthorLite | null;
 }

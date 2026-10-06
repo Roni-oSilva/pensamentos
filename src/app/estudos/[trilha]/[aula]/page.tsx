@@ -45,8 +45,21 @@ export default async function Aula({ params }: Props) {
         <footer className="mt-2 text-sm text-ash-400">{lesson.versiculo.ref}</footer>
       </blockquote>
       <div className="space-y-5 text-[17px] leading-relaxed text-ash-200">{lesson.texto.map((p, i) => <p key={i}>{p}</p>)}</div>
+      <section className="space-y-3" aria-labelledby="contexto-h"><h2 id="contexto-h" className="eyebrow">Contexto</h2><p className="text-[17px] leading-relaxed text-ash-300">{lesson.contexto}</p></section>
+      <section className="space-y-5" aria-labelledby="aprof-h"><h2 id="aprof-h" className="eyebrow">Aprofundamento</h2>{lesson.aprofundamento.map((p, i) => <p key={i} className="text-[17px] leading-relaxed text-ash-200">{p}</p>)}</section>
+      <section className="card space-y-3 p-5" aria-labelledby="termos-h"><h2 id="termos-h" className="eyebrow">Palavras-chave</h2>
+        <dl className="space-y-3">{lesson.termos.map((t) => <div key={t.termo}><dt className="font-medium text-white">{t.termo}</dt><dd className="text-sm text-ash-300">{t.definicao}</dd></div>)}</dl>
+      </section>
+      <section className="rounded-xl border border-ash-100/40 p-5 sm:p-6" aria-labelledby="heroi-h">
+        <p id="heroi-h" className="eyebrow mb-2">Herói da fé</p>
+        <h2 className="font-display text-3xl leading-tight text-white">{lesson.heroi.nome}</h2>
+        <p className="mt-1 text-sm text-ash-400">{lesson.heroi.periodo} · {lesson.heroi.titulo}</p>
+        <div className="mt-4 space-y-4 text-ash-200">{lesson.heroi.historia.map((p, i) => <p key={i}>{p}</p>)}</div>
+        <p className="mt-4 border-t border-ink-700 pt-4 text-white"><span className="text-ash-400">O que aprendemos: </span>{lesson.heroi.licao}</p>
+      </section>
       <p className="text-sm text-ash-400"><span className="text-ash-200">Para ler também:</span> {lesson.apoio.join(" · ")}</p>
       <section className="card space-y-2 p-5"><h2 className="eyebrow">Reflexão</h2><p className="text-lg text-white">{lesson.reflexao}</p></section>
+      <section className="card space-y-2 p-5"><h2 className="eyebrow">Para praticar esta semana</h2><ul className="list-disc space-y-1 pl-5 text-ash-200">{lesson.pratica.map((p, i) => <li key={i}>{p}</li>)}</ul></section>
       <section className="card space-y-2 p-5"><h2 className="eyebrow">Oração</h2><p className="font-display text-xl italic text-ash-200">{lesson.oracao}</p></section>
 
       <LessonRunner track={track.slug} order={lesson.ordem} quiz={quiz} initialNote={note} signedIn={!!session} alreadyDone={done}

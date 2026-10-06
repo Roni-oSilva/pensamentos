@@ -176,3 +176,18 @@ body {
 /* Nome "Igreja de Cristo": "Igreja de" em sans negrito e "Cristo" em serifada itálica */
 .church-name { display: inline-block; font-family: var(--font-sans); font-weight: 700; line-height: 1; letter-spacing: -0.035em; white-space: nowrap; }
 .church-accent { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: 1.22em; letter-spacing: 0; line-height: 0.8; }
+
+/* Impressão / "Salvar como PDF": só o conteúdo da aula, em tema claro e sem botões */
+@media print {
+  :root, :root[data-theme="dark"], :root[data-theme="light"] {
+    color-scheme: light;
+    --ink-950: 255 255 255; --ink-900: 255 255 255; --ink-800: 245 245 245; --ink-700: 220 220 220; --ink-600: 190 190 190; --ink-500: 150 150 150;
+    --ash-400: 90 90 90; --ash-300: 60 60 60; --ash-200: 30 30 30; --ash-100: 0 0 0; --c-white: 0 0 0;
+  }
+  html, body { background: #fff !important; background-image: none !important; }
+  header, footer, .no-print, .fixed, .sticky, nav[aria-label="Trilha"] { display: none !important; }
+  .force-dark { background: #fff !important; border-color: #ccc !important; }
+  .force-dark * { color: #000 !important; }
+  .card, section, blockquote { break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}

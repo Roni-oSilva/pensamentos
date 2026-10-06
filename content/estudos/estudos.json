@@ -4212,6 +4212,972 @@
           "minutos": 5
         }
       ]
+    },
+    {
+      "slug": "intimidade-com-deus",
+      "titulo": "Intimidade com Deus",
+      "descricao": "Sete aulas longas e aprofundadas sobre Cristo supremo, a alegria em Deus, a fome espiritual, a renovação da mente, a vida no Espírito, o refrigério e a família. Cada uma sugere livros para continuar o estudo.",
+      "nivel": "Avançado",
+      "aulas": [
+        {
+          "titulo": "Quem é Jesus? O Cristo supremo",
+          "resumo": "Colossenses 1 apresenta Jesus como imagem do Deus invisível, Criador, sustentador, cabeça da igreja e reconciliador de todas as coisas.",
+          "versiculo": {
+            "ref": "Colossenses 1:15",
+            "texto": "O qual é a imagem do Deus invisível, o primogênito de toda a criação;"
+          },
+          "texto": [
+            "Paulo escreve aos colossenses porque a igreja corria o risco de misturar Cristo com outras coisas: filosofias humanas, rituais, visões e poderes espirituais. A resposta dele não é uma lista de regras. É um hino sobre Jesus (Colossenses 1:15-20), que mostra que ele é maior do que qualquer coisa que se queira acrescentar a ele.",
+            "O hino começa com duas afirmações: Jesus é “a imagem do Deus invisível” e “o primogênito de toda a criação”. Imagem (eikón) não é só semelhança, é revelação: quem vê o Filho vê o Pai (João 14:9). “Primogênito” não quer dizer que foi criado primeiro, mas que tem a posição de herdeiro e Senhor sobre tudo. O contexto deixa isso claro: “nele foram criadas todas as coisas”.",
+            "Depois vem a afirmação de que tudo foi criado por ele e para ele, e de que “nele subsistem” todas as coisas. Jesus não apenas começou o universo: ele o mantém. Cada átomo existe porque o Filho o sustenta (Hebreus 1:3). Isso significa que não existe uma área neutra da vida, como trabalho, estudo, arte ou política, que esteja fora do senhorio de Cristo.",
+            "O hino termina falando da igreja e da cruz. Ele é a cabeça do corpo, o princípio, o primogênito dentre os mortos, “para que em tudo tenha a preeminência”. E toda a plenitude de Deus quis habitar nele, para reconciliar todas as coisas, “fazendo a paz pelo sangue da sua cruz”. O Cristo cósmico é o Cristo crucificado.",
+            "Por isso Colossenses é um remédio para a fé que se dispersa. Quando Jesus é supremo, a fé deixa de ser um item da vida e passa a ser o centro. Ele é suficiente para o perdão, para a vida diária, para a esperança e para o futuro."
+          ],
+          "apoio": [
+            "João 1:1-18",
+            "Hebreus 1:1-4",
+            "Filipenses 2:5-11",
+            "Apocalipse 1:12-18"
+          ],
+          "reflexao": "Existe alguma área da sua vida em que Jesus ainda não é o Senhor, apenas um conselheiro?",
+          "oracao": "Senhor Jesus, tu és a imagem do Deus invisível, Criador e sustentador. Que em tudo tenhas a preeminência na minha vida. Amém.",
+          "quiz": [
+            {
+              "pergunta": "Segundo Colossenses 1:15, Jesus é…",
+              "opcoes": [
+                "A imagem do Deus invisível",
+                "O primeiro ser criado",
+                "Um anjo poderoso"
+              ],
+              "correta": 0,
+              "explicacao": "Jesus revela o Pai: quem o vê, vê o Pai."
+            },
+            {
+              "pergunta": "O que Colossenses 1:17 diz sobre Jesus e o universo?",
+              "opcoes": [
+                "Que nele tudo subsiste",
+                "Que ele o abandonou",
+                "Que o criou e se afastou"
+              ],
+              "correta": 0,
+              "explicacao": "O Filho sustenta toda a criação."
+            },
+            {
+              "pergunta": "Quem fundou a igreja de Colossos, segundo Colossenses?",
+              "opcoes": [
+                "Epafras",
+                "Pedro",
+                "Tiago"
+              ],
+              "correta": 0,
+              "explicacao": "Epafras anunciou o evangelho em Colossos (Colossenses 1:7)."
+            }
+          ],
+          "ordem": 1,
+          "contexto": "Colossos era uma cidade pequena no vale do rio Lico, na atual Turquia, perto de Laodiceia e Hierápolis. A igreja não foi fundada por Paulo, mas por Epafras (Colossenses 1:7; 4:12). Havia ali influências de filosofias e práticas místicas que diminuíam a posição de Cristo: culto a anjos, rituais de dieta e calendário, visões (Colossenses 2:8-23). Paulo, preso, responde com a pessoa de Jesus.",
+          "aprofundamento": [
+            "Dois grandes blocos do hino. O texto de Colossenses 1:15-20 costuma ser dividido em duas partes: Cristo e a criação (v. 15-17) e Cristo e a nova criação (v. 18-20). Ambas começam com “primogênito”. Em uma, ele é Senhor da criação; na outra, Senhor da ressurreição. O Criador é o Redentor. A mesma pessoa que fez o mundo o refaz na cruz.",
+            "“Imagem” e revelação. Em Gênesis 1:26-27, o ser humano foi criado à imagem de Deus. Adão falhou em refletir essa imagem. Jesus é a imagem perfeita e veio restaurar a nossa. Em 2 Coríntios 4:4-6, Paulo diz que na face de Cristo vemos a glória de Deus. Em Romanos 8:29, somos predestinados a ser conformados à imagem do Filho. A salvação é, em parte, ser restaurado para refletir quem Deus é.",
+            "Divindade e humanidade. Colossenses 2:9 diz que “nele habita corporalmente toda a plenitude da divindade”. Ele é plenamente Deus e plenamente homem. A igreja cristã confessou isso nos concílios de Niceia (325) e Calcedônia (451) para proteger o evangelho. Se Jesus não é Deus, não pode nos salvar; se não é homem, não pode nos representar. A cruz só faz sentido se ele é as duas coisas.",
+            "Suficiência de Cristo. “Tendes a plenitude nele” (Colossenses 2:10). O erro dos colossenses não era negar Jesus, era achar que ele precisava de complementos: uma experiência especial, um ritual, um conhecimento secreto. Paulo responde que, em Cristo, “estão escondidos todos os tesouros da sabedoria e da ciência” (2:3). A vida cristã não é buscar algo além de Jesus, é aprofundar-se nele.",
+            "Reconciliação cósmica. A palavra “reconciliar” aparece no hino: todas as coisas, no céu e na terra, serão reconciliadas por meio da cruz. Isso aponta para a nova criação (Romanos 8:19-23; Apocalipse 21:5). A obra de Cristo não salva só indivíduos: ela renova o universo. Por isso o cristão se importa com a criação, com a justiça e com a paz, sem substituir o anúncio do evangelho.",
+            "Cristo e a igreja. Ele é “a cabeça do corpo, da igreja”. Isso significa direção, vida e autoridade. A igreja não é um clube que escolhe seu líder; é o corpo que recebe a vida da cabeça. Por isso as divisões e as vaidades humanas são um contrassenso. Em Colossenses 3, Paulo dirá que em Cristo “não há grego nem judeu, circuncisão nem incircuncisão [...], mas Cristo é tudo em todos”."
+          ],
+          "termos": [
+            {
+              "termo": "Primogênito",
+              "definicao": "Título de posição e herança: Cristo é Senhor sobre toda a criação e o primeiro da nova criação."
+            },
+            {
+              "termo": "Reconciliação",
+              "definicao": "Restauração da paz entre Deus e os pecadores, e entre todas as coisas, pela cruz."
+            },
+            {
+              "termo": "Preeminência",
+              "definicao": "Primeiro lugar em tudo."
+            },
+            {
+              "termo": "Suficiência de Cristo",
+              "definicao": "A verdade de que ele basta para a salvação e para a vida cristã."
+            }
+          ],
+          "heroi": {
+            "nome": "Paulo de Tarso",
+            "periodo": "c. 5–c. 64",
+            "titulo": "Apóstolo dos gentios e autor de cartas do Novo Testamento",
+            "historia": [
+              "Paulo (Saulo) nasceu em Tarso, na Cilícia, cidadão romano e judeu da tribo de Benjamim. Estudou em Jerusalém aos pés de Gamaliel e se tornou um fariseu zeloso. Perseguiu a igreja com violência, até o encontro com Jesus no caminho de Damasco, por volta do ano 33 ou 34.",
+              "Depois da conversão, foi para a Arábia, voltou a Damasco, passou por Jerusalém e Tarso, e foi levado por Barnabé a Antioquia. Dali fez três grandes viagens missionárias, plantando igrejas na Ásia Menor, Macedônia e Grécia. Escreveu cartas que formam quase metade do Novo Testamento. Entre elas, Colossenses, escrita quando estava preso.",
+              "Enfrentou açoites, naufrágios, prisões e abandono. Mesmo assim, escreveu aos filipenses sobre alegria. Segundo a tradição, morreu em Roma, sob Nero, por volta dos anos 64 a 67. Sua vida é a resposta prática ao hino de Colossenses: quem viu Cristo supremo já não tem como viver para outra coisa."
+            ],
+            "licao": "Quando Cristo é supremo, o sofrimento não tem a última palavra e a vida ganha uma só direção."
+          },
+          "pratica": [
+            "Leia Colossenses 1:15-20 três vezes, em dias seguidos, e escreva uma frase que resuma cada vez.",
+            "Anote uma “área neutra” da sua vida (trabalho, estudo, dinheiro, redes sociais) e entregue-a a Cristo em oração.",
+            "Memorize Colossenses 1:17."
+          ],
+          "simbolo": "cruz",
+          "curiosidades": [
+            "Colossenses 1:15-20 é um dos hinos mais antigos sobre Cristo, que alguns estudiosos acreditam ter sido cantado antes de Paulo o incluir na carta.",
+            "A cidade de Colossos desapareceu com o tempo, e hoje o local arqueológico é um monte ainda pouco escavado, perto de Honaz, na Turquia.",
+            "Paulo manda que a carta seja lida também em Laodiceia (Colossenses 4:16)."
+          ],
+          "linha": [
+            {
+              "ano": "c. 33",
+              "fato": "Conversão de Paulo."
+            },
+            {
+              "ano": "c. 60-62",
+              "fato": "Paulo, preso, escreve Colossenses."
+            },
+            {
+              "ano": "325",
+              "fato": "Concílio de Niceia."
+            },
+            {
+              "ano": "451",
+              "fato": "Concílio de Calcedônia."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Colossenses 1 e 2"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Quem é Jesus?, de Alessandro Vilas Boas (confira na loja oficial)"
+            }
+          ],
+          "minutos": 7
+        },
+        {
+          "titulo": "Cristo, fonte de prazer",
+          "resumo": "Fomos feitos para a alegria. A Bíblia diz que o prazer maior e duradouro está na presença de Deus.",
+          "versiculo": {
+            "ref": "Salmos 16:11",
+            "texto": "Far-me-ás ver a vereda da vida; na tua presença há plenitude de alegria, à tua mão direita há delícias perpetuamente."
+          },
+          "texto": [
+            "Muitos cristãos crescem achando que obedecer a Deus é abrir mão de ser feliz. A Bíblia diz o contrário: “Na tua presença há plenitude de alegria; à tua mão direita há delícias perpetuamente”. Deus não é inimigo da nossa alegria: ele é a fonte dela. O problema não é desejar prazer, é desejar pouco.",
+            "O Catecismo Menor de Westminster, escrito em 1647, começa com esta pergunta: qual é o fim principal do homem? E responde: “glorificar a Deus e gozá-lo para sempre”. Glorificar e gozar não competem: ao encontrar a nossa alegria em Deus, mostramos que ele vale mais que qualquer outra coisa.",
+            "Jesus contou a parábola do tesouro escondido num campo: o homem acha, esconde, e “pelo gozo dele” vai e vende tudo o que tem para comprar aquele campo (Mateus 13:44). Quem abandona tudo por Jesus não está fazendo um sacrifício amargo, e sim uma troca muito boa. Pedro, no entanto, também aprendeu que, ao seguir Jesus, “não há ninguém que tenha deixado [...] que não receba muito mais” (Marcos 10:29-30).",
+            "O pecado nos engana oferecendo alegrias rápidas, que prometem mais do que dão. Hebreus 11:25 fala dos “gozos do pecado por um breve tempo”. Quando a Bíblia nos manda fugir do pecado, ela não nos convida a ser tristes, mas a não trocar o grande pelo pequeno. A pergunta de Jesus em Marcos 8:36 se aplica: de que adianta ganhar o mundo e perder a alma?",
+            "Aprender a achar prazer em Cristo é um processo. Ele se alimenta na Palavra, na oração, na comunhão, no louvor e na obediência. E tem uma promessa: “Deleita-te também no Senhor, e ele te concederá os desejos do teu coração” (Salmos 37:4). Quem se deleita em Deus tem os desejos ajustados por ele."
+          ],
+          "apoio": [
+            "Salmos 36:7-9",
+            "Salmos 63:1-5",
+            "Hebreus 12:1-2",
+            "Filipenses 3:7-11"
+          ],
+          "reflexao": "O que você tem buscado para ser feliz? Isso tem satisfeito de verdade?",
+          "oracao": "Senhor, tu és a fonte da alegria. Ensina-me a achar em ti o prazer que nada mais dá, e a desejar mais de ti. Em nome de Jesus, amém.",
+          "quiz": [
+            {
+              "pergunta": "Segundo Salmos 16:11, onde há plenitude de alegria?",
+              "opcoes": [
+                "Na presença de Deus",
+                "Na riqueza",
+                "No sucesso"
+              ],
+              "correta": 0,
+              "explicacao": "A plenitude da alegria está na presença do Senhor."
+            },
+            {
+              "pergunta": "Qual é, segundo o Catecismo de Westminster, o fim principal do homem?",
+              "opcoes": [
+                "Glorificar a Deus e gozá-lo para sempre",
+                "Ter sucesso na vida",
+                "Evitar o sofrimento"
+              ],
+              "correta": 0,
+              "explicacao": "Glorificar e gozar a Deus não competem; andam juntos."
+            },
+            {
+              "pergunta": "O que C. S. Lewis dizia sobre o desejo humano?",
+              "opcoes": [
+                "Que desejamos pouco, e não muito",
+                "Que devemos eliminar os desejos",
+                "Que desejar é pecado"
+              ],
+              "correta": 0,
+              "explicacao": "Para Lewis, somos facilmente satisfeitos com pouco, quando Deus oferece alegria infinita."
+            }
+          ],
+          "ordem": 2,
+          "contexto": "O livro de Salmos termina cantando alegria e louvor. Quase todo salmo tem desejo, sede, fome ou deleite: “Como suspira o cervo...” (42:1), “O Senhor é a minha porção” (16:5), “Provai e vede que o Senhor é bom” (34:8). Os cristãos antigos e os reformadores leram esses textos com um mesmo pano de fundo: a alegria é o fruto natural de conhecer e amar a Deus.",
+          "aprofundamento": [
+            "Alegria como mandamento. “Alegrai-vos sempre no Senhor” (Filipenses 4:4) é uma ordem. A Bíblia não trata alegria como sentimento opcional, mas como parte da fé. Isso não quer dizer fingir felicidade: quer dizer que a alegria cristã tem outra base, a pessoa de Cristo, e por isso sobrevive à tristeza. Paulo escreveu essa ordem na prisão. Há “tristes mas sempre alegres” (2 Coríntios 6:10).",
+            "Prazer e glória. O pastor John Piper, em “Em busca de Deus”, tornou conhecida a ideia de que “Deus é mais glorificado em nós quando estamos mais satisfeitos nele”. A ideia ecoa Agostinho, Edwards e Lewis. Não é preciso concordar com tudo para perceber o ponto bíblico: o culto verdadeiro vem de um coração que acha Deus precioso (Salmos 73:25-26). Um dever feito sem alegria honra pouco.",
+            "Prazer e pecado. Todo pecado é uma tentativa de achar satisfação em algo menor que Deus. O profeta Jeremias dizia: “Dois males fez o meu povo: deixaram a mim, a fonte de águas vivas, e cavaram cisternas, cisternas rotas, que não retêm as águas” (2:13). Essa imagem ajuda a combater o pecado: não só dizendo “não”, mas apresentando algo melhor. Thomas Chalmers, pregador escocês, chamou isso de “o poder expulsivo de uma nova afeição”: um amor maior expulsa o menor.",
+            "Cristo no centro do prazer. Jesus oferece “água viva” e “pão da vida” (João 4 e 6) e diz: “Eu vim para que tenham vida, e a tenham em abundância” (João 10:10). A alegria de Jesus é a alegria que nos dá: “Tenho-vos dito isto, para que o meu gozo permaneça em vós, e o vosso gozo seja completo” (João 15:11). A fonte do prazer não é uma coisa, é uma pessoa.",
+            "Alegria e sofrimento. A alegria bíblica convive com a dor. Jesus, “pela alegria que lhe estava proposta, suportou a cruz” (Hebreus 12:2). Os apóstolos se alegravam por serem considerados dignos de sofrer pelo Nome (Atos 5:41). Isso mostra que a alegria em Cristo não é uma fuga, é uma força.",
+            "Práticas que alimentam o prazer em Deus. Ler a Palavra com expectativa de encontrar nela o Senhor; orar devagar, sem pressa de pedir; cantar; agradecer em voz alta; celebrar a Ceia; passar tempo com irmãos que amam a Deus; e dar, porque “mais bem-aventurado é dar do que receber” (Atos 20:35). Também é preciso aprender a reconhecer os prazeres legítimos da criação (comida, amizade, beleza) como presentes que apontam ao Doador (1 Timóteo 6:17)."
+          ],
+          "termos": [
+            {
+              "termo": "Deleite",
+              "definicao": "Prazer profundo e sincero em algo ou alguém; no Salmo 37:4, deleitar-se no Senhor."
+            },
+            {
+              "termo": "Glorificar",
+              "definicao": "Mostrar o valor e a beleza de Deus com a vida e com os lábios."
+            },
+            {
+              "termo": "Cisterna rota",
+              "definicao": "Imagem de Jeremias para as coisas que prometem satisfação, mas não a dão."
+            },
+            {
+              "termo": "Gozo",
+              "definicao": "Alegria profunda, que vem de Deus e que o sofrimento não destrói."
+            }
+          ],
+          "heroi": {
+            "nome": "C. S. Lewis",
+            "periodo": "1898–1963",
+            "titulo": "Escritor e professor de Oxford",
+            "historia": [
+              "Clive Staples Lewis nasceu em Belfast, na Irlanda do Norte. Perdeu a mãe aos nove anos e se afastou da fé na adolescência. Tornou-se professor em Oxford e depois em Cambridge, e era ateu convicto.",
+              "Sua conversão foi gradual. Primeiro aceitou que Deus existe, em 1929; e, em 1931, depois de uma conversa noturna com amigos, entre eles J. R. R. Tolkien, passou a crer em Cristo. Ele contou essa jornada em “Surpreendido pela Alegria”: desde menino sentia uma saudade que nada neste mundo preenchia, e descobriu que ela apontava para Deus.",
+              "Escreveu “Cristianismo Puro e Simples”, “O Peso da Glória” e “As Crônicas de Nárnia”, entre outros. No sermão “O Peso da Glória”, disse, em resumo, que não somos pessoas de desejos grandes demais, e sim de desejos pequenos demais: brincamos com bebida, sexo e ambição quando nos é oferecida uma alegria infinita, como uma criança que prefere fazer bolos de lama numa viela porque não imagina o que é um dia de praia."
+            ],
+            "licao": "A alegria que sentimos é uma pista de que fomos feitos para Deus. Procurar mais, e não menos, é o caminho."
+          },
+          "pratica": [
+            "Todos os dias desta semana, escreva três coisas pelas quais você sente alegria em Deus (uma pessoa, uma promessa, uma atitude dele).",
+            "Escolha uma “cisterna rota” e substitua o tempo dela por tempo na presença do Senhor (Palavra, oração ou louvor).",
+            "Leia o Salmo 16 devagar e transforme cada versículo em oração."
+          ],
+          "simbolo": "sol",
+          "curiosidades": [
+            "A palavra “felizes” no começo do Salmo 1 vem do hebraico ashrei, que também pode ser traduzido “bem-aventurados”.",
+            "O Catecismo Menor de Westminster foi redigido em 1647 e ainda é estudado em muitas igrejas.",
+            "Lewis dizia que a sua conversão começou com uma sensação de “alegria” (Sehnsucht, saudade) que o acompanhou desde criança."
+          ],
+          "linha": [
+            {
+              "ano": "1647",
+              "fato": "Catecismo Menor de Westminster."
+            },
+            {
+              "ano": "1898",
+              "fato": "Nasce C. S. Lewis."
+            },
+            {
+              "ano": "1931",
+              "fato": "Lewis se converte ao cristianismo."
+            },
+            {
+              "ano": "1941",
+              "fato": "Prega o sermão “O Peso da Glória”."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Salmos 16, 36 e 63"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Cristo, Fonte de Prazer, de Alessandro Vilas Boas (confira na loja oficial)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "O Peso da Glória, de C. S. Lewis"
+            }
+          ],
+          "minutos": 7
+        },
+        {
+          "titulo": "Fome por Deus",
+          "resumo": "A fome espiritual é um dom: ela nos leva à fonte. A Bíblia mostra como cultivá-la com oração, Palavra e jejum.",
+          "versiculo": {
+            "ref": "Salmos 42:1",
+            "texto": "Como o cervo brama pelas correntes das águas, assim suspira a minha alma por ti, ó Deus!"
+          },
+          "texto": [
+            "O cervo do Salmo 42 está sedento. Ele corre pela seca, ofegante, procurando água. Assim o salmista descreve a própria alma. Muitas vezes pensamos que a falta de vontade de orar ou de ler a Bíblia é só desânimo. Mas o salmo ensina que sentir sede é bom: é o sinal de que a alma está viva e de que sabe onde está a água.",
+            "Jesus disse: “Bem-aventurados os que têm fome e sede de justiça, porque eles serão fartos” (Mateus 5:6). Há uma promessa aqui: quem tem fome é saciado. Não é o contrário. O problema é quando nos enchemos de lanches espirituais, entretenimento e preocupações, e perdemos o apetite pelo alimento real.",
+            "A fome por Deus se cultiva. Daniel, ao ler as profecias de Jeremias, “voltou o rosto ao Senhor Deus, para o buscar com oração e súplicas, com jejum, e saco e cinza” (Daniel 9:3). Davi, no deserto, dizia: “Ó Deus, tu és o meu Deus, de madrugada te buscarei; a minha alma tem sede de ti” (Salmos 63:1). A busca tem ritmos, horários e hábitos.",
+            "Jesus jejuou quarenta dias antes de começar o ministério e ensinou como fazer: “quando jejuardes, [...] unge a tua cabeça e lava o teu rosto, para não pareceres aos homens que jejuas” (Mateus 6:16-18). O jejum não é uma moeda de troca, mas uma forma de dizer com o corpo que precisamos de Deus mais que de pão. Deve ser feito com sabedoria, e quem tem problemas de saúde deve consultar um médico antes de jejuar de alimentos.",
+            "A promessa para quem busca é firme: “Buscar-me-eis, e me achareis, quando me buscardes de todo o vosso coração” (Jeremias 29:13). Se a sua fome está fraca, comece pedindo a Deus que a desperte: “Aviva-me, Senhor”. Ele gosta de responder a essa oração."
+          ],
+          "apoio": [
+            "Salmos 63:1-8",
+            "Isaías 58:6-12",
+            "Joel 2:12-13",
+            "Amós 8:11-12"
+          ],
+          "reflexao": "Em que você tem “matado a fome” que deveria ser de Deus?",
+          "oracao": "Pai, desperta em mim a fome e a sede de ti. Tira de mim a indiferença e aproxima-me da tua presença. Em nome de Jesus, amém.",
+          "quiz": [
+            {
+              "pergunta": "O que Jesus promete aos que têm fome e sede de justiça?",
+              "opcoes": [
+                "Serão fartos",
+                "Serão provados",
+                "Serão esquecidos"
+              ],
+              "correta": 0,
+              "explicacao": "Mateus 5:6 promete que serão saciados."
+            },
+            {
+              "pergunta": "Qual é a atitude certa ao jejuar, segundo Mateus 6?",
+              "opcoes": [
+                "Fazê-lo em secreto, diante do Pai",
+                "Mostrar a todos",
+                "Fazer para obter algo de Deus"
+              ],
+              "correta": 0,
+              "explicacao": "Jesus ensina a jejuar sem ostentação."
+            },
+            {
+              "pergunta": "Quem escreveu “A Busca de Deus”?",
+              "opcoes": [
+                "A. W. Tozer",
+                "C. S. Lewis",
+                "João Calvino"
+              ],
+              "correta": 0,
+              "explicacao": "Tozer publicou o livro em 1948."
+            }
+          ],
+          "ordem": 3,
+          "contexto": "O Salmo 42 foi escrito por um dos filhos de Corá, provavelmente em um tempo de exílio ou de distância do templo. O salmista chora, lembra tempos de culto alegre e pergunta: “Por que estás abatida, ó minha alma?”. Ao final, responde a si mesmo: “Espera em Deus”. É o retrato de alguém que tem fome por Deus em meio ao sofrimento.",
+          "aprofundamento": [
+            "Fome e saciedade. A fome física é um sinal do corpo: pede alimento. A fome espiritual é um sinal da alma. Jesus disse que o homem não vive só de pão, “mas de toda a palavra que sai da boca de Deus” (Mateus 4:4). O Senhor também fala de uma fome terrível: “não de pão, nem sede de água, mas de ouvir as palavras do Senhor” (Amós 8:11). Ter fome da Palavra é graça; não ter é perigo.",
+            "A busca de Deus na história. Agostinho orou: “Fizeste-nos para ti, e inquieto está o nosso coração enquanto não repousar em ti”. Os monges do deserto, os reformadores, os morávios, os puritanos e os pietistas buscaram Deus com horários de leitura e oração. O pastor A. W. Tozer escreveu, em “A Busca de Deus” (1948), que a alma que realmente deseja Deus nunca está satisfeita: encontrá-lo faz querer mais. Ele chamava isso de “doce paradoxo”.",
+            "Jejum na Bíblia. O jejum aparece na Lei (Levítico 16), nos profetas (Joel 2), nos Salmos (35:13), nos Evangelhos (Mateus 4, 6, 9:14-15) e em Atos (13:2-3; 14:23). Serve para arrependimento, intercessão, busca de direção e adoração. Isaías 58 faz um alerta: um jejum que não leva à justiça e à misericórdia é vazio. Jesus disse que os discípulos jejuariam quando o noivo fosse tirado (Mateus 9:15).",
+            "Disciplinas espirituais. Não são fórmulas, são caminhos pelos quais a graça nos alcança. Richard Foster, em “Celebração da Disciplina”, e Donald Whitney, em “Disciplinas Espirituais para a Vida Cristã”, mostraram como a leitura da Bíblia, a oração, a meditação, o jejum, a solitude, o culto e o serviço treinam o coração. Um bom plano é pequeno, regular e possível. É melhor dez minutos todos os dias do que duas horas de vez em quando.",
+            "Fome e falsos pães. O inimigo não precisa nos fazer abandonar Deus: basta nos entreter. Há “pães” que parecem alimento, como a pressa, a distração, o consumo e o aplauso. A pergunta é: o que me alimenta e o que me esvazia? Em João 6:27, Jesus diz: “Trabalhai, não pela comida que perece, mas pela comida que permanece para a vida eterna”.",
+            "Quando falta o apetite. Há fases em que não sentimos fome de Deus. Isso não é motivo para desistir, mas para voltar ao básico: pedir, ler uma passagem curta, cantar, agradecer, conversar com um irmão. Muitos santos descreveram seca espiritual. Não precisamos esperar o sentimento: a fome costuma voltar quando começamos a comer. Em caso de tristeza profunda e prolongada, procurar apoio de um pastor e de um profissional de saúde é sábio e bíblico."
+          ],
+          "termos": [
+            {
+              "termo": "Jejum",
+              "definicao": "Abster-se de comida, ou de outra coisa legítima, por um tempo, para buscar a Deus em oração."
+            },
+            {
+              "termo": "Disciplinas espirituais",
+              "definicao": "Práticas como ler a Bíblia, orar e servir, que treinam o coração para Deus."
+            },
+            {
+              "termo": "Seca espiritual",
+              "definicao": "Período em que a presença de Deus parece distante."
+            },
+            {
+              "termo": "Sede",
+              "definicao": "No salmo, desejo intenso por Deus."
+            }
+          ],
+          "heroi": {
+            "nome": "A. W. Tozer",
+            "periodo": "1897–1963",
+            "titulo": "Pastor e escritor norte-americano",
+            "historia": [
+              "Aiden Wilson Tozer nasceu na Pensilvânia, nos Estados Unidos, e cresceu em uma família pobre. Aos 17 anos, em Akron, Ohio, ouviu um pregador de rua e se converteu a Cristo. Quase não frequentou escola formal: aprendeu lendo muito.",
+              "De 1928 a 1959, foi pastor de uma igreja em Chicago e editor de uma revista cristã. Era conhecido por orar durante longos períodos de joelhos e pelo hábito de ler os grandes mestres da vida espiritual, de séculos anteriores.",
+              "Seus livros mais conhecidos são “A Busca de Deus”, de 1948, e “O Conhecimento do Santo”, de 1961. Ele dizia, em essência, que a maior necessidade da igreja é recuperar uma visão elevada de Deus. Morreu em 1963, deixando uma obra curta e intensa, até hoje lida no mundo todo."
+            ],
+            "licao": "A fome de Deus é uma dádiva a ser alimentada, e quem a cultiva nunca fica sem encontro."
+          },
+          "pratica": [
+            "Reserve 15 minutos diários, nos próximos sete dias, no mesmo horário, só para estar com Deus (Palavra, oração, silêncio).",
+            "Se estiver bem de saúde, escolha um jejum parcial (uma refeição ou uma distração) e use o tempo para orar com o Salmo 63. Quem tiver problemas de saúde deve conversar antes com um médico.",
+            "Leia o Salmo 42 e escreva o que é “o seu cervo”."
+          ],
+          "simbolo": "pao",
+          "curiosidades": [
+            "O Salmo 42 é atribuído aos “filhos de Corá”, grupo de levitas que cantavam no templo.",
+            "Daniel orava de joelhos três vezes ao dia, voltado para Jerusalém (Daniel 6:10).",
+            "Segundo se conta, Tozer escreveu boa parte de “A Busca de Deus” durante uma viagem de trem."
+          ],
+          "linha": [
+            {
+              "ano": "1897",
+              "fato": "Nasce A. W. Tozer."
+            },
+            {
+              "ano": "1928",
+              "fato": "Torna-se pastor em Chicago."
+            },
+            {
+              "ano": "1948",
+              "fato": "Publica “A Busca de Deus”."
+            },
+            {
+              "ano": "1963",
+              "fato": "Morre Tozer."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Salmos 42, 43 e 63"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Fome por Deus, de Alessandro Vilas Boas (confira na loja oficial)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "A Busca de Deus, de A. W. Tozer"
+            }
+          ],
+          "minutos": 7
+        },
+        {
+          "titulo": "A renovação da mente",
+          "resumo": "A transformação do cristão começa por dentro: pensar com a verdade de Deus muda o que sentimos, dizemos e fazemos.",
+          "versiculo": {
+            "ref": "Romanos 12:2",
+            "texto": "E não vos conformeis com este século, mas transformai-vos pela renovação do vosso entendimento, para que experimenteis qual seja a boa, agradável e perfeita vontade de Deus."
+          },
+          "texto": [
+            "Em Romanos 12, Paulo muda de tom. Nos capítulos 1 a 11, explicou o que Deus fez em Cristo. Agora, diz: “Rogo-vos, pois, irmãos, pela compaixão de Deus”: a resposta à graça é a vida inteira entregue. E logo vem o mandamento: não se conformar com este mundo, mas ser transformado pela renovação da mente.",
+            "A palavra “conformar” lembra um molde. O mundo quer nos pressionar para dentro de uma forma: o que pensar, o que valorizar, como medir o sucesso. A palavra “transformar” (metamorphóo) é a mesma usada para a transfiguração de Jesus. É uma mudança de dentro para fora, e não uma maquiagem.",
+            "A mente é o centro dessa batalha. Provérbios 23:7 diz que como o homem pensa no seu coração, assim ele é. Pensamentos alimentam desejos, desejos geram atitudes e atitudes formam hábitos. Por isso Paulo manda: “Tudo o que é verdadeiro, tudo o que é honesto, tudo o que é justo, tudo o que é puro, tudo o que é amável, tudo o que é de boa fama [...] nisso pensai” (Filipenses 4:8).",
+            "A renovação é obra de Deus e exige a nossa cooperação. Ele faz pelo Espírito e pela Palavra (João 17:17; 2 Coríntios 3:18), e nós colaboramos ao meditar na Bíblia, guardar o que lemos e ouvimos, memorizar versículos e escolher com cuidado as nossas “fontes”. Jesus venceu a tentação no deserto citando as Escrituras três vezes (Mateus 4).",
+            "A renovação também é comunitária. Em Efésios 4:22-24, Paulo fala de despir-se do velho homem e “renovar-se no espírito do vosso entendimento”. Isso acontece quando ouvimos a pregação, conversamos, confessamos e recebemos correção. E ela mira um fim: experimentar a vontade de Deus, que é boa, agradável e perfeita."
+          ],
+          "apoio": [
+            "Efésios 4:17-24",
+            "Filipenses 4:6-9",
+            "2 Coríntios 10:3-5",
+            "Colossenses 3:1-10"
+          ],
+          "reflexao": "Que pensamento repetido precisa ser trocado por uma verdade da Palavra?",
+          "oracao": "Senhor, renova a minha mente. Ensina-me a pensar com a tua verdade e a viver a tua vontade boa, agradável e perfeita. Amém.",
+          "quiz": [
+            {
+              "pergunta": "O que Paulo manda em Romanos 12:2?",
+              "opcoes": [
+                "Transformar-se pela renovação da mente",
+                "Fugir do mundo",
+                "Ignorar o pensamento"
+              ],
+              "correta": 0,
+              "explicacao": "A transformação vem da renovação do entendimento."
+            },
+            {
+              "pergunta": "Em Filipenses 4:8, em que devemos pensar?",
+              "opcoes": [
+                "No que é verdadeiro, justo, puro e amável",
+                "Só em problemas",
+                "Em nada"
+              ],
+              "correta": 0,
+              "explicacao": "Paulo lista temas que alimentam uma mente saudável."
+            },
+            {
+              "pergunta": "Qual verbo grego de Romanos 12:2 lembra a transfiguração?",
+              "opcoes": [
+                "Metamorphóo (transformar)",
+                "Agapáo (amar)",
+                "Ekklesía (igreja)"
+              ],
+              "correta": 0,
+              "explicacao": "A palavra é a mesma usada em Mateus 17:2."
+            }
+          ],
+          "ordem": 4,
+          "contexto": "Romanos foi escrita por Paulo em Corinto, por volta do ano 57, a uma igreja de Roma que ele ainda não conhecia. A carta é a exposição mais completa do evangelho no Novo Testamento. Os capítulos 12 a 16 mostram como o evangelho molda a vida: mente, corpo, igreja, governo, relações e missão. O versículo 2 é a chave: quem teve o coração tocado quer ter também a mente transformada.",
+          "aprofundamento": [
+            "Mente e coração. Na Bíblia, “coração” inclui pensar, querer e sentir. Em Hebreus 8:10, Deus promete escrever as suas leis “na mente” e “no coração”. A renovação não é só intelectual: envolve afetos e vontade. Mas começa com a verdade, porque o que acreditamos molda o que amamos (Salmos 119:9-11).",
+            "Guerra de pensamentos. “Levando cativo todo o entendimento à obediência de Cristo” (2 Coríntios 10:5). Paulo fala de “fortalezas”, “argumentos” e “altivez”, isto é, ideias que se levantam contra o conhecimento de Deus. Nem todo pensamento que passa pela cabeça é pecado: o que importa é o que fazemos com ele. Em vez de nos acusar, podemos testar o pensamento: isto é verdadeiro? Concorda com a Palavra? Leva-me a Cristo?",
+            "Memorizar a Escritura. Memorizar é guardar a Palavra na mente para que o Espírito a use. “Guardei no meu coração a tua palavra, para não pecar contra ti” (Salmos 119:11). Um método simples: escolher um versículo por semana, escrevê-lo, repeti-lo em momentos fixos (ao acordar, ao almoçar, ao dormir) e usá-lo em oração. Em um ano, serão cinquenta versículos guardados.",
+            "O ambiente da mente. Somos formados pelo que vemos, ouvimos e repetimos. Hoje há um fluxo constante de informação e entretenimento. Isso não é necessariamente mau, mas exige escolha. Pergunte: o que isto produz em mim? Mais paz ou mais ansiedade? Mais gratidão ou mais inveja? Mais amor ou mais ira? Jesus ensinou: “Atentai para o que ouvis” (Marcos 4:24).",
+            "Mente e saúde emocional. Renovar a mente não é negar o sofrimento nem se culpar por ansiedade ou tristeza. Há dores que exigem acompanhamento médico, psicológico e pastoral, e buscar ajuda é sinal de sabedoria. O profeta Elias, em 1 Reis 19, estava esgotado e Deus o cuidou com sono, comida e um sussurro. O cuidado de Deus inclui o corpo, a mente e a alma.",
+            "Renovação e vontade de Deus. A promessa de Romanos 12:2 é que, renovados, “experimentaremos” a vontade de Deus. A palavra significa provar e aprovar. Quem tem a mente renovada começa a ver a vida como Deus a vê, e a perceber o que é bom, agradável e perfeito. Isso inclui decisões grandes e pequenas: estudos, trabalho, casamento, finanças, descanso."
+          ],
+          "termos": [
+            {
+              "termo": "Metamorphóo",
+              "definicao": "Verbo grego de Romanos 12:2: ser transformado, mudar de forma por dentro."
+            },
+            {
+              "termo": "Entendimento (nous)",
+              "definicao": "A mente, a capacidade de pensar e discernir."
+            },
+            {
+              "termo": "Meditação bíblica",
+              "definicao": "Pensar com atenção e oração sobre a Palavra, guardando-a no coração."
+            },
+            {
+              "termo": "Fortaleza",
+              "definicao": "Ideias ou hábitos arraigados que se opõem ao conhecimento de Deus."
+            }
+          ],
+          "heroi": {
+            "nome": "Charles Haddon Spurgeon",
+            "periodo": "1834–1892",
+            "titulo": "O “príncipe dos pregadores”",
+            "historia": [
+              "Spurgeon nasceu em Essex, na Inglaterra, em uma família de pastores. Em 6 de janeiro de 1850, aos quinze anos, durante uma tempestade de neve, entrou numa pequena capela em Colchester. O pregador leigo, que substituía o pastor, citou Isaías 45:22: “Olhai para mim, e sede salvos”. Spurgeon olhou para Cristo e creu.",
+              "Aos dezenove anos já era pastor em Londres, e logo as multidões não cabiam nos templos. Em 1861 inaugurou o Tabernáculo Metropolitano, com cerca de cinco mil lugares. Pregou milhares de sermões, escreveu comentários, como “O Tesouro de Davi”, e fundou orfanatos e escolas de pastores.",
+              "Spurgeon lutou com a depressão e com dores físicas crônicas durante grande parte da vida. Mesmo assim, ensinava que a mente se renova pela Palavra, pelo descanso, pela comunhão e pela esperança em Cristo. Sua vida mostra que fé e sofrimento emocional podem andar juntos, e que Deus usa pessoas frágeis."
+            ],
+            "licao": "Deus renova a mente por meio da Palavra, do tempo e do cuidado, e usa até os que passam por noites escuras."
+          },
+          "pratica": [
+            "Escolha um versículo desta lição e memorize-o durante esta semana.",
+            "Faça uma “limpeza” de um hábito de consumo que alimenta ansiedade ou inveja, e substitua por leitura ou música que leve a Deus.",
+            "Se estiver passando por tristeza ou ansiedade persistentes, converse com um pastor e procure ajuda profissional de saúde."
+          ],
+          "simbolo": "luz",
+          "curiosidades": [
+            "Spurgeon pregou em 1857 no Palácio de Cristal, em Londres, para cerca de vinte e quatro mil pessoas, sem microfones.",
+            "Ele lia cerca de seis livros por semana, segundo relatos.",
+            "O verbo de Filipenses 4:8 traduzido por “pensai” (logízomai) também significa “calcular” ou “considerar com atenção”: é pensar com cuidado."
+          ],
+          "linha": [
+            {
+              "ano": "1834",
+              "fato": "Nasce Spurgeon."
+            },
+            {
+              "ano": "1850",
+              "fato": "Conversão em Colchester."
+            },
+            {
+              "ano": "1861",
+              "fato": "Inaugura o Tabernáculo Metropolitano."
+            },
+            {
+              "ano": "1892",
+              "fato": "Morre em Menton, França."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Romanos 12 e Filipenses 4"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Renovação de Mente, de Alessandro Vilas Boas (confira na loja oficial)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Lições aos Meus Alunos, de C. H. Spurgeon"
+            }
+          ],
+          "minutos": 6
+        },
+        {
+          "titulo": "Permanecendo no óleo",
+          "resumo": "O óleo, na Bíblia, fala do Espírito Santo. Quem permanece nele vive acesa, dependente e pronta para servir.",
+          "versiculo": {
+            "ref": "1 João 2:27",
+            "texto": "E a unção que vós recebestes dele fica em vós, e não tendes necessidade de que alguém vos ensine; mas, como a sua unção vos ensina acerca de todas as coisas, e é verdadeira, e não é mentira."
+          },
+          "texto": [
+            "Na Bíblia, o óleo tem muitos usos: acende as lâmpadas, cura feridas, perfuma, alimenta e consagra. Sacerdotes, reis e profetas eram ungidos com óleo para o serviço de Deus. Por isso o óleo se tornou um símbolo do Espírito Santo. Quando Samuel ungiu Davi, “o Espírito do Senhor desceu sobre Davi, daquele dia em diante” (1 Samuel 16:13).",
+            "Jesus é o Ungido (Messias, Cristo). Em Atos 10:38, Pedro diz que “Deus ungiu a Jesus de Nazaré com o Espírito Santo e com poder, o qual andou fazendo o bem”. Em Lucas 4:18, Jesus lê Isaías 61: “O Espírito do Senhor está sobre mim, pois que me ungiu para evangelizar os pobres”. A vida e o ministério dele foram impulsionados pelo Espírito.",
+            "Os que creem em Cristo também têm uma unção. João escreve: “A unção que vós recebestes dele fica em vós”. Isso quer dizer que todo cristão tem o Espírito, que o ensina e o conduz à verdade. Não é uma elite espiritual: é uma realidade para todos os que são de Cristo (Romanos 8:9).",
+            "Jesus contou a parábola das dez virgens (Mateus 25:1-13). Todas tinham lâmpadas e todas dormiram. O que diferenciou as sábias foi o óleo extra. Quando o noivo chegou, as insensatas não puderam “emprestar” óleo de última hora. A mensagem é clara: a relação com Deus não pode ser vivida de segunda mão. Cada um precisa do seu óleo, formado na rotina da Palavra, da oração e da obediência.",
+            "“Permanecer” é a palavra de João 15: “Permanecei em mim, e eu em vós”. Permanecer no óleo é viver todos os dias na dependência do Espírito: ouvir, obedecer, confessar, renovar. O Espírito não é um estoque que se gasta, é uma fonte. E a maior prova de permanência não é um episódio, é o fruto (Gálatas 5:22-23)."
+          ],
+          "apoio": [
+            "Êxodo 30:22-33",
+            "Salmos 133",
+            "Lucas 4:16-21",
+            "Zacarias 4:1-6"
+          ],
+          "reflexao": "Que hábito simples ajuda você a “manter o óleo” da sua lâmpada diariamente?",
+          "oracao": "Espírito Santo, enche-me de ti. Que eu permaneça em ti, e que a minha lâmpada não se apague. Em nome de Jesus, amém.",
+          "quiz": [
+            {
+              "pergunta": "Segundo 1 João 2:27, a unção que recebemos…",
+              "opcoes": [
+                "Permanece em nós e nos ensina",
+                "É só para pastores",
+                "Acaba depois de um tempo"
+              ],
+              "correta": 0,
+              "explicacao": "O Espírito permanece nos crentes e os ensina."
+            },
+            {
+              "pergunta": "O que diferenciou as virgens sábias na parábola?",
+              "opcoes": [
+                "Tinham óleo extra",
+                "Eram mais bonitas",
+                "Não dormiram"
+              ],
+              "correta": 0,
+              "explicacao": "Elas estavam preparadas, com óleo suficiente."
+            },
+            {
+              "pergunta": "Qual era a profissão do irmão Lourenço no mosteiro?",
+              "opcoes": [
+                "Cozinheiro",
+                "Pregador",
+                "Professor"
+              ],
+              "correta": 0,
+              "explicacao": "Ele serviu muitos anos na cozinha do mosteiro."
+            }
+          ],
+          "ordem": 5,
+          "contexto": "O azeite de oliva era comum em Israel. Era usado na cozinha, na iluminação, como remédio e em rituais. O óleo da unção do tabernáculo era feito de uma receita especial (Êxodo 30:22-25) e não podia ser usado para fins comuns. Aarão e seus filhos eram ungidos, assim como os reis e alguns profetas. A unção marcava uma pessoa como separada e capacitada para a tarefa que Deus lhe dava.",
+          "aprofundamento": [
+            "Do símbolo à realidade. No Antigo Testamento, o Espírito vinha sobre algumas pessoas por um tempo, para uma tarefa. Os profetas prometeram que, na nova aliança, o Espírito seria derramado sobre todos (Joel 2:28; Ezequiel 36:27). Em Atos 2, isso começou. Hoje, todo aquele que crê tem o Espírito, que o sela para o dia da redenção (Efésios 1:13-14; 4:30).",
+            "Unção e unidade. O Salmo 133 diz: “Oh! Quão bom e quão suave é que os irmãos vivam em união! É como o óleo precioso sobre a cabeça, que desce sobre a barba, a barba de Arão”. O óleo escorre da cabeça até a veste. A imagem mostra que o Espírito flui de Cristo, a cabeça, para todo o corpo, e que a unidade é terreno em que Deus abençoa. Onde há divisão, o fluir se perturba.",
+            "Lâmpada e azeite (Zacarias 4). Zacarias viu um candelabro de ouro abastecido por oliveiras, que despejavam azeite sem trabalho humano. A mensagem de Deus a Zorobabel foi: “Não por força nem por violência, mas pelo meu Espírito”. A obra de Deus é feita com o óleo que ele mesmo fornece. Isso tira de nós a pressão de produzir e nos devolve à dependência.",
+            "Obediência e plenitude. Efésios 5:18 manda: “Enchei-vos do Espírito”, no presente contínuo: continuem sendo cheios. A plenitude do Espírito aparece em quem fala a Palavra com ousadia (Atos 4:31), canta e agradece (Efésios 5:19-20), se submete uns aos outros (5:21) e vive em santidade. Não é só uma experiência intensa, é um modo de andar com Deus.",
+            "Falsas imitações. A Bíblia alerta contra espíritos enganadores (1 João 4:1) e contra quem fala em nome de Deus sem fruto (Mateus 7:15-23). A unção verdadeira exalta a Cristo, concorda com a Palavra e produz fruto. Por isso não se mede por barulho, fama, resultado ou emoção. Mede-se pelo caráter de Cristo, pela verdade e pelo amor.",
+            "Permanência em tempo de rotina. Muita gente está disposta ao momento especial, mas pouca à rotina. O Espírito é o mesmo no culto e na cozinha. O irmão Lourenço, um cozinheiro de mosteiro do século XVII, dizia que podia estar tão perto de Deus entre as panelas quanto de joelhos no culto. O óleo de cada dia vem de pequenos atos de fidelidade: orar antes de começar, agradecer ao comer, pedir perdão rápido, ouvir a Palavra."
+          ],
+          "termos": [
+            {
+              "termo": "Unção",
+              "definicao": "Consagração e capacitação do Espírito para servir a Deus."
+            },
+            {
+              "termo": "Messias / Cristo",
+              "definicao": "“Ungido”: título de Jesus."
+            },
+            {
+              "termo": "Plenitude do Espírito",
+              "definicao": "Ser dirigido e capacitado, de modo contínuo, pelo Espírito Santo."
+            },
+            {
+              "termo": "Permanecer",
+              "definicao": "Manter união viva com Cristo, dia após dia."
+            }
+          ],
+          "heroi": {
+            "nome": "Irmão Lourenço (Nicolas Herman)",
+            "periodo": "c. 1614–1691",
+            "titulo": "Cozinheiro de mosteiro e mestre da presença de Deus",
+            "historia": [
+              "Nicolas Herman nasceu na região de Lorena, na França, por volta de 1614. Foi soldado e ficou ferido em uma guerra. Aos dezoito anos, ao olhar uma árvore sem folhas no inverno, pensou que ela voltaria a ter folhas e frutos, e sentiu uma profunda confiança na providência de Deus.",
+              "Em 1640 entrou para um mosteiro de carmelitas descalços, em Paris, e recebeu o nome de Irmão Lourenço. Passou boa parte da vida na cozinha, e depois como sapateiro. Em vez de ficar frustrado com as tarefas simples, aprendeu a conversar com Deus enquanto trabalhava, em silêncio, durante todo o dia.",
+              "Depois da sua morte, em 1691, as suas cartas e conversas foram reunidas no livro “A Prática da Presença de Deus”, que influenciou católicos e protestantes. Ele dizia que o importante não é mudar de lugar, mas de coração: tudo pode ser culto, se feito com amor e na presença de Deus."
+            ],
+            "licao": "Permanecer no óleo é viver a rotina em companhia de Deus."
+          },
+          "pratica": [
+            "Escolha três momentos fixos do seu dia (acordar, almoço, dormir) para parar um minuto e dizer: “Senhor, estás aqui”.",
+            "Leia o Salmo 133 e peça a Deus para que haja unidade na sua casa e na sua igreja.",
+            "Leia Mateus 25:1-13 e pergunte-se onde você tem “óleo”."
+          ],
+          "simbolo": "chama",
+          "curiosidades": [
+            "O azeite de oliva era usado em Israel como combustível das lâmpadas de barro.",
+            "A palavra “Cristo” (Christós) vem do verbo grego chríō, “ungir”.",
+            "O livro “A Prática da Presença de Deus” é pequeno e pode ser lido em poucas horas."
+          ],
+          "linha": [
+            {
+              "ano": "c. 1614",
+              "fato": "Nasce Nicolas Herman."
+            },
+            {
+              "ano": "1640",
+              "fato": "Entra para o mosteiro em Paris."
+            },
+            {
+              "ano": "1691",
+              "fato": "Morre o irmão Lourenço."
+            },
+            {
+              "ano": "1692",
+              "fato": "Publicadas as suas conversas e cartas."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Mateus 25:1-13 e Zacarias 4"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Permanecendo no Óleo, de Alessandro Vilas Boas (confira na loja oficial)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "A Prática da Presença de Deus, do irmão Lourenço"
+            }
+          ],
+          "minutos": 7
+        },
+        {
+          "titulo": "Tempos de refrigério",
+          "resumo": "Deus prepara tempos de descanso e renovo para os que se voltam a ele. Aprendemos a descansar sem culpa e a buscar o refrigério da presença do Senhor.",
+          "versiculo": {
+            "ref": "Mateus 11:28",
+            "texto": "Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei."
+          },
+          "texto": [
+            "Pedro, depois de curar um paralítico no templo, disse ao povo: “Arrependei-vos, pois, e convertei-vos, para que sejam apagados os vossos pecados, e venham os tempos do refrigério pela presença do Senhor” (Atos 3:19). O refrigério é uma promessa ligada ao arrependimento e à presença. A palavra grega (anápsyxis) fala de um sopro de ar fresco, de um alívio depois de um calor intenso.",
+            "Jesus também convida: “Vinde a mim, todos os que estais cansados e oprimidos, e eu vos aliviarei. Tomai sobre vós o meu jugo, e aprendei de mim, que sou manso e humilde de coração; e achareis descanso para as vossas almas” (Mateus 11:28-29). O descanso que ele oferece não é a ausência de tarefas, mas a presença dele sobre elas. Seu jugo é suave, porque ele puxa conosco.",
+            "A Bíblia coloca o descanso na própria estrutura da criação. Deus trabalhou seis dias e descansou no sétimo (Gênesis 2:2-3). No Sinai, mandou que o povo guardasse o sábado (Êxodo 20:8-11), e Jesus disse que “o sábado foi feito por causa do homem” (Marcos 2:27). Descansar é obedecer e confiar: reconhecer que o mundo não depende de nós.",
+            "O profeta Elias, depois de grande vitória no Carmelo, fugiu, esgotado, e quis morrer. Deus não o repreendeu: mandou-o dormir, alimentou-o, e só depois falou com ele em “um assobio suave e delicado” (1 Reis 19). Há refrigério que começa pelo corpo: sono, comida, pausa. E há um que só vem do alto: a voz de Deus.",
+            "O Salmo 23 diz: “Deitar-me faz em verdes pastos, guia-me mansamente a águas tranquilas. Refrigera a minha alma”. O Pastor é quem nos leva ao descanso. Quando estamos cansados, Deus não pede mais esforço: ele nos conduz ao lugar onde podemos respirar."
+          ],
+          "apoio": [
+            "Isaías 40:28-31",
+            "Hebreus 4:9-11",
+            "Êxodo 33:14",
+            "Lucas 5:15-16"
+          ],
+          "reflexao": "O que tem cansado a sua alma? O que você pode entregar a Jesus hoje?",
+          "oracao": "Senhor Jesus, venho a ti cansado. Dá-me o teu descanso, renova as minhas forças e refrigera a minha alma. Amém.",
+          "quiz": [
+            {
+              "pergunta": "O que Jesus promete em Mateus 11:28?",
+              "opcoes": [
+                "Aliviar os cansados e oprimidos",
+                "Retirar todos os problemas",
+                "Dar riquezas"
+              ],
+              "correta": 0,
+              "explicacao": "Ele convida os cansados a virem a ele."
+            },
+            {
+              "pergunta": "O que Deus fez por Elias em 1 Reis 19?",
+              "opcoes": [
+                "Deu-lhe descanso, comida e depois falou com ele",
+                "O repreendeu duramente",
+                "O deixou sozinho"
+              ],
+              "correta": 0,
+              "explicacao": "O cuidado de Deus incluiu sono e alimento antes da conversa."
+            },
+            {
+              "pergunta": "De onde vem a palavra “refrigério” de Atos 3:19?",
+              "opcoes": [
+                "De um sopro de ar fresco (anápsyxis)",
+                "De um tipo de pão",
+                "De um instrumento musical"
+              ],
+              "correta": 0,
+              "explicacao": "A palavra grega evoca alívio e renovo, como brisa depois do calor."
+            }
+          ],
+          "ordem": 6,
+          "contexto": "O discurso de Pedro em Atos 3 acontece depois da cura do coxo à porta do templo. O povo fica admirado, e Pedro explica que foi o poder do nome de Jesus que o curou. Em seguida, chama todos ao arrependimento. O “refrigério” que ele promete é descrito junto com “a restauração de todas as coisas” (3:21), isto é, a volta de Cristo. Há refrigério hoje e há refrigério final.",
+          "aprofundamento": [
+            "Presença e descanso. Em Êxodo 33:14, Deus diz a Moisés: “A minha presença irá contigo, e te darei descanso”. O descanso bíblico não é inatividade, é a paz de quem está com Deus. Hebreus 4 desenvolve o tema: “resta ainda um repouso para o povo de Deus”. Entrar nesse repouso é deixar de confiar nas próprias obras e descansar na obra de Cristo.",
+            "Sábado e Dia do Senhor. Na Lei, o sábado era um sinal da aliança. Jesus mostrou que ele é “Senhor do sábado” (Marcos 2:28) e que o sábado serve ao bem do ser humano. Os cristãos, desde cedo, se reuniam no primeiro dia da semana, o dia da ressurreição (Atos 20:7; 1 Coríntios 16:2). Mais do que o dia exato, a Bíblia nos convida ao ritmo de trabalho e descanso, à adoração e à comunhão.",
+            "Descanso e exaustão. Muitos servem a Deus até a exaustão e chamam isso de zelo. Mas Jesus, o mais ocupado de todos, se retirava: “Ele, porém, se retirava para os desertos, e ali orava” (Lucas 5:16). Em Marcos 6:31, disse aos discípulos: “Vinde vós, aqui à parte, a um lugar deserto, e repousai um pouco”. Descansar não é preguiça, é sabedoria.",
+            "Refrigério na prova. Isaías 40:31 diz que “os que esperam no Senhor renovarão as forças; subirão com asas como águias; correrão e não se cansarão; caminharão e não se fatigarão”. A promessa é para quem espera, e não para quem se esforça mais. Esperar é a postura de quem confia: ora, descansa, e age quando Deus conduz. Na dor, também há refrigério: Deus “nos consola em toda a nossa tribulação” (2 Coríntios 1:4).",
+            "Refrigério coletivo. Os grandes avivamentos foram chamados de “tempos de refrigério”: períodos em que a igreja foi renovada, os pecados confessados e o povo alegrado. Os morávios, os puritanos, os pietistas e muitos outros relataram esses tempos. Esses momentos não podem ser fabricados, mas podem ser pedidos e preparados com arrependimento, oração e unidade (Atos 1:14; 2:1).",
+            "Refrigério e missão. Quem recebe descanso de Deus pode oferecer descanso aos outros. A igreja é chamada a ser um lugar onde os cansados encontram acolhida (Gálatas 6:2; Romanos 15:7). Quando fazemos do descanso um luxo, perdemos a oportunidade de testemunhar uma vida que não depende do próprio esforço."
+          ],
+          "termos": [
+            {
+              "termo": "Anápsyxis (refrigério)",
+              "definicao": "Sopro de ar fresco; alívio e renovação vindos do Senhor (Atos 3:19)."
+            },
+            {
+              "termo": "Sábado",
+              "definicao": "Dia de descanso e adoração que lembra a criação e a aliança."
+            },
+            {
+              "termo": "Jugo",
+              "definicao": "Peça que une dois animais para o trabalho; Jesus oferece o seu, suave e leve."
+            },
+            {
+              "termo": "Repouso (katápausis)",
+              "definicao": "O descanso de Deus, a que a Escritura convida o seu povo."
+            }
+          ],
+          "heroi": {
+            "nome": "Susannah Spurgeon",
+            "periodo": "1832–1903",
+            "titulo": "Esposa de Charles Spurgeon e mulher de fé na doença",
+            "historia": [
+              "Susannah Thompson nasceu em Londres, em 1832. Casou-se com Charles Spurgeon em 1856, e logo nasceram os gêmeos Charles e Thomas. Poucos anos depois, a saúde dela se tornou muito frágil e passou grande parte da vida confinada em casa, com dores e limitações.",
+              "Mesmo assim, em 1875 iniciou o chamado Fundo de Livros: enviava livros, em especial os sermões e comentários do marido, a pastores pobres que não podiam comprá-los. Ao longo dos anos, distribuiu dezenas de milhares de volumes e recebeu cartas de agradecimento do mundo todo.",
+              "Susannah aprendeu a servir sem sair do lugar e a descansar sem culpa. Quando o marido sofria com a depressão e a dor, ela estava ao seu lado. Morreu em 1903. Sua vida mostra que o serviço não depende de saúde perfeita, e que o descanso e o trabalho convivem na mão de Deus."
+            ],
+            "licao": "O refrigério de Deus nos alcança nas limitações, e podemos ser instrumentos de alívio para outros."
+          },
+          "pratica": [
+            "Reserve um período do seu fim de semana para descansar de verdade: sem celular, sem tarefas, com oração e gratidão.",
+            "Escreva três coisas que você carrega sozinho e entregue-as em oração (Mateus 11:28).",
+            "Visite ou ligue para alguém cansado e ofereça ajuda concreta."
+          ],
+          "simbolo": "agua",
+          "curiosidades": [
+            "Na Palestina, o vento do mar chegava a Jerusalém no fim da tarde e trazia alívio depois do calor do dia.",
+            "O Fundo de Livros de Susannah Spurgeon chegou a distribuir dezenas de milhares de livros a pastores.",
+            "Jesus dormiu em um barco no meio de uma tempestade (Marcos 4:38), um sinal de confiança no Pai."
+          ],
+          "linha": [
+            {
+              "ano": "1832",
+              "fato": "Nasce Susannah Spurgeon."
+            },
+            {
+              "ano": "1856",
+              "fato": "Casa-se com Charles Spurgeon."
+            },
+            {
+              "ano": "1875",
+              "fato": "Começa o Fundo de Livros."
+            },
+            {
+              "ano": "1903",
+              "fato": "Morre Susannah Spurgeon."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Atos 3:12-26 e Mateus 11:25-30"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Tempos de Refrigério, de Alessandro Vilas Boas (confira na loja oficial)"
+            },
+            {
+              "tipo": "Leia",
+              "titulo": "Salmo 23"
+            }
+          ],
+          "minutos": 7
+        },
+        {
+          "titulo": "Andando em família",
+          "resumo": "A fé se vive em casa e na família de Deus: ensinar os filhos, honrar uns aos outros e conhecer Deus como Pai.",
+          "versiculo": {
+            "ref": "Deuteronômio 6:6-7",
+            "texto": "E estas palavras, que hoje te ordeno, estarão no teu coração; e as ensinarás a teus filhos, e delas falarás assentado em tua casa, e andando pelo caminho, e deitando-te e levantando-te."
+          },
+          "texto": [
+            "O Shemá (Deuteronômio 6:4-9) é a oração central de Israel: “Ouve, Israel, o Senhor nosso Deus é o único Senhor”. Logo depois do mandamento de amar a Deus de todo o coração, vem a ordem de ensinar os filhos. A fé não é entregue só pela igreja: ela é vivida e conversada em casa, no caminho, ao deitar e ao levantar. O melhor lugar para ensinar sobre Deus é a vida comum.",
+            "Jesus nos ensinou a chamar Deus de Pai. Ele mesmo, o Filho, revelou o coração do Pai: na parábola do filho pródigo (Lucas 15), o pai corre ao encontro do filho que voltou. Isso muda o modo de entender a autoridade: o pai e a mãe cristãos refletem, com falhas, o cuidado do Pai celestial. E quem não teve um bom pai pode encontrar em Deus o Pai que sempre quis.",
+            "Efésios 5 e 6 mostram a casa cristã sob o senhorio de Cristo: marido e mulher se amando e se submetendo uns aos outros no temor de Cristo; pais que não irritam os filhos, mas os criam “na doutrina e admoestação do Senhor”; filhos que honram os pais. A medida do amor no casamento é a cruz: “Maridos, amai vossas mulheres, como também Cristo amou a igreja e a si mesmo se entregou por ela”.",
+            "Nem toda família é como as do texto. Há pais ausentes, lares divididos, solidão e perdas. Por isso a Bíblia também fala da família de Deus. Jesus disse: “Quem é minha mãe, e meus irmãos? [...] Todo aquele que fizer a vontade de Deus, esse é meu irmão, e irmã, e mãe” (Marcos 3:33-35). A igreja é uma família em que ninguém fica sozinho (Salmos 68:6).",
+            "Andar em família é um chamado diário: orar juntos, ler a Bíblia, pedir perdão, abençoar os filhos, receber os irmãos, cuidar dos idosos, acolher os solitários. As crianças aprendem mais pelo exemplo do que pelo discurso. Não precisa ser perfeito: precisa ser sincero, constante e cheio de graça."
+          ],
+          "apoio": [
+            "Efésios 5:21-6:4",
+            "Salmos 78:1-8",
+            "Lucas 15:11-32",
+            "Marcos 3:31-35"
+          ],
+          "reflexao": "O que você pode fazer esta semana para transformar a sua casa em um lugar de adoração e graça?",
+          "oracao": "Pai, abençoa a minha família e a tua igreja. Ensina-nos a andar juntos, perdoando, amando e te honrando. Em nome de Jesus, amém.",
+          "quiz": [
+            {
+              "pergunta": "Onde, segundo Deuteronômio 6, devemos falar das palavras de Deus?",
+              "opcoes": [
+                "Em casa, no caminho, ao deitar e ao levantar",
+                "Só na igreja",
+                "Só nas festas"
+              ],
+              "correta": 0,
+              "explicacao": "A fé deve ser conversada no dia a dia."
+            },
+            {
+              "pergunta": "Quem Jesus disse que são sua família em Marcos 3?",
+              "opcoes": [
+                "Os que fazem a vontade de Deus",
+                "Só os parentes de sangue",
+                "Só os apóstolos"
+              ],
+              "correta": 0,
+              "explicacao": "A família de Jesus é formada por quem faz a vontade de Deus."
+            },
+            {
+              "pergunta": "Quem foram Loide e Eunice?",
+              "opcoes": [
+                "A avó e a mãe de Timóteo",
+                "Duas irmãs de Jesus",
+                "Duas profetisas"
+              ],
+              "correta": 0,
+              "explicacao": "Paulo as menciona em 2 Timóteo 1:5."
+            }
+          ],
+          "ordem": 7,
+          "contexto": "Na cultura judaica, o lar era o primeiro lugar de ensino da fé. Na ceia da Páscoa, as crianças perguntavam: “Que significa este culto?” (Êxodo 12:26) e os pais contavam a história da libertação. Na sinagoga e no templo, o povo se reunia; em casa, a fé ganhava rosto. Quando Paulo lembra Timóteo, diz que a fé dele “habitou primeiro em sua avó Loide e em sua mãe Eunice” (2 Timóteo 1:5).",
+          "aprofundamento": [
+            "Família e aliança. Desde Abraão, Deus faz promessas “a ti e à tua descendência” (Gênesis 17:7). Em Atos 2:39, Pedro diz: “Para vós é a promessa, e para vossos filhos”. As crianças fazem parte da comunidade da fé. Isso não dispensa cada um de crer pessoalmente, mas mostra que a casa é o lugar em que a promessa é anunciada e vivida.",
+            "Culto doméstico. Muitos pais cristãos ao longo da história separaram um tempo diário para ler a Bíblia, cantar e orar em família. Os puritanos chamavam isso de “altar da família”. Não precisa ser longo: dez minutos, com uma passagem, uma pergunta, um agradecimento e um pedido. O importante é a constância e o tom: leve, afetuoso e atento à idade das crianças.",
+            "Paternidade e Deus Pai. “Pai” é o título mais íntimo de Deus no Novo Testamento (Romanos 8:15). Jesus revela o Pai como quem cuida das aves, conta os cabelos da nossa cabeça, dá o Espírito a quem pede (Lucas 11:13). Os pais terrenos têm um chamado grande e uma limitação real: refletem o Pai, mas não o substituem. Quem foi ferido por um pai pode ser curado ao conhecer o Pai celestial.",
+            "Casamento e cruz. Paulo diz que o casamento é um mistério que fala de Cristo e da igreja (Efésios 5:32). O amor do marido deve ser sacrificial e o da esposa, respeitoso, em um clima de submissão mútua. Isso desafia culturas de domínio e de indiferença. Casais que oram juntos, perdoam e servem à igreja mostram o evangelho de forma visível. Os solteiros e os viúvos também são parte da família de Deus e preciosos a ele.",
+            "Perdão e disciplina em casa. A casa cristã é um lugar de graça, de verdade e de limites. Provérbios 13:24 e Hebreus 12:5-11 falam da disciplina como cuidado. Mas Efésios 6:4 e Colossenses 3:21 advertem: “Pais, não irriteis os vossos filhos”. A correção deve vir do amor e visar ao crescimento, jamais à humilhação. Pedir perdão aos filhos, quando erramos, ensina o evangelho.",
+            "Família espiritual. O Novo Testamento chama os cristãos de “irmãos” mais de cem vezes. Paulo fala de “pais e mães” na fé, como Timóteo e Tito foram “filhos” dele. Mentores, discipuladores e amigos fazem parte dessa família. Quem não tem família biológica próxima pode ser acolhido por uma casa de fé. Ao mesmo tempo, quem tem família deve abrir a porta (Romanos 12:13; 1 Pedro 4:9)."
+          ],
+          "termos": [
+            {
+              "termo": "Shemá",
+              "definicao": "Declaração de Deuteronômio 6:4: “Ouve, Israel, o Senhor nosso Deus é o único Senhor”."
+            },
+            {
+              "termo": "Culto doméstico",
+              "definicao": "Tempo de oração, leitura bíblica e louvor em família."
+            },
+            {
+              "termo": "Adoção",
+              "definicao": "Em Cristo, Deus nos recebe como filhos e herdeiros (Romanos 8:15)."
+            },
+            {
+              "termo": "Disciplina",
+              "definicao": "Instrução e correção feitas com amor, para o crescimento."
+            }
+          ],
+          "heroi": {
+            "nome": "Loide, Eunice e Timóteo",
+            "periodo": "século I",
+            "titulo": "Avó, mãe e filho que transmitiram a fé",
+            "historia": [
+              "Paulo conheceu Timóteo em Listra, na primeira viagem missionária, e depois o convidou a acompanhá-lo (Atos 16:1-3). Timóteo era filho de mãe judia crente, Eunice, e de pai grego. A avó, Loide, foi a primeira a ter uma fé sincera.",
+              "Na segunda carta, Paulo escreve a Timóteo: “Trago à memória a fé não fingida que em ti há, a qual habitou primeiro em tua avó Loide, e em tua mãe Eunice”. E acrescenta: “Desde a tua meninice sabes as sagradas letras” (2 Timóteo 3:15). Era um ensino diário, simples e paciente.",
+              "Timóteo se tornou um dos mais fiéis colaboradores de Paulo e pastor da igreja de Éfeso. A Bíblia não conta nada de especial sobre Loide e Eunice, a não ser a fé e o ensino delas. Foi suficiente: a fé de uma casa chegou a muitos."
+            ],
+            "licao": "O ensino fiel em casa é um dos legados mais profundos que podemos deixar."
+          },
+          "pratica": [
+            "Combine com sua família (ou com um irmão da igreja) um tempo de dez minutos, três dias nesta semana, para ler Salmos 78:1-8 e orar.",
+            "Escreva uma carta de bênção para alguém mais novo na fé (filho, sobrinho, discípulo).",
+            "Se houver mágoa em casa, dê um primeiro passo de perdão ou de reconciliação."
+          ],
+          "simbolo": "igreja",
+          "curiosidades": [
+            "Na Páscoa judaica, a criança mais nova faz perguntas ao pai: é parte do ritual (Êxodo 12:26).",
+            "A palavra “Abba” aparece três vezes no Novo Testamento (Marcos 14:36; Romanos 8:15; Gálatas 4:6).",
+            "Timóteo foi circuncidado por Paulo para facilitar o trabalho entre os judeus (Atos 16:3)."
+          ],
+          "linha": [
+            {
+              "ano": "c. 47-48",
+              "fato": "Paulo visita Listra e conhece a família de Timóteo."
+            },
+            {
+              "ano": "c. 49-50",
+              "fato": "Timóteo se junta a Paulo."
+            },
+            {
+              "ano": "c. 66",
+              "fato": "Paulo escreve a segunda carta a Timóteo."
+            }
+          ],
+          "leitura": [
+            {
+              "tipo": "Leia",
+              "titulo": "Deuteronômio 6:1-9 e 2 Timóteo 1:3-14"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Andando em Família, de Alessandro Vilas Boas (confira na loja oficial)"
+            },
+            {
+              "tipo": "Livro",
+              "titulo": "Jesus, Um Pai de Família, de Alessandro Vilas Boas (confira na loja oficial)"
+            }
+          ],
+          "minutos": 7
+        }
+      ]
     }
   ],
   "plano": {

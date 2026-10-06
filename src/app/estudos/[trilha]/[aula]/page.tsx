@@ -6,6 +6,7 @@ import { getStudyState } from "@/lib/study/data";
 import { getLesson, getTrack } from "@/lib/study/content";
 import { LessonRunner } from "@/components/study/LessonRunner";
 import { LevelCard } from "@/components/study/LevelCard";
+import { PrintButton } from "@/components/study/PrintButton";
 import { LessonBanner, Medallion, SymbolIcon, Timeline } from "@/components/study/Art";
 
 export const dynamic = "force-dynamic";
@@ -40,6 +41,7 @@ export default async function Aula({ params }: Props) {
         <nav aria-label="Trilha" className="flex flex-wrap items-center gap-2 text-sm text-ash-400"><Link href="/estudos" className="link-muted">Estudos</Link><span>›</span><Link href={`/estudos/${track.slug}`} className="link-muted">{track.titulo}</Link><span>›</span><span>Aula {lesson.ordem} de {track.aulas.length}</span></nav>
         <h1 className="font-display text-4xl leading-tight text-white sm:text-5xl">{lesson.titulo}</h1>
         <p className="text-ash-300">{lesson.resumo} <span className="text-ash-400">· {lesson.minutos} min</span></p>
+        <PrintButton />
       </div>
       <LessonBanner slug={track.slug} symbol={lesson.simbolo} label={`${track.titulo} · Aula ${lesson.ordem}`} verse={lesson.versiculo.ref} />
       <blockquote className="border-l-2 border-ash-100 pl-5">
@@ -74,14 +76,14 @@ export default async function Aula({ params }: Props) {
       <section className="card space-y-2 p-5"><h2 className="eyebrow">Para praticar esta semana</h2><ul className="list-disc space-y-1 pl-5 text-ash-200">{lesson.pratica.map((p, i) => <li key={i}>{p}</li>)}</ul></section>
       <section className="card space-y-2 p-5"><h2 className="eyebrow">Oração</h2><p className="font-display text-xl italic text-ash-200">{lesson.oracao}</p></section>
 
-      <LessonRunner track={track.slug} order={lesson.ordem} quiz={quiz} initialNote={note} signedIn={!!session} alreadyDone={done}
-        nextHref={next ? `/estudos/${track.slug}/${next.ordem}` : `/estudos/${track.slug}`} nextLabel={next ? `Próxima aula: ${next.titulo}` : "Voltar à trilha"} />
+      <div className="no-print"><LessonRunner track={track.slug} order={lesson.ordem} quiz={quiz} initialNote={note} signedIn={!!session} alreadyDone={done}
+        nextHref={next ? `/estudos/${track.slug}/${next.ordem}` : `/estudos/${track.slug}`} nextLabel={next ? `Próxima aula: ${next.titulo}` : "Voltar à trilha"} /></div>
 
-      <div className="flex flex-wrap justify-between gap-3 border-t border-ink-700 pt-6 text-sm">
+      <div className="no-print flex flex-wrap justify-between gap-3 border-t border-ink-700 pt-6 text-sm">
         {prev ? <Link href={`/estudos/${track.slug}/${prev.ordem}`} className="link-muted">← {prev.titulo}</Link> : <span />}
         {next && <Link href={`/estudos/${track.slug}/${next.ordem}`} className="link-muted">{next.titulo} →</Link>}
       </div>
-      {state && <LevelCard info={state.info} compact />}
+      {state && <div className="no-print"><LevelCard info={state.info} compact /></div>}
     </article>
   );
 }

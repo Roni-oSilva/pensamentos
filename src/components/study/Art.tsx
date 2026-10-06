@@ -19,7 +19,7 @@ const PATHS: Record<SymbolName, React.ReactNode> = {
   chama: <path d="M12 3c1 4 5 5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-3-1-5 1-9Z" />,
 };
 
-const HUE: Record<string, number> = { "fundamentos-da-fe": 215, "evangelho-de-joao": 38, "a-vida-de-oracao": 275, "avivamentos-e-avivalistas": 8 };
+const HUE: Record<string, number> = { "fundamentos-da-fe": 215, "evangelho-de-joao": 38, "a-vida-de-oracao": 275, "avivamentos-e-avivalistas": 8, "intimidade-com-deus": 165 };
 const hue = (slug: string) => HUE[slug] ?? 200;
 
 export function SymbolIcon({ name, size = 24, className = "" }: { name: SymbolName; size?: number; className?: string }) {

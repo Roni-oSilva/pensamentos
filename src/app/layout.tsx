@@ -14,6 +14,7 @@ import { getSession } from "@/lib/auth";
 import { PwaRuntime } from "@/components/pwa/PwaRuntime";
 import { InstallBanner } from "@/components/pwa/InstallBanner";
 import { AppTabBar } from "@/components/pwa/AppTabBar";
+import { Toaster } from "@/components/feedback/Toaster";
 
 // Telas de abertura do iPhone (largura × altura em pontos, densidade, arquivo em pixels).
 const SPLASH: [number, number, number][] = [[440, 956, 3], [430, 932, 3], [402, 874, 3], [393, 852, 3], [390, 844, 3], [428, 926, 3], [375, 812, 3], [414, 896, 2], [375, 667, 2]];
@@ -58,6 +59,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Footer />
         <HelpButton />
         <AppTabBar meHref={meHref} />
+        <Toaster />
         <InstallBanner />
         <PwaRuntime />
         <Analytics />

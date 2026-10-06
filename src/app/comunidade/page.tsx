@@ -1,3 +1,4 @@
+import { ComposeFab } from "@/components/community/ComposeFab";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getSession } from "@/lib/auth";
@@ -33,6 +34,7 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
         {posts.length ? <FeedList key={sort} initial={posts} hasMore={hasMore} signedIn={!!session} params={{ origin: "COMMUNITY", sort }} />
           : <EmptyState title="Ainda não há palavras por aqui." hint={sort === "trending" ? "Nada em alta nos últimos 14 dias." : "Seja o primeiro a compartilhar uma palavra de fé."} />}
       </div>
+      <ComposeFab />
     </>
   );
 }

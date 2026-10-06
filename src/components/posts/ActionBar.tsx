@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
+import { toast } from "@/lib/toast";
 import { toggleFavorite, toggleLike } from "@/actions/social";
 import { ReportButton } from "@/components/moderation/ReportButton";
 import { ShareButton } from "./ShareButton";
@@ -16,6 +17,9 @@ export function ActionBar(p: Props) {
   const [fav, setFav] = useState({ on: p.favorited, n: p.favorites });
   const [busy, start] = useTransition();
   const [error, setError] = useState<string | null>(null);
+  const [spark, setSpark] = useState(0); // reinicia a animação de faíscas a cada curtida
+  const likeRef = useRef(like);
+  likeRef.current = like;
 
   function guard(fn: () => void) {
     if (!p.signedIn) { window.location.href = `/login?next=${encodeURIComponent(p.path)}`; return; }
@@ -30,13 +34,25 @@ export function ActionBar(p: Props) {
     const at = (on: boolean): S => ({ on, n: Math.max(0, cur.n + (on === cur.on ? 0 : on ? 1 : -1)) });
     set(at(target));
     if (target && typeof navigator !== "undefined") navigator.vibrate?.(12); // retorno tátil no celular
+    if (target && act === toggleLike) setSpark((n) => n + 1);
     start(async () => {
       try {
         const r = await act(p.postId);
-        if (!r.ok) { set(cur); setError(r.error); } else { set(at(r.active)); announce(act === toggleLike ? { liked: r.active, like_count: at(r.active).n } : { favorited: r.active, favorite_count: at(r.active).n }); }
+        if (!r.ok) { set(cur); setError(r.error); } else { set(at(r.active)); if (act === toggleFavorite) toast(r.active ? "Guardado nos seus favoritos." : "Removido dos favoritos."); announce(act === toggleLike ? { liked: r.active, like_count: at(r.active).n } : { favorited: r.active, favorite_count: at(r.active).n }); }
       } catch { set(cur); setError("Não foi possível concluir a ação. Tente novamente."); }
     });
   }
+
+  // duplo toque no texto da publicação (DoubleTapLike) curte, se ainda não estiver curtida
+  useEffect(() => {
+    const on = (e: Event) => {
+      if ((e as CustomEvent).detail !== p.postId) return;
+      if (!p.signedIn) { window.location.href = `/login?next=${encodeURIComponent(p.path)}`; return; }
+      if (!likeRef.current.on) flip(likeRef.current, setLike, toggleLike);
+    };
+    window.addEventListener("igreja:like", on);
+    return () => window.removeEventListener("igreja:like", on);
+  }); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div>
@@ -45,6 +61,11 @@ export function ActionBar(p: Props) {
           onClick={() => guard(() => flip(like, setLike, toggleLike))}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill={like.on ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.6" className={like.on ? "text-blood-soft" : ""}><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" /></svg>
           <span className="count">{like.n}</span>
+          {spark > 0 && like.on && (
+            <span key={spark} aria-hidden className="sparks pointer-events-none absolute inset-0">
+              {Array.from({ length: 8 }, (_, i) => <i key={i} style={{ "--a": `${i * 45}deg` } as React.CSSProperties} />)}
+            </span>
+          )}
         </button>
         <Link href={`${p.path}#comentarios`} className="action" aria-label="Comentários">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12z" /></svg>

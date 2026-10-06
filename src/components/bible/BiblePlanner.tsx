@@ -12,6 +12,7 @@ import { Avatar } from "@/components/ui/Avatar";
 import { dateForDay, dayForDate, PLAN_DAYS, planDay, readingLabel } from "@/lib/bible-plan";
 import { getBiblePresence, saveBibleNote, toggleBibleMark, type PresenceRow } from "@/actions/bible";
 import { cap, dateToIso, fmtBR, isoToDate } from "./dates";
+import { toast } from "@/lib/toast";
 
 interface Props {
   startIso: string;
@@ -167,6 +168,7 @@ function DayPanel({ day, startIso, todayIso, currentDay, count, note, marked, si
   const [pending, start] = useTransition();
   const [draft, setDraft] = useState(note);
   const [noteMsg, setNoteMsg] = useState<string | null>(null);
+  const [burst, setBurst] = useState(0);
 
   const load = () => start(async () => {
     const r = await getBiblePresence(day);
@@ -180,6 +182,8 @@ function DayPanel({ day, startIso, todayIso, currentDay, count, note, marked, si
       const r = await toggleBibleMark(day);
       if (!r.ok) { setError(r.error); return; }
       onToggled(day, r.marked);
+      if (r.marked) { setBurst((n) => n + 1); navigator.vibrate?.(15); toast(isToday ? "Você está junto hoje! +5 XP" : "Dia marcado como lido. +5 XP"); }
+      else toast("Marcação removida.");
       const p = await getBiblePresence(day);
       if (p.ok) { setPeople(p.people); setHidden(p.hidden); }
     });
@@ -237,9 +241,18 @@ function DayPanel({ day, startIso, todayIso, currentDay, count, note, marked, si
           ) : !arrived ? (
             <Button type="button" className="w-full" disabled>Disponível em {fmtBR(iso, "d 'de' MMMM")}</Button>
           ) : (
+            <div className="relative">
+            {burst > 0 && (
+              <span key={burst} aria-hidden className="confetti pointer-events-none absolute left-1/2 top-1/2 z-10">
+                {Array.from({ length: 18 }, (_, i) => (
+                  <i key={i} style={{ background: pd.readings[i % pd.readings.length]!.book.color, "--a": `${(i * 360) / 18}deg`, "--d": `${70 + (i % 4) * 22}px`, "--r": `${(i % 2 ? 1 : -1) * (180 + i * 20)}deg` } as React.CSSProperties} />
+                ))}
+              </span>
+            )}
             <Button type="button" onClick={toggle} disabled={pending} variant={marked ? "outline" : "default"} className="h-12 w-full text-base">
               {marked ? <><Check className="mr-2 h-5 w-5" />Você leu este dia · desmarcar</> : isToday ? "Li hoje · estou junto!" : "Marcar como lido"}
             </Button>
+            </div>
           )}
           {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
           <div className="flex items-center gap-2 text-sm text-muted-foreground"><Users className="h-4 w-4" /><span><strong className="text-foreground">{count}</strong> {count === 1 ? "irmão leu" : "irmãos leram"} este dia</span></div>

@@ -210,3 +210,38 @@ html[data-app] #mobile-menu { top: calc(4rem + env(safe-area-inset-top)); }
 .app-home { display: none; }
 html[data-app] .app-home { display: block; }
 html[data-app] .hero { display: none !important; }
+
+/* ---------- Toques finais do app: avisos, faíscas, coração do duplo toque, confetes e transições ---------- */
+.toaster { bottom: calc(1.25rem + env(safe-area-inset-bottom)); }
+.toast-pill { animation: toast-in .4s cubic-bezier(.2,.9,.25,1.15) both; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(16px) scale(.96); } to { opacity: 1; transform: none; } }
+.compose-fab { bottom: calc(5rem + env(safe-area-inset-bottom)); }
+@media (max-width: 767px) {
+  html[data-app] .toaster { bottom: calc(5.4rem + env(safe-area-inset-bottom)); }
+  html[data-app] .compose-fab { bottom: calc(8.6rem + env(safe-area-inset-bottom)); }
+}
+.sparks i { position: absolute; left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px; border-radius: 9999px; background: #e8453c;
+  transform: rotate(var(--a)) translateY(0); animation: spark .6s cubic-bezier(.2,.7,.2,1) forwards; }
+.sparks i:nth-child(even) { background: #f59e0b; }
+@keyframes spark { to { opacity: 0; transform: rotate(var(--a)) translateY(-26px) scale(.3); } }
+.big-heart { animation: big-heart .9s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes big-heart {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(.2); }
+  25% { opacity: 1; transform: translate(-50%, -50%) scale(1.15); }
+  45% { transform: translate(-50%, -50%) scale(.95); }
+  75% { opacity: 1; }
+  100% { opacity: 0; transform: translate(-50%, -62%) scale(1); }
+}
+.confetti i { position: absolute; left: 0; top: 0; width: 8px; height: 12px; margin: -6px -4px; border-radius: 2px;
+  animation: confetti .95s cubic-bezier(.2,.7,.2,1) forwards; }
+@keyframes confetti {
+  0% { opacity: 1; transform: rotate(var(--a)) translateY(0) rotate(0); }
+  100% { opacity: 0; transform: rotate(var(--a)) translateY(calc(var(--d) * -1)) rotate(var(--r)); }
+}
+/* no app instalado, cada tela entra subindo de leve */
+html[data-app] main > * { animation: app-in .45s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes app-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .toast-pill, .sparks i, .big-heart, .confetti i, html[data-app] main > * { animation: none !important; }
+  .sparks, .confetti, .big-heart { display: none; }
+}

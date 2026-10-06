@@ -6,6 +6,7 @@ import { compact, excerpt, timeAgo, toPlainText } from "@/lib/utils";
 import { Avatar } from "@/components/ui/Avatar";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { ActionBar } from "./ActionBar";
+import { DoubleTapLike } from "./DoubleTapLike";
 
 export function postPath(p: Pick<PostWithViewer, "id" | "origin">) {
   return p.origin === "OFFICIAL" ? `/frases/${p.id}` : `/comunidade/${p.id}`;
@@ -55,13 +56,13 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
               <Image src={post.image_url} alt={post.title ?? "Imagem da publicação"} fill sizes="(min-width:1024px) 400px, 100vw" loading="lazy" className="object-cover transition duration-500 hover:scale-[1.05]" />
             </Link>
           )}
-          <Link href={path} className="group/t block space-y-3">
+          <DoubleTapLike postId={post.id} href={path} className="group/t block space-y-3">
             {post.title && !isVerse && <h3 className="font-poster text-3xl uppercase leading-none tracking-wide text-white transition-colors group-hover/t:text-poster">{post.title}</h3>}
             <p className={`preline font-display [text-wrap:pretty] ${isVerse ? "text-[1.7rem] italic leading-[1.3] text-white" : short ? "text-2xl leading-snug text-ash-100" : "text-lg leading-relaxed text-ash-200"}`}>
               {isVerse ? `“${text}”` : text}
             </p>
             {isVerse && post.title && <p className={`text-xs font-medium uppercase tracking-[0.25em] ${accent}`}>— {post.title}</p>}
-          </Link>
+          </DoubleTapLike>
           <div className="flex flex-wrap items-center gap-1.5">
             {post.category && <Link href={`/categoria/${post.category.slug}`} className="badge hover:border-poster hover:text-white">{post.category.name}</Link>}
             {post.post_tags.map((t) => t.tag && <Link key={t.tag.slug} href={`/explorar?tag=${t.tag.slug}`} className="text-xs text-ash-400 hover:text-poster">#{t.tag.name}</Link>)}

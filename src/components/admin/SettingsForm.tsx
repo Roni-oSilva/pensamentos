@@ -1,7 +1,7 @@
 "use client";
 import { useActionState } from "react";
 import { updateSettings } from "@/actions/admin";
-import { SubmitButton } from "@/components/ui/Button";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { FormMessage } from "@/components/ui/FormMessage";
 
 export function SettingsForm({ registrationsOpen, communityOpen }: { registrationsOpen: boolean; communityOpen: boolean }) {

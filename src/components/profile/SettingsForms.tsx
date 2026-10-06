@@ -3,7 +3,7 @@ import { useActionState } from "react";
 import { changePassword, deleteAccount } from "@/actions/auth";
 import { updateProfile } from "@/actions/profile";
 import { AvatarCropField } from "./AvatarCropField";
-import { SubmitButton } from "@/components/ui/Button";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { FormMessage } from "@/components/ui/FormMessage";
 import { ConfirmButton } from "@/components/ui/ConfirmButton";
 import type { Profile } from "@/lib/types";

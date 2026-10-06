@@ -18,6 +18,7 @@ export function HeroScroll() {
   const [loaded, setLoaded] = useState(0);
 
   useEffect(() => {
+    if (document.documentElement.dataset.app === "1") return; // no app instalado a abertura é a igreja, sem o vídeo
     const el = root.current, cv = canvas.current;
     const ctx = cv?.getContext("2d", { alpha: false });
     if (!el || !cv || !ctx) return;

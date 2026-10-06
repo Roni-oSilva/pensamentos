@@ -206,3 +206,7 @@ html[data-app] #mobile-menu { top: calc(4rem + env(safe-area-inset-top)); }
   html[data-app] .help-fab { bottom: calc(4.6rem + env(safe-area-inset-bottom)); }
 }
 @media print { .app-tabbar { display: none !important; } }
+/* No app instalado: a abertura é a igreja (sem o vídeo); no site continua o vídeo. */
+.app-home { display: none; }
+html[data-app] .app-home { display: block; }
+html[data-app] .hero { display: none !important; }

@@ -19,12 +19,13 @@ export interface Gain { gained: number; xp: number; levelUp: { level: number; na
 
 async function currentXp(userId: string): Promise<number> {
   const admin = createAdminClient();
-  const [p, t, d] = await Promise.all([
+  const [p, t, d, bb] = await Promise.all([
     admin.from("study_progress").select("quiz_correct, quiz_total").eq("user_id", userId),
     admin.from("study_trail_done").select("track_slug", { count: "exact", head: true }).eq("user_id", userId),
     admin.from("study_plan_days").select("day", { count: "exact", head: true }).eq("user_id", userId),
+    admin.from("bible_plan_marks").select("day", { count: "exact", head: true }).eq("user_id", userId),
   ]);
-  return totalXp({ lessons: (p.data ?? []) as { quiz_correct: number; quiz_total: number }[], trails: t.count ?? 0, planDays: d.count ?? 0 });
+  return totalXp({ lessons: (p.data ?? []) as { quiz_correct: number; quiz_total: number }[], trails: t.count ?? 0, planDays: d.count ?? 0, bibleDays: bb.count ?? 0 });
 }
 
 const completeSchema = z.object({ track: z.string().max(80), order: z.number().int().min(1).max(200), answers: z.array(z.number().int().min(0).max(5)).max(20) });

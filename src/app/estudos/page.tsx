@@ -6,13 +6,16 @@ import { PageTitle } from "@/components/ui/Section";
 import { LevelCard } from "@/components/study/LevelCard";
 import { ProgressBar } from "@/components/study/ProgressBar";
 import { TrackCover } from "@/components/study/Art";
+import { getBibleState } from "@/lib/bible-data";
+import { dayLabel, planDay, PLAN_DAYS } from "@/lib/bible-plan";
 
 export const metadata = { title: "Estudos", description: "Trilhas de estudo bíblico da Igreja de Cristo, com progresso e níveis." };
 export const dynamic = "force-dynamic";
 
 export default async function Estudos() {
   const session = await getSession();
-  const state = session ? await getStudyState(session.user.id) : null;
+  const [state, bible] = await Promise.all([session ? getStudyState(session.user.id) : null, getBibleState(session?.user.id ?? null)]);
+  const today = bible.currentDay ? planDay(bible.currentDay) : null;
   // próxima aula: primeira não concluída da trilha mais avançada ainda em andamento (ou da primeira trilha)
   let next: { href: string; label: string } | null = null;
   if (state) {
@@ -42,6 +45,23 @@ export default async function Estudos() {
             <Link href="/login?next=/estudos" className="btn-primary">Entrar</Link>
           </div>
         )}
+
+        <section aria-labelledby="biblia-h">
+          <Link href="/estudos/biblia" className="card relative block overflow-hidden p-5 transition hover:border-ash-400 sm:p-6">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div className="min-w-0">
+                <h2 id="biblia-h" className="eyebrow mb-1">Bíblia em um ano</h2>
+                <p className="font-display text-3xl text-white">{today ? `Hoje: ${dayLabel(today)}` : "Leia a Bíblia inteira em 365 dias"}</p>
+                <p className="mt-1 text-sm text-ash-300">
+                  {bible.currentDay ? `Dia ${bible.currentDay} de ${PLAN_DAYS} · ${bible.counts[bible.currentDay] ?? 0} irmãos já leram hoje` : "Calendário com as cores de cada livro e lista de presença diária."}
+                  {session ? ` · você leu ${bible.myDays.length} dias` : ""}
+                </p>
+              </div>
+              <span className="btn-primary">Abrir o plano →</span>
+            </div>
+            {today && <div className="mt-4 flex h-1.5 overflow-hidden rounded-full" aria-hidden>{today.readings.map((r) => <span key={r.book.id} style={{ background: r.book.color, flex: r.to - r.from + 1 }} />)}</div>}
+          </Link>
+        </section>
 
         <section aria-labelledby="trilhas-h" className="space-y-4">
           <h2 id="trilhas-h" className="eyebrow">Trilhas</h2>
@@ -84,6 +104,7 @@ export default async function Estudos() {
             <li>Acertar todo o quiz da aula: <strong className="text-white">+10 XP</strong></li>
             <li>Concluir uma trilha: <strong className="text-white">+100 XP</strong></li>
             <li>Cada dia do plano de leitura: <strong className="text-white">+5 XP</strong></li>
+            <li>Cada dia da Bíblia em um ano: <strong className="text-white">+5 XP</strong></li>
           </ul>
         </section>
       </div>

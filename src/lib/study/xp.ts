@@ -1,5 +1,5 @@
 /** Sistema de níveis da Área de Estudo. O XP nunca é guardado: é calculado a partir dos registros de progresso. */
-export const XP = { lesson: 20, perfectQuiz: 10, trail: 100, planDay: 5 } as const;
+export const XP = { lesson: 20, perfectQuiz: 10, trail: 100, planDay: 5, bibleDay: 5 } as const;
 
 export const LEVELS = [
   { name: "Semente", min: 0 },
@@ -36,6 +36,6 @@ export function levelFor(xp: number): LevelInfo {
 
 export const lessonXp = (correct: number, total: number): number => XP.lesson + (total > 0 && correct === total ? XP.perfectQuiz : 0);
 
-export function totalXp(input: { lessons: { quiz_correct: number; quiz_total: number }[]; trails: number; planDays: number }): number {
-  return input.lessons.reduce((n, l) => n + lessonXp(l.quiz_correct, l.quiz_total), 0) + input.trails * XP.trail + input.planDays * XP.planDay;
+export function totalXp(input: { lessons: { quiz_correct: number; quiz_total: number }[]; trails: number; planDays: number; bibleDays?: number }): number {
+  return input.lessons.reduce((n, l) => n + lessonXp(l.quiz_correct, l.quiz_total), 0) + input.trails * XP.trail + input.planDays * XP.planDay + (input.bibleDays ?? 0) * XP.bibleDay;
 }

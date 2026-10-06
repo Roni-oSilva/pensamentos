@@ -1,7 +1,7 @@
 "use client";
 import { useActionState } from "react";
 import { saveOfficialPost } from "@/actions/admin";
-import { SubmitButton } from "@/components/ui/Button";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { ImageUploadField } from "@/components/ui/ImageUploadField";
 import { FormMessage } from "@/components/ui/FormMessage";
 import { POST_KINDS, KIND_LABEL } from "@/lib/constants";

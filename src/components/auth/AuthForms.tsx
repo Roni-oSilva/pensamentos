@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useActionState } from "react";
 import { requestPasswordReset, signIn, signUp } from "@/actions/auth";
-import { SubmitButton } from "@/components/ui/Button";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { FormMessage } from "@/components/ui/FormMessage";
 import type { FormState } from "@/actions/_shared";
 

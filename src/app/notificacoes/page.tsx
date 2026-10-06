@@ -4,7 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { markNotificationsRead } from "@/actions/profile";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { PageTitle } from "@/components/ui/Section";
-import { SubmitButton } from "@/components/ui/Button";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { Avatar } from "@/components/ui/Avatar";
 import { NotifIcon } from "@/components/ui/NotifIcon";
 import { NOTIF_TEXT, isSystemNotif, notifHref, type NotifItem } from "@/lib/notifications";

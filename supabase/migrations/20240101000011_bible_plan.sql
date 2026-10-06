@@ -1,0 +1,78 @@
+-- Bíblia em um ano: a divisão dos capítulos por dia é calculada no código (src/lib/bible-plan.ts).
+-- Aqui ficam só: a data de início (e opções) do plano, as notas do Criador por dia e a “lista de presença” (marcações).
+-- Somente o CRIADOR altera o plano; nem administradores conseguem.
+
+create table public.bible_plan_settings (
+  id            boolean primary key default true check (id),           -- uma única linha
+  start_date    date not null,
+  show_presence boolean not null default true,                         -- lista de quem leu visível para os membros
+  message       text check (message is null or char_length(message) <= 500),
+  updated_at    timestamptz not null default now()
+);
+insert into public.bible_plan_settings (start_date)
+values (date_trunc('year', now() at time zone 'America/Sao_Paulo')::date);
+
+create table public.bible_plan_notes (
+  day        smallint primary key check (day between 1 and 365),
+  note       text not null check (char_length(note) between 1 and 500),
+  updated_at timestamptz not null default now()
+);
+
+create table public.bible_plan_marks (
+  user_id   uuid not null references public.profiles (id) on delete cascade,
+  day       smallint not null check (day between 1 and 365),
+  marked_at timestamptz not null default now(),
+  primary key (user_id, day)
+);
+create index bible_plan_marks_day_idx on public.bible_plan_marks (day, marked_at);
+
+-- Dia atual do plano no horário de Brasília (pode ser < 1 antes de começar, ou > 365 depois de terminar).
+create or replace function public.bible_plan_current_day()
+returns integer language sql stable security definer set search_path = public
+as $$ select ((now() at time zone 'America/Sao_Paulo')::date - start_date + 1)::integer from public.bible_plan_settings limit 1 $$;
+
+create or replace function public.bible_presence_visible()
+returns boolean language sql stable security definer set search_path = public
+as $$ select coalesce((select show_presence from public.bible_plan_settings limit 1), true) $$;
+
+-- Total de pessoas que leram cada dia (só números; pode ser visto por todos).
+create or replace function public.bible_plan_counts()
+returns table (day smallint, total integer) language sql stable security definer set search_path = public
+as $$
+  select m.day, count(*)::integer from public.bible_plan_marks m
+  where not public.is_user_blocked(m.user_id)
+  group by m.day
+$$;
+
+revoke all on function public.bible_plan_current_day() from public;
+revoke all on function public.bible_presence_visible() from public;
+revoke all on function public.bible_plan_counts() from public;
+grant execute on function public.bible_plan_current_day() to anon, authenticated;
+grant execute on function public.bible_presence_visible() to anon, authenticated;
+grant execute on function public.bible_plan_counts() to anon, authenticated;
+
+alter table public.bible_plan_settings enable row level security;
+alter table public.bible_plan_notes enable row level security;
+alter table public.bible_plan_marks enable row level security;
+
+create policy bible_settings_select on public.bible_plan_settings for select using (true);
+create policy bible_settings_update on public.bible_plan_settings for update to authenticated
+  using ((select public.is_creator())) with check ((select public.is_creator()));
+revoke insert, update, delete on public.bible_plan_settings from anon, authenticated;
+grant update (start_date, show_presence, message, updated_at) on public.bible_plan_settings to authenticated;
+
+create policy bible_notes_select on public.bible_plan_notes for select using (true);
+create policy bible_notes_insert on public.bible_plan_notes for insert to authenticated with check ((select public.is_creator()));
+create policy bible_notes_update on public.bible_plan_notes for update to authenticated using ((select public.is_creator())) with check ((select public.is_creator()));
+create policy bible_notes_delete on public.bible_plan_notes for delete to authenticated using ((select public.is_creator()));
+
+-- Presença: cada um vê as próprias marcações; as dos outros, se a lista estiver aberta (ou se for da equipe).
+create policy bible_marks_select on public.bible_plan_marks for select to authenticated using (
+  user_id = (select auth.uid())
+  or (not public.is_user_blocked(user_id) and ((select public.bible_presence_visible()) or (select public.is_staff()))));
+-- Só se marca o próprio nome, em dias que já chegaram (nunca no futuro).
+create policy bible_marks_insert on public.bible_plan_marks for insert to authenticated with check (
+  user_id = (select auth.uid()) and (select public.can_write())
+  and day <= (select public.bible_plan_current_day()));
+create policy bible_marks_delete on public.bible_plan_marks for delete to authenticated using (user_id = (select auth.uid()));
+revoke update on public.bible_plan_marks from anon, authenticated;

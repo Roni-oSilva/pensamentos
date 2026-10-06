@@ -272,6 +272,37 @@ select pg_temp.as_anon();
 select pg_temp.must_see_zero('public.study_notes', 'anônimo não vê anotações');
 select pg_temp.as_su();
 
+-- 7g. Bíblia em um ano --------------------------------------------------------------------------
+select pg_temp.as_su();
+update public.bible_plan_settings set start_date = (now() at time zone 'America/Sao_Paulo')::date - 9; -- hoje = dia 10
+select pg_temp.assert_eq(public.bible_plan_current_day(), 10, 'dia atual do plano');
+select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2');
+select pg_temp.must_affect_zero($$update public.bible_plan_settings set start_date = '2020-01-01'$$, 'admin não altera o plano');
+select pg_temp.must_fail($$insert into public.bible_plan_notes (day, note) values (1, 'nota do admin')$$, 'admin não escreve nota do plano');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.must_affect_zero($$update public.bible_plan_settings set show_presence = false$$, 'membro não altera o plano');
+insert into public.bible_plan_marks (user_id, day) values ('00000000-0000-0000-0000-0000000000b1', 10);
+insert into public.bible_plan_marks (user_id, day) values ('00000000-0000-0000-0000-0000000000b1', 3);
+select pg_temp.must_fail($$insert into public.bible_plan_marks (user_id, day) values ('00000000-0000-0000-0000-0000000000b1', 11)$$, 'não marca dia futuro');
+select pg_temp.must_fail($$insert into public.bible_plan_marks (user_id, day) values ('00000000-0000-0000-0000-0000000000b2', 10)$$, 'não marca em nome de outro');
+select pg_temp.must_fail($$update public.bible_plan_marks set day = 1$$, 'marcação não é editável');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000c0');
+update public.bible_plan_settings set message = 'Vamos juntos!';
+insert into public.bible_plan_notes (day, note) values (10, 'Hoje começamos Êxodo');
+select pg_temp.assert_eq((select message from public.bible_plan_settings), 'Vamos juntos!', 'criador altera o plano');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.assert_eq((select count(*) from public.bible_plan_marks where day = 10)::int, 1, 'membro vê a lista de presença aberta');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000c0');
+update public.bible_plan_settings set show_presence = false;
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_see_zero('public.bible_plan_marks', 'lista fechada: membro não vê os outros');
+select pg_temp.as_anon();
+select pg_temp.must_see_zero('public.bible_plan_marks', 'anônimo não vê a lista de presença');
+select pg_temp.assert_eq((select total from public.bible_plan_counts() where day = 10), 1, 'contagem do dia é pública');
+select pg_temp.assert_eq((select note from public.bible_plan_notes where day = 10), 'Hoje começamos Êxodo', 'notas do plano são públicas');
+select pg_temp.must_fail($$insert into public.bible_plan_marks (user_id, day) values ('00000000-0000-0000-0000-0000000000b1', 1)$$, 'anônimo não marca');
+select pg_temp.as_su();
+
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();
 update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b2';

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { getSession } from "@/lib/auth";
 import { listCategories, listPosts } from "@/lib/data";
 import { HeroScroll } from "@/components/home/HeroScroll";
+import { AppHome } from "@/components/home/AppHome";
+import { getBibleState } from "@/lib/bible-data";
 import { PostGrid } from "@/components/posts/PostGrid";
 import { Section } from "@/components/ui/Section";
 import { EmptyState } from "@/components/ui/EmptyState";
@@ -23,11 +25,12 @@ const COMUNHAO = [
 export default async function Home() {
   const session = await getSession();
   const uid = session?.user.id ?? null;
-  const [latest, top, community, categories] = await Promise.all([
+  const [latest, top, community, categories, bible] = await Promise.all([
     listPosts({ origin: "OFFICIAL", sort: "recent" }, uid),
     listPosts({ origin: "OFFICIAL", sort: "likes" }, uid),
     listPosts({ origin: "COMMUNITY", sort: "recent" }, uid),
     listCategories(),
+    getBibleState(uid),
   ]);
   const featured = latest.posts.slice(0, 3);
   const mostLiked = top.posts.filter((p) => p.like_count > 0).slice(0, 3);
@@ -36,6 +39,7 @@ export default async function Home() {
     <>
       <noscript><style>{".hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}.hero-canvas{display:none}"}</style></noscript>
       <HeroScroll />
+      <AppHome currentDay={bible.currentDay} name={session?.profile.display_name || session?.profile.username || null} />
 
       <div id="continuar" className="scroll-mt-20">
         <section className="container-wide pt-6" aria-label="Como funciona">

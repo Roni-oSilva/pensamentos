@@ -1,6 +1,6 @@
 "use client";
 import { useActionState } from "react";
-import { SubmitButton } from "@/components/ui/Button";
+import { SubmitButton } from "@/components/ui/SubmitButton";
 import { FormMessage } from "@/components/ui/FormMessage";
 import type { FormState } from "@/actions/_shared";
 

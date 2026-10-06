@@ -52,7 +52,7 @@ export const SHARE_BACKGROUNDS = [
 export const SHARE_BRAND = "Igreja de Cristo";
 
 export async function renderShareImage(text: string, bg: number | null = 1, signature?: string): Promise<Blob> {
-  await Promise.all([document.fonts.load("900 90px 'Church Condensed'"), document.fonts.load("500 40px 'Inter Variable'")]).catch(() => undefined);
+  await Promise.all([document.fonts.load("700 80px 'Inter Tight Variable'"), document.fonts.load("400 80px 'Instrument Serif'"), document.fonts.load("italic 400 80px 'Instrument Serif'")]).catch(() => undefined);
   const bgDef = SHARE_BACKGROUNDS.find((b) => b.id === bg);
   const photo = bgDef ? await loadImage(bgDef.src).catch(() => null) : null;
 
@@ -81,18 +81,18 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
   // frase, centralizada
   const clean = text.replace(/\s+\n/g, "\n").trim();
   const box = { w: 820, h: 700 };
-  const serif = (px: number) => `italic 500 ${px}px Georgia, 'Times New Roman', serif`;
-  const f = fit(ctx, clean, serif, box, 78, 34, 1.32);
-  const lh = f.px * 1.32, blockH = f.lines.length * lh;
+  const serif = (px: number) => `italic 400 ${px}px 'Instrument Serif', Georgia, serif`;
+  const f = fit(ctx, clean, serif, box, 108, 44, 1.18);
+  const lh = f.px * 1.18, blockH = f.lines.length * lh;
   const top = 120 + (box.h - blockH) / 2 + 80;
   ctx.textAlign = "center"; ctx.textBaseline = "top";
   ctx.shadowColor = "rgba(0,0,0,0.75)"; ctx.shadowBlur = 24; ctx.shadowOffsetY = 4;
-  ctx.font = "900 200px 'Church Condensed', Georgia, serif"; ctx.fillStyle = "rgba(255,255,255,0.85)";
+  ctx.font = "400 220px 'Instrument Serif', Georgia, serif"; ctx.fillStyle = "rgba(255,255,255,0.85)";
   ctx.fillText("“", W / 2, top - 150);
   ctx.font = serif(f.px); ctx.fillStyle = "#f7f3ec";
   f.lines.forEach((l, i) => ctx.fillText(l, W / 2, top + i * lh));
   if (signature) {
-    ctx.font = "500 28px 'Inter Variable', Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.8)";
+    ctx.font = "500 28px 'Inter Tight Variable', Arial, sans-serif"; ctx.fillStyle = "rgba(255,255,255,0.8)";
     ctx.fillText(`— ${signature}`, W / 2, top + blockH + 28);
   }
   ctx.shadowColor = "transparent";
@@ -109,10 +109,14 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
     ctx.fillStyle = "#ffffff"; ctx.fill(new Path2D(MARK_BODY), "evenodd");
     ctx.restore();
   }
-  // nome na mesma letra do site (didone preta condensada)
-  ctx.font = "900 94px 'Church Condensed', Didot, Georgia, serif"; ctx.fillStyle = "#ffffff"; ctx.letterSpacing = "4px";
-  ctx.fillText(SHARE_BRAND.toUpperCase(), W / 2 + 2, H - 58);
-  ctx.letterSpacing = "0px";
+  // nome: "Igreja de" em sans negrito + "Cristo" em serifada itálica (as duas letras do site)
+  const sans = "700 80px 'Inter Tight Variable', Arial, sans-serif", ital = "italic 400 98px 'Instrument Serif', Georgia, serif";
+  ctx.textAlign = "left";
+  ctx.font = sans; const w1 = ctx.measureText("Igreja de ").width;
+  ctx.font = ital; const w2 = ctx.measureText("Cristo").width;
+  const x0 = W / 2 - (w1 + w2) / 2;
+  ctx.font = sans; ctx.fillStyle = "#ffffff"; ctx.fillText("Igreja de ", x0, H - 66);
+  ctx.font = ital; ctx.fillStyle = "#ff6a5f"; ctx.fillText("Cristo", x0 + w1, H - 66);
 
   return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"));
 }

@@ -10,7 +10,7 @@ export function Footer() {
           <Link className="link-muted" href="/termos">Termos de uso</Link>
           <Link className="link-muted" href="/diretrizes">Diretrizes da comunidade</Link>
         </nav>
-        <p>© {new Date().getFullYear()} <span className="church-name text-lg text-ash-200">Igreja de Cristo</span></p>
+        <p>© {new Date().getFullYear()} <span className="church-name text-base text-ash-200">Igreja de <span className="church-accent text-poster">Cristo</span></span></p>
       </div>
     </footer>
   );

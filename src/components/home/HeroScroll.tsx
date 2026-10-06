@@ -132,7 +132,7 @@ export function HeroScroll() {
 
         <div className="hero-manifesto">
           <ChurchMark className="h-24 w-auto text-white sm:h-32" />
-          <h2 className="church-name text-[clamp(2.1rem,10vw,7.5rem)] tracking-[0.02em] text-white">Igreja de <span className="text-poster">Cristo</span></h2>
+          <h2 className="church-name text-[clamp(2.4rem,11vw,7rem)] text-white">Igreja de <span className="church-accent text-poster">Cristo</span></h2>
           <a href="#continuar" aria-label="Continuar para o conteúdo" className="mt-4 grid h-12 w-12 place-items-center rounded-full border border-white/30 text-white/80 transition hover:border-white hover:text-white active:scale-90">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="animate-bounce"><path d="m6 9 6 6 6-6" /></svg>
           </a>

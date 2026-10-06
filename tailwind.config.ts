@@ -18,7 +18,7 @@ const config: Config = {
         display: ["var(--font-display)", "Georgia", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         poster: ["var(--font-poster)", "Impact", "sans-serif"],
-        church: ["var(--font-poster)", "Didot", "Georgia", "serif"],
+        church: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       keyframes: {
         rise: { "0%": { opacity: "0", transform: "translateY(8px)" }, "100%": { opacity: "1", transform: "none" } },

@@ -9,5 +9,5 @@ export default async function AdminSettings() {
   await requireAdmin("/admin/settings");
   const { data } = await (await createClient()).from("site_settings").select("key, value");
   const get = (k: string) => (data ?? []).find((r) => r.key === k)?.value !== false;
-  return (<><AdminTitle title="Configurações" /><SettingsForm registrationsOpen={get("registrations_open")} communityOpen={get("community_open")} /></>);
+  return (<><AdminTitle title="Configurações" /><SettingsForm registrationsOpen={get("registrations_open")} communityOpen={get("community_open")} autopublish={get("community_autopublish")} /></>);
 }

@@ -16,7 +16,7 @@ export default function Termos() {
       <h2>Seu conteúdo</h2>
       <p>Você mantém os direitos sobre o que publica e nos concede licença não exclusiva para exibi-lo na plataforma. Você declara ter direito de publicar o conteúdo enviado.</p>
       <h2>Moderação</h2>
-      <p>Publicações da comunidade passam por aprovação. Podemos rejeitar, ocultar ou remover conteúdo e bloquear contas que violem as <a className="link-muted" href="/diretrizes">Diretrizes</a> ou a lei.</p>
+      <p>Publicações da comunidade aparecem na hora e podem ser denunciadas por qualquer membro. A equipe pode ocultar ou remover conteúdo e bloquear contas que violem as <a className="link-muted" href="/diretrizes">Diretrizes</a> ou a lei.</p>
       <h2>Abuso</h2>
       <p>Spam, automação abusiva e tentativas de burlar a segurança resultam em bloqueio.</p>
       <h2>Limitação de responsabilidade</h2>

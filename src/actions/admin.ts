@@ -231,6 +231,7 @@ export async function updateSettings(_: FormState, fd: FormData): Promise<FormSt
   const rows = [
     { key: "registrations_open", value: str(fd, "registrations_open") === "on" },
     { key: "community_open", value: str(fd, "community_open") === "on" },
+    { key: "community_autopublish", value: str(fd, "community_autopublish") === "on" },
   ];
   const { error } = await (await createClient()).from("site_settings").upsert(rows);
   if (error) return { error: GENERIC_ERROR };

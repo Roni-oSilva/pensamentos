@@ -19,7 +19,7 @@ export function PostDetail({ post, signedIn }: { post: PostWithViewer; signedIn:
       {!published && (
         <p role="status" className="mb-8 rounded-md border border-ink-500 bg-ink-800 px-4 py-3 text-sm text-ash-200">
           Status: <strong>{STATUS_LABEL[post.status]}</strong>
-          {post.status === "PENDING" && " — aguardando aprovação de um moderador. Só você e a equipe veem esta página."}
+          {post.status === "PENDING" && " — aguardando aprovação. Só você e a equipe veem esta página."}
           {post.status === "REJECTED" && post.rejection_reason ? ` — motivo: ${post.rejection_reason}` : ""}
         </p>
       )}

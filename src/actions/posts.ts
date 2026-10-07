@@ -11,7 +11,7 @@ import { isSettingOn } from "@/lib/data";
 import { uploadImage } from "@/lib/upload";
 import { FORBIDDEN, GENERIC_ERROR, ensureTags, parseTags, setPostTags, str, type FormState } from "./_shared";
 
-/** Cria/edita publicação da comunidade. Sempre entra como DRAFT ou PENDING (moderação). */
+/** Cria/edita publicação da comunidade. Com a publicação direta ligada, já entra publicada; senão, vai para aprovação. */
 export async function saveCommunityPost(_: FormState, fd: FormData): Promise<FormState> {
   const s = await actionSession();
   if (!s) return { error: FORBIDDEN };
@@ -46,20 +46,26 @@ export async function saveCommunityPost(_: FormState, fd: FormData): Promise<For
   if (imageUrl && !isOwnedImageUrl(imageUrl, s.user.id, ["community"])) return { error: "Imagem inválida." };
   if (d.kind === "IMAGEM" && !imageUrl) return { error: "Publicações do tipo Imagem precisam de uma imagem." };
 
-  const status = d.submit ? "PENDING" : "DRAFT";
-  const fields = { kind: d.kind, title: d.title, content: d.content, category_id: d.categoryId, image_url: imageUrl, status };
+  const direct = d.submit && (await isSettingOn("community_autopublish"));
+  const base = { kind: d.kind, title: d.title, content: d.content, category_id: d.categoryId, image_url: imageUrl };
+  // Publicação direta; se o banco ainda não aceitar (migração 0013 não aplicada), vai para aprovação.
+  const tries: string[] = d.submit ? (direct ? ["PUBLISHED", "PENDING"] : ["PENDING"]) : ["DRAFT"];
 
   let postId = editingId;
-  if (editingId) {
-    const { data, error } = await supabase.from("posts").update(fields).eq("id", editingId).eq("author_id", s.user.id).select("id");
-    if (error || !data?.length) return { error: GENERIC_ERROR };
-  } else {
-    const { data, error } = await supabase.from("posts").insert({ ...fields, author_id: s.user.id, origin: "COMMUNITY" }).select("id").single();
-    if (error || !data) return { error: GENERIC_ERROR };
-    postId = data.id;
+  let saved = false;
+  for (const status of tries) {
+    if (editingId) {
+      const { data, error } = await supabase.from("posts").update({ ...base, status }).eq("id", editingId).eq("author_id", s.user.id).select("id");
+      if (!error && data?.length) { saved = true; break; }
+    } else {
+      const { data, error } = await supabase.from("posts").insert({ ...base, status, author_id: s.user.id, origin: "COMMUNITY" }).select("id").single();
+      if (!error && data) { postId = data.id; saved = true; break; }
+    }
   }
+  if (!saved) return { error: GENERIC_ERROR };
   await setPostTags(supabase, postId, await ensureTags(d.tags));
   revalidatePath("/comunidade");
+  revalidatePath("/");
   redirect(`/comunidade/${postId}`);
 }
 

@@ -7,7 +7,7 @@ import { FormMessage } from "@/components/ui/FormMessage";
 const FAQ: { q: string; a: string }[] = [
   { q: "Como crio a minha conta?", a: "Toque em “Criar conta”, escolha um nome de usuário (3 a 24 letras, números ou _), informe o e-mail e uma senha de 10 ou mais caracteres, com letras e números." },
   { q: "Esqueci a minha senha. E agora?", a: "Na tela de entrar, toque em “Esqueci a senha”. Enviaremos um link para o seu e-mail para você criar uma nova." },
-  { q: "Por que a minha publicação não aparece?", a: "Toda publicação da comunidade passa por uma revisão rápida antes de aparecer. Assim que for aprovada, ela entra na lista e você recebe um aviso." },
+  { q: "Por que a minha publicação não aparece?", a: "Publicações aparecem na hora. Se a sua não está na lista, ela pode ter sido salva como rascunho (veja no seu perfil) ou ocultada pela equipe por não seguir as diretrizes." },
   { q: "Como faço um pedido de oração?", a: "Abra a aba Comunhão e toque em “Fazer um pedido de oração”. Os irmãos poderão ver, comentar e orar por você." },
   { q: "Como compartilho um versículo fora do site?", a: "Toque no ícone de compartilhar na publicação. Você pode enviar o link, só o texto ou criar uma imagem, escolhendo uma foto de fundo. A imagem sempre leva o nome Igreja de Cristo." },
   { q: "Como troco a minha foto de perfil?", a: "Vá em Configurações, toque em “Escolher e ajustar foto”, posicione e aproxime a imagem no círculo e salve o perfil." },

@@ -81,7 +81,10 @@ select pg_temp.must_affect_zero($$update public.profiles set bio = 'hack' where 
 select pg_temp.must_affect_zero($$update public.posts set content = 'hack' where id = '10000000-0000-0000-0000-000000000003'$$, 'bob não edita post da alice');
 select pg_temp.must_affect_zero($$delete from public.posts where id = '10000000-0000-0000-0000-000000000003'$$, 'bob não exclui post da alice');
 select pg_temp.must_affect_zero($$update public.posts set content = 'hack' where id = '10000000-0000-0000-0000-000000000001'$$, 'bob não edita post oficial');
--- criação
+-- criação (com a publicação direta DESLIGADA: tudo passa por aprovação)
+select pg_temp.as_su();
+insert into public.site_settings (key, value) values ('community_autopublish', 'false'::jsonb) on conflict (key) do update set value = excluded.value;
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
 select pg_temp.must_fail($$insert into public.posts (author_id, origin, status, content) values ('00000000-0000-0000-0000-0000000000b2', 'COMMUNITY', 'PUBLISHED', 'auto-publicado')$$, 'bob não publica direto');
 select pg_temp.must_fail($$insert into public.posts (author_id, origin, status, content) values ('00000000-0000-0000-0000-0000000000b2', 'OFFICIAL', 'PENDING', 'oficial falso')$$, 'bob não cria post oficial');
 select pg_temp.must_fail($$insert into public.posts (author_id, origin, status, content) values ('00000000-0000-0000-0000-0000000000b1', 'COMMUNITY', 'PENDING', 'em nome da alice')$$, 'bob não posta como alice');
@@ -332,6 +335,23 @@ select pg_temp.assert_eq((select count(*) from public.study_ranking('all') where
 select pg_temp.assert_eq((select pos from public.study_ranking('all') where user_id = '00000000-0000-0000-0000-0000000000b2')::int, 1, 'ranking recalcula sem o bloqueado');
 select pg_temp.as_su();
 update public.profiles set is_blocked = false where id = '00000000-0000-0000-0000-0000000000b1';
+
+-- 7i. Publicação direta na comunidade ----------------------------------------------------------
+select pg_temp.as_su();
+update public.site_settings set value = 'true'::jsonb where key = 'community_autopublish';
+update public.posts set status = 'HIDDEN' where id = '10000000-0000-0000-0000-000000000004';
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+insert into public.posts (id, author_id, origin, status, content) values ('10000000-0000-0000-0000-000000000099', '00000000-0000-0000-0000-0000000000b1', 'COMMUNITY', 'PUBLISHED', 'publicado na hora');
+select pg_temp.assert_eq((select published_at is not null from public.posts where id = '10000000-0000-0000-0000-000000000099'), true, 'membro publica direto e ganha data de publicação');
+update public.posts set content = 'editado' where id = '10000000-0000-0000-0000-000000000099';
+select pg_temp.assert_eq((select status::text from public.posts where id = '10000000-0000-0000-0000-000000000099'), 'PUBLISHED', 'editar mantém publicado');
+select pg_temp.must_fail($$insert into public.posts (author_id, origin, status, content) values ('00000000-0000-0000-0000-0000000000b1', 'OFFICIAL', 'PUBLISHED', 'oficial falso')$$, 'membro continua sem criar post oficial');
+select pg_temp.must_fail($$insert into public.posts (author_id, origin, status, content) values ('00000000-0000-0000-0000-0000000000b2', 'COMMUNITY', 'PUBLISHED', 'em nome de outro')$$, 'não publica em nome de outro');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_affect_zero($$update public.posts set status = 'PUBLISHED' where id = '10000000-0000-0000-0000-000000000004'$$, 'post ocultado pela equipe não volta sozinho');
+select pg_temp.as_anon();
+select pg_temp.assert_eq((select count(*) from public.posts where id = '10000000-0000-0000-0000-000000000099')::int, 1, 'publicação direta aparece para todos');
+select pg_temp.as_su();
 
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();

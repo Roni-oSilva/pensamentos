@@ -21,7 +21,7 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
   return (
     <>
       <PageTitle eyebrow="Comunidade" title="Irmãos em Cristo">
-        <span>Compartilhe versículos, frases, pensamentos e conselhos, e engrandeça a Cristo junto com a comunidade. Tudo passa por moderação antes de aparecer.</span>
+        <span>Compartilhe versículos, frases, pensamentos e conselhos, e engrandeça a Cristo junto com a comunidade. O que você publica aparece na hora.</span>
         <span className="mt-5 block"><Link href="/comunidade/nova" className="btn-primary">Compartilhar com a comunidade</Link></span>
       </PageTitle>
       <div className="container-wide mt-10">

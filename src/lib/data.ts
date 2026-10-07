@@ -144,7 +144,7 @@ export async function listRecentMembers(limit = 14) {
 }
 
 /** Configuração pública do site (site_settings é legível por todos; só ADMIN escreve). Padrão: aberto. */
-export async function isSettingOn(key: "registrations_open" | "community_open"): Promise<boolean> {
+export async function isSettingOn(key: "registrations_open" | "community_open" | "community_autopublish"): Promise<boolean> {
   const supabase = await createClient();
   const { data } = await supabase.from("site_settings").select("value").eq("key", key).maybeSingle();
   return data?.value !== false;

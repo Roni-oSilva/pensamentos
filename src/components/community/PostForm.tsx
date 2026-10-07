@@ -6,7 +6,7 @@ import { FormMessage } from "@/components/ui/FormMessage";
 import { COMMUNITY_KINDS, KIND_LABEL, type PostKind } from "@/lib/constants";
 import type { Category, Post } from "@/lib/types";
 
-export function PostForm({ post, categories, defaultKind }: { post?: Post; categories: Category[]; defaultKind?: PostKind }) {
+export function PostForm({ post, categories, defaultKind, autopublish = true }: { post?: Post; categories: Category[]; defaultKind?: PostKind; autopublish?: boolean }) {
   const [state, action] = useActionState(saveCommunityPost, {});
   const [content, setContent] = useState(post?.content ?? "");
   const [kind, setKind] = useState<PostKind>((post?.kind as PostKind) ?? defaultKind ?? "FRASE");
@@ -36,10 +36,10 @@ export function PostForm({ post, categories, defaultKind }: { post?: Post; categ
           <input id="tags" name="tags" defaultValue={post?.post_tags.map((t) => t.tag?.name).filter(Boolean).join(", ") ?? ""} className="field" /></div>
       </div>
       <ImageUploadField bucket="community" initialUrl={post?.image_url} label="Imagem (opcional)" hint="JPG, PNG ou WebP até 50 MB." />
-      <p className="text-xs text-ash-400">Publicações passam por moderação antes de aparecerem na comunidade.</p>
+      <p className="text-xs text-ash-400">{autopublish ? "Sua publicação aparece na hora para toda a comunidade. Siga as diretrizes: a equipe pode ocultar o que for impróprio." : "Publicações passam por aprovação antes de aparecerem na comunidade."}</p>
       <FormMessage state={state} />
       <div className="flex flex-wrap gap-3">
-        <button type="submit" name="intent" value="submit" className="btn-primary">Enviar para aprovação</button>
+        <button type="submit" name="intent" value="submit" className="btn-primary">{autopublish ? (post?.status === "PUBLISHED" ? "Salvar alterações" : "Publicar") : "Enviar para aprovação"}</button>
         <button type="submit" name="intent" value="draft" className="btn-ghost">Salvar rascunho</button>
       </div>
     </form>

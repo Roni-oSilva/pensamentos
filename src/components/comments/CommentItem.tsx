@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { deleteComment, editComment } from "@/actions/social";
 import { Avatar } from "@/components/ui/Avatar";
 import { ReportButton } from "@/components/moderation/ReportButton";
@@ -19,6 +19,14 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
   const [editingId, setEditingId] = useState<string | null>(null);
   const [draft, setDraft] = useState("");
   const [editError, setEditError] = useState<string | null>(null);
+  const editRef = useRef<HTMLTextAreaElement>(null);
+  // ao abrir a edição, o cursor vai para o fim do texto (não para o começo)
+  useEffect(() => {
+    const el = editRef.current;
+    if (!editingId || !el) return;
+    el.focus();
+    el.setSelectionRange(el.value.length, el.value.length);
+  }, [editingId]);
 
   const saveEdit = (id: string) => start(async () => {
     setEditError(null);
@@ -32,8 +40,10 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
     start(async () => { await deleteComment(id); router.refresh(); });
   };
 
-  const Row = ({ c, isReply }: { c: CommentRow; isReply: boolean }) => (
-    <div className={isReply ? "ml-8 border-l border-ink-700 pl-4" : ""}>
+  // Função de renderização (não um componente): assim o campo de edição não é recriado a cada tecla
+  // e o cursor fica onde a pessoa tocou.
+  const row = (c: CommentRow, isReply: boolean) => (
+    <div key={c.id} className={isReply ? "ml-8 border-l border-ink-700 pl-4" : ""}>
       <div className="flex items-start gap-3">
         <Avatar src={c.author?.avatar_url} name={c.author?.username ?? "?"} size={28} />
         <div className="min-w-0 flex-1">
@@ -43,7 +53,7 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
           </div>
           {editingId === c.id ? (
             <div className="mt-2 space-y-2">
-              <textarea value={draft} onChange={(e) => setDraft(e.target.value)} maxLength={1000} rows={3} className="field" aria-label="Editar comentário" autoFocus />
+              <textarea ref={editRef} value={draft} onChange={(e) => setDraft(e.target.value)} maxLength={1000} rows={3} className="field" aria-label="Editar comentário" />
               {editError && <p role="alert" className="text-sm text-red-300">{editError}</p>}
               <div className="flex gap-2">
                 <button type="button" className="btn-primary" disabled={pending || !draft.trim()} onClick={() => saveEdit(c.id)}>{pending ? "Salvando…" : "Salvar"}</button>
@@ -64,8 +74,8 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
 
   return (
     <li className="space-y-4">
-      <Row c={comment} isReply={false} />
-      {replies.map((r) => <Row key={r.id} c={r} isReply />)}
+      {row(comment, false)}
+      {replies.map((r) => row(r, true))}
       {replying ? (
         <div className="ml-8"><CommentForm postId={comment.post_id} parentId={comment.id} signedIn={signedIn} autoFocus onDone={() => setReplying(false)} /></div>
       ) : null}

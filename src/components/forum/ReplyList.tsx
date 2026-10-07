@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useTransition } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { addReply, deleteReply, editReply } from "@/actions/forum";
 import { Avatar } from "@/components/ui/Avatar";
 import type { Reply } from "@/lib/forum";
@@ -14,6 +14,14 @@ function Item({ r, viewerId, canModerate }: { r: Reply; viewerId: string | null;
   const [error, setError] = useState<string | null>(null);
   const [pending, start] = useTransition();
   const mine = viewerId === r.author_id;
+  const editRef = useRef<HTMLTextAreaElement>(null);
+  // ao abrir a edição, o cursor vai para o fim do texto
+  useEffect(() => {
+    const el = editRef.current;
+    if (!editing || !el) return;
+    el.focus();
+    el.setSelectionRange(el.value.length, el.value.length);
+  }, [editing]);
 
   const save = () => start(async () => {
     setError(null);
@@ -35,7 +43,7 @@ function Item({ r, viewerId, canModerate }: { r: Reply; viewerId: string | null;
         </div>
         {editing ? (
           <div className="mt-2 space-y-2">
-            <textarea value={text} onChange={(e) => setText(e.target.value)} maxLength={1500} rows={4} className="field" aria-label="Editar resposta" autoFocus />
+            <textarea ref={editRef} value={text} onChange={(e) => setText(e.target.value)} maxLength={1500} rows={4} className="field" aria-label="Editar resposta" />
             {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
             <div className="flex gap-2">
               <button type="button" className="btn-primary" disabled={pending || !text.trim()} onClick={save}>{pending ? "Salvando…" : "Salvar"}</button>

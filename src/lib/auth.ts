@@ -9,6 +9,13 @@ import { isAdminRole, isStaffRole } from "@/lib/constants";
 
 export interface Session { user: Pick<User, "id" | "email">; profile: Profile }
 
+// Perfil em memória por 30 s (por instância do servidor): evita uma consulta ao banco a cada troca de aba.
+// É esquecido na hora quando a pessoa edita o perfil ou um admin muda papel/bloqueio (forgetProfile);
+// o bloqueio também é conferido pelo banco em toda escrita (can_write), então nada passa por causa do cache.
+const PROFILE_TTL = 30_000;
+const profileCache = new Map<string, { profile: Profile; at: number }>();
+export function forgetProfile(id: string) { profileCache.delete(id); }
+
 /** Usuário autenticado (validado no Auth server) + perfil. Cacheado por requisição. */
 export const getSession = cache(async (): Promise<Session | null> => {
   const supabase = await createClient();
@@ -21,9 +28,18 @@ export const getSession = cache(async (): Promise<Session | null> => {
     user = data.user ? { id: data.user.id, email: data.user.email } : null;
   }
   if (!user) return null;
-  const { data: profile } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
+  const hit = profileCache.get(user.id);
+  let profile = hit && Date.now() - hit.at < PROFILE_TTL ? hit.profile : null;
+  if (!profile) {
+    const { data } = await supabase.from("profiles").select("*").eq("id", user.id).maybeSingle();
+    profile = (data as Profile | null) ?? null;
+    if (profile) {
+      if (profileCache.size > 2000) profileCache.clear();
+      profileCache.set(user.id, { profile, at: Date.now() });
+    }
+  }
   if (!profile || profile.is_blocked) return null;
-  return { user, profile: profile as Profile };
+  return { user, profile };
 });
 
 export async function requireUser(next = "/"): Promise<Session> {

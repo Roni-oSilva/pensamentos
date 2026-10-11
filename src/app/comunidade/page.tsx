@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ComposeFab } from "@/components/community/ComposeFab";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -6,7 +7,7 @@ import { listPosts, type Sort } from "@/lib/data";
 import { FeedList } from "@/components/posts/FeedList";
 import { PageTitle } from "@/components/ui/Section";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { InstantsTray } from "@/components/instants/InstantsTray";
+import { InstantsTray, TraySkeleton } from "@/components/instants/InstantsTray";
 
 export const metadata: Metadata = { title: "Comunidade", description: "Versículos, frases, pensamentos e conselhos de irmãos que compartilham a Palavra e engrandecem a Cristo." };
 
@@ -26,7 +27,7 @@ export default async function Comunidade({ searchParams }: { searchParams: Promi
         <span className="mt-5 block"><Link href="/comunidade/nova" className="btn-primary">Compartilhar com a comunidade</Link></span>
       </PageTitle>
       <div className="container-wide mt-10">
-        <InstantsTray className="mb-8" />
+        <Suspense fallback={<div className="mb-8"><TraySkeleton /></div>}><InstantsTray className="mb-8" /></Suspense>
         <div role="tablist" aria-label="Ordenação" className="mb-8 flex gap-1 overflow-x-auto border-b border-ink-700 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {TABS.map((t) => (
             <Link key={t.key} role="tab" aria-selected={t.key === sort} href={t.key === "recent" ? "/comunidade" : `/comunidade?ordem=${t.key}`}

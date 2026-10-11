@@ -4,9 +4,9 @@
  * - Arquivos estáticos com hash (/_next/static) e imagens públicas do app: cache, para abrir rápido.
  * - Nada de outros domínios (Supabase, analytics) passa por aqui.
  */
-const VERSION = "v1";
+const VERSION = "v2"; // v2: ícone novo (vermelho) e marca nova — limpa o cache antigo
 const STATIC = `igreja-static-${VERSION}`;
-const PRECACHE = ["/offline.html", "/pwa/icon-192.png", "/pwa/icon-512.png", "/pwa/apple-touch-icon.png"];
+const PRECACHE = ["/offline.html", "/pwa/v2/icon-192.png", "/pwa/v2/icon-512.png", "/pwa/v2/apple-touch-icon.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(STATIC).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));

@@ -36,3 +36,17 @@ export async function InstantsTray({ className = "" }: { className?: string }) {
     </nav>
   );
 }
+
+/** Espaço reservado enquanto a fileira de Instantes carrega (mesma altura: a página não pula). */
+export function TraySkeleton() {
+  return (
+    <div aria-hidden className="flex gap-4">
+      {[0, 1, 2, 3].map((i) => (
+        <div key={i} className="flex w-[76px] shrink-0 flex-col items-center gap-1.5">
+          <span className="h-[68px] w-[68px] animate-pulse rounded-full bg-ink-800" />
+          <span className="h-3 w-12 animate-pulse rounded bg-ink-800" />
+        </div>
+      ))}
+    </div>
+  );
+}

@@ -34,7 +34,7 @@ const nextConfig = {
     serverActions: { bodySizeLimit: "6mb" },
     // telas já abertas ficam guardadas por alguns segundos: voltar para uma aba é instantâneo.
     // (publicar, curtir etc. chamam revalidatePath, que limpa essa memória na hora)
-    staleTimes: { dynamic: 30, static: 120 },
+    staleTimes: { dynamic: 60, static: 300 },
   },
   async headers() {
     // CSP com nonce é aplicada no middleware; aqui ficam os demais cabeçalhos.

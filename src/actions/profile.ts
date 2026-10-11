@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
-import { actionSession } from "@/lib/auth";
+import { actionSession, forgetProfile } from "@/lib/auth";
 import { allow, rateLimitMessage } from "@/lib/rate-limit";
 import { firstError, profileSchema } from "@/lib/validation";
 import { uploadImage } from "@/lib/upload";
@@ -27,6 +27,7 @@ export async function updateProfile(_: FormState, fd: FormData): Promise<FormSta
     if (old?.startsWith(`${s.user.id}/`)) await supabase.storage.from("avatars").remove([old]);
   }
   const { error } = await supabase.from("profiles").update(patch).eq("id", s.user.id);
+  forgetProfile(s.user.id);
   if (error) return { error: error.code === "23505" ? "Esse nome de usuário já está em uso." : GENERIC_ERROR };
   revalidatePath("/", "layout");
   return { success: "Perfil atualizado." };

@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/admin";
-import { actionSession } from "@/lib/auth";
+import { actionSession, forgetProfile } from "@/lib/auth";
 import { audit } from "@/lib/audit";
 import { allow, rateLimitMessage } from "@/lib/rate-limit";
 import { firstError, idSchema, nameSchema, officialPostSchema, roleSchema, statusSchema } from "@/lib/validation";
@@ -161,6 +161,7 @@ export async function setUserBlocked(fd: FormData) {
   const block = str(fd, "block") === "1";
   const admin = createAdminClient();
   await admin.from("profiles").update({ is_blocked: block }).eq("id", target.id);
+  forgetProfile(target.id);
   await admin.auth.admin.updateUserById(target.id, { ban_duration: block ? "876000h" : "none" }); // bloqueia login de fato
   await audit(block ? "user.block" : "user.unblock", "user", target.id, { username: target.username });
   revalidatePath("/admin/users");
@@ -186,6 +187,7 @@ export async function setUserRole(fd: FormData) {
   if (target.role === "ADMIN" && role.data !== "ADMIN" && (count ?? 0) <= 1) return; // mantém ao menos um admin
   const supabase = await createClient(); // RLS + trigger também exigem admin com MFA
   await supabase.from("profiles").update({ role: role.data }).eq("id", target.id);
+  forgetProfile(target.id);
   await audit("user.role_change", "user", target.id, { from: target.role, to: role.data });
   revalidatePath("/admin/users");
 }

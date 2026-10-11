@@ -8,7 +8,7 @@ export function Toaster() {
     let t: ReturnType<typeof setTimeout>;
     const on = (e: Event) => {
       setMsg({ text: String((e as CustomEvent).detail), key: Date.now() });
-      clearTimeout(t); t = setTimeout(() => setMsg(null), 2600);
+      clearTimeout(t); t = setTimeout(() => setMsg(null), Math.min(8000, 2600 + String((e as CustomEvent).detail ?? "").length * 35));
     };
     window.addEventListener("igreja:toast", on);
     return () => { window.removeEventListener("igreja:toast", on); clearTimeout(t); };

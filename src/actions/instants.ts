@@ -12,6 +12,11 @@ import { INSTANT_ARCHIVE_DAYS, INSTANT_BUCKET, INSTANT_REACTIONS } from "@/lib/i
 import type { Result } from "@/lib/types";
 
 const MAX_BYTES = 6 * 1024 * 1024;
+const NOT_SETUP = "Os Instantes ainda não foram ativados no servidor. O administrador precisa rodar o arquivo RODAR_6_INSTANTES.sql no Supabase.";
+const TRY_AGAIN = "Não foi possível enviar agora. Verifique a internet e tente de novo.";
+/** O banco/armazenamento ainda não tem os Instantes (SQL não aplicado)? */
+const missingSetup = (e: { message?: string; code?: string; statusCode?: string | number } | null | undefined) =>
+  !!e && (/bucket not found|does not exist|relation .*instants/i.test(e.message ?? "") || e.code === "42P01" || e.code === "PGRST205" || String(e.statusCode) === "404");
 
 /** Envia um instante: a foto (JPEG/WebP já sem metadados, gerada pelo canvas do app) e uma legenda opcional. */
 export async function sendInstant(fd: FormData): Promise<Result<{ id: string }>> {
@@ -30,12 +35,19 @@ export async function sendInstant(fd: FormData): Promise<Result<{ id: string }>>
   const path = `${s.user.id}/${id}.${mime === "image/webp" ? "webp" : "jpg"}`;
   const admin = createAdminClient();
   const up = await admin.storage.from(INSTANT_BUCKET).upload(path, bytes, { contentType: mime, upsert: false });
-  if (up.error) return { ok: false, error: "Não foi possível enviar agora. Tente de novo." };
+  if (up.error) {
+    console.error("[instantes] upload falhou:", up.error.message);
+    return { ok: false, error: missingSetup(up.error as never) ? NOT_SETUP : TRY_AGAIN };
+  }
 
   // o registro é criado com o cliente da pessoa: as regras do banco (dono, conta ativa, 24 h) continuam valendo
   const supabase = await createClient();
   const { error } = await supabase.from("instants").insert({ id, author_id: s.user.id, path, caption });
-  if (error) { await admin.storage.from(INSTANT_BUCKET).remove([path]); return { ok: false, error: "Não foi possível enviar agora. Tente de novo." }; }
+  if (error) {
+    console.error("[instantes] registro falhou:", error.code, error.message);
+    await admin.storage.from(INSTANT_BUCKET).remove([path]);
+    return { ok: false, error: missingSetup(error) ? NOT_SETUP : TRY_AGAIN };
+  }
 
   await cleanupOld(s.user.id);
   revalidatePath("/instantes", "layout");

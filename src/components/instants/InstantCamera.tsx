@@ -22,7 +22,7 @@ function toCanvas(src: CanvasImageSource, sw: number, sh: number, mirror: boolea
   return c;
 }
 // o canvas gera um JPEG novo: sem localização nem outros metadados da câmera
-const toJpeg = (c: HTMLCanvasElement) => new Promise<Blob | null>((r) => c.toBlob(r, "image/jpeg", 0.86));
+const toJpeg = (c: HTMLCanvasElement) => new Promise<Blob | null>((r) => c.toBlob(r, "image/jpeg", 0.82));
 
 export function InstantCamera({ friends }: { friends: number }) {
   const router = useRouter();
@@ -33,6 +33,7 @@ export function InstantCamera({ friends }: { friends: number }) {
   const [shot, setShot] = useState<{ blob: Blob; url: string } | null>(null);
   const [caption, setCaption] = useState("");
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [flash, setFlash] = useState(false);
 
   const stop = () => { stream.current?.getTracks().forEach((t) => t.stop()); stream.current = null; };
@@ -90,13 +91,19 @@ export function InstantCamera({ friends }: { friends: number }) {
 
   async function send() {
     if (!shot || sending) return;
-    setSending(true);
+    setSending(true); setError(null);
     const fd = new FormData();
     fd.append("photo", shot.blob, "instante.jpg");
     if (caption.trim()) fd.append("caption", caption.trim());
-    const r = await sendInstant(fd);
+    let r: Awaited<ReturnType<typeof sendInstant>>;
+    try {
+      r = await sendInstant(fd);
+    } catch {
+      // queda de conexão ou erro do servidor: nunca deixa o botão preso em "Enviando…"
+      r = { ok: false, error: "Não foi possível enviar agora. Verifique a internet e tente de novo." };
+    }
     setSending(false);
-    if (!r.ok) { toast(r.error); return; }
+    if (!r.ok) { setError(r.error); return; }
     stop();
     toast(friends ? `Instante enviado para ${friends} ${friends === 1 ? "amigo" : "amigos"}!` : "Instante enviado!");
     router.push("/instantes");
@@ -155,6 +162,7 @@ export function InstantCamera({ friends }: { friends: number }) {
             <button type="button" onClick={flip} disabled={mode === "fallback"} aria-label="Trocar câmera" className="grid h-12 w-12 place-items-center rounded-full bg-white/10 disabled:opacity-30"><SwitchCamera className="h-5 w-5" /></button>
           </div>
         )}
+        {error && <p role="alert" className="mx-auto mt-4 max-w-md rounded-2xl bg-red-500/15 px-4 py-3 text-center text-sm text-red-200">{error}</p>}
         <p className="mt-4 text-center text-xs text-white/55">
           {friends ? `Vai para ${friends} ${friends === 1 ? "amigo" : "amigos"} (quem você segue e te segue) · some depois de visto` : "Você ainda não tem amigos: siga irmãos que também te seguem para eles receberem."}
         </p>

@@ -286,3 +286,65 @@ html[data-app] main > * { animation: app-in .18s ease-out both; }
 .brand-stack { display: inline-flex; flex-direction: column; align-items: center; }
 .brand-stack .brand-de { font-size: 0.34em; letter-spacing: 0.14em; margin: 0 0 0.75em 1.7em; }
 .brand-stack .brand-cristo { display: block; }
+
+/* ---------- Comentários no estilo do pôster "Saved by Grace" ----------
+   Papel cinza-claro, caixa alta condensada (Anton), bloco vermelho com letras brancas,
+   barras pretas atravessando as palavras e pincelada amarela (Permanent Marker). */
+.grace {
+  /* paleta clara só aqui dentro: os textos "white/ash" do app ficam escuros e legíveis sobre o papel */
+  color-scheme: light;
+  --ink-950: 239 238 235; --ink-900: 250 249 247; --ink-800: 232 230 226; --ink-700: 17 17 17; --ink-600: 17 17 17; --ink-500: 120 116 110;
+  --ash-400: 92 88 82; --ash-300: 60 57 53; --ash-200: 30 29 27; --ash-100: 17 17 17; --c-white: 17 17 17;
+  --grace-red: #e1251b; --grace-ink: #111111; --grace-yellow: #f7e017;
+  position: relative; isolation: isolate;
+  background: #efeeeb; color: var(--grace-ink);
+  padding: clamp(1.25rem, 5vw, 2.5rem); margin-inline: calc(-1 * clamp(0rem, 2vw, 1rem));
+}
+.grace::before { /* textura de papel amassado */
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.012 .03' numOctaves='3' seed='4'/><feColorMatrix values='0 0 0 0 .55  0 0 0 0 .54  0 0 0 0 .52  0 0 0 .35 0'/></filter><rect width='260' height='260' filter='url(%23n)'/></svg>");
+}
+.grace-head { font-family: "Inter Tight Variable", sans-serif; font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; line-height: .9; }
+.grace-line { display: flex; align-items: center; gap: .18em; font-size: clamp(1.7rem, 8vw, 3.2rem); color: var(--grace-ink); white-space: nowrap; }
+.grace-line-b { position: relative; z-index: 2; margin-top: .12em; }
+.grace-bars { flex-shrink: 0; display: inline-flex; flex-direction: column; justify-content: center; gap: .08em; width: 1.5em; height: .72em; }
+.grace-bars i { display: block; height: .16em; background: var(--grace-ink); }
+.grace-bars i:nth-child(2) { background: transparent; border: .045em solid var(--grace-ink); }
+.grace-bars i:nth-child(3) { width: 70%; }
+.grace-block {
+  position: relative; overflow: hidden; margin: .08em 0 0; padding: .02em .12em .06em;
+  background: var(--grace-red); color: #fbfaf7;
+  font-family: "Anton", "Impact", sans-serif; font-weight: 400; letter-spacing: -0.005em;
+  font-size: clamp(2.6rem, 14.2vw, 7rem); line-height: .95; transform: rotate(-1deg); white-space: nowrap; width: fit-content; max-width: 100%;
+}
+.grace-block::after { /* papel amassado por cima do vermelho */
+  content: ""; position: absolute; inset: 0; mix-blend-mode: multiply; opacity: .45; pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.02 .05' numOctaves='4' seed='9'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .1  0 0 0 0 .08  0 0 0 .6 0'/></filter><rect width='300' height='200' filter='url(%23n)'/></svg>");
+}
+.grace-brush {
+  display: inline-block; margin-left: .25em; font-size: 1.15em !important; transform: rotate(-9deg) translateY(-.08em);
+  font-family: "Permanent Marker", cursive; font-weight: 400; text-transform: none; letter-spacing: 0;
+  color: var(--grace-yellow); font-size: 1.05em; text-shadow: .04em .05em 0 var(--grace-ink);
+}
+.grace-count { display: flex; align-items: center; gap: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; color: var(--grace-ink); }
+.grace-count span { display: inline-grid; place-items: center; min-width: 2.2rem; height: 2.2rem; padding: 0 .4rem; background: var(--grace-ink); color: #fff; font-family: "Anton", sans-serif; font-size: 1.15rem; letter-spacing: 0; }
+.grace .field { background: #fff; color: var(--grace-ink); border: 2px solid var(--grace-ink); border-radius: 0; box-shadow: 4px 4px 0 var(--grace-ink); }
+.grace .field::placeholder { color: #8a857d; }
+.grace .field:focus { outline: none; box-shadow: 4px 4px 0 var(--grace-red); border-color: var(--grace-ink); }
+.grace-btn, .grace .btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: .45rem 1.3rem;
+  background: var(--grace-red); color: #fff; border: 2px solid var(--grace-ink); border-radius: 0; box-shadow: 4px 4px 0 var(--grace-ink);
+  font-family: "Anton", sans-serif; font-weight: 400; font-size: 1.15rem; letter-spacing: .04em; text-transform: uppercase;
+  transition: transform .12s, box-shadow .12s;
+}
+.grace-btn:hover, .grace .btn-primary:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--grace-ink); }
+.grace-btn:active, .grace .btn-primary:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--grace-ink); }
+.grace-btn:disabled, .grace .btn-primary:disabled { opacity: .45; transform: none; box-shadow: 4px 4px 0 var(--grace-ink); }
+.grace .btn-ghost { border: 2px solid var(--grace-ink); border-radius: 0; background: #fff; color: var(--grace-ink); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; }
+.grace-card { background: #fbfaf8; border: 2px solid var(--grace-ink); box-shadow: 5px 5px 0 var(--grace-ink); padding: 1rem 1rem .85rem; }
+.grace-reply { margin-left: 1.5rem; border-left: 5px solid var(--grace-red); background: #fbfaf8; padding: .75rem .9rem; box-shadow: 3px 3px 0 rgba(17,17,17,.85); }
+.grace-user { font-family: "Anton", sans-serif; font-size: 1.12rem; letter-spacing: .02em; text-transform: uppercase; color: var(--grace-ink); }
+.grace-actions button, .grace-actions a { font-weight: 800; text-transform: uppercase; letter-spacing: .1em; font-size: .68rem; color: var(--grace-ink); }
+.grace-actions button:hover { color: var(--grace-red); }
+.grace .link-muted { color: var(--grace-red); font-weight: 700; }
+@media (prefers-reduced-motion: reduce) { .grace-btn, .grace .btn-primary { transition: none; } }

@@ -43,12 +43,12 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
   // Função de renderização (não um componente): assim o campo de edição não é recriado a cada tecla
   // e o cursor fica onde a pessoa tocou.
   const row = (c: CommentRow, isReply: boolean) => (
-    <div key={c.id} className={isReply ? "ml-8 border-l border-ink-700 pl-4" : ""}>
+    <div key={c.id} className={isReply ? "grace-reply" : "grace-card"}>
       <div className="flex items-start gap-3">
         <Avatar src={c.author?.avatar_url} name={c.author?.username ?? "?"} size={28} />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-baseline gap-x-2 text-sm">
-            {c.author ? <Link href={`/perfil/${c.author.username}`} className="font-medium text-white hover:underline">@{c.author.username}</Link> : <span>anônimo</span>}
+            {c.author ? <Link href={`/perfil/${c.author.username}`} className="grace-user hover:underline">@{c.author.username}</Link> : <span className="grace-user">anônimo</span>}
             <span className="text-xs text-ash-400">{timeAgo(c.created_at)}{c.edited_at ? " · editado" : ""}</span>
           </div>
           {editingId === c.id ? (
@@ -61,7 +61,7 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
               </div>
             </div>
           ) : <p className="preline mt-1 text-[15px] text-ash-200">{c.body}</p>}
-          <div className="mt-1.5 flex gap-4 text-xs text-ash-400">
+          <div className="grace-actions mt-2 flex flex-wrap gap-4 text-xs text-ash-400">
             {!isReply && signedIn && <button type="button" onClick={() => setReplying((v) => !v)} className="hover:text-white">Responder</button>}
             {viewerId === c.author_id && editingId !== c.id && <button type="button" onClick={() => { setEditingId(c.id); setDraft(c.body); setEditError(null); }} className="hover:text-white">Editar</button>}
             {(viewerId === c.author_id || canModerate) && <button type="button" disabled={pending} onClick={() => remove(c.id)} className="hover:text-red-300">Excluir</button>}
@@ -73,7 +73,7 @@ export function CommentItem({ comment, replies, viewerId, canModerate, signedIn 
   );
 
   return (
-    <li className="space-y-4">
+    <li className="space-y-3">
       {row(comment, false)}
       {replies.map((r) => row(r, true))}
       {replying ? (

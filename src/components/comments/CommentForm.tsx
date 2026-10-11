@@ -28,7 +28,7 @@ export function CommentForm({ postId, parentId = null, signedIn, onDone, autoFoc
         required autoFocus={autoFocus} placeholder={parentId ? "Escreva uma resposta…" : "Diga o que pensa…"} className="field" />
       <div className="flex items-center justify-between">
         <span className="text-xs text-ash-400">{body.length}/1000</span>
-        <button className="btn-primary" disabled={pending || !body.trim()}>{pending ? "Enviando…" : parentId ? "Responder" : "Comentar"}</button>
+        <button className="grace-btn" disabled={pending || !body.trim()}>{pending ? "Enviando…" : parentId ? "Responder" : "Comentar"}</button>
       </div>
       {error && <p role="alert" className="text-sm text-red-300">{error}</p>}
     </form>

@@ -8,7 +8,7 @@ import { ChurchName } from "@/components/ui/ChurchName";
  * Abertura do app instalado: a igreja (logo) e o nome, a leitura de hoje e atalhos.
  * Só aparece no modo app (html[data-app]); no site continua o vídeo de abertura.
  */
-export function AppHome({ currentDay, name }: { currentDay: number | null; name: string | null }) {
+export function AppHome({ currentDay, name, tray }: { currentDay: number | null; name: string | null; tray?: React.ReactNode }) {
   const pd = currentDay ? planDay(currentDay) : null;
   const shortcuts = [
     { href: "/estudos/biblia", label: "Bíblia em um ano", icon: CalendarDays },
@@ -18,7 +18,8 @@ export function AppHome({ currentDay, name }: { currentDay: number | null; name:
     { href: "/forum", label: "Fórum", icon: MessageCircle },
   ];
   return (
-    <section className="app-home container-wide pb-4 pt-10" aria-label="Início do app">
+    <section className="app-home container-wide pb-4 pt-6" aria-label="Início do app">
+      {tray && <div className="mb-8">{tray}</div>}
       <div className="flex flex-col items-center text-center">
         <ChurchMark className="h-36 text-white" />
         <h1 className="mt-6 leading-none text-white"><ChurchName variant="stack" className="text-[clamp(3.6rem,19vw,6rem)]" /></h1>

@@ -348,3 +348,13 @@ html[data-app] main > * { animation: app-in .18s ease-out both; }
 .grace-actions button:hover { color: var(--grace-red); }
 .grace .link-muted { color: var(--grace-red); font-weight: 700; }
 @media (prefers-reduced-motion: reduce) { .grace-btn, .grace .btn-primary { transition: none; } }
+
+/* ---------- Instantes ---------- */
+.instant-ring { background: conic-gradient(from 210deg, #f7e017, #e1251b, #ff6a5f, #f59e0b, #f7e017); }
+.instant-cta { background: linear-gradient(135deg, #e1251b, #b3352b 45%, #f59e0b); box-shadow: 0 20px 50px -25px rgba(225, 37, 27, .7); }
+.instant-stage { overscroll-behavior: contain; }
+.instant-pop { animation: instant-pop .35s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes instant-pop { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+.instant-burst { animation: instant-burst .9s cubic-bezier(.2,.8,.2,1) forwards; text-shadow: 0 10px 40px rgba(0,0,0,.5); }
+@keyframes instant-burst { 0% { opacity: 0; transform: scale(.3); } 35% { opacity: 1; transform: scale(1.15); } 100% { opacity: 0; transform: scale(1.4) translateY(-30px); } }
+@media (prefers-reduced-motion: reduce) { .instant-pop, .instant-burst { animation: none; } }

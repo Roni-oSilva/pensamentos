@@ -3,7 +3,7 @@ import { updateSession } from "@/lib/supabase/middleware";
 import { SUPABASE_URL } from "@/lib/env";
 import { APP_COOKIE, APP_PARAM, showDownloadPage } from "@/lib/app-gate";
 
-const PROTECTED = ["/admin", "/configuracoes", "/favoritos", "/notificacoes", "/comunidade/nova"];
+const PROTECTED = ["/admin", "/configuracoes", "/favoritos", "/notificacoes", "/comunidade/nova", "/instantes"];
 
 function buildCsp(nonce: string): string {
   const supabase = SUPABASE_URL;

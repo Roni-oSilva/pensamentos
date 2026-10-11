@@ -9,6 +9,7 @@ import { Section } from "@/components/ui/Section";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { Reveal } from "@/components/ui/Reveal";
 import { TiltCard } from "@/components/ui/TiltCard";
+import { InstantsTray } from "@/components/instants/InstantsTray";
 
 const STEPS = [
   { n: "01", title: "Leia", text: "Versículos, frases, conselhos e reflexões para meditar. Sem pressa e sem algoritmo.", href: "/frases", cta: "Ver as palavras" },
@@ -39,7 +40,7 @@ export default async function Home() {
     <>
       <noscript><style>{".hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}.hero-canvas{display:none}"}</style></noscript>
       <HeroScroll />
-      <AppHome currentDay={bible.currentDay} name={session?.profile.display_name || session?.profile.username || null} />
+      <AppHome currentDay={bible.currentDay} name={session?.profile.display_name || session?.profile.username || null} tray={session ? <InstantsTray /> : null} />
 
       <div id="continuar" className="scroll-mt-20">
         <section className="container-wide pt-6" aria-label="Como funciona">

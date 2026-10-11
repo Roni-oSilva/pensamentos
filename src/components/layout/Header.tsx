@@ -13,6 +13,7 @@ import type { AdminPending, NotifItem } from "@/lib/notifications";
 const LINKS: NavLink[] = [
   { href: "/frases", label: "Palavras" },
   { href: "/comunidade", label: "Comunidade" },
+  { href: "/instantes", label: "Instantes" },
   { href: "/comunhao", label: "Comunhão" },
   { href: "/estudos", label: "Estudos" },
   { href: "/forum", label: "Fórum" },

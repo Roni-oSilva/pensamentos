@@ -353,6 +353,39 @@ select pg_temp.as_anon();
 select pg_temp.assert_eq((select count(*) from public.posts where id = '10000000-0000-0000-0000-000000000099')::int, 1, 'publicação direta aparece para todos');
 select pg_temp.as_su();
 
+-- 7j. Instantes ------------------------------------------------------------------------------
+select pg_temp.as_su();
+insert into public.follows (follower_id, following_id) values ('00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b2') on conflict do nothing;
+insert into public.follows (follower_id, following_id) values ('00000000-0000-0000-0000-0000000000b2', '00000000-0000-0000-0000-0000000000b1') on conflict do nothing;
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+insert into public.instants (id, author_id, path, caption) values ('30000000-0000-0000-0000-000000000001', '00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b1/30000000-0000-0000-0000-000000000001.jpg', 'culto de hoje');
+select pg_temp.must_fail($$insert into public.instants (author_id, path) values ('00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b2/30000000-0000-0000-0000-000000000009.jpg')$$, 'instante não usa a pasta de outra pessoa');
+select pg_temp.must_fail($$insert into public.instants (author_id, path) values ('00000000-0000-0000-0000-0000000000b2', '00000000-0000-0000-0000-0000000000b2/30000000-0000-0000-0000-000000000009.jpg')$$, 'não envia instante em nome de outro');
+select pg_temp.must_fail($$insert into public.instants (author_id, path, expires_at) values ('00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b1/30000000-0000-0000-0000-000000000008.jpg', now() + interval '3 days')$$, 'instante não dura mais de 24 h');
+select pg_temp.as_su();
+insert into public.instants (id, author_id, path, created_at, expires_at) values ('30000000-0000-0000-0000-000000000002', '00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b1/30000000-0000-0000-0000-000000000002.jpg', now() - interval '2 days', now() - interval '1 day');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_see_zero('public.instants', 'amigo não lê a tabela de instantes direto');
+select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 1, 'amigo recebe o instante válido (o vencido não aparece)');
+select pg_temp.assert_eq((select caption from public.instant_open('30000000-0000-0000-0000-000000000001')), 'culto de hoje', 'amigo abre o instante');
+select pg_temp.must_fail($$select * from public.instant_open('30000000-0000-0000-0000-000000000001')$$, 'instante abre uma vez só');
+select pg_temp.must_fail($$select * from public.instant_open('30000000-0000-0000-0000-000000000002')$$, 'instante vencido não abre');
+select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 0, 'depois de visto, some da caixa');
+update public.instant_views set reaction = '🙏' where instant_id = '30000000-0000-0000-0000-000000000001';
+select pg_temp.must_fail($$insert into public.instant_views (instant_id, viewer_id) values ('30000000-0000-0000-0000-000000000002', '00000000-0000-0000-0000-0000000000b2')$$, 'não registra visualização na mão');
+select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2');
+select pg_temp.must_fail($$select * from public.instant_open('30000000-0000-0000-0000-000000000001')$$, 'quem não é amigo não abre (nem admin)');
+select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 0, 'quem não é amigo não recebe');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.assert_eq((select reaction from public.instant_views where instant_id = '30000000-0000-0000-0000-000000000001'), '🙏', 'autor vê quem viu e a reação');
+delete from public.follows where follower_id = '00000000-0000-0000-0000-0000000000b1' and following_id = '00000000-0000-0000-0000-0000000000b2';
+insert into public.instants (id, author_id, path) values ('30000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b1/30000000-0000-0000-0000-000000000003.jpg');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 0, 'seguir de um lado só não é amizade');
+select pg_temp.as_anon();
+select pg_temp.must_fail($$select * from public.instants_inbox()$$, 'anônimo não acessa instantes');
+select pg_temp.as_su();
+
 -- 7. Usuário bloqueado -----------------------------------------------------------------------
 select pg_temp.as_su();
 update public.profiles set is_blocked = true where id = '00000000-0000-0000-0000-0000000000b2';

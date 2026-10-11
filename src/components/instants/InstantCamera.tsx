@@ -104,7 +104,7 @@ export function InstantCamera({ friends }: { friends: number }) {
   }
 
   return (
-    <div className="instant-stage fixed inset-0 z-[70] flex flex-col bg-black text-white">
+    <div className="instant-stage force-dark fixed inset-0 z-[70] flex flex-col bg-black text-white">
       <div className="flex items-center justify-between px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top))]">
         <Link href="/instantes" aria-label="Fechar" className="grid h-11 w-11 place-items-center rounded-full bg-white/10" onClick={stop}><X className="h-5 w-5" /></Link>
         <p className="text-sm font-semibold tracking-wide">Instante</p>

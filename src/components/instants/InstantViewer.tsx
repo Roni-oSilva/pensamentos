@@ -60,7 +60,7 @@ export function InstantViewer({ friends, start, onClose }: { friends: InboxFrien
   if (!friend) return null;
   return (
     <Overlay>
-    <div className="instant-stage fixed inset-0 z-[70] flex flex-col bg-black text-white" role="dialog" aria-modal aria-label={`Instantes de ${friend.name}`}>
+    <div className="instant-stage force-dark fixed inset-0 z-[70] flex flex-col bg-black text-white" role="dialog" aria-modal aria-label={`Instantes de ${friend.name}`}>
       <div className="flex gap-1 px-3 pt-[max(0.6rem,env(safe-area-inset-top))]">
         {friend.items.map((it, i) => <span key={it.id} className={`h-[3px] flex-1 rounded-full ${i <= ii ? "bg-white" : "bg-white/30"}`} />)}
       </div>

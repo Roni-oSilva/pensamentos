@@ -48,7 +48,7 @@ export function MyInstants({ items }: { items: MyInstant[] }) {
 
       {open && (
         <Overlay>
-        <div className="instant-stage fixed inset-0 z-[70] flex flex-col bg-black/95 text-white" role="dialog" aria-modal aria-label="Seu instante" onClick={() => setOpenId(null)}>
+        <div className="instant-stage force-dark fixed inset-0 z-[70] flex flex-col bg-black/95 text-white" role="dialog" aria-modal aria-label="Seu instante" onClick={() => setOpenId(null)}>
           <div className="mx-auto flex w-full max-w-md flex-1 flex-col px-4 pb-[max(1rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))]" onClick={(e) => e.stopPropagation()}>
             <div className="mb-3 flex items-center justify-between text-sm">
               <span>{timeAgo(open.createdAt)} · {new Date(open.expiresAt).getTime() > Date.now() ? "no ar" : "encerrado"}</span>

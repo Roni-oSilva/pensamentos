@@ -2,6 +2,7 @@ import Link from "next/link";
 import { BookOpen, CalendarDays, MessageCircle, Users, HandHeart } from "lucide-react";
 import { ChurchMark } from "@/components/ui/ChurchMark";
 import { dayLabel, planDay, PLAN_DAYS } from "@/lib/bible-plan";
+import { ChurchName } from "@/components/ui/ChurchName";
 
 /**
  * Abertura do app instalado: a igreja (logo) e o nome, a leitura de hoje e atalhos.
@@ -19,8 +20,8 @@ export function AppHome({ currentDay, name }: { currentDay: number | null; name:
   return (
     <section className="app-home container-wide pb-4 pt-10" aria-label="Início do app">
       <div className="flex flex-col items-center text-center">
-        <ChurchMark className="h-28 w-auto text-white" />
-        <h1 className="church-name mt-5 text-[clamp(2.6rem,13vw,4.5rem)] leading-none text-white">Igreja de <span className="church-accent text-poster">Cristo</span></h1>
+        <ChurchMark className="h-36 text-white" />
+        <h1 className="mt-6 leading-none text-white"><ChurchName variant="stack" className="text-[clamp(3.6rem,19vw,6rem)]" /></h1>
         <p className="mt-3 text-ash-300">{name ? `Que bom te ver, ${name}.` : "Bem-vindo à casa."} A paz do Senhor!</p>
       </div>
 

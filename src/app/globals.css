@@ -268,3 +268,21 @@ html[data-app] main > * { animation: app-in .18s ease-out both; }
 .crown-bob { animation: crown-bob 2.4s ease-in-out infinite; }
 @keyframes crown-bob { 0%, 100% { transform: translate(-50%, 0) rotate(-6deg); } 50% { transform: translate(-50%, -5px) rotate(6deg); } }
 @media (prefers-reduced-motion: reduce) { .podium-rise, .rank-row, .crown-bob { animation: none !important; } }
+
+/* ---------- Nome "Igreja de Cristo" (marca) ----------
+   Serifada de alto contraste em caixa alta (Bodoni Moda) com o "C" de Cristo cursivo (Great Vibes). */
+.brand-name {
+  display: inline-block; white-space: nowrap; line-height: 1;
+  font-family: "Bodoni Moda Variable", "Bodoni Moda", Didot, "Bodoni 72", Georgia, serif;
+  font-weight: 500; font-variation-settings: "opsz" 96; font-optical-sizing: none;
+  text-transform: uppercase; letter-spacing: -0.012em;
+}
+.brand-c {
+  display: inline-block; position: relative; z-index: 1;
+  font-family: "Great Vibes", "Snell Roundhand", "Apple Chancery", cursive; font-weight: 400;
+  text-transform: none; letter-spacing: 0; font-size: 1.5em; line-height: 0.5;
+  margin-right: -0.2em; vertical-align: -0.06em;
+}
+.brand-stack { display: inline-flex; flex-direction: column; align-items: center; }
+.brand-stack .brand-de { font-size: 0.34em; letter-spacing: 0.14em; margin: 0 0 0.75em 1.7em; }
+.brand-stack .brand-cristo { display: block; }

@@ -7,6 +7,8 @@ import { Avatar } from "@/components/ui/Avatar";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { ActionBar } from "./ActionBar";
 import { DoubleTapLike } from "./DoubleTapLike";
+import { ChurchName } from "@/components/ui/ChurchName";
+import { ChurchMark } from "@/components/ui/ChurchMark";
 
 export function postPath(p: Pick<PostWithViewer, "id" | "origin">) {
   return p.origin === "OFFICIAL" ? `/frases/${p.id}` : `/comunidade/${p.id}`;
@@ -39,9 +41,9 @@ export function PostCard({ post, signedIn, featured = false }: { post: PostWithV
               </Link>
             ) : (
               <span className="flex min-w-0 flex-1 items-center gap-3">
-                <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-950 bg-ink-900 text-lg leading-none text-poster">✝</span></span>
+                <span className="shrink-0 rounded-full bg-gradient-to-tr from-poster via-[#f59e0b] to-poster p-[2px]"><span className="grid h-10 w-10 place-items-center rounded-full border-2 border-ink-950 bg-ink-900 text-white"><ChurchMark className="h-7" /></span></span>
                 <span className="min-w-0">
-                  <span className="church-name block text-[0.95rem] text-white">Igreja de <span className="church-accent text-poster">Cristo</span></span>
+                  <ChurchName className="block text-[1.05rem] text-white" />
                   <span className="block truncate text-xs text-ash-400">{post.published_at ? timeAgo(post.published_at) : ""}</span>
                 </span>
               </span>

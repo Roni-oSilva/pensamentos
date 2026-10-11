@@ -1,20 +1,11 @@
-import { MARK_BODY, MARK_TRAIL, MARK_VIEWBOX as V } from "@/lib/church-mark";
+import { MARK_RATIO, MARK_URL } from "@/lib/church-mark";
 
-/** A igreja (logo oficial). Usa a cor do texto (`currentColor`), então funciona nos temas claro e escuro. */
-export function ChurchMark({ className = "", light = true }: { className?: string; light?: boolean }) {
-  return (
-    <svg viewBox={`${V.x} ${V.y} ${V.w} ${V.h}`} className={className} aria-hidden focusable="false">
-      {light && (
-        <>
-          <defs>
-            <linearGradient id="church-light" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0" stopColor="#e8453c" stopOpacity="0" /><stop offset="0.55" stopColor="#f59e0b" /><stop offset="1" stopColor="#ffe9a8" />
-            </linearGradient>
-          </defs>
-          <path d={MARK_TRAIL} fill="url(#church-light)" />
-        </>
-      )}
-      <path d={MARK_BODY} fill="currentColor" fillRule="evenodd" />
-    </svg>
-  );
+/**
+ * A cruz (logo oficial). Desenhada por máscara: assume a cor do texto (`currentColor`), então funciona nos temas
+ * claro e escuro, e o arquivo vetorial é baixado uma única vez (cache) em vez de repetido em cada página.
+ * Use uma altura na classe (ex.: "h-10"); a largura acompanha a proporção da cruz.
+ */
+export function ChurchMark({ className = "" }: { className?: string; light?: boolean }) {
+  const mask = `url(${MARK_URL}) center / contain no-repeat`;
+  return <span aria-hidden className={`inline-block shrink-0 bg-current ${className}`} style={{ aspectRatio: String(MARK_RATIO), WebkitMask: mask, mask }} />;
 }

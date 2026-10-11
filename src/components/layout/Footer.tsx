@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HelpLink } from "./HelpLink";
+import { ChurchName } from "@/components/ui/ChurchName";
 
 export function Footer() {
   return (
@@ -13,7 +14,7 @@ export function Footer() {
           <Link className="link-muted" href="/diretrizes">Diretrizes da comunidade</Link>
           <HelpLink />
         </nav>
-        <p>© {new Date().getFullYear()} <span className="church-name text-base text-ash-200">Igreja de <span className="church-accent text-poster">Cristo</span></span></p>
+        <p>© {new Date().getFullYear()} <ChurchName className="text-[1.05rem] text-ash-200" /></p>
       </div>
     </footer>
   );

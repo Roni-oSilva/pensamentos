@@ -10,6 +10,7 @@ import { ChurchMark } from "@/components/ui/ChurchMark";
 import { InstallCard } from "@/components/pwa/InstallCard";
 import { CopyLink } from "@/components/pwa/CopyLink";
 import { ShareIosIcon, AddSquareIcon, DotsIcon } from "@/components/pwa/InstallIcons";
+import { ChurchName } from "@/components/ui/ChurchName";
 
 const DESCRIPTION = "A Igreja de Cristo agora é app: versículos, estudos com níveis, Bíblia em um ano, comunidade, oração e fórum na sua tela inicial. Grátis e sem loja de aplicativos.";
 
@@ -75,8 +76,8 @@ export default async function AppPage() {
 
       <header className="container-wide flex items-center justify-between pt-[max(1.25rem,env(safe-area-inset-top))]">
         <span className="flex items-center gap-2.5 text-white">
-          <ChurchMark className="h-9 w-auto" />
-          <span className="church-name text-lg leading-none">Igreja de <span className="church-accent text-poster">Cristo</span></span>
+          <ChurchMark className="h-10" />
+          <ChurchName variant="stack" className="text-[1.45rem]" />
         </span>
         <a href="#instalar" className="btn-primary px-4 py-2 text-sm">Instalar</a>
       </header>
@@ -86,9 +87,9 @@ export default async function AppPage() {
           <p className="landing-rise inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">
             <span className="landing-dot h-1.5 w-1.5 rounded-full bg-amber-300" aria-hidden />O site virou app
           </p>
-          <h1 className="landing-rise font-poster text-[clamp(3rem,13vw,5.6rem)] leading-[0.92] text-white [animation-delay:.08s]">
-            Igreja de <span className="church-accent text-poster">Cristo</span>
-            <span className="mt-2 block font-display text-[0.8em] italic text-ash-200">agora é app.</span>
+          <h1 className="landing-rise text-white [animation-delay:.08s]">
+            <ChurchName variant="stack" className="text-[clamp(4rem,19vw,7.5rem)]" />
+            <span className="mt-3 block font-display text-[clamp(2.4rem,10vw,4.2rem)] italic leading-none text-ash-200">agora é app.</span>
           </h1>
           <p className="landing-rise max-w-xl text-lg text-ash-300 [animation-delay:.16s]">
             Deixamos o navegador para trás. A Palavra, os estudos, a Bíblia em um ano, a comunidade e a oração estão agora num app leve, direto na sua tela inicial.
@@ -184,7 +185,7 @@ export default async function AppPage() {
       </section>
 
       <section className="container-wide pb-20 pt-6 text-center">
-        <ChurchMark className="mx-auto h-16 w-auto text-white" />
+        <ChurchMark className="mx-auto h-24 text-white" />
         <p className="mx-auto mt-5 max-w-md font-display text-3xl text-white">Engrandeça a Cristo de onde estiver.</p>
         <a href="#instalar" className="btn-primary mt-6 inline-flex px-8 py-3.5 text-base">Instalar o app</a>
       </section>

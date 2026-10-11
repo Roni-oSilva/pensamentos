@@ -1,6 +1,6 @@
 /** Gera o PNG de compartilhamento no navegador (canvas): imagem de fundo à escolha, a frase e SEMPRE a marca "Igreja de Cristo". */
 
-import { MARK_BODY, MARK_TRAIL, MARK_VIEWBOX } from "@/lib/church-mark";
+import { MARK_RATIO, MARK_WHITE_URL } from "@/lib/church-mark";
 
 const W = 1080, H = 1350;
 
@@ -57,7 +57,11 @@ export const SHARE_BACKGROUNDS = [
 export const SHARE_BRAND = "Igreja de Cristo";
 
 export async function renderShareImage(text: string, bg: number | null = 1, signature?: string): Promise<Blob> {
-  await Promise.all([document.fonts.load("700 80px 'Inter Tight Variable'"), document.fonts.load("400 80px 'Instrument Serif'"), document.fonts.load("italic 400 80px 'Instrument Serif'")]).catch(() => undefined);
+  await Promise.all([
+    document.fonts.load("700 80px 'Inter Tight Variable'"), document.fonts.load("400 80px 'Instrument Serif'"), document.fonts.load("italic 400 80px 'Instrument Serif'"),
+    document.fonts.load("500 80px 'Bodoni Moda Variable'", "IGREJA DE RISTO"), document.fonts.load("400 80px 'Great Vibes'", "C"),
+  ]).catch(() => undefined);
+  const mark = await loadImage(MARK_WHITE_URL).catch(() => null);
   const bgDef = SHARE_BACKGROUNDS.find((b) => b.id === bg);
   const photo = bgDef ? await loadImage(bgDef.src).catch(() => null) : null;
 
@@ -111,26 +115,23 @@ export async function renderShareImage(text: string, bg: number | null = 1, sign
   }
   ctx.shadowColor = "transparent";
 
-  // marca (sempre presente): a igreja (logo oficial) + nome, embaixo ao centro
-  ctx.textBaseline = "alphabetic"; ctx.textAlign = "center";
-  {
-    const h = 96, k = h / MARK_VIEWBOX.h, w = MARK_VIEWBOX.w * k;
-    ctx.save();
-    ctx.translate(W / 2 - w / 2, H - 262); ctx.scale(k, k); ctx.translate(-MARK_VIEWBOX.x, -MARK_VIEWBOX.y);
-    const beam = ctx.createLinearGradient(0, 0, 52, 0);
-    beam.addColorStop(0, "rgba(232,69,60,0)"); beam.addColorStop(0.55, "#f59e0b"); beam.addColorStop(1, "#ffe9a8");
-    ctx.fillStyle = beam; ctx.fill(new Path2D(MARK_TRAIL));
-    ctx.fillStyle = "#ffffff"; ctx.fill(new Path2D(MARK_BODY), "evenodd");
-    ctx.restore();
+  // marca (sempre presente): a cruz (logo oficial) + o nome na tipografia da marca, embaixo ao centro
+  ctx.textBaseline = "alphabetic";
+  if (mark) {
+    const h = 128, w = h * MARK_RATIO;
+    ctx.drawImage(mark, W / 2 - w / 2, H - 300, w, h);
   }
-  // nome: "Igreja de" em sans negrito + "Cristo" em serifada itálica (as duas letras do site)
-  const sans = "700 80px 'Inter Tight Variable', Arial, sans-serif", ital = "italic 400 98px 'Instrument Serif', Georgia, serif";
+  // IGREJA DE CRISTO — serifada de alto contraste em caixa alta, com o "C" cursivo
+  const bodoni = "500 64px 'Bodoni Moda Variable', 'Bodoni Moda', Didot, Georgia, serif";
+  const script = "400 104px 'Great Vibes', 'Snell Roundhand', cursive";
   ctx.textAlign = "left";
-  ctx.font = sans; const w1 = ctx.measureText("Igreja de ").width;
-  ctx.font = ital; const w2 = ctx.measureText("Cristo").width;
-  const x0 = W / 2 - (w1 + w2) / 2;
-  ctx.font = sans; ctx.fillStyle = "#ffffff"; ctx.fillText("Igreja de ", x0, H - 66);
-  ctx.font = ital; ctx.fillStyle = "#ff6a5f"; ctx.fillText("Cristo", x0 + w1, H - 66);
+  ctx.font = bodoni; const w1 = ctx.measureText("IGREJA DE ").width, w3 = ctx.measureText("RISTO").width;
+  ctx.font = script; const w2 = ctx.measureText("C").width * 0.8; // o "C" invade um pouco o "R", como no pôster
+  const x0 = W / 2 - (w1 + w2 + w3) / 2, base = H - 92;
+  ctx.fillStyle = "#ffffff";
+  ctx.font = bodoni; ctx.fillText("IGREJA DE ", x0, base);
+  ctx.font = script; ctx.fillText("C", x0 + w1, base + 6);
+  ctx.font = bodoni; ctx.fillText("RISTO", x0 + w1 + w2, base);
 
   return new Promise((resolve, reject) => canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("blob"))), "image/png"));
 }

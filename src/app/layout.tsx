@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import "@fontsource-variable/inter-tight/index.css";
 import "@fontsource/instrument-serif/latin-400.css";
 import "@fontsource/instrument-serif/latin-400-italic.css";
+import "@fontsource-variable/bodoni-moda/opsz.css"; // nome da igreja (marca)
+import "@fontsource/great-vibes/latin-400.css"; // "C" cursivo da marca
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";

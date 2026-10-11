@@ -1,15 +1,13 @@
 import Link from "next/link";
 import { ChurchMark } from "./ChurchMark";
+import { ChurchName } from "./ChurchName";
 
-/** Logo oficial: a igreja à esquerda e o nome em duas linhas ("Igreja de" em sans, "Cristo" em serifada itálica). */
+/** Logo oficial: a cruz à esquerda e o nome na tipografia da marca (IGREJA DE / CRISTO). */
 export function Logo() {
   return (
-    <Link href="/" className="group inline-flex items-center gap-3 leading-none" aria-label="Igreja de Cristo — início">
-      <ChurchMark className="h-10 w-auto shrink-0 text-white transition-transform duration-300 group-hover:scale-105 sm:h-11" />
-      <span className="flex flex-col gap-0.5">
-        <span className="church-name text-[1.1rem] text-white sm:text-[1.2rem]">Igreja de</span>
-        <span className="church-accent text-[1.5rem] text-poster sm:text-[1.65rem]">Cristo</span>
-      </span>
+    <Link href="/" className="group inline-flex items-center gap-4 leading-none" aria-label="Igreja de Cristo — início">
+      <ChurchMark className="h-11 text-white transition-transform duration-300 group-hover:-rotate-3 group-hover:scale-105 sm:h-12" />
+      <ChurchName variant="stack" className="text-[1.55rem] text-white sm:text-[1.7rem]" />
     </Link>
   );
 }

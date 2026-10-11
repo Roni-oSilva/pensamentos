@@ -8,6 +8,7 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { PostBody } from "@/components/posts/PostBody";
 import { KIND_LABEL, type PostKind } from "@/lib/constants";
 import { timeAgo } from "@/lib/utils";
+import { publishAllPending } from "@/actions/admin";
 
 export const metadata = { title: "Moderação" };
 
@@ -22,6 +23,12 @@ export default async function Moderation() {
   return (
     <>
       <AdminTitle title="Fila de moderação" />
+      <p className="mb-6 max-w-2xl text-sm text-ash-300">Com a publicação direta ligada (Configurações), o que os membros publicam já aparece na hora. Esta fila só mostra o que ficou de antes.</p>
+      {rows.length > 0 && (
+        <form action={publishAllPending} className="mb-6">
+          <button type="submit" className="btn-primary">Publicar todas as pendentes</button>
+        </form>
+      )}
       {rows.length === 0 ? <EmptyState title="Fila vazia." hint="Nenhuma publicação aguardando aprovação." /> : (
         <ul className="space-y-5">
           {rows.map((p) => (

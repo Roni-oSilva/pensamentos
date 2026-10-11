@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { actionSession } from "@/lib/auth";
 import { allow, rateLimitMessage } from "@/lib/rate-limit";
 import { communityPostSchema, firstError, idSchema } from "@/lib/validation";
@@ -48,25 +49,41 @@ export async function saveCommunityPost(_: FormState, fd: FormData): Promise<For
 
   const direct = d.submit && (await isSettingOn("community_autopublish"));
   const base = { kind: d.kind, title: d.title, content: d.content, category_id: d.categoryId, image_url: imageUrl };
-  // Publicação direta; se o banco ainda não aceitar (migração 0013 não aplicada), vai para aprovação.
-  const tries: string[] = d.submit ? (direct ? ["PUBLISHED", "PENDING"] : ["PENDING"]) : ["DRAFT"];
+  const status = d.submit ? (direct ? "PUBLISHED" : "PENDING") : "DRAFT";
 
-  let postId = editingId;
+  let postId: string | null = editingId || null;
   let saved = false;
-  for (const status of tries) {
-    if (editingId) {
-      const { data, error } = await supabase.from("posts").update({ ...base, status }).eq("id", editingId).eq("author_id", s.user.id).select("id");
-      if (!error && data?.length) { saved = true; break; }
-    } else {
-      const { data, error } = await supabase.from("posts").insert({ ...base, status, author_id: s.user.id, origin: "COMMUNITY" }).select("id").single();
-      if (!error && data) { postId = data.id; saved = true; break; }
-    }
+  if (editingId) {
+    const { data, error } = await supabase.from("posts").update({ ...base, status }).eq("id", editingId).eq("author_id", s.user.id).select("id, status");
+    saved = !error && !!data?.length && data[0]!.status === status;
+  } else {
+    const { data, error } = await supabase.from("posts").insert({ ...base, status, author_id: s.user.id, origin: "COMMUNITY" }).select("id").single();
+    if (!error && data) { postId = data.id; saved = true; }
   }
-  if (!saved) return { error: GENERIC_ERROR };
+  // Publicação direta com o banco ainda sem a migração 0013 (que libera o membro a publicar):
+  // o servidor publica pela chave de serviço, depois de conferir sessão (não bloqueada) e autoria.
+  if (!saved && direct) postId = await publishAsServer(s.user.id, editingId, base);
+  if (!postId || (!saved && !direct)) return { error: GENERIC_ERROR };
   await setPostTags(supabase, postId, await ensureTags(d.tags));
   revalidatePath("/comunidade");
   revalidatePath("/");
   redirect(`/comunidade/${postId}`);
+}
+
+type PostFields = { kind: string; title: string | null | undefined; content: string; category_id: string | null | undefined; image_url: string | null | undefined };
+
+async function publishAsServer(userId: string, editingId: string | null | undefined, base: PostFields): Promise<string | null> {
+  const admin = createAdminClient();
+  const now = new Date().toISOString();
+  if (editingId) {
+    const { data: cur } = await admin.from("posts").select("author_id, origin, status, published_at").eq("id", editingId).maybeSingle();
+    // nunca republica o que a equipe ocultou/removeu, nem post de outra pessoa
+    if (!cur || cur.author_id !== userId || cur.origin !== "COMMUNITY" || !["DRAFT", "PENDING", "PUBLISHED", "REJECTED"].includes(cur.status)) return null;
+    const { error } = await admin.from("posts").update({ ...base, status: "PUBLISHED", published_at: cur.published_at ?? now, rejection_reason: null }).eq("id", editingId);
+    return error ? null : editingId;
+  }
+  const { data, error } = await admin.from("posts").insert({ ...base, status: "PUBLISHED", published_at: now, author_id: userId, origin: "COMMUNITY" }).select("id").single();
+  return error || !data ? null : (data.id as string);
 }
 
 export async function deleteOwnPost(fd: FormData) {

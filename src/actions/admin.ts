@@ -95,6 +95,18 @@ export async function setPostStatus(fd: FormData) {
   revalidatePath("/admin", "layout");
 }
 
+/** Publica de uma vez tudo o que ficou esperando aprovação na comunidade. */
+export async function publishAllPending() {
+  const s = await gate("staff");
+  if (!s) return;
+  const supabase = await createClient();
+  const { data } = await supabase.from("posts").update({ status: "PUBLISHED" }).eq("origin", "COMMUNITY").eq("status", "PENDING").select("id");
+  if (data?.length) await audit("post.publish_all", "post", undefined, { count: data.length });
+  revalidatePath("/admin", "layout");
+  revalidatePath("/comunidade");
+  revalidatePath("/");
+}
+
 export async function deletePost(fd: FormData) {
   const s = await gate("admin");
   const id = idSchema.safeParse(str(fd, "id"));

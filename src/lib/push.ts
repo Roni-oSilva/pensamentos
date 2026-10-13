@@ -25,18 +25,30 @@ function configure() {
  */
 export async function notifyMembers(kind: PushKind, exceptUserId: string, payload: PushPayload) {
   if (!pushEnabled()) return;
-  configure();
-  const admin = createAdminClient();
-  const { data } = await admin.from("push_subscriptions")
+  const { data } = await createAdminClient().from("push_subscriptions")
     .select("endpoint, p256dh, auth")
     .eq(kind === "instants" ? "notify_instants" : "notify_posts", true)
     .neq("user_id", exceptUserId)
     .limit(5000);
-  if (!data?.length) return;
+  await sendTo(data ?? [], payload);
+}
+
+/** Aviso da igreja para todos os aparelhos inscritos (enviado pelo admin). Devolve quantos receberam. */
+export async function notifyEveryone(payload: PushPayload): Promise<{ sent: number; total: number }> {
+  if (!pushEnabled()) return { sent: 0, total: 0 };
+  const { data } = await createAdminClient().from("push_subscriptions").select("endpoint, p256dh, auth").limit(5000);
+  return sendTo(data ?? [], payload);
+}
+
+type Sub = { endpoint: string; p256dh: string; auth: string };
+async function sendTo(subs: Sub[], payload: PushPayload): Promise<{ sent: number; total: number }> {
+  if (!subs.length) return { sent: 0, total: 0 };
+  configure();
   const body = JSON.stringify(payload);
   const gone: string[] = [];
-  await Promise.allSettled(data.map((s) =>
+  const res = await Promise.allSettled(subs.map((s) =>
     webpush.sendNotification({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, body, { TTL: 6 * 3600, urgency: "high" })
-      .catch((e: { statusCode?: number }) => { if (e.statusCode === 404 || e.statusCode === 410) gone.push(s.endpoint); })));
-  if (gone.length) await admin.from("push_subscriptions").delete().in("endpoint", gone);
+      .catch((e: { statusCode?: number }) => { if (e.statusCode === 404 || e.statusCode === 410) gone.push(s.endpoint); throw e; })));
+  if (gone.length) await createAdminClient().from("push_subscriptions").delete().in("endpoint", gone);
+  return { sent: res.filter((r) => r.status === "fulfilled").length, total: subs.length };
 }

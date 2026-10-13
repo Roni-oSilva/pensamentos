@@ -11,6 +11,13 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { Reveal } from "@/components/ui/Reveal";
 import { TiltCard } from "@/components/ui/TiltCard";
 import { InstantsTray, TraySkeleton } from "@/components/instants/InstantsTray";
+import { AnnouncementBanner } from "@/components/home/AnnouncementBanner";
+import { getAnnouncement } from "@/lib/announcement";
+
+async function Notice() {
+  const a = await getAnnouncement();
+  return a ? <AnnouncementBanner id={a.id} title={a.title} body={a.body} url={a.url} /> : null;
+}
 
 const STEPS = [
   { n: "01", title: "Leia", text: "Versículos, frases, conselhos e reflexões para meditar. Sem pressa e sem algoritmo.", href: "/frases", cta: "Ver as palavras" },
@@ -33,7 +40,7 @@ export default async function Home() {
     <>
       <noscript><style>{".hero{height:auto!important}.hero-stage{position:relative!important;height:auto!important;min-height:100svh}.hero-manifesto{position:relative!important;opacity:1!important;transform:none!important;padding:3rem 1rem}.hero-canvas{display:none}"}</style></noscript>
       <HeroScroll />
-      <AppHome currentDay={bible.currentDay} name={session?.profile.display_name || session?.profile.username || null} tray={session ? <Suspense fallback={<TraySkeleton />}><InstantsTray /></Suspense> : null} />
+      <AppHome currentDay={bible.currentDay} name={session?.profile.display_name || session?.profile.username || null} notice={<Suspense fallback={null}><Notice /></Suspense>} tray={session ? <Suspense fallback={<TraySkeleton />}><InstantsTray /></Suspense> : null} />
 
       {/* o resto da página chega logo depois (não segura a abertura do app) */}
       <Suspense fallback={<div className="min-h-[50vh]" aria-hidden />}>

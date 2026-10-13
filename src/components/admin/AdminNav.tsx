@@ -18,6 +18,7 @@ const ITEMS: { href: string; label: string; adminOnly?: boolean }[] = [
   { href: "/admin/tags", label: "Tags", adminOnly: true },
   { href: "/admin/media", label: "Mídia", adminOnly: true },
   { href: "/admin/analytics", label: "Estatísticas" },
+  { href: "/admin/avisos", label: "Enviar aviso", adminOnly: true },
   { href: "/admin/settings", label: "Configurações", adminOnly: true },
   { href: "/admin/audit-logs", label: "Logs de auditoria", adminOnly: true },
 ];

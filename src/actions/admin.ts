@@ -12,6 +12,9 @@ import { isStorageUrl, sanitizeRichHtml } from "@/lib/sanitize";
 import { uploadImage } from "@/lib/upload";
 import { slugify } from "@/lib/utils";
 import type { Result } from "@/lib/types";
+import { z } from "zod";
+import { ANNOUNCEMENT_LINKS } from "@/lib/announcement";
+import { notifyEveryone, pushEnabled } from "@/lib/push";
 import { FORBIDDEN, GENERIC_ERROR, ensureTags, parseTags, setPostTags, str, type FormState } from "./_shared";
 
 type Level = "staff" | "admin";
@@ -284,4 +287,39 @@ export async function deleteFeedback(fd: FormData) {
   await (await createClient()).from("feedback").delete().eq("id", id.data);
   await audit("feedback.delete", "feedback", id.data);
   revalidatePath("/admin/feedback");
+}
+
+/* ------------------------------ Avisos para todos ------------------------------ */
+
+const announcementSchema = z.object({
+  title: z.string().trim().min(3, "Escreva um título.").max(60, "Título: até 60 letras."),
+  body: z.string().trim().min(3, "Escreva a mensagem.").max(180, "Mensagem: até 180 letras."),
+  url: z.enum(ANNOUNCEMENT_LINKS.map((l) => l.url) as [string, ...string[]]),
+});
+
+export async function sendAnnouncement(_: FormState, fd: FormData): Promise<FormState> {
+  const s = await gate("admin");
+  if (!s) return { error: FORBIDDEN };
+  if (!(await allow("announcement", s.user.id))) return { error: "Você já enviou avisos demais agora. Espere alguns minutos." };
+  const parsed = announcementSchema.safeParse({ title: str(fd, "title"), body: str(fd, "body"), url: str(fd, "url") });
+  if (!parsed.success) return { error: firstError(parsed.error) };
+  const a = { id: crypto.randomUUID(), ...parsed.data, at: new Date().toISOString() };
+  const { error } = await (await createClient()).from("site_settings").upsert({ key: "announcement", value: a });
+  if (error) return { error: GENERIC_ERROR };
+  const r = await notifyEveryone({ title: a.title, body: a.body, url: a.url, tag: `aviso-${a.id}` });
+  await audit("announcement.send", "settings", a.id, { title: a.title, url: a.url, sent: r.sent, total: r.total });
+  revalidatePath("/");
+  const where = "Ele já aparece no início do app para todos durante 7 dias.";
+  if (!pushEnabled()) return { success: `Aviso publicado. ${where} As notificações no celular estão desligadas: faltam as chaves VAPID na Vercel.` };
+  if (r.total === 0) return { success: `Aviso publicado. ${where} Ninguém ativou as notificações ainda, então nenhum celular apitou.` };
+  return { success: `Aviso enviado! Apitou em ${r.sent} de ${r.total} aparelho${r.total === 1 ? "" : "s"}. ${where}` };
+}
+
+export async function clearAnnouncement() {
+  const s = await gate("admin");
+  if (!s) return;
+  await (await createClient()).from("site_settings").delete().eq("key", "announcement");
+  await audit("announcement.clear", "settings");
+  revalidatePath("/");
+  revalidatePath("/admin/avisos");
 }

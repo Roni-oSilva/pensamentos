@@ -29,6 +29,7 @@ export const RATE_RULES = {
   share: { limit: 30, window: 60 },
   view: { limit: 1, window: 3600 },
   admin: { limit: 300, window: 60 },
+  announcement: { limit: 5, window: 600 },
 } as const;
 export type RateAction = keyof typeof RATE_RULES;
 

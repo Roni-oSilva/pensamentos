@@ -7,7 +7,7 @@ import { toast } from "@/lib/toast";
 
 type State = "loading" | PushSupport | "denied" | "idle" | "on";
 
-/** Cartão de notificações: ativar neste aparelho e escolher o que apita (Instantes e publicações da comunidade). */
+/** Cartão de notificações: ativar neste aparelho e escolher o que apita (Momentos e publicações da comunidade). */
 export function PushSettings({ compact = false }: { compact?: boolean }) {
   const [state, setState] = useState<State>("loading");
   const [sub, setSub] = useState<PushSubscription | null>(null);
@@ -72,7 +72,7 @@ export function PushSettings({ compact = false }: { compact?: boolean }) {
   if (state === "idle") return (
     <div className={`${box} flex flex-wrap items-center justify-between gap-4`}>
       <div className="min-w-0"><p className="flex items-center gap-2 font-semibold text-white"><Bell className="h-5 w-5" /> Notificações</p>
-        <p className="mt-1 text-sm text-ash-300">Receba um aviso no celular quando alguém postar um Instante ou publicar na comunidade.</p></div>
+        <p className="mt-1 text-sm text-ash-300">Receba um aviso no celular quando alguém postar um Momento ou publicar na comunidade.</p></div>
       <button type="button" onClick={enable} disabled={busy} className="btn-primary">{busy ? "Ativando…" : "Ativar notificações"}</button>
     </div>
   );
@@ -83,7 +83,7 @@ export function PushSettings({ compact = false }: { compact?: boolean }) {
         <button type="button" onClick={disable} disabled={busy} className="text-xs text-ash-400 underline-offset-2 hover:underline">Desativar</button>
       </div>
       <div className="mt-3 space-y-2">
-        {([["instants", "Quando alguém postar um Instante"], ["posts", "Quando alguém publicar na comunidade"]] as const).map(([k, label]) => (
+        {([["instants", "Quando alguém postar um Momento"], ["posts", "Quando alguém publicar na comunidade"]] as const).map(([k, label]) => (
           <label key={k} className="flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-ink-700 px-4 py-3 text-sm text-ash-200">
             {label}
             <input type="checkbox" checked={prefs[k]} onChange={() => toggle(k)} className="h-5 w-5 accent-[#e1251b]" />

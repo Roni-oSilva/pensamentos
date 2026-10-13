@@ -12,7 +12,7 @@ const REACTIONS = ["❤️", "🙏", "🔥", "😂", "😮"];
 type Opened = { id: string; url: string; caption: string | null; createdAt: string } | { id: string; error: string };
 
 /**
- * Mostra os instantes de um amigo em sequência. Cada foto é aberta no servidor só quando aparece na tela
+ * Mostra os momentos de um amigo em sequência. Cada foto é aberta no servidor só quando aparece na tela
  * (é aí que conta como vista) — depois de fechar, ela não volta.
  */
 export function InstantViewer({ friends, start, onClose }: { friends: InboxFriend[]; start: number; onClose: (seen: string[]) => void }) {
@@ -60,7 +60,7 @@ export function InstantViewer({ friends, start, onClose }: { friends: InboxFrien
   if (!friend) return null;
   return (
     <Overlay>
-    <div className="instant-stage force-dark fixed inset-0 z-[70] flex flex-col bg-black text-white" role="dialog" aria-modal aria-label={`Instantes de ${friend.name}`}>
+    <div className="instant-stage force-dark fixed inset-0 z-[70] flex flex-col bg-black text-white" role="dialog" aria-modal aria-label={`Momentos de ${friend.name}`}>
       <div className="flex gap-1 px-3 pt-[max(0.6rem,env(safe-area-inset-top))]">
         {friend.items.map((it, i) => <span key={it.id} className={`h-[3px] flex-1 rounded-full ${i <= ii ? "bg-white" : "bg-white/30"}`} />)}
       </div>
@@ -80,7 +80,7 @@ export function InstantViewer({ friends, start, onClose }: { friends: InboxFrien
           {cur && !("error" in cur) && (
             <>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={cur.url} alt={cur.caption ?? `Instante de ${friend.name}`} className="instant-pop absolute inset-0 h-full w-full object-cover" draggable={false} />
+              <img src={cur.url} alt={cur.caption ?? `Momento de ${friend.name}`} className="instant-pop absolute inset-0 h-full w-full object-cover" draggable={false} />
               {cur.caption && <span className="absolute inset-x-4 bottom-4 rounded-full bg-black/55 px-5 py-3 text-center text-[15px] backdrop-blur">{cur.caption}</span>}
             </>
           )}
@@ -96,7 +96,7 @@ export function InstantViewer({ friends, start, onClose }: { friends: InboxFrien
           ))}
         </div>
         <div className="mx-auto mt-3 flex max-w-md items-center justify-between text-xs text-white/55">
-          <span>Este instante some quando você fechar.</span>
+          <span>Este momento some quando você fechar.</span>
           <ReportButton targetType="PROFILE" targetId={friend.authorId} signedIn label="Denunciar" />
         </div>
       </div>

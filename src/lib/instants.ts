@@ -10,7 +10,7 @@ export type InstantReaction = (typeof INSTANT_REACTIONS)[number];
 export interface InboxItem { id: string; createdAt: string; expiresAt: string }
 export interface InboxFriend { authorId: string; username: string; name: string; avatarUrl: string | null; items: InboxItem[] }
 
-/** Instantes de amigos ainda não abertos, agrupados por pessoa (mais recente primeiro). Sem a migração 0014, vazio. */
+/** Momentos de amigos ainda não abertos, agrupados por pessoa (mais recente primeiro). Sem a migração 0014, vazio. */
 export async function getInbox(): Promise<InboxFriend[]> {
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("instants_inbox");

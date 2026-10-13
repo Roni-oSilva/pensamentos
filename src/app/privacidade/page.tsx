@@ -18,8 +18,8 @@ export default function Privacidade() {
       <p>Execução do serviço que você solicitou (art. 7º, V), legítimo interesse para segurança e prevenção a fraudes (art. 7º, IX) e cumprimento de obrigações legais.</p>
       <h2>O que é público e o que é privado</h2>
       <p>Seu e-mail <strong>nunca</strong> é exibido. Seu perfil, suas publicações aprovadas e seus comentários são públicos. Curtidas e favoritos são privados.</p>
-      <h2>Instantes (fotos)</h2>
-      <p>As fotos dos Instantes são tiradas na hora pela câmera do app e enviadas sem localização ou outros dados da câmera. Ficam guardadas de forma privada: os membros logados da comunidade podem abrir cada instante uma única vez, por até 24 horas. Você vê os seus instantes, quem viu e as reações por 30 dias; depois disso eles são apagados. Você pode apagar um instante a qualquer momento.</p>
+      <h2>Momentos (fotos)</h2>
+      <p>As fotos dos Momentos são tiradas na hora pela câmera do app e enviadas sem localização ou outros dados da câmera. Ficam guardadas de forma privada: os membros logados da comunidade podem abrir cada momento uma única vez, por até 24 horas. Você vê os seus momentos, quem viu e as reações por 30 dias; depois disso eles são apagados. Você pode apagar um momento a qualquer momento.</p>
       <h2>Seus direitos</h2>
       <ul>
         <li>Acessar e corrigir seus dados em <strong>Configurações</strong>.</li>

@@ -93,7 +93,7 @@ export function InstantCamera() {
     if (!shot || sending) return;
     setSending(true); setError(null);
     const fd = new FormData();
-    fd.append("photo", shot.blob, "instante.jpg");
+    fd.append("photo", shot.blob, "momento.jpg");
     if (caption.trim()) fd.append("caption", caption.trim());
     let r: Awaited<ReturnType<typeof sendInstant>>;
     try {
@@ -105,16 +105,16 @@ export function InstantCamera() {
     setSending(false);
     if (!r.ok) { setError(r.error); return; }
     stop();
-    toast("Instante enviado para a comunidade!");
-    router.push("/instantes");
+    toast("Momento enviado para a comunidade!");
+    router.push("/momentos");
     router.refresh();
   }
 
   return (
     <div className="instant-stage force-dark fixed inset-0 z-[70] flex flex-col bg-black text-white">
       <div className="flex items-center justify-between px-4 pb-2 pt-[max(0.75rem,env(safe-area-inset-top))]">
-        <Link href="/instantes" aria-label="Fechar" className="grid h-11 w-11 place-items-center rounded-full bg-white/10" onClick={stop}><X className="h-5 w-5" /></Link>
-        <p className="text-sm font-semibold tracking-wide">Instante</p>
+        <Link href="/momentos" aria-label="Fechar" className="grid h-11 w-11 place-items-center rounded-full bg-white/10" onClick={stop}><X className="h-5 w-5" /></Link>
+        <p className="text-sm font-semibold tracking-wide">Momento</p>
         <span className="w-11" />
       </div>
 

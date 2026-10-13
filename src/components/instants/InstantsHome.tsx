@@ -18,16 +18,16 @@ export function InstantsHome({ inbox, mine, openUser }: { inbox: InboxFriend[]; 
     setOpen(null);
     // o que foi visto some da lista (não dá para ver de novo)
     setList((l) => l.map((f) => ({ ...f, items: f.items.filter((i) => !seen.includes(i.id)) })).filter((f) => f.items.length));
-    router.replace("/instantes", { scroll: false });
+    router.replace("/momentos", { scroll: false });
     router.refresh();
   }
 
   return (
     <div className="space-y-8">
-      <Link href="/instantes/novo" className="instant-cta group relative flex items-center gap-4 overflow-hidden rounded-3xl p-5 text-white">
+      <Link href="/momentos/novo" className="instant-cta group relative flex items-center gap-4 overflow-hidden rounded-3xl p-5 text-white">
         <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white text-black transition group-active:scale-90"><Camera className="h-7 w-7" /></span>
         <span className="min-w-0 flex-1">
-          <span className="block text-xl font-bold">Tirar um instante</span>
+          <span className="block text-xl font-bold">Postar um momento</span>
           <span className="block text-sm text-white/80">Uma foto agora, do jeito que está. Vai para toda a comunidade e some depois de visto.</span>
         </span>
         <ChevronRight className="h-6 w-6 shrink-0 opacity-70" />
@@ -37,7 +37,7 @@ export function InstantsHome({ inbox, mine, openUser }: { inbox: InboxFriend[]; 
         <h2 id="rec-h" className="eyebrow">Recebidos</h2>
         {list.length === 0 ? (
           <div className="card p-6 text-center">
-            <p className="text-white">Nenhum instante novo agora.</p>
+            <p className="text-white">Nenhum momento novo agora.</p>
             <p className="mt-1 text-sm text-ash-400">Quando alguém da comunidade postar, aparece aqui. Ative as notificações para ser avisado.</p>
           </div>
         ) : (
@@ -58,9 +58,9 @@ export function InstantsHome({ inbox, mine, openUser }: { inbox: InboxFriend[]; 
         )}
       </section>
 
-      <Link href="/instantes/meus" className="card flex items-center gap-4 p-5 transition hover:border-ash-400">
+      <Link href="/momentos/meus" className="card flex items-center gap-4 p-5 transition hover:border-ash-400">
         <Images className="h-6 w-6 text-ash-300" />
-        <span className="flex-1"><span className="block font-semibold text-white">Seus instantes</span><span className="block text-sm text-ash-400">{mine ? `${mine} nos últimos 30 dias · quem viu e as reações` : "Os que você enviar ficam guardados aqui por 30 dias (só você vê)."}</span></span>
+        <span className="flex-1"><span className="block font-semibold text-white">Seus momentos</span><span className="block text-sm text-ash-400">{mine ? `${mine} nos últimos 30 dias · quem viu e as reações` : "Os que você enviar ficam guardados aqui por 30 dias (só você vê)."}</span></span>
         <ChevronRight className="h-5 w-5 text-ash-400" />
       </Link>
 

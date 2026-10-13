@@ -21,6 +21,8 @@ const nextConfig = {
     return [
       { source: "/heresia", destination: "/frases", permanent: true },
       { source: "/palavra", destination: "/frases", permanent: true }, // a “Palavra aleatória” saiu do site
+      { source: "/instantes", destination: "/momentos", permanent: true }, // Instantes agora se chamam Momentos
+      { source: "/instantes/:path*", destination: "/momentos/:path*", permanent: true },
     ];
   },
   poweredByHeader: false,

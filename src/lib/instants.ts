@@ -24,17 +24,6 @@ export async function getInbox(): Promise<InboxFriend[]> {
   return [...by.values()].sort((a, b) => b.items.at(-1)!.createdAt.localeCompare(a.items.at(-1)!.createdAt));
 }
 
-/** Quantos amigos (seguem nos dois sentidos) a pessoa tem: é para eles que o instante vai. */
-export async function countFriends(userId: string): Promise<number> {
-  const supabase = await createClient();
-  const [a, b] = await Promise.all([
-    supabase.from("follows").select("following_id").eq("follower_id", userId),
-    supabase.from("follows").select("follower_id").eq("following_id", userId),
-  ]);
-  const followers = new Set((b.data ?? []).map((r) => r.follower_id as string));
-  return (a.data ?? []).filter((r) => followers.has(r.following_id as string)).length;
-}
-
 export interface MyInstant {
   id: string; caption: string | null; createdAt: string; expiresAt: string; url: string | null;
   views: { username: string; avatarUrl: string | null; reaction: string | null; viewedAt: string }[];

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { requireUser } from "@/lib/auth";
 import { DeleteAccountForm, PasswordForm, ProfileForm } from "@/components/profile/SettingsForms";
 import { PageTitle } from "@/components/ui/Section";
+import { PushSettings } from "@/components/push/PushSettings";
 
 export const metadata = { title: "Configurações", robots: { index: false } };
 
@@ -11,6 +12,7 @@ export default async function Configuracoes() {
     <>
       <PageTitle eyebrow="Conta" title="Configurações" />
       <div className="container-narrow mt-10 space-y-14">
+        <section aria-labelledby="notif-h"><h2 id="notif-h" className="mb-5 font-poster uppercase tracking-wide text-3xl text-white">Notificações</h2><PushSettings /></section>
         <section aria-labelledby="perfil-h"><h2 id="perfil-h" className="mb-5 font-poster uppercase tracking-wide text-3xl text-white">Perfil público</h2><ProfileForm profile={s.profile} /></section>
         <section aria-labelledby="senha-h"><h2 id="senha-h" className="mb-5 font-poster uppercase tracking-wide text-3xl text-white">Senha</h2><PasswordForm /></section>
         <section aria-labelledby="seg-h"><h2 id="seg-h" className="mb-3 font-poster uppercase tracking-wide text-3xl text-white">Segurança</h2>

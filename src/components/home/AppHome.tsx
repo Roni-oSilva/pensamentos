@@ -3,6 +3,7 @@ import { BookOpen, CalendarDays, MessageCircle, Users, HandHeart } from "lucide-
 import { ChurchMark } from "@/components/ui/ChurchMark";
 import { dayLabel, planDay, PLAN_DAYS } from "@/lib/bible-plan";
 import { ChurchName } from "@/components/ui/ChurchName";
+import { PushPrompt } from "@/components/push/PushPrompt";
 
 /**
  * Abertura do app instalado: a igreja (logo) e o nome, a leitura de hoje e atalhos.
@@ -20,6 +21,7 @@ export function AppHome({ currentDay, name, tray }: { currentDay: number | null;
   return (
     <section className="app-home container-wide pb-4 pt-6" aria-label="Início do app">
       {tray && <div className="mb-8">{tray}</div>}
+      {tray && <PushPrompt />}
       <div className="flex flex-col items-center text-center">
         <ChurchMark className="h-36 text-white" />
         <h1 className="mt-6 leading-none text-white"><ChurchName variant="stack" className="text-[clamp(3.6rem,19vw,6rem)]" /></h1>

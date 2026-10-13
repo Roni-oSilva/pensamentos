@@ -8,7 +8,7 @@ import { InstantViewer } from "./InstantViewer";
 import { timeAgo } from "@/lib/utils";
 import type { InboxFriend } from "@/lib/instants";
 
-export function InstantsHome({ inbox, friends, mine, openUser }: { inbox: InboxFriend[]; friends: number; mine: number; openUser?: string }) {
+export function InstantsHome({ inbox, mine, openUser }: { inbox: InboxFriend[]; mine: number; openUser?: string }) {
   const router = useRouter();
   const [list, setList] = useState(inbox);
   const startAt = openUser ? list.findIndex((f) => f.username === openUser) : -1;
@@ -28,7 +28,7 @@ export function InstantsHome({ inbox, friends, mine, openUser }: { inbox: InboxF
         <span className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white text-black transition group-active:scale-90"><Camera className="h-7 w-7" /></span>
         <span className="min-w-0 flex-1">
           <span className="block text-xl font-bold">Tirar um instante</span>
-          <span className="block text-sm text-white/80">Uma foto agora, do jeito que está. Vai para {friends} {friends === 1 ? "amigo" : "amigos"} e some depois de visto.</span>
+          <span className="block text-sm text-white/80">Uma foto agora, do jeito que está. Vai para toda a comunidade e some depois de visto.</span>
         </span>
         <ChevronRight className="h-6 w-6 shrink-0 opacity-70" />
       </Link>
@@ -38,7 +38,7 @@ export function InstantsHome({ inbox, friends, mine, openUser }: { inbox: InboxF
         {list.length === 0 ? (
           <div className="card p-6 text-center">
             <p className="text-white">Nenhum instante novo agora.</p>
-            <p className="mt-1 text-sm text-ash-400">Quando um amigo mandar, ele aparece aqui. Amigos são irmãos que você segue e que te seguem.</p>
+            <p className="mt-1 text-sm text-ash-400">Quando alguém da comunidade postar, aparece aqui. Ative as notificações para ser avisado.</p>
           </div>
         ) : (
           <ul className="grid grid-cols-3 gap-4 sm:grid-cols-4">

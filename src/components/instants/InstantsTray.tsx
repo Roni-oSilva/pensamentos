@@ -4,7 +4,7 @@ import { getSession } from "@/lib/auth";
 import { getInbox } from "@/lib/instants";
 import { Avatar } from "@/components/ui/Avatar";
 
-/** Fileira de Instantes (como no Instagram): o seu (+) e os amigos com instantes novos. Só para quem está logado. */
+/** Fileira de Instantes (como no Instagram): o seu (+) e quem postou instantes novos. Só para quem está logado. */
 export async function InstantsTray({ className = "" }: { className?: string }) {
   const session = await getSession();
   if (!session) return null;

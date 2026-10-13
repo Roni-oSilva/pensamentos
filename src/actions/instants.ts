@@ -10,6 +10,8 @@ import { detectImageMime } from "@/lib/upload";
 import { idSchema } from "@/lib/validation";
 import { INSTANT_ARCHIVE_DAYS, INSTANT_BUCKET, INSTANT_REACTIONS } from "@/lib/instants";
 import type { Result } from "@/lib/types";
+import { after } from "next/server";
+import { notifyMembers } from "@/lib/push";
 
 const MAX_BYTES = 6 * 1024 * 1024;
 const NOT_SETUP = "Os Instantes ainda não foram ativados no servidor. O administrador precisa rodar o arquivo RODAR_6_INSTANTES.sql no Supabase.";
@@ -51,6 +53,12 @@ export async function sendInstant(fd: FormData): Promise<Result<{ id: string }>>
 
   await cleanupOld(s.user.id);
   revalidatePath("/instantes", "layout");
+  // avisa os membros (apita no celular) depois de responder: não atrasa o envio
+  const name = s.profile.display_name || s.profile.username;
+  after(() => notifyMembers("instants", s.user.id, {
+    title: "Novo instante 📸", body: `${name} postou um instante. Veja antes que suma!`,
+    url: `/instantes?de=${encodeURIComponent(s.profile.username)}`, tag: `instant-${s.user.id}`,
+  }));
   return { ok: true, id };
 }
 

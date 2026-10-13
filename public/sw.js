@@ -4,7 +4,7 @@
  * - Arquivos estáticos com hash (/_next/static) e imagens públicas do app: cache, para abrir rápido.
  * - Nada de outros domínios (Supabase, analytics) passa por aqui.
  */
-const VERSION = "v2"; // v2: ícone novo (vermelho) e marca nova — limpa o cache antigo
+const VERSION = "v3"; // v3: notificações push
 const STATIC = `igreja-static-${VERSION}`;
 const PRECACHE = ["/offline.html", "/pwa/v2/icon-192.png", "/pwa/v2/icon-512.png", "/pwa/v2/apple-touch-icon.png"];
 
@@ -51,4 +51,33 @@ self.addEventListener("fetch", (event) => {
       }),
     );
   }
+});
+
+// ---------- Notificações push (apitam mesmo com o app fechado) ----------
+self.addEventListener("push", (event) => {
+  let d = {};
+  try { d = event.data ? event.data.json() : {}; } catch { d = { body: event.data ? event.data.text() : "" }; }
+  const title = d.title || "Igreja de Cristo";
+  event.waitUntil(self.registration.showNotification(title, {
+    body: d.body || "",
+    icon: "/pwa/v2/icon-192.png",
+    badge: "/pwa/v2/icon-192.png",
+    tag: d.tag || undefined,
+    renotify: !!d.tag,            // mesmo assunto de novo: apita outra vez
+    vibrate: [120, 60, 120],
+    data: { url: typeof d.url === "string" && d.url.startsWith("/") ? d.url : "/" },
+  }));
+});
+
+// Tocar na notificação: abre (ou traz para frente) o app na tela certa.
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  const url = new URL(event.notification.data?.url || "/", self.location.origin).href;
+  event.waitUntil((async () => {
+    const wins = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+    for (const w of wins) {
+      if (new URL(w.url).origin === self.location.origin) { await w.focus(); return w.navigate(url).catch(() => undefined); }
+    }
+    return self.clients.openWindow(url);
+  })());
 });

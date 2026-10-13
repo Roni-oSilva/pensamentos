@@ -24,7 +24,7 @@ function toCanvas(src: CanvasImageSource, sw: number, sh: number, mirror: boolea
 // o canvas gera um JPEG novo: sem localização nem outros metadados da câmera
 const toJpeg = (c: HTMLCanvasElement) => new Promise<Blob | null>((r) => c.toBlob(r, "image/jpeg", 0.82));
 
-export function InstantCamera({ friends }: { friends: number }) {
+export function InstantCamera() {
   const router = useRouter();
   const video = useRef<HTMLVideoElement>(null);
   const stream = useRef<MediaStream | null>(null);
@@ -105,7 +105,7 @@ export function InstantCamera({ friends }: { friends: number }) {
     setSending(false);
     if (!r.ok) { setError(r.error); return; }
     stop();
-    toast(friends ? `Instante enviado para ${friends} ${friends === 1 ? "amigo" : "amigos"}!` : "Instante enviado!");
+    toast("Instante enviado para a comunidade!");
     router.push("/instantes");
     router.refresh();
   }
@@ -164,7 +164,7 @@ export function InstantCamera({ friends }: { friends: number }) {
         )}
         {error && <p role="alert" className="mx-auto mt-4 max-w-md rounded-2xl bg-red-500/15 px-4 py-3 text-center text-sm text-red-200">{error}</p>}
         <p className="mt-4 text-center text-xs text-white/55">
-          {friends ? `Vai para ${friends} ${friends === 1 ? "amigo" : "amigos"} (quem você segue e te segue) · some depois de visto` : "Você ainda não tem amigos: siga irmãos que também te seguem para eles receberem."}
+          {"Vai para toda a comunidade · cada pessoa vê uma vez · some em 24 h"}
         </p>
       </div>
     </div>

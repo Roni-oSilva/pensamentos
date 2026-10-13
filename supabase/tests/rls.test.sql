@@ -374,14 +374,23 @@ select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 0,
 update public.instant_views set reaction = '🙏' where instant_id = '30000000-0000-0000-0000-000000000001';
 select pg_temp.must_fail($$insert into public.instant_views (instant_id, viewer_id) values ('30000000-0000-0000-0000-000000000002', '00000000-0000-0000-0000-0000000000b2')$$, 'não registra visualização na mão');
 select pg_temp.as_user('00000000-0000-0000-0000-00000000000a', 'aal2');
-select pg_temp.must_fail($$select * from public.instant_open('30000000-0000-0000-0000-000000000001')$$, 'quem não é amigo não abre (nem admin)');
-select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 0, 'quem não é amigo não recebe');
+select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 1, 'instantes são para todos os membros (mesmo sem seguir)');
+select pg_temp.assert_eq((select caption from public.instant_open('30000000-0000-0000-0000-000000000001')), 'culto de hoje', 'qualquer membro abre');
+select pg_temp.must_fail($$select * from public.instant_open('30000000-0000-0000-0000-000000000001')$$, 'cada membro abre uma vez só');
 select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
-select pg_temp.assert_eq((select reaction from public.instant_views where instant_id = '30000000-0000-0000-0000-000000000001'), '🙏', 'autor vê quem viu e a reação');
+select pg_temp.assert_eq((select reaction from public.instant_views where instant_id = '30000000-0000-0000-0000-000000000001' and viewer_id = '00000000-0000-0000-0000-0000000000b2'), '🙏', 'autor vê quem viu e a reação');
 delete from public.follows where follower_id = '00000000-0000-0000-0000-0000000000b1' and following_id = '00000000-0000-0000-0000-0000000000b2';
 insert into public.instants (id, author_id, path) values ('30000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-0000000000b1', '00000000-0000-0000-0000-0000000000b1/30000000-0000-0000-0000-000000000003.jpg');
 select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
-select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 0, 'seguir de um lado só não é amizade');
+select pg_temp.assert_eq((select count(*) from public.instants_inbox())::int, 1, 'novo instante chega para todos');
+-- notificações push: cada um só vê os próprios aparelhos; ninguém grava direto
+select pg_temp.as_su();
+insert into public.push_subscriptions (endpoint, user_id, p256dh, auth) values ('https://push.example/b1', '00000000-0000-0000-0000-0000000000b1', 'k', 'a');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b2');
+select pg_temp.must_see_zero('public.push_subscriptions', 'não vê os aparelhos dos outros');
+select pg_temp.must_fail($$insert into public.push_subscriptions (endpoint, user_id, p256dh, auth) values ('https://push.example/x', '00000000-0000-0000-0000-0000000000b2', 'k', 'a')$$, 'inscrição só pelo servidor');
+select pg_temp.as_user('00000000-0000-0000-0000-0000000000b1');
+select pg_temp.assert_eq((select count(*) from public.push_subscriptions)::int, 1, 'vê o próprio aparelho');
 select pg_temp.as_anon();
 select pg_temp.must_fail($$select * from public.instants_inbox()$$, 'anônimo não acessa instantes');
 select pg_temp.as_su();

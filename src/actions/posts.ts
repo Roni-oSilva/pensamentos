@@ -11,6 +11,9 @@ import { isOwnedImageUrl } from "@/lib/sanitize";
 import { isSettingOn } from "@/lib/data";
 import { uploadImage } from "@/lib/upload";
 import { FORBIDDEN, GENERIC_ERROR, ensureTags, parseTags, setPostTags, str, type FormState } from "./_shared";
+import { after } from "next/server";
+import { notifyMembers } from "@/lib/push";
+import { excerpt } from "@/lib/utils";
 
 /** Cria/edita publicação da comunidade. Com a publicação direta ligada, já entra publicada; senão, vai para aprovação. */
 export async function saveCommunityPost(_: FormState, fd: FormData): Promise<FormState> {
@@ -65,6 +68,11 @@ export async function saveCommunityPost(_: FormState, fd: FormData): Promise<For
   if (!saved && direct) postId = await publishAsServer(s.user.id, editingId, base);
   if (!postId || (!saved && !direct)) return { error: GENERIC_ERROR };
   await setPostTags(supabase, postId, await ensureTags(d.tags));
+  if (!editingId && direct) {
+    // publicação nova que já entrou no ar: avisa os membros (apita no celular)
+    const name = s.profile.display_name || s.profile.username, id = postId;
+    after(() => notifyMembers("posts", s.user.id, { title: `${name} publicou na comunidade`, body: excerpt(d.title ? `${d.title} — ${d.content}` : d.content, 110), url: `/comunidade/${id}`, tag: `post-${id}` }));
+  }
   revalidatePath("/comunidade");
   revalidatePath("/");
   redirect(`/comunidade/${postId}`);

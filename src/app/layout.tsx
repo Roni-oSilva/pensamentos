@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description: "Uma comunidade cristã para compartilhar versículos, frases, pensamentos e conselhos e, acima de tudo, engrandecer a Cristo.",
   openGraph: { siteName: "Igreja de Cristo", locale: "pt_BR", type: "website" },
   applicationName: "Igreja de Cristo",
-  icons: { apple: "/pwa/v2/apple-touch-icon.png" },
+  icons: { apple: "/pwa/v3/apple-touch-icon.png" },
   formatDetection: { telephone: false },
   other: { "apple-mobile-web-app-capable": "yes" }, // iPhones mais antigos ainda leem esta marca
   appleWebApp: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Igreja de Cristo",
     statusBarStyle: "black-translucent",
     startupImage: SPLASH.map(([w, h, r]) => ({
-      url: `/pwa/splash/splash-${w * r}x${h * r}.png`,
+      url: `/pwa/v3/splash/splash-${w * r}x${h * r}.png`,
       media: `(device-width: ${w}px) and (device-height: ${h}px) and (-webkit-device-pixel-ratio: ${r}) and (orientation: portrait)`,
     })),
   },

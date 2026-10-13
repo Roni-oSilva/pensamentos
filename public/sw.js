@@ -4,9 +4,9 @@
  * - Arquivos estáticos com hash (/_next/static) e imagens públicas do app: cache, para abrir rápido.
  * - Nada de outros domínios (Supabase, analytics) passa por aqui.
  */
-const VERSION = "v3"; // v3: notificações push
+const VERSION = "v4"; // v4: ícones e abertura em vermelho
 const STATIC = `igreja-static-${VERSION}`;
-const PRECACHE = ["/offline.html", "/pwa/v2/icon-192.png", "/pwa/v2/icon-512.png", "/pwa/v2/apple-touch-icon.png"];
+const PRECACHE = ["/offline.html", "/pwa/v3/icon-192.png", "/pwa/v3/icon-512.png", "/pwa/v3/apple-touch-icon.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(caches.open(STATIC).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
@@ -60,8 +60,8 @@ self.addEventListener("push", (event) => {
   const title = d.title || "Igreja de Cristo";
   event.waitUntil(self.registration.showNotification(title, {
     body: d.body || "",
-    icon: "/pwa/v2/icon-192.png",
-    badge: "/pwa/v2/icon-192.png",
+    icon: "/pwa/v3/icon-192.png",
+    badge: "/pwa/v3/icon-192.png",
     tag: d.tag || undefined,
     renotify: !!d.tag,            // mesmo assunto de novo: apita outra vez
     vibrate: [120, 60, 120],

@@ -40,7 +40,7 @@ export function InstallBanner() {
     <div role="dialog" aria-label="Instalar o app" className="no-print fixed inset-x-3 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-[65] animate-rise rounded-2xl border border-ink-600 bg-ink-900/95 p-4 shadow-2xl backdrop-blur md:hidden">
       <div className="flex items-start gap-3">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/pwa/v2/icon-192.png" alt="" width={48} height={48} className="h-12 w-12 shrink-0 rounded-xl" />
+        <img src="/pwa/v3/icon-192.png" alt="" width={48} height={48} className="h-12 w-12 shrink-0 rounded-xl" />
         <div className="min-w-0 flex-1">
           <p className="font-semibold text-white">Instale o app Igreja de Cristo</p>
           <p className="mt-0.5 text-sm text-ash-300">
